@@ -1,22 +1,24 @@
 """
 =============================================================================
-QUANTLAB AI – RESEARCH MVP v1.0
-Institutional-Style Strategy Hypothesis Tester
+QUANTLAB AI – RESEARCH #002
+Hypothesis: Does a positive EMA200 slope improve Bullish FVG performance?
 
-Purpose:
-  Objectively determine whether a trading hypothesis demonstrates a
-  measurable edge against a control benchmark.
+Research Question:
+  Does requiring EMA200[now] > EMA200[N bars ago] filter out false uptrends
+  and improve Profit Factor, Expectancy, Drawdown, and Equity Curve Stability
+  over the plain EMA200 + FVG strategy from Research #001?
 
-Truth is more important than profitability.
-Evidence is more important than opinion.
+Three strategies run on identical data, identical engine, identical costs:
+  A  EMA200 Bullish Crossover Only        (Research #001 benchmark)
+  B  EMA200 + Bullish FVG                 (Research #001 strategy under test)
+  C  EMA200 + Positive EMA200 Slope + FVG (Research #002 hypothesis)
+
+Backtest engine, fees, spread, SL, TP, train/test split: UNCHANGED.
 
 Note on timeframe:
-  Default is 1H (hourly candles). 1-minute candles are available but
-  produce 0 FVG signals on 24/7 perpetual futures because continuous
-  crypto markets have no true between-candle price gaps — a valid and
-  important finding in itself. Hourly candles exhibit real FVG patterns
-  during impulse moves and produce sensible stop distances (~0.3–1% of
-  price vs. ~0.008% on 1m).
+  1H (hourly) candles are used. Research #001 established that 1-minute
+  perpetual futures produce 0 FVG signals because continuous 24/7 crypto
+  markets have no true inter-candle price gaps.
 =============================================================================
 """
 
@@ -87,6 +89,11 @@ CONFIG = {
 
     # Max candles per OKX API page
     "OKX_PAGE_LIMIT": 100,
+
+    # ── Research #002 parameters ──────────────────────────────────────────
+    # EMA200 slope lookback: slope is positive when EMA200[now] > EMA200[N bars ago]
+    # Increase N for a slower/smoother slope confirmation; decrease for sensitivity.
+    "SLOPE_LOOKBACK": 10,
 }
 
 
@@ -302,14 +309,19 @@ def calc_ema(series: pd.Series, length: int) -> pd.Series:
 def add_indicators(df: pd.DataFrame) -> pd.DataFrame:
     """Add all required indicators. Preserves original column order."""
     df = df.copy()
-    df["ema200"]     = calc_ema(df["close"], CONFIG["EMA_LENGTH"])
-    # Lagged columns for signal detection
-    df["prev_high"]  = df["high"].shift(1)
-    df["prev_low"]   = df["low"].shift(1)
-    df["prev_close"] = df["close"].shift(1)
+    df["ema200"]      = calc_ema(df["close"], CONFIG["EMA_LENGTH"])
+    # Lagged price columns for signal detection
+    df["prev_high"]   = df["high"].shift(1)
+    df["prev_low"]    = df["low"].shift(1)
+    df["prev_close"]  = df["close"].shift(1)
     # Two bars back (used in 3-candle FVG definition)
-    df["high_2"]     = df["high"].shift(2)
-    df["ema200_prev"]= df["ema200"].shift(1)
+    df["high_2"]      = df["high"].shift(2)
+    df["ema200_prev"] = df["ema200"].shift(1)
+    # EMA200 slope: positive when EMA200[now] > EMA200[SLOPE_LOOKBACK bars ago]
+    # Used by Research #002 Strategy C only; does not affect A or B.
+    n = CONFIG["SLOPE_LOOKBACK"]
+    df["ema200_lag"]     = df["ema200"].shift(n)
+    df["ema200_rising"]  = df["ema200"] > df["ema200_lag"]
     return df
 
 
@@ -347,15 +359,41 @@ def strategy_fvg_ema(df: pd.DataFrame) -> pd.Series:
 
 def strategy_ema_only(df: pd.DataFrame) -> pd.Series:
     """
-    CONTROL / BENCHMARK: EMA200 Bullish Crossover
+    STRATEGY A — BENCHMARK: EMA200 Bullish Crossover
 
     Signal: price closes above EMA200 after being below it the prior bar.
-    Same execution, stops, costs, and RR as the FVG strategy.
+    Same execution, stops, costs, and RR as the FVG strategies.
 
-    Isolates whether FVG adds edge beyond the trend filter alone.
+    Isolates whether FVG contributes edge beyond the trend filter alone.
     """
     cross_up = (df["close"] > df["ema200"]) & (df["prev_close"] <= df["ema200_prev"])
     return cross_up
+
+
+def strategy_fvg_ema_slope(df: pd.DataFrame) -> pd.Series:
+    """
+    STRATEGY C — RESEARCH #002 HYPOTHESIS: Bullish FVG + EMA200 + Positive Slope
+
+    Adds one additional condition to Strategy B:
+      3. EMA200 slope is positive: EMA200[now] > EMA200[SLOPE_LOOKBACK bars ago]
+
+    Hypothesis: requiring the EMA to be actively rising (not just above it)
+    filters out choppy conditions where price is oscillating around a flat
+    EMA200, reducing false uptrend entries and improving edge quality.
+
+    Signal conditions (all must be true on bar close):
+      1. Bullish 3-candle FVG: low[i] > high[i-2] × FVG_MULT
+      2. Trend filter: close[i] > EMA200[i]
+      3. Slope filter: EMA200[i] > EMA200[i - SLOPE_LOOKBACK]
+
+    Entry: next candle open. Stop: low of signal bar. TP: entry + 2 × stop_dist.
+
+    ─── THIS IS THE ONLY CHANGE FROM STRATEGY B ───
+    """
+    fvg     = df["low"] > df["high_2"] * CONFIG["FVG_MULT"]
+    trend   = df["close"] > df["ema200"]
+    slope   = df["ema200_rising"]
+    return fvg & trend & slope
 
 
 # =============================================================================
@@ -625,18 +663,26 @@ def monte_carlo(pnls: np.ndarray, n_iter: int = 1000) -> dict:
 # SECTION 8 — VISUALISATIONS
 # =============================================================================
 
-def plot_results(m_fvg: dict, m_bench: dict, mc_fvg: dict,
+def plot_results(m_a: dict, m_b: dict, m_c: dict,
+                 mc_b: dict, mc_c: dict,
                  symbol: str, oos_start: str, oos_end: str) -> list:
-    """Generate and save all charts. Returns list of saved file paths."""
+    """
+    Generate and save Research #002 charts.
+
+    Three strategies plotted throughout:
+      A  EMA200 Only (benchmark)
+      B  EMA200 + FVG (Research #001)
+      C  EMA200 + FVG + Slope (Research #002 hypothesis)
+    """
     os.makedirs(CONFIG["OUTPUT_FOLDER"], exist_ok=True)
     safe = symbol.replace("-", "_")
     saved = []
 
     BG = "#0F1117"
-    G1 = "#00C49A"
-    G2 = "#4A90D9"
+    CA = "#4A90D9"    # A — blue
+    CB = "#FFB347"    # B — amber
+    CC = "#00C49A"    # C — teal (hypothesis)
     RD = "#FF4560"
-    OR = "#FF9500"
 
     def _style(ax):
         ax.set_facecolor(BG)
@@ -648,96 +694,112 @@ def plot_results(m_fvg: dict, m_bench: dict, mc_fvg: dict,
             sp.set_edgecolor("#333333")
         ax.grid(True, alpha=0.2, color="#444")
 
-    # ── Chart 1: Equity / Drawdown / Distribution ─────────────────────────
-    fig, axes = plt.subplots(3, 1, figsize=(14, 12))
-    fig.patch.set_facecolor(BG)
-    fig.suptitle(f"QuantLab AI — {symbol}  |  OOS: {oos_start} → {oos_end}",
-                 fontsize=12, fontweight="bold", color="white", y=0.99)
+    leg_kw = dict(fontsize=8, facecolor="#1A1D24", edgecolor="#444",
+                  labelcolor="white")
 
+    # ── Chart 1: Equity curves (3-way) ───────────────────────────────────
+    fig, axes = plt.subplots(3, 1, figsize=(14, 13))
+    fig.patch.set_facecolor(BG)
+    fig.suptitle(
+        f"QuantLab AI Research #002 — {symbol}\n"
+        f"OOS: {oos_start} → {oos_end}  |  "
+        f"Slope lookback: {CONFIG['SLOPE_LOOKBACK']} bars",
+        fontsize=11, fontweight="bold", color="white", y=0.995,
+    )
     ax1, ax2, ax3 = axes
     for ax in axes:
         _style(ax)
 
     # Equity
-    if len(m_fvg["equity"]) > 1:
-        ax1.plot(m_fvg["equity"], color=G1, lw=1.5,
-                 label=f"FVG + EMA200  (PF {m_fvg['profit_factor']:.2f})")
-    if len(m_bench["equity"]) > 1:
-        ax1.plot(m_bench["equity"], color=G2, lw=1.5, ls="--",
-                 label=f"EMA200 Only  (PF {m_bench['profit_factor']:.2f})")
-    ax1.axhline(CONFIG["STARTING_CAPITAL"], color="gray", lw=0.7, ls=":")
-    ax1.set_title("Equity Curve", fontsize=10)
+    for m, col, ls, lbl in [
+        (m_a, CA, ":", f"A  EMA200 Only       (PF {m_a['profit_factor']:.2f})"),
+        (m_b, CB, "--", f"B  FVG + EMA200      (PF {m_b['profit_factor']:.2f})"),
+        (m_c, CC, "-",  f"C  FVG + EMA + Slope (PF {m_c['profit_factor']:.2f})"),
+    ]:
+        if len(m["equity"]) > 1:
+            ax1.plot(m["equity"], color=col, lw=1.6, ls=ls, label=lbl)
+    ax1.axhline(CONFIG["STARTING_CAPITAL"], color="gray", lw=0.6, ls=":")
+    ax1.set_title("Equity Curve — Three Strategies", fontsize=10)
     ax1.set_ylabel("Portfolio Value ($)")
-    ax1.legend(fontsize=8, facecolor="#1A1D24", edgecolor="#444",
-               labelcolor="white")
+    ax1.legend(**leg_kw)
 
     # Drawdown
-    if len(m_fvg["drawdown"]) > 1:
-        ax2.fill_between(range(len(m_fvg["drawdown"])),
-                         m_fvg["drawdown"] * 100, 0,
-                         color=RD, alpha=0.7, label="FVG + EMA200")
-    if len(m_bench["drawdown"]) > 1:
-        ax2.fill_between(range(len(m_bench["drawdown"])),
-                         m_bench["drawdown"] * 100, 0,
-                         color=OR, alpha=0.4, label="EMA200 Only")
+    for m, col, alpha, lbl in [
+        (m_a, CA, 0.35, "A  EMA200 Only"),
+        (m_b, CB, 0.45, "B  FVG + EMA200"),
+        (m_c, CC, 0.70, "C  FVG + EMA + Slope"),
+    ]:
+        if len(m["drawdown"]) > 1:
+            ax2.fill_between(range(len(m["drawdown"])),
+                             m["drawdown"] * 100, 0,
+                             color=col, alpha=alpha, label=lbl)
     ax2.set_title("Drawdown (%)", fontsize=10)
     ax2.set_ylabel("Drawdown (%)")
-    ax2.legend(fontsize=8, facecolor="#1A1D24", edgecolor="#444",
-               labelcolor="white")
+    ax2.legend(**leg_kw)
 
-    # R-multiple distribution
-    if len(m_fvg["r_multiples"]) > 0:
-        ax3.hist(m_fvg["r_multiples"], bins=40, color=G1,
-                 alpha=0.75, edgecolor="#000", label="FVG + EMA200")
-    if len(m_bench["r_multiples"]) > 0:
-        ax3.hist(m_bench["r_multiples"], bins=40, color=G2,
-                 alpha=0.5, edgecolor="#000", label="EMA200 Only")
+    # R-multiple distribution (B vs C — the key comparison)
+    for m, col, alpha, lbl in [
+        (m_b, CB, 0.55, "B  FVG + EMA200"),
+        (m_c, CC, 0.75, "C  FVG + EMA + Slope"),
+    ]:
+        if len(m["r_multiples"]) > 0:
+            ax3.hist(m["r_multiples"], bins=35, color=col,
+                     alpha=alpha, edgecolor="#111", label=lbl)
     ax3.axvline(0, color="white", lw=0.8, ls="--")
-    ax3.set_title("Trade R-Multiple Distribution", fontsize=10)
+    ax3.set_title("R-Multiple Distribution  (B vs C)", fontsize=10)
     ax3.set_xlabel("R Multiple")
     ax3.set_ylabel("Count")
-    ax3.legend(fontsize=8, facecolor="#1A1D24", edgecolor="#444",
-               labelcolor="white")
+    ax3.legend(**leg_kw)
 
-    plt.tight_layout(rect=[0, 0, 1, 0.97])
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
     p1 = os.path.join(CONFIG["OUTPUT_FOLDER"],
-                      f"{safe}_equity_drawdown_distribution.png")
+                      f"{safe}_r002_equity_drawdown_distribution.png")
     fig.savefig(p1, dpi=150, bbox_inches="tight", facecolor=BG)
     plt.close(fig)
     saved.append(p1)
 
-    # ── Chart 2: Monte Carlo distribution ────────────────────────────────
-    if len(mc_fvg["final_equities"]) > 0:
-        fig2, ax = plt.subplots(figsize=(12, 5))
-        fig2.patch.set_facecolor(BG)
+    # ── Chart 2: Monte Carlo — Strategy B vs C side-by-side ──────────────
+    fig2, (ax_b, ax_c) = plt.subplots(1, 2, figsize=(14, 5))
+    fig2.patch.set_facecolor(BG)
+    fig2.suptitle(
+        f"Monte Carlo Final Equity — {symbol}  "
+        f"({CONFIG['MC_ITERATIONS']:,} iterations)",
+        fontsize=11, fontweight="bold", color="white",
+    )
+
+    for ax, mc, col, strat_lbl in [
+        (ax_b, mc_b, CB, "B  FVG + EMA200"),
+        (ax_c, mc_c, CC, "C  FVG + EMA + Slope"),
+    ]:
         _style(ax)
-        fe = mc_fvg["final_equities"]
-        n_unique = len(np.unique(fe))
-        mc_bins = max(1, min(60, n_unique - 1)) if n_unique > 1 else 1
-        ax.hist(fe, bins=mc_bins, color=G1, alpha=0.75, edgecolor="#000")
-        ax.axvline(CONFIG["STARTING_CAPITAL"], color="white", lw=1.5,
-                   ls="--", label="Starting Capital")
-        ax.axvline(mc_fvg["p5"],    color=RD,       lw=1.5, ls=":",
-                   label=f"5th pct  ${mc_fvg['p5']:,.0f}")
-        ax.axvline(mc_fvg["median"], color="#FFD700", lw=1.5,
-                   label=f"Median   ${mc_fvg['median']:,.0f}")
-        ax.axvline(mc_fvg["p95"],   color="#00D4FF", lw=1.5, ls=":",
-                   label=f"95th pct ${mc_fvg['p95']:,.0f}")
+        fe = mc["final_equities"]
+        if len(fe) > 0:
+            n_u = len(np.unique(fe))
+            bins = max(1, min(60, n_u - 1)) if n_u > 1 else 1
+            ax.hist(fe, bins=bins, color=col, alpha=0.75, edgecolor="#111")
+        ax.axvline(CONFIG["STARTING_CAPITAL"], color="white",
+                   lw=1.4, ls="--", label="Start")
+        if mc["p5"] != mc["median"]:
+            ax.axvline(mc["p5"],    color=RD,       lw=1.3, ls=":",
+                       label=f"5th  ${mc['p5']:,.0f}")
+        ax.axvline(mc["median"], color="#FFD700", lw=1.4,
+                   label=f"Med  ${mc['median']:,.0f}")
+        if mc["p95"] != mc["median"]:
+            ax.axvline(mc["p95"],   color="#00D4FF", lw=1.3, ls=":",
+                       label=f"95th ${mc['p95']:,.0f}")
         ax.set_title(
-            f"Monte Carlo Final Equity — {symbol}\n"
-            f"{CONFIG['MC_ITERATIONS']:,} iterations  |  "
-            f"Prob. Profitable: {mc_fvg['prob_profit']:.1%}",
-            fontsize=11, color="white",
+            f"{strat_lbl}\nProb. Profitable: {mc['prob_profit']:.1%}",
+            fontsize=10, color="white",
         )
-        ax.set_xlabel("Final Portfolio Value ($)")
+        ax.set_xlabel("Final Equity ($)")
         ax.set_ylabel("Frequency")
-        ax.legend(fontsize=9, facecolor="#1A1D24", edgecolor="#444",
-                  labelcolor="white")
-        plt.tight_layout()
-        p2 = os.path.join(CONFIG["OUTPUT_FOLDER"], f"{safe}_monte_carlo.png")
-        fig2.savefig(p2, dpi=150, bbox_inches="tight", facecolor=BG)
-        plt.close(fig2)
-        saved.append(p2)
+        ax.legend(**leg_kw)
+
+    plt.tight_layout()
+    p2 = os.path.join(CONFIG["OUTPUT_FOLDER"], f"{safe}_r002_monte_carlo.png")
+    fig2.savefig(p2, dpi=150, bbox_inches="tight", facecolor=BG)
+    plt.close(fig2)
+    saved.append(p2)
 
     return saved
 
@@ -746,8 +808,10 @@ def plot_results(m_fvg: dict, m_bench: dict, mc_fvg: dict,
 # SECTION 9 — TRADE LOG EXPORT
 # =============================================================================
 
-def save_trade_log(fvg_trades: list, bench_trades: list, symbol: str) -> str:
-    all_trades = fvg_trades + bench_trades
+def save_trade_log(trades_a: list, trades_b: list, trades_c: list,
+                   symbol: str) -> str:
+    """Save combined trade log for all three strategies to CSV."""
+    all_trades = trades_a + trades_b + trades_c
     if not all_trades:
         return ""
     safe = symbol.replace("-", "_")
@@ -758,7 +822,7 @@ def save_trade_log(fvg_trades: list, bench_trades: list, symbol: str) -> str:
             "funding_windows_crossed", "win", "exit_type"]
     df = df[[c for c in cols if c in df.columns]]
     os.makedirs(CONFIG["OUTPUT_FOLDER"], exist_ok=True)
-    path = os.path.join(CONFIG["OUTPUT_FOLDER"], f"{safe}_trade_log.csv")
+    path = os.path.join(CONFIG["OUTPUT_FOLDER"], f"{safe}_r002_trade_log.csv")
     df.to_csv(path, index=False)
     return path
 
@@ -802,91 +866,235 @@ def _verdict(m_fvg: dict, m_bench: dict, mc: dict) -> tuple[str, list[str]]:
     return verdict, (pros if verdict == "PROMOTE" else cons)
 
 
-def _metrics_block(m: dict) -> None:
-    print(f"  Strategy         : {m['label']}")
-    print(f"  Trades           : {m['n_trades']}")
-    print(f"  Net Profit       : ${m['net_profit']:>12,.2f}")
-    print(f"  Profit Factor    : {m['profit_factor']:>12.3f}")
-    print(f"  Win Rate         : {m['win_rate']:>12.1%}")
-    print(f"  Avg Win          : ${m['avg_win']:>12,.2f}")
-    print(f"  Avg Loss         : ${m['avg_loss']:>12,.2f}")
-    print(f"  Avg Trade        : ${m['avg_trade']:>12,.2f}")
-    print(f"  Avg R            : {m['avg_r']:>12.3f}")
-    print(f"  Expectancy       : {m['expectancy_r']:>+12.3f}R")
-    print(f"  Largest Win      : ${m['largest_win']:>12,.2f}")
-    print(f"  Largest Loss     : ${m['largest_loss']:>12,.2f}")
-    print(f"  Max Drawdown     : {m['max_drawdown']:>12.2%}")
-    print(f"  Sharpe (approx)  : {m['sharpe']:>12.3f}")
-    print(f"  Avg Hold Time    : {m['avg_hold_minutes']:>10.0f} min")
-    print(f"  Funding Windows  : {m['total_funding_windows']:>12,}")
+def _row(label: str, a, b, c, fmt="") -> None:
+    """Print one row of the 3-way comparison table."""
+    def _f(v):
+        if isinstance(v, float):
+            if fmt == "$":   return f"${v:>10,.2f}"
+            if fmt == "%":   return f"{v:>10.2%}"
+            if fmt == "r":   return f"{v:>+10.3f}R"
+            if fmt == "pf":  return f"{v:>10.3f}"
+            if fmt == "min": return f"{v:>8.0f} min"
+            return f"{v:>10.3f}"
+        return f"{str(v):>11}"
+    print(f"  {label:<26} {_f(a)}  {_f(b)}  {_f(c)}")
 
 
-def print_report(symbol: str, m_fvg: dict, m_bench: dict,
-                 mc: dict, oos_start: str, oos_end: str,
+def _cmp(val_b, val_c, higher_is_better: bool = True) -> str:
+    """Return a directional indicator for B→C change."""
+    if val_b == 0 and val_c == 0:
+        return "  ─"
+    if higher_is_better:
+        if val_c > val_b * 1.05:  return "  ▲ improved"
+        if val_c < val_b * 0.95:  return "  ▼ degraded"
+        return "  ≈ unchanged"
+    else:  # lower is better (e.g. drawdown)
+        if val_c < val_b * 0.95:  return "  ▲ improved"
+        if val_c > val_b * 1.05:  return "  ▼ degraded"
+        return "  ≈ unchanged"
+
+
+def print_report(symbol: str,
+                 m_a: dict, m_b: dict, m_c: dict,
+                 mc_b: dict, mc_c: dict,
+                 oos_start: str, oos_end: str,
                  n_days: int, chart_paths: list) -> None:
-    verdict, reasons = _verdict(m_fvg, m_bench, mc)
-    stars = "★★★★★" if verdict == "PROMOTE" else "★☆☆☆☆"
-    S = "=" * 67
+    """
+    Research #002 three-way comparison report.
+    A = EMA200 Only (benchmark)
+    B = FVG + EMA200 (Research #001)
+    C = FVG + EMA200 + Slope (Research #002 hypothesis)
+    """
+    S  = "=" * 75
+    S2 = "-" * 75
 
     print(f"\n{S}")
-    print("  QUANTLAB AI RESEARCH REPORT")
+    print("  QUANTLAB AI — RESEARCH #002")
+    print("  Hypothesis: Does positive EMA200 slope improve Bullish FVG?")
     print(f"  {datetime.now(tz=timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}")
     print(S)
-    print(f"  Symbol           : {symbol}")
-    print(f"  Strategy         : Bullish FVG (3-candle) + EMA{CONFIG['EMA_LENGTH']}")
-    print(f"  Benchmark        : EMA{CONFIG['EMA_LENGTH']} Cross Only")
-    print(f"  Timeframe        : {CONFIG['TIMEFRAME']}")
-    print(f"  EMA Length       : {CONFIG['EMA_LENGTH']}")
-    print(f"  FVG Multiplier   : {CONFIG['FVG_MULT']}")
-    print(f"  Risk:Reward      : 1:{CONFIG['RISK_REWARD']:.1f}")
-    print(f"  Taker Fee        : {CONFIG['TAKER_FEE']:.3%}")
-    print(f"  Spread           : {CONFIG['SPREAD']:.3%}")
-    print(f"  SL Slippage      : {CONFIG['SL_SLIPPAGE']:.3%}")
-    print(f"  Max Leverage     : {CONFIG['MAX_LEVERAGE']:.0f}×")
+    print(f"  Symbol          : {symbol}")
+    print(f"  Timeframe       : {CONFIG['TIMEFRAME']}")
+    print(f"  EMA Length      : {CONFIG['EMA_LENGTH']}")
+    print(f"  Slope Lookback  : {CONFIG['SLOPE_LOOKBACK']} bars "
+          f"(EMA200[now] > EMA200[{CONFIG['SLOPE_LOOKBACK']} bars ago])")
+    print(f"  FVG Multiplier  : {CONFIG['FVG_MULT']}")
+    print(f"  Risk:Reward     : 1:{CONFIG['RISK_REWARD']:.1f}")
+    print(f"  Taker Fee       : {CONFIG['TAKER_FEE']:.3%}  |  "
+          f"Spread: {CONFIG['SPREAD']:.3%}  |  "
+          f"SL Slip: {CONFIG['SL_SLIPPAGE']:.3%}")
     print(S)
-    print("  OUT-OF-SAMPLE WINDOW")
-    print(f"  Start            : {oos_start}")
-    print(f"  End              : {oos_end}")
-    print(f"  Calendar Days    : {n_days}")
-    print(f"  Trades (FVG)     : {m_fvg['n_trades']}")
-    print(f"  Trades (Bench)   : {m_bench['n_trades']}")
-    if m_fvg["n_trades"] < 30:
-        print("  ⚠  WARNING: < 30 FVG trades — limited statistical significance")
+    print(f"  OOS: {oos_start} → {oos_end}  ({n_days} calendar days)")
     print(S)
-    print("  FVG + EMA200 PERFORMANCE")
-    _metrics_block(m_fvg)
+
+    # ── Comparison table ─────────────────────────────────────────────────
+    H = f"  {'Metric':<26} {'A  EMA Only':>11}  {'B  FVG+EMA':>11}  {'C  FVG+Slope':>11}"
+    print(H)
+    print(f"  {S2[2:]}")
+    _row("Trades",          float(m_a["n_trades"]),  float(m_b["n_trades"]),  float(m_c["n_trades"]))
+    _row("Win Rate",        m_a["win_rate"],          m_b["win_rate"],          m_c["win_rate"],         "%")
+    _row("Profit Factor",   m_a["profit_factor"],     m_b["profit_factor"],     m_c["profit_factor"],    "pf")
+    _row("Expectancy",      m_a["expectancy_r"],      m_b["expectancy_r"],      m_c["expectancy_r"],     "r")
+    _row("Net Profit",      m_a["net_profit"],        m_b["net_profit"],        m_c["net_profit"],       "$")
+    _row("Max Drawdown",    m_a["max_drawdown"],      m_b["max_drawdown"],      m_c["max_drawdown"],     "%")
+    _row("Sharpe (approx)", m_a["sharpe"],            m_b["sharpe"],            m_c["sharpe"],           "pf")
+    _row("Avg Hold (min)",  m_a["avg_hold_minutes"],  m_b["avg_hold_minutes"],  m_c["avg_hold_minutes"], "min")
+    _row("MC Prob Profit",
+         mc_b.get("prob_profit", 0.0),   # A shares MC with B for display
+         mc_b["prob_profit"],
+         mc_c["prob_profit"], "%")
+    print(f"  {S2[2:]}")
+
+    # ── Monte Carlo detail ────────────────────────────────────────────────
+    print(f"\n  MONTE CARLO  ({CONFIG['MC_ITERATIONS']:,} iterations)")
+    for lbl, mc in [("B  FVG + EMA200     ", mc_b),
+                    ("C  FVG + EMA + Slope", mc_c)]:
+        if len(mc["final_equities"]) > 0:
+            print(f"    {lbl}  Med ${mc['median']:>8,.0f}  "
+                  f"Worst5% ${mc['p5']:>8,.0f}  "
+                  f"Best5% ${mc['p95']:>8,.0f}  "
+                  f"ProbProfit {mc['prob_profit']:.1%}")
+        else:
+            print(f"    {lbl}  Insufficient trades.")
+
+    # ── B vs C directional comparison ────────────────────────────────────
+    print(f"\n  B → C  (adding slope filter)")
+    print(f"  {'─' * 44}")
+    def _delta(key, higher=True):
+        b_val = m_b[key]
+        c_val = m_c[key]
+        delta = c_val - b_val
+        arrow = _cmp(b_val, c_val, higher)
+        if key in ("net_profit", "avg_win", "avg_loss"):
+            print(f"  {key:<26} Δ ${delta:>+8,.2f}{arrow}")
+        elif key in ("win_rate", "max_drawdown"):
+            print(f"  {key:<26} Δ {delta:>+8.2%}{arrow}")
+        else:
+            print(f"  {key:<26} Δ {delta:>+8.3f}{arrow}")
+
+    _delta("profit_factor",   higher=True)
+    _delta("expectancy_r",    higher=True)
+    _delta("win_rate",        higher=True)
+    _delta("net_profit",      higher=True)
+    _delta("max_drawdown",    higher=False)
+    _delta("sharpe",          higher=True)
+
+    trade_reduction = m_b["n_trades"] - m_c["n_trades"]
+    print(f"  {'trades_filtered_out':<26}   {trade_reduction:>+8.0f}  "
+          f"  (slope removed {trade_reduction} of {m_b['n_trades']} FVG signals)")
+
+    # ── Five research questions ───────────────────────────────────────────
+    print(f"\n{S}")
+    print("  RESEARCH CONCLUSIONS")
     print(S)
-    print("  EMA200-ONLY BENCHMARK")
-    _metrics_block(m_bench)
-    print(S)
-    print("  MONTE CARLO ROBUSTNESS  (FVG + EMA200)")
-    print(f"  Iterations       : {CONFIG['MC_ITERATIONS']:,}")
-    if len(mc["final_equities"]) > 0:
-        print(f"  Median Equity    : ${mc['median']:>12,.2f}")
-        print(f"  Worst 5%         : ${mc['p5']:>12,.2f}")
-        print(f"  Best  5%         : ${mc['p95']:>12,.2f}")
-        print(f"  Prob. Profitable : {mc['prob_profit']:>12.1%}")
+
+    def _ans(q: str, result: str, detail: str) -> None:
+        icon = "✓" if result == "YES" else ("✗" if result == "NO" else "~")
+        print(f"  {icon} Q{q}: {detail}")
+
+    # Q1: Did slope improve over plain FVG+EMA?
+    slope_improved_pf  = m_c["profit_factor"]  > m_b["profit_factor"]
+    slope_improved_exp = m_c["expectancy_r"]   > m_b["expectancy_r"]
+    q1_yes = slope_improved_pf or slope_improved_exp
+    _ans("1", "YES" if q1_yes else "NO",
+         f"Did slope improve FVG+EMA200?  "
+         f"PF {m_b['profit_factor']:.3f} → {m_c['profit_factor']:.3f}  "
+         f"Exp {m_b['expectancy_r']:+.3f}R → {m_c['expectancy_r']:+.3f}R")
+
+    # Q2: Did it reduce drawdown?
+    q2_yes = m_c["max_drawdown"] > m_b["max_drawdown"]  # less negative = improved
+    _ans("2", "YES" if q2_yes else "NO",
+         f"Did it reduce drawdown?  "
+         f"MDD {m_b['max_drawdown']:.2%} → {m_c['max_drawdown']:.2%}")
+
+    # Q3: Did it improve Profit Factor?
+    q3_yes = m_c["profit_factor"] > m_b["profit_factor"]
+    _ans("3", "YES" if q3_yes else "NO",
+         f"Did PF improve?  "
+         f"{m_b['profit_factor']:.3f} → {m_c['profit_factor']:.3f}")
+
+    # Q4: Did C outperform BOTH A and B?
+    q4_a = m_c["profit_factor"] > m_a["profit_factor"]
+    q4_b = m_c["profit_factor"] > m_b["profit_factor"]
+    q4_yes = q4_a and q4_b
+    _ans("4", "YES" if q4_yes else "NO",
+         f"Did C outperform A and B?  "
+         f"A={m_a['profit_factor']:.3f}  B={m_b['profit_factor']:.3f}  "
+         f"C={m_c['profit_factor']:.3f}")
+
+    # Q5: Statistically meaningful or noise?
+    n_c = m_c["n_trades"]
+    mc_diff = mc_c["prob_profit"] - mc_b["prob_profit"]
+    if n_c < 20:
+        q5 = "NOISE"
+        q5_detail = (f"Only {n_c} trades in OOS window — "
+                     f"insufficient sample for statistical confidence.")
+    elif abs(m_c["profit_factor"] - m_b["profit_factor"]) < 0.05 and \
+         abs(m_c["expectancy_r"] - m_b["expectancy_r"]) < 0.05:
+        q5 = "NOISE"
+        q5_detail = (f"Δ PF={m_c['profit_factor']-m_b['profit_factor']:+.3f} "
+                     f"Δ Exp={m_c['expectancy_r']-m_b['expectancy_r']:+.3f}R — "
+                     f"changes are within noise margin (<0.05).")
     else:
-        print("  Insufficient trades for Monte Carlo.")
-    print(S)
-    print("  MODELLING ASSUMPTIONS")
+        q5 = "SIGNAL" if (slope_improved_pf and slope_improved_exp) else "MIXED"
+        q5_detail = (f"Δ PF={m_c['profit_factor']-m_b['profit_factor']:+.3f}  "
+                     f"Δ Exp={m_c['expectancy_r']-m_b['expectancy_r']:+.3f}R  "
+                     f"ΔMC={mc_diff:+.1%}  n={n_c} trades")
+    _ans("5", "YES" if q5 == "SIGNAL" else "NO",
+         f"Meaningful or noise?  → {q5}  ({q5_detail})")
+
+    # ── Final verdict ─────────────────────────────────────────────────────
+    print()
+    # Strategy C must clearly outperform B; ties or marginal gains = reject
+    c_beats_b_clearly = (
+        m_c["profit_factor"]  > m_b["profit_factor"]  + 0.05 and
+        m_c["expectancy_r"]   > m_b["expectancy_r"]   + 0.05
+    )
+    verdict = "PROMOTE" if c_beats_b_clearly and n_c >= 20 else "REJECT"
+    stars   = "★★★★★" if verdict == "PROMOTE" else "★☆☆☆☆"
+
+    print(f"  HYPOTHESIS VERDICT:  {stars}  {verdict}")
+    print()
+    if verdict == "PROMOTE":
+        print("  ✓ Strategy C clearly outperforms Strategy B")
+        print("  ✓ EMA200 slope filter adds genuine measurable edge")
+        print("  ✓ Hypothesis supported — carry forward to Research #003")
+    else:
+        print("  ✗ Strategy C does not clearly outperform Strategy B")
+        print("  ✗ Slope filter does not add statistically meaningful edge")
+        print("  ✗ Hypothesis rejected — do not carry slope filter forward")
+        print()
+        # Objective next hypothesis recommendation
+        b_pf   = m_b["profit_factor"]
+        b_wr   = m_b["win_rate"]
+        b_mdd  = abs(m_b["max_drawdown"])
+        if b_wr < 0.40:
+            print("  → NEXT HYPOTHESIS to test:")
+            print("    Research #003: Does requiring FVG to form at a higher-timeframe")
+            print("    support level (prior swing low) improve Win Rate and Profit Factor?")
+        elif b_mdd > 0.20:
+            print("  → NEXT HYPOTHESIS to test:")
+            print("    Research #003: Does adding an ATR-based volatility filter")
+            print("    (only trade when ATR < median ATR) reduce drawdown?")
+        else:
+            print("  → NEXT HYPOTHESIS to test:")
+            print("    Research #003: Does restricting FVG entries to the first")
+            print("    occurrence after an EMA200 cross (rather than all FVGs above EMA)")
+            print("    reduce over-trading and improve Profit Factor?")
+
+    # ── Assumptions ───────────────────────────────────────────────────────
+    print()
+    print(f"  {'─' * 45}")
+    print("  MODELLING ASSUMPTIONS  (unchanged from Research #001)")
     print("  ✓ Next-candle execution  (no look-ahead bias)")
     print("  ✓ Conservative SL-first  (if SL & TP both within same bar)")
-    print("  ✓ Taker fees included    (both sides)")
-    print("  ✓ Spread cost included   (both sides)")
-    print("  ✓ SL slippage included   (fixed %)")
-    print(f"  ✓ Leverage capped at     {CONFIG['MAX_LEVERAGE']:.0f}×")
-    print("  ✗ Funding rate costs     NOT included in PnL")
-    print(f"  ↳ FVG funding windows  : {m_fvg['total_funding_windows']:,}")
-    print(f"  ↳ Bench funding windows: {m_bench['total_funding_windows']:,}")
-    print(S)
-    print(f"  RESEARCH VERDICT:  {stars}  {verdict}")
-    print()
-    bullet = "  ✓" if verdict == "PROMOTE" else "  ✗"
-    for r in reasons:
-        print(f"{bullet} {r}")
-    print()
+    print("  ✓ Taker fees, spread, SL slippage all included")
+    print(f"  ✓ Leverage capped at {CONFIG['MAX_LEVERAGE']:.0f}×")
+    print("  ✗ Funding rate NOT included in PnL")
+    print(f"  ↳ Strategy C funding windows : {m_c['total_funding_windows']:,}")
+
     if chart_paths:
+        print()
         print("  OUTPUT FILES")
         for p in chart_paths:
             print(f"  → {p}")
@@ -898,105 +1106,115 @@ def print_report(symbol: str, m_fvg: dict, m_bench: dict,
 # =============================================================================
 
 def process_symbol(symbol: str) -> None:
-    """Full research pipeline for one symbol."""
-    sep = "─" * 67
+    """Full Research #002 pipeline for one symbol — three strategies."""
+    sep = "─" * 75
     print(f"\n{sep}\n  PROCESSING: {symbol}\n{sep}")
 
-    # 1. Data
+    # 1. Data (cached from Research #001 — no re-download needed)
     df = get_data(symbol)
     n  = len(df)
     print(f"  Total candles : {n:,}")
 
-    warm_up = CONFIG["EMA_LENGTH"] * 3
+    warm_up = CONFIG["EMA_LENGTH"] * 3 + CONFIG["SLOPE_LOOKBACK"]
     if n < warm_up:
-        print(f"  [SKIP] Need ≥ {warm_up:,} candles for EMA warm-up. Got {n:,}.")
+        print(f"  [SKIP] Need ≥ {warm_up:,} candles. Got {n:,}.")
         return
 
-    # 2. Indicators
+    # 2. Indicators (now includes ema200_lag and ema200_rising)
     df = add_indicators(df)
 
-    # 3. Train / OOS split
-    split = int(n * CONFIG["TRAIN_RATIO"])
+    # 3. Train / OOS split  (identical to Research #001)
+    split  = int(n * CONFIG["TRAIN_RATIO"])
     df_oos = df.iloc[split:].reset_index(drop=True)
 
     oos_start = str(df_oos["datetime"].iloc[0].date())
     oos_end   = str(df_oos["datetime"].iloc[-1].date())
     n_days    = (df_oos["datetime"].iloc[-1] - df_oos["datetime"].iloc[0]).days
 
-    print(f"  Train      : {df['datetime'].iloc[0].date()} → "
+    print(f"  Train : {df['datetime'].iloc[0].date()} → "
           f"{df['datetime'].iloc[split-1].date()} ({split:,} bars)")
-    print(f"  OOS        : {oos_start} → {oos_end} "
+    print(f"  OOS   : {oos_start} → {oos_end} "
           f"({len(df_oos):,} bars / {n_days} days)")
 
-    # Quick diagnostic: count raw FVG signals across entire dataset
-    all_fvg = strategy_fvg_ema(df).sum()
-    oos_fvg = strategy_fvg_ema(df_oos).sum()
-    print(f"  FVG signals: {all_fvg:,} total / {oos_fvg:,} in OOS")
+    # Signal diagnostics
+    sig_b = strategy_fvg_ema(df_oos).sum()
+    sig_c = strategy_fvg_ema_slope(df_oos).sum()
+    print(f"  OOS FVG signals: B={sig_b:,}  C={sig_c:,}  "
+          f"(slope filtered out {sig_b - sig_c:,} = "
+          f"{(sig_b - sig_c)/max(sig_b,1):.0%})")
 
-    # 4. Backtests (OOS only)
-    print("\n  Running FVG + EMA200 backtest...")
-    res_fvg = run_backtest(df_oos, strategy_fvg_ema, "FVG + EMA200")
+    # 4. Backtests (OOS only) — three strategies, identical engine
+    print("\n  Running Strategy A (EMA200 Only)...")
+    res_a = run_backtest(df_oos, strategy_ema_only,     "A  EMA200 Only")
 
-    print("  Running EMA200-only benchmark...")
-    res_bench = run_backtest(df_oos, strategy_ema_only, "EMA200 Only")
+    print("  Running Strategy B (FVG + EMA200)...")
+    res_b = run_backtest(df_oos, strategy_fvg_ema,      "B  FVG + EMA200")
 
-    print(f"  Trades executed: {len(res_fvg['trades'])} FVG "
-          f"| {len(res_bench['trades'])} Benchmark")
+    print("  Running Strategy C (FVG + EMA200 + Slope)...")
+    res_c = run_backtest(df_oos, strategy_fvg_ema_slope,"C  FVG+EMA+Slope")
+
+    print(f"  Trades: A={len(res_a['trades'])}  "
+          f"B={len(res_b['trades'])}  C={len(res_c['trades'])}")
 
     # 5. Metrics
-    m_fvg   = compute_metrics(res_fvg["trades"],   "FVG + EMA200")
-    m_bench = compute_metrics(res_bench["trades"], "EMA200 Only")
+    m_a = compute_metrics(res_a["trades"], "A  EMA200 Only")
+    m_b = compute_metrics(res_b["trades"], "B  FVG + EMA200")
+    m_c = compute_metrics(res_c["trades"], "C  FVG+EMA+Slope")
 
-    # 6. Monte Carlo
-    print(f"  Running Monte Carlo ({CONFIG['MC_ITERATIONS']:,} iterations)...")
-    mc = monte_carlo(m_fvg["pnls"], CONFIG["MC_ITERATIONS"])
+    # 6. Monte Carlo (B and C — the key comparison)
+    print(f"  Running Monte Carlo ({CONFIG['MC_ITERATIONS']:,} iterations × 2)...")
+    mc_b = monte_carlo(m_b["pnls"], CONFIG["MC_ITERATIONS"])
+    mc_c = monte_carlo(m_c["pnls"], CONFIG["MC_ITERATIONS"])
 
-    # 7. Trade log
-    log = save_trade_log(res_fvg["trades"], res_bench["trades"], symbol)
+    # 7. Trade log (all three strategies)
+    log = save_trade_log(res_a["trades"], res_b["trades"], res_c["trades"], symbol)
     if log:
         print(f"  Trade log → {log}")
 
     # 8. Charts
     print("  Generating charts...")
-    paths = plot_results(m_fvg, m_bench, mc, symbol, oos_start, oos_end)
+    paths = plot_results(m_a, m_b, m_c, mc_b, mc_c, symbol, oos_start, oos_end)
     if log:
         paths.append(log)
 
     # 9. Report
-    print_report(symbol, m_fvg, m_bench, mc,
+    print_report(symbol, m_a, m_b, m_c, mc_b, mc_c,
                  oos_start, oos_end, n_days, paths)
 
 
 def main():
     print("""
-╔═══════════════════════════════════════════════════════════════════╗
-║              QUANTLAB AI — RESEARCH MVP v1.0                      ║
-║         Institutional-Style Strategy Hypothesis Tester            ║
-╚═══════════════════════════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════╗
+║              QUANTLAB AI — RESEARCH #002                              ║
+║   Hypothesis: Positive EMA200 Slope Improves Bullish FVG Strategy    ║
+╚═══════════════════════════════════════════════════════════════════════╝
 
-  Strategy Under Test : Bullish FVG (3-candle) + EMA200
-  Control Benchmark   : EMA200 Bullish Crossover
-  Data Source         : OKX Public REST API (no authentication)
-  Execution Model     : Event-driven | Next-candle entry | SL-first
-  Evaluation Window   : Out-of-Sample only (last 30%%)
+  Strategy A : EMA200 Bullish Crossover Only        (benchmark)
+  Strategy B : EMA200 + Bullish FVG                 (Research #001)
+  Strategy C : EMA200 + Positive Slope + Bullish FVG (hypothesis)
+
+  Engine, fees, spread, SL, TP, train/test split : UNCHANGED
+  Data Source : OKX Public REST API (cached from Research #001)
+  Evaluation  : Out-of-Sample only (last 30%%)
 """)
 
     print("  ACTIVE CONFIGURATION")
-    print(f"  {'─' * 44}")
+    print(f"  {'─' * 46}")
     for sym in CONFIG["SYMBOLS"]:
-        print(f"  Symbol        : {sym}")
-    print(f"  Timeframe     : {CONFIG['TIMEFRAME']}")
-    print(f"  History       : {CONFIG['MONTHS_HISTORY']} months")
-    print(f"  EMA Length    : {CONFIG['EMA_LENGTH']}")
-    print(f"  Risk:Reward   : 1:{CONFIG['RISK_REWARD']}")
-    print(f"  Taker Fee     : {CONFIG['TAKER_FEE']:.3%}")
-    print(f"  Spread        : {CONFIG['SPREAD']:.3%}")
-    print(f"  SL Slippage   : {CONFIG['SL_SLIPPAGE']:.3%}")
-    print(f"  Max Leverage  : {CONFIG['MAX_LEVERAGE']:.0f}×")
-    print(f"  Capital       : ${CONFIG['STARTING_CAPITAL']:,.0f}")
-    print(f"  Risk/Trade    : {CONFIG['RISK_PER_TRADE_PCT']:.1%}")
-    print(f"  Cache         : {CONFIG['CACHE_FOLDER']}/")
-    print(f"  Output        : {CONFIG['OUTPUT_FOLDER']}/")
+        print(f"  Symbol         : {sym}")
+    print(f"  Timeframe      : {CONFIG['TIMEFRAME']}")
+    print(f"  History        : {CONFIG['MONTHS_HISTORY']} months")
+    print(f"  EMA Length     : {CONFIG['EMA_LENGTH']}")
+    print(f"  Slope Lookback : {CONFIG['SLOPE_LOOKBACK']} bars")
+    print(f"  Risk:Reward    : 1:{CONFIG['RISK_REWARD']}")
+    print(f"  Taker Fee      : {CONFIG['TAKER_FEE']:.3%}")
+    print(f"  Spread         : {CONFIG['SPREAD']:.3%}")
+    print(f"  SL Slippage    : {CONFIG['SL_SLIPPAGE']:.3%}")
+    print(f"  Max Leverage   : {CONFIG['MAX_LEVERAGE']:.0f}×")
+    print(f"  Capital        : ${CONFIG['STARTING_CAPITAL']:,.0f}")
+    print(f"  Risk/Trade     : {CONFIG['RISK_PER_TRADE_PCT']:.1%}")
+    print(f"  Cache          : {CONFIG['CACHE_FOLDER']}/")
+    print(f"  Output         : {CONFIG['OUTPUT_FOLDER']}/")
 
     random.seed(42)
     np.random.seed(42)
@@ -1009,7 +1227,7 @@ def main():
             print(f"\n  [ERROR] {sym}: {exc}")
             traceback.print_exc()
 
-    print(f"\n  All symbols processed.")
+    print(f"\n  Research #002 complete.")
     print(f"  Results saved to: {CONFIG['OUTPUT_FOLDER']}/\n")
 
 
