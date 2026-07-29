@@ -1,0 +1,5 @@
+timeframe,regime,interpretation,n_bars,freq_pct,avg_rv20,avg_adx,avg_ret20,avg_ret50,avg_bb_width,avg_slope,avg_rsi,avg_momentum,avg_dist_ema,avg_vol_pct,avg_duration_bars,persistence
+15m,0,Trending Bull,111563,79.75,0.2377,23.81,0.3198,0.5138,1.595,0.02896,52.48,0.1813,0.3505,0.4815,40.4,0.9753
+15m,1,Trending Bear,28325,20.25,0.40584,35.21,-1.5167,-2.6604,3.1746,-0.26545,37.1,-0.8412,-2.9,0.6081,10.3,0.9027
+1H,0,Trending Bull,30833,78.88,0.46341,24.05,0.5448,0.8553,3.2086,0.00441,52.17,0.3084,0.1592,0.484,46.6,0.9788
+1H,1,Trending Bear,8257,21.12,0.80128,36.74,-2.9736,-5.6421,6.441,-0.58935,36.89,-1.6075,-6.3268,0.582,12.5,0.9201
