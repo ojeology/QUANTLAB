@@ -1,0 +1,3 @@
+group,n_symbols,n_trades,win_rate,pf,boot_p50,boot_lo,boot_hi,mc_p,net_r,profitable_syms
+OKX,4,28,46.4,1.68,1.679,0.916,3.018,91.5,10.525,2
+KuCoin,22,105,39.0,1.257,1.257,0.9,1.718,86.9,16.776,13

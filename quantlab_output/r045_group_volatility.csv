@@ -1,0 +1,4 @@
+group,n_symbols,n_trades,win_rate,pf,boot_p50,boot_lo,boot_hi,mc_p,net_r,profitable_syms
+Low,9,32,37.5,1.164,1.163,0.644,2.165,71.0,3.385,5
+Medium,8,44,40.9,1.357,1.357,0.821,2.349,85.7,9.478,5
+High,9,57,42.1,1.43,1.43,0.907,2.187,88.3,14.439,5

@@ -1,0 +1,4 @@
+group,n_symbols,n_trades,win_rate,pf,boot_p50,boot_lo,boot_hi,mc_p,net_r,profitable_syms
+Trending,26,133,40.6,1.338,1.34,0.999,1.764,94.9,27.302,15
+Mixed,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
+Mean-reverting,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0
