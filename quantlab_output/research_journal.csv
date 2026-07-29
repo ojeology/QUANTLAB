@@ -232,3 +232,5 @@ R041-H,,,,,,,,,,1.4541,,,INVESTIGATE,2026-07-29,ENV_OPT_VARH_RELVOL,1H,23,env-op
 R041-I,,,,,,,,,,0.0,,,REJECT,2026-07-29,ENV_OPT_VARI_RELVOL,1H,23,env-opt-varI-5fold-WF,103.0,0.3981,1.0054,-0.1233,40.3,1.0045,0.5095,0.8957,
 R041-J,,,,,,,,,,-0.0001,,,REJECT,2026-07-29,ENV_OPT_VARJ_RELVOL,1H,23,env-opt-varJ-5fold-WF,152.0,0.3487,0.8025,-0.3351,-2392.87,0.7977,0.093,0.7279,
 R042,,Best Env: Dist>p75 · Wed-Thu · BodyPct>p60 · US(14-21UTC),ALL,68.0,2.0029,,0.5441,3530.55,-0.0364,5818141284220.884,,,PROMOTE,,,,,,,,,,,,,,Discovery: 130 envs found. Independent: 120. 3-cond tested: 1504.
+R043,,Portfolio C: E1+E2+E3+E4,ALL,273.0,1.5125,,0.4762,8369.45,-0.0726,20950.5702,,,PROMOTE,,,,,,,,,,,,,,5 envs × 4 portfolios. Best=C PF=1.513 n=273 Score=7/7
+R044,,Portfolio C (OVERFIT),NEW_SYMBOLS,133.0,1.1618,,0.406,1443.64,-0.0728,0.5131,,,REJECT,,,,,,,,,,,,,,Generalisation test: 26 new syms. PF=1.162 vs R043=1.512 (-23.2%). OVERFIT. 15/26 syms profitable.

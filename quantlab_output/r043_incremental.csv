@@ -1,0 +1,15 @@
+portfolio,env,n_attributed,pf_without,delta_pf,additive
+A,E1,14,1.2826,0.2474,True
+A,E2,11,1.3688,0.1612,True
+B,E1,14,1.2587,0.2395,True
+B,E2,11,1.3419,0.1563,True
+B,E3,0,1.4982,0.0,True
+C,E1,17,1.3137,0.1988,True
+C,E2,13,1.3824,0.1301,True
+C,E3,0,1.5125,0.0,True
+C,E4,6,1.4442,0.0683,True
+D,E1,17,1.358,0.1266,True
+D,E2,13,1.4018,0.0827,True
+D,E3,0,1.4845,0.0,True
+D,E4,6,1.441,0.0435,True
+D,E5,5,1.4476,0.037,True
