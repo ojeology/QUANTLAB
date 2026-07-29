@@ -1,0 +1,33 @@
+QUANTLAB EDGE BLUEPRINT v1.0
+Generated from: 1785 trades | 9 strategies | 9 symbols
+
+TOP FEATURES:
+  1. realized_vol  Cohen's d=+0.039
+  2. atr_rank_pct  Cohen's d=-0.263
+  3. bb_width  Cohen's d=-0.003
+  4. dist_from_ema200_pct  Cohen's d=+0.029
+  5. rel_vol  Cohen's d=-0.071
+  6. ema200_slope_pct  Cohen's d=+0.083
+  7. hour_utc  Cohen's d=-0.210
+  8. day_of_week  Cohen's d=+0.236
+  9. atr14  Cohen's d=-0.113
+  10. dist_from_low20_pct  Cohen's d=-0.090
+
+SYMBOL RANKINGS:
+  BCH  PF=1.045  WR=35.4%
+  SOL  PF=1.025  WR=35.0%
+  LTC  PF=0.943  WR=33.3%
+  LINK  PF=0.918  WR=32.8%
+  ETH  PF=0.875  WR=31.8%
+  DOGE  PF=0.860  WR=31.1%
+  XRP  PF=0.794  WR=29.7%
+  AVAX  PF=0.631  WR=24.9%
+  BTC  PF=0.599  WR=24.4%
+
+SESSION RANKINGS:
+  London  PF=1.114  WR=37.3%
+  Asia  PF=0.971  WR=34.0%
+  NewYork  PF=0.878  WR=31.6%
+  Dead  PF=0.437  WR=18.9%
+
+MINIMUM CONDITIONS: ADX, ATR_Rank, EMA_Slope, Session, Dist_from_Low20
