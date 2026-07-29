@@ -1,0 +1,174 @@
+================================================================================
+QUANTLAB AI — R035 EDGE BLUEPRINT
+Universal Edge Discovery from Pooled Trades
+================================================================================
+
+Total trades analysed : 2,116
+Symbols               : 23
+Portfolio WR          : 33.3%
+Portfolio PF          : 0.664
+
+TOP-20 WINNING MARKET ENVIRONMENTS
+--------------------------------------------------------------------------------
+  # 1  [assoc  ]  atr_rank_LOW ∧ ema_slope_HIGH
+        n=190  WR=49.5%  PF=1.356  Boot_p50=1.359  Exp_R=+0.484  p_binom=0.0000
+
+  # 2  [3-feat ]  atr_rank=low ∧ prev_body_ratio=high ∧ session=Asia
+        n=63  WR=55.6%  PF=1.633  Boot_p50=1.635  Exp_R=+0.667  p_binom=0.0002
+
+  # 3  [assoc  ]  ema_dist_pct_HIGH ∧ bb_width_LOW
+        n=124  WR=50.8%  PF=1.343  Boot_p50=1.344  Exp_R=+0.524  p_binom=0.0000
+
+  # 4  [assoc  ]  atr_rank_LOW ∧ ema_dist_pct_HIGH
+        n=187  WR=46.0%  PF=1.219  Boot_p50=1.222  Exp_R=+0.380  p_binom=0.0002
+
+  # 5  [2-feat ]  atr_rank=low ∧ regime=ranging
+        n=271  WR=43.2%  PF=1.031  Boot_p50=1.032  Exp_R=+0.295  p_binom=0.0005
+
+  # 6  [3-feat ]  atr_rank=low ∧ regime=ranging ∧ session=NY
+        n=78  WR=50.0%  PF=1.324  Boot_p50=1.325  Exp_R=+0.500  p_binom=0.0017
+
+  # 7  [3-feat ]  atr_rank=low ∧ hour_utc=high ∧ regime=ranging
+        n=78  WR=50.0%  PF=1.324  Boot_p50=1.325  Exp_R=+0.500  p_binom=0.0017
+
+  # 8  [3-feat ]  atr_rank=low ∧ regime=ranging ∧ prev_body_ratio=high
+        n=103  WR=46.6%  PF=1.227  Boot_p50=1.226  Exp_R=+0.398  p_binom=0.0035
+
+  # 9  [3-feat ]  atr_rank=low ∧ regime=ranging ∧ session=Asia
+        n=93  WR=48.4%  PF=1.256  Boot_p50=1.249  Exp_R=+0.452  p_binom=0.0019
+
+  #10  [assoc  ]  ema_slope_HIGH ∧ bb_width_LOW
+        n=144  WR=47.9%  PF=1.129  Boot_p50=1.127  Exp_R=+0.438  p_binom=0.0002
+
+  #11  [cluster]  Cluster-2
+        n=119  WR=43.7%  PF=1.164  Boot_p50=1.168  Exp_R=+0.311  p_binom=0.0118
+
+  #12  [2-feat ]  atr_rank=low ∧ adx14=low
+        n=312  WR=41.7%  PF=0.970  Boot_p50=0.967  Exp_R=+0.250  p_binom=0.0013
+
+  #13  [2-feat ]  atr_rank=low ∧ prev_body_ratio=high
+        n=259  WR=42.1%  PF=0.996  Boot_p50=0.996  Exp_R=+0.263  p_binom=0.0020
+
+  #14  [1-feat ]  atr_rank = Q1 (low)
+        n=484  WR=41.5%  PF=0.890  Boot_p50=0.890  Exp_R=+0.246  p_binom=0.0001
+
+  #15  [3-feat ]  atr_rank=low ∧ hour_utc=low ∧ prev_body_ratio=high
+        n=106  WR=46.2%  PF=1.171  Boot_p50=1.177  Exp_R=+0.387  p_binom=0.0039
+
+  #16  [3-feat ]  regime=ranging ∧ prev_body_ratio=high ∧ session=Asia
+        n=66  WR=48.5%  PF=1.286  Boot_p50=1.298  Exp_R=+0.455  p_binom=0.0076
+
+  #17  [2-feat ]  prev_body_ratio=high ∧ session=Asia
+        n=202  WR=43.6%  PF=1.005  Boot_p50=1.006  Exp_R=+0.307  p_binom=0.0016
+
+  #18  [3-feat ]  hour_utc=low ∧ prev_body_ratio=high ∧ session=Asia
+        n=202  WR=43.6%  PF=1.005  Boot_p50=1.006  Exp_R=+0.307  p_binom=0.0016
+
+  #19  [assoc  ]  atr_rank_LOW ∧ sym_ETH-USDT-SWAP
+        n=54  WR=53.7%  PF=1.326  Boot_p50=1.322  Exp_R=+0.611  p_binom=0.0016
+
+  #20  [2-feat ]  sym=ETH-USDT-SWAP ∧ atr_rank=low
+        n=54  WR=53.7%  PF=1.326  Boot_p50=1.322  Exp_R=+0.611  p_binom=0.0016
+
+SINGLE-FEATURE RANKINGS (top 5 per feature)
+--------------------------------------------------------------------------------
+
+  sym:
+    NEAR-USDT-SWAP   n=32  PF=1.269  WR=43.8%
+    SUI-USDT-SWAP    n=30  PF=1.042  WR=40.0%
+    PEPE-USDT-SWAP   n=35  PF=1.038  WR=40.0%
+    UNI-USDT-SWAP    n=39  PF=0.999  WR=38.5%
+    ETH-USDT-SWAP    n=227  PF=0.755  WR=37.9%
+
+  atr_rank:
+    Q1 (low)         n=484  PF=0.890  WR=41.5%
+    Q2               n=410  PF=0.757  WR=35.1%
+    Q4               n=422  PF=0.628  WR=32.9%
+    Q3               n=381  PF=0.579  WR=29.7%
+    Q5 (high)        n=419  PF=0.475  WR=25.8%
+
+  hour_utc:
+    Q3               n=438  PF=0.783  WR=36.1%
+    Q2               n=445  PF=0.733  WR=36.0%
+    Q1 (low)         n=458  PF=0.725  WR=36.0%
+    Q4               n=390  PF=0.588  WR=30.0%
+    Q5 (high)        n=385  PF=0.487  WR=27.3%
+
+  regime:
+    ranging          n=596  PF=0.786  WR=36.4%
+    mixed            n=685  PF=0.624  WR=31.8%
+    trending         n=835  PF=0.616  WR=32.3%
+
+  prev_body_ratio:
+    Q5 (high)        n=423  PF=0.789  WR=36.9%
+    Q4               n=423  PF=0.726  WR=35.2%
+    Q2               n=423  PF=0.648  WR=33.1%
+    Q3               n=423  PF=0.632  WR=32.2%
+    Q1 (low)         n=424  PF=0.541  WR=29.2%
+
+  session:
+    Asia             n=612  PF=0.734  WR=36.3%
+    London           n=850  PF=0.701  WR=33.8%
+    NY               n=654  PF=0.560  WR=30.0%
+
+  adx14:
+    Q1 (low)         n=424  PF=0.758  WR=35.8%
+    Q2               n=423  PF=0.755  WR=35.2%
+    Q5 (high)        n=423  PF=0.631  WR=32.9%
+    Q4               n=423  PF=0.597  WR=31.7%
+    Q3               n=423  PF=0.591  WR=31.0%
+
+  prev_range_pct:
+    Q3               n=423  PF=0.753  WR=35.5%
+    Q2               n=423  PF=0.732  WR=36.4%
+    Q5 (high)        n=423  PF=0.686  WR=31.4%
+    Q4               n=423  PF=0.585  WR=29.1%
+    Q1 (low)         n=424  PF=0.576  WR=34.2%
+
+WORST ENVIRONMENTS (avoid)
+--------------------------------------------------------------------------------
+  [3-feat ]  sym=LINK-USDT-SWAP ∧ atr_rank=high ∧ regime=trending
+    n=36  PF=0.215  WR=16.7%
+  [3-feat ]  atr_rank=high ∧ regime=ranging ∧ session=NY
+    n=52  PF=0.226  WR=15.4%
+  [3-feat ]  atr_rank=high ∧ hour_utc=high ∧ regime=ranging
+    n=52  PF=0.226  WR=15.4%
+  [3-feat ]  sym=BTC-USDT-SWAP ∧ atr_rank=high ∧ regime=trending
+    n=39  PF=0.244  WR=17.9%
+  [3-feat ]  atr_rank=high ∧ hour_utc=high ∧ prev_body_ratio=mid
+    n=71  PF=0.249  WR=16.9%
+  [3-feat ]  atr_rank=high ∧ prev_body_ratio=mid ∧ session=NY
+    n=71  PF=0.249  WR=16.9%
+  [2-feat ]  sym=DOGE-USDT-SWAP ∧ atr_rank=high
+    n=45  PF=0.257  WR=17.8%
+  [2-feat ]  sym=DOGE-USDT-SWAP ∧ regime=mixed
+    n=32  PF=0.264  WR=15.6%
+  [3-feat ]  sym=BTC-USDT-SWAP ∧ atr_rank=high ∧ prev_body_ratio=low
+    n=35  PF=0.272  WR=17.1%
+  [3-feat ]  sym=BTC-USDT-SWAP ∧ regime=trending ∧ prev_body_ratio=low
+    n=51  PF=0.273  WR=19.6%
+
+FEATURE IMPORTANCES (RF Gini)
+--------------------------------------------------------------------------------
+  dow                     0.1019
+  atr_rank                0.0877
+  bb_width                0.0874
+  prev_range_pct          0.0824
+  hour_utc                0.0774
+  ema_slope               0.0752
+  rel_vol                 0.0751
+  real_vol                0.0745
+  pullback_pct            0.0710
+  prev_body_ratio         0.0691
+  ema_dist_pct            0.0688
+  rsi14                   0.0677
+  adx14                   0.0618
+
+NEXT STEPS — STRATEGY CONSTRUCTION
+--------------------------------------------------------------------------------
+  1. Select the top environment(s) with n≥200 and PF>1.20
+  2. These define the ENTRY FILTER for R036
+  3. Design a new entry signal that triggers ONLY in this environment
+  4. The entry signal should be independent of the filter features
+  5. Validate with 5-fold walk-forward on all 23 symbols
+================================================================================
