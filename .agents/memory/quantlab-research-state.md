@@ -74,6 +74,37 @@ description: Current frozen baselines, promotion status, and research trajectory
 - Worst symbols: NEAR (-83% WR), OP (-87% WR), FET (-78% WR), ATOM (-77% WR), SUI (-76% WR)
 - Intra-session analysis inconclusive (timestamp artifact — all read as hour=0)
 
+## R068 ADX_ST+PBD_HI Independent Validation (COMPLETE)
+
+**Result: 8/8 production criteria passed — CLEARED FOR PAPER TRADING**
+
+| Metric | Value |
+|---|---|
+| PF | 1.6919 |
+| WR | 45.8% |
+| n | 2,049 |
+| MDD | -5.9% |
+| Expectancy | $37.48/trade |
+| Boot P5 | 1.573 (criterion >1.20 ✓) |
+| MC P(profit) | 100% (criterion >95% ✓) |
+| LOO-sym floor | 1.674 [LTC removed] |
+| LOO-fold floor | 1.644 |
+| All 5 folds profitable | YES ✓ |
+
+**Final Q&A (R068 Section 12):**
+- Q1 Genuine standalone edge: YES
+- Q2 DST_NR truly redundant: UNCERTAIN — bootstrap CI spans 0; directionally better but not proven
+- Q3 Survives independent validation: YES
+- Q4 Deploy on demo today: YES
+- Q5 New official Family C: NOT YET — run alongside original, monitor live
+- Q6 Stop Family C research: NO — paper trade first
+- Q7 vs Family A: Both real. Family A = high conviction/low frequency (PF=3.35, n=91). ADX+PBD = moderate conviction/high frequency (PF=1.69, n=2049). Run both.
+
+**Promotion status: ADX_ST+PBD_HI → PAPER TRADING alongside Family A**
+- Demo bot should run both strategies independently
+- Worst-case simulated drawdown: -33.6% (know this going in)
+- MC expected drawdown: -7.2%
+
 ## Capital Allocation Finding (R066 Section 7)
 - Equal weight (33/33/33): PF=1.618, MDD=-8.3%
 - Kelly-weighted (64%A / 36%C): PF=1.718, MDD=-8.3%, RF=6.57 — practical choice if both families used
@@ -95,9 +126,10 @@ description: Current frozen baselines, promotion status, and research trajectory
 - Family B's 0 OOS trades is partly explained by the narrow OOS window (20% of 2000+ bars)
 
 ## Key File Locations
-- Research scripts: `quantlab_r0XX.py` (r064–r066 are the relevant arc)
+- Research scripts: `quantlab_r0XX.py` (r064–r068 are the relevant arc)
 - Config + indicators: `quantlab_ai.py`
 - Cached OHLCV: `quantlab_cache/SYMBOL_1H.parquet` (52 symbols)
 - R066 outputs: `quantlab_output/r066_*` (dashboard, equity curves, ranking, allocation, journal)
 - R065 forensic: `quantlab_output/r065_journal.md` (Family B forensic)
 - Demo bot spec (Family A): `quantlab_output/r062_demo_bot_spec.md`
+- R068 outputs: `quantlab_output/r068_*` (dashboard, equity curves, LOO symbol, MC, journal)
