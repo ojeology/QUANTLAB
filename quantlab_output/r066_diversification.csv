@@ -1,0 +1,4 @@
+pair,trade_overlap,pnl_corr,sym_overlap,sess_overlap,simult_loss_pct,div_score,label_a,label_b
+A+B,0.0,0.0,0.0,0.0,0.0,100.0,Family A,Family B
+A+C,0.8462,0.0,0.8462,1.0,0.0,39.2,Family A,Family C
+B+C,0.0,0.0,0.0,0.0,0.0,100.0,Family B,Family C

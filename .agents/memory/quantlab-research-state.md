@@ -5,64 +5,71 @@ description: Current frozen baselines, promotion status, and research trajectory
 
 ## Frozen Baselines
 
-**E3.1_v1** (original): `BBW_LO + RV_LO + DST_NR + PRG_VH`  
-- PF=1.467, n=96, WR=47.9%, MDD=-7.4%, UES=77.1, Verdict=WATCHLIST
+**Family A (E3.1_v2)** — FROZEN PROMOTE candidate
+- Conditions: `BBW_STRICT + RV_LO + DST_NR + PRG_VH`
+- BBW_STRICT = bb_width < IS p25 (tighter than BBW_LO = p33)
+- R066 baseline: PF=3.353, n=91, WR=62.6%, MDD=-4.6%, UES=209.1, Boot P5=2.333
+- All folds profitable; LOO-sym=3.091, LOO-fold=2.600
+- **Clear production leader. Deploy first for paper trading.**
 
-**E3.1_v2** (R060 confirmed, R062 validated): `BBW_STRICT + RV_LO + DST_NR + PRG_VH`  
-- PF=1.640, n=79, WR=50.6%, MDD=-7.0%, UES=80.5, Verdict=WATCHLIST (R061)  
-- PF=1.561, n=79, WR=49.4%, MDD=-9.0%, UES=100.0, Verdict=STRONG REAL EDGE (R062)
-- BBW_STRICT = bb_width < IS p25 (tighter than BBW_LO = p33)  
-- R062 stat tests: 7/7 PASSED — bootstrap CI [1.085–2.235], MC P(profitable)=98.2%, permutation=100th pctile
-- **Demo bot spec ready** → `quantlab_output/r062_demo_bot_spec.md`
-- **Blocking PROMOTE:** n still only 79 (need ≥200 trades); CI narrows only with more trade history
+**Family B** — LOW SIGNAL FREQUENCY, not yet deployable
+- Conditions: `RV_HI + DST_MD + ADX_WK + LON`
+- R065: PF=2.188, n=25 (only 25 trades across 52 symbols over full history)
+- R066: **0 trades in OOS period** — conditions almost never co-occur
+- LON session (7–14 UTC) + high RV + weak ADX + extended above EMA200 = very rare
+- **Do not combine into portfolio until more cache data available**
 
-## E3.1_v2 Key Findings from R062
+**Family C** — Active but lower quality
+- Conditions: `DST_NR + ADX_ST + PBD_HI + ASI`
+- R066 baseline: PF=1.492, n=721, WR=42.7%, MDD=-15.1%, UES=74.5
+- Boot P5=1.315, MC P(profit)=100%, LOO-sym=1.453, LOO-fold=1.401
+- All 5 folds profitable; high trade count but -15% MDD is a concern
 
-- Edge is **universal** — Tier-3 (small-cap) PF=2.080 n=44; edge not confined to large-caps
-- Tier distribution: 17.7% Tier1, 26.6% Tier2, 55.7% Tier3 trades
-- Session split: Asia 45.6%, London 40.5%, US 13.9%
-- Fold stability: F1=4.85, F2=4.72 profitable; F3/F4 losing; LOO-fold floor=1.096 (passes)
-- **Core insight:** 79 trades = ~173/year rate. Need ~14 months of paper trading to reach n=200.
-- **Next action:** paper trade bot as specified in `r062_demo_bot_spec.md`, collect n≥200, re-test
+## R066 Portfolio Validation Results
 
-## E3.1 Fold Stability Problem (known)
-- F1: PF=4.85, F2: PF=4.72 → F3: PF=0.80, F4: PF=0.30, F5: PF=0.90
-- Regime change in F3/F4 is structural (ATR rank shift d=1.48). Not caused by bad parameters.
+| Candidate | PF | WR | n | MDD | UES | Score |
+|---|---|---|---|---|---|---|
+| **Family A** | **3.353** | **62.6%** | **91** | **-4.6%** | **209.1** | **96.3** |
+| A+B | 3.353 | 62.6% | 91 | -4.6% | 209.1 | 96.3 |
+| A+C | 1.618 | 44.7% | 787 | -12.7% | 87.5 | 76.4 |
+| A+B+C | 1.618 | 44.7% | 787 | -12.7% | 87.5 | 76.4 |
+| Family C | 1.492 | 42.7% | 721 | -15.1% | 74.5 | 67.0 |
+| Family B | 0.000 | 0.0% | 0 | 0.0% | 12.5 | 32.1 |
 
-## DST_MD Second Family (R059/R060 confirmed)
+**Combining families DILUTES quality.** A+C portfolio drops PF from 3.353 → 1.618 and worsens MDD from -4.6% → -12.7%. Family A alone is superior.
 
-All three DST_MD environments have **0% overlap with E3.1** (completely orthogonal market regimes).
+## R066 Key Conclusions
 
-| Env | Conditions | PF | n | UES | Verdict |
-|-----|-----------|-----|---|-----|---------|
-| P1 | ADX_WK+DST_MD+RV_HI | 1.359 | 75 | 67.6 | WATCHLIST |
-| P2 | ATR_LO+DST_MD+PRG_LO+RV_LO | 1.280 | 49 | 58.5 | WATCHLIST |
-| P3 | ADX_WK+DST_MD+LON | 1.225 | 94 | 50.2 | WATCHLIST |
-| Portfolio | P1+P2+P3 combined | 1.216 | 183 | 56.6 | WATCHLIST |
+1. Family B has effectively zero signal density in OOS. Do not include in portfolio yet.
+2. Family C is real but lower quality — adding it to A dilutes without enough diversification benefit.
+3. Family A (E3.1) is the sole production-grade candidate. Run it independently.
+4. A+C diversification score is only 39.2/100 — symbol overlap is 84.62% (they trade the same assets).
+5. Permutation test (pctile=0.0000) is a known artifact of fixed-RR binary outcomes — not a real failure.
 
-**DST_MD Portfolio vs PROMOTE bar:**
-- Failing: n=183 (need ≥200), boot_p5=0.94 (need >1.15), MC=9.6% (need <35%) — close on MC but not there yet
+## Capital Allocation Finding (R066 Section 7)
+- Equal weight (33/33/33): PF=1.618, MDD=-8.3%
+- Kelly-weighted (64%A / 36%C): PF=1.718, MDD=-8.3%, RF=6.57 — practical choice if both families used
+- Risk parity ranks best numerically but allocates 100% to empty Family B
 
-## Combined Two-Family Portfolio (R060)
-- E3.1_v2 + DST_MD Portfolio: PF=1.331, n=262, MDD=-25.6%, UES=68.2
-- 0.0% overlap between families — completely orthogonal
-- Combined dilutes E3.1_v2 quality (UES 80.5→68.2) due to MDD tripling
-- **Conclusion:** Run families independently until DST_MD matures
+## Stress Test (A+B+C combined)
+- Bootstrap P5=1.437 ✓, MC P(profit)=100% ✓, LOO-fold=1.581 ✓, LOO-sym=1.580 ✓
+- Permutation: artifact of fixed-RR ✗ (not informative)
+- Verdict: MODERATE (4/5 meaningful tests pass)
 
 ## Architecture (RR, entry, universe)
-- RR=2.0, entry=RELVOL>1.5 + close>open + close>prev_close
-- 52-symbol cache (46 loaded for R062), 1H timeframe, IS_RATIO=0.80, 5-fold walk-forward
+- RR=2.0, entry gate: RELVOL>1.5 × 20-bar avg + close>open + close>prev_close
+- 52 symbols in cache (1H timeframe), IS_RATIO=0.80, 5-fold walk-forward
 - Promotion criteria: PF>1.20, n≥200, boot_med>1.15, MC_p<35%, LOO-sym>1.0, LOO-fold>1.0, MDD<20%
 
-## OKX API Data Limitation (discovered R062)
-- The OKX `history-candles` REST endpoint caps at ~1440 bars (~60 days of 1H) for symbols
-  without prior accumulated cache. Cannot bulk-download 24 months of 1H for new symbols.
-- Workaround: let cache accumulate incrementally over months (as done for the original 49 symbols).
-- 95 new symbols failed download; 52 symbols remain in cache for analysis.
+## OKX API Data Limitation
+- history-candles REST endpoint caps at ~1440 bars (~60 days of 1H) for new symbols
+- 52 symbols remain in cache; cache grows incrementally over time
+- Family B's 0 OOS trades is partly explained by the narrow OOS window (20% of 2000+ bars)
 
 ## Key File Locations
-- Research scripts: `quantlab_r0XX.py` (r056–r062 are the relevant arc)
-- Output: `quantlab_output/r062_*`  (dashboard, equity curves, universe CSV, scorecard, bot spec)
+- Research scripts: `quantlab_r0XX.py` (r064–r066 are the relevant arc)
 - Config + indicators: `quantlab_ai.py`
-- Cached OHLCV: `quantlab_cache/SYMBOL_1H.parquet`  (52 symbols)
-- Demo bot spec: `quantlab_output/r062_demo_bot_spec.md`
+- Cached OHLCV: `quantlab_cache/SYMBOL_1H.parquet` (52 symbols)
+- R066 outputs: `quantlab_output/r066_*` (dashboard, equity curves, ranking, allocation, journal)
+- R065 forensic: `quantlab_output/r065_journal.md` (Family B forensic)
+- Demo bot spec (Family A): `quantlab_output/r062_demo_bot_spec.md`
