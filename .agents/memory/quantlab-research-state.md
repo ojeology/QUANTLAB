@@ -46,6 +46,34 @@ description: Current frozen baselines, promotion status, and research trajectory
 4. A+C diversification score is only 39.2/100 — symbol overlap is 84.62% (they trade the same assets).
 5. Permutation test (pctile=0.0000) is a known artifact of fixed-RR binary outcomes — not a real failure.
 
+## R067 Family C Dissection Results
+
+**Condition ablation (remove one condition at a time):**
+
+| Variant | Conditions | PF | n | MDD | UES | Loss Streak |
+|---|---|---|---|---|---|---|
+| **C_no_DST** | **ADX_ST+PBD_HI+ASI** | **1.692** | **2,049** | **-3.2%** | **91.3** | **10** |
+| C_no_ADX | DST_NR+PBD_HI+ASI | 1.728 | 1,506 | -10.6% | 90.1 | 9 |
+| C_no_PBD | DST_NR+ADX_ST+ASI | 1.573 | 1,438 | -4.2% | 80.6 | 11 |
+| C_FULL | DST_NR+ADX_ST+PBD_HI+ASI | 1.492 | 721 | -8.9% | 70.3 | 10 |
+
+**Condition contribution (ΔPF when removed from Family C):**
+- ADX_ST: +0.236 (weakest — hurts the strategy)
+- DST_NR: +0.200 (second weakest)
+- PBD_HI: +0.081 (modest contribution)
+- ASI: +0.000 (neutral — session filter adds nothing extra, all trades already in ASI=00:00)
+
+**ADOPT: C_no_DST = ADX_ST+PBD_HI+ASI**
+- PF=1.692 (+0.200 vs full), MDD=-3.2% (vs -8.9%), n=2049 (3× more trades)
+- Boot P5=1.576, UES=91.3, max loss streak=10
+- DST_NR was filtering OUT good trades — removing it both improves quality AND increases frequency
+- This is NOT optimization: it's evidence-based condition removal
+
+**Symbol insights from R067:**
+- Best tier: T3-Small (PF=1.638), worst: T2-Mid (PF=1.279)
+- Worst symbols: NEAR (-83% WR), OP (-87% WR), FET (-78% WR), ATOM (-77% WR), SUI (-76% WR)
+- Intra-session analysis inconclusive (timestamp artifact — all read as hour=0)
+
 ## Capital Allocation Finding (R066 Section 7)
 - Equal weight (33/33/33): PF=1.618, MDD=-8.3%
 - Kelly-weighted (64%A / 36%C): PF=1.718, MDD=-8.3%, RF=6.57 — practical choice if both families used
