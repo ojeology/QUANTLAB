@@ -105,6 +105,24 @@ description: Current frozen baselines, promotion status, and research trajectory
 - Worst-case simulated drawdown: -33.6% (know this going in)
 - MC expected drawdown: -7.2%
 
+## R069 Timestamp Fix + Full Re-Evaluation (COMPLETE)
+
+**Timestamp fix:** `quantlab_fix_timestamps.py` — sets `datetime` column as index on all 64 parquet files. 1m files skipped (not used in research). All 1H files now have real UTC hours 0–23.
+
+**All 24 hours present, evenly distributed (~4.2% each). Session conditions now work correctly.**
+
+| Family | PF | n | vs Baseline | Status |
+|---|---|---|---|---|
+| A (BBW+RV_LO+DST_NR+PRG_VH) | 3.353 | 91 | No change ✓ | CLEARED |
+| B (RV_HI+DST_MD+ADX_WK+LON) | 3.200 | **26** | First real test | NOT DEPLOYABLE |
+| C (ADX_ST+PBD_HI) | 1.692 | 2,049 | No change ✓ | CLEARED |
+
+**Family B finding:** 26 OOS trades — signal PF=3.2 is promising but n is far too small. The data bug was real. The condition combination is genuinely rare with the LON filter. Need more cache data over time before Family B can be evaluated properly.
+
+**Session sensitivity finding (Family C):** C+ASI [0,6) gives PF=2.260 n=409. Worth tracking but not changing the frozen strategy before live validation.
+
+**Demo bot:** Build now. Family A + Family C. Family B sits out.
+
 ## Capital Allocation Finding (R066 Section 7)
 - Equal weight (33/33/33): PF=1.618, MDD=-8.3%
 - Kelly-weighted (64%A / 36%C): PF=1.718, MDD=-8.3%, RF=6.57 — practical choice if both families used
