@@ -1,0 +1,6 @@
+test,pass,detail
+Test 1: Parameter Robustness,1,25/25 variations PF>1.0 (100%) — need ≥60%
+Test 2: Permutation Null,1,"Observed PF=1.640 at 100.0th pctile (null median=0.694, p95=0.978)"
+Test 3: Condition Ablation,1,4/4 conditions degrade PF by ≥0.05 on removal
+Test 4: Temporal Stability,0,"MaxFoldShare=76.4%, MaxSymShare=19.5%, PosFolds=2/5"
+Test 5: Symbol Holdout,1,Pooled-thr holdout PF=1.428 on 14 never-seen syms
