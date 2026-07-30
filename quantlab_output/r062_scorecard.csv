@@ -1,0 +1,13 @@
+metric,r061,r062
+n_symbols,49,46
+n_trades,79,79
+profit_factor,1.64,1.561
+win_rate,0.397,0.494
+max_drawdown,-0.076,-0.09
+bootstrap_ci90_lo,~1.2,1.085
+bootstrap_ci90_hi,~2.1,2.235
+mc_prob_profitable,n/a,0.982
+permutation_percentile,100.0,100.0
+stat_tests_passed,4/5,7/7
+ues_score,~80,100.0
+bot_ready,NO,YES
