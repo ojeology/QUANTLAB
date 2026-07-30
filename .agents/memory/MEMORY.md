@@ -1,1 +1,2 @@
 - [QuantLab Research State](quantlab-research-state.md) — current research round, frozen baselines, promotion status of all active environments
+- [RR per-strategy decision](quantlab-rr-decision.md) — R071 bootstrap result: FamilyA=2.0 (no sig gain), FamilyC=3.0 (P=100%, CI[+0.59,+1.11])

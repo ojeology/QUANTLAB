@@ -122,11 +122,13 @@ STRATEGIES = {
         "label":       "Family A",
         "conditions":  ["BBW_STRICT","RV_LO","DST_NR","PRG_VH"],
         "description": "BBW_STRICT+RV_LO+DST_NR+PRG_VH — R066 PF=3.35 n=91",
+        "rr":          2.0,   # R071: n=91 too small to prove RR>2.0 gains, keep base
     },
     "FamilyC": {
         "label":       "Family C",
         "conditions":  ["ADX_ST","PBD_HI"],
         "description": "ADX_ST+PBD_HI — R068 PF=1.69 n=2049",
+        "rr":          3.0,   # R071: RR=3.0 statistically proven better (P=100%, CI [+0.59,+1.11])
     },
 }
 
@@ -482,16 +484,17 @@ def _tg_send(text):
     except Exception as e:
         log.warning(f"Telegram error: {e}")
 
-def tg_signal(strategy_label, symbol, entry_price, stop_loss, take_profit, atr, rel_vol):
+def tg_signal(strategy_label, symbol, entry_price, stop_loss, take_profit, atr, rel_vol, rr=None):
     risk_pct = abs(entry_price - stop_loss) / entry_price * 100
     reward_pct = abs(take_profit - entry_price) / entry_price * 100
+    rr_display = rr if rr is not None else RR
     _tg_send(
         f"📡 <b>SIGNAL: {symbol}</b>  [{strategy_label}]\n"
         f"─────────────────────────\n"
         f"📅 {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')} UTC\n"
         f"💰 Entry: ${entry_price:,.4f}\n"
         f"🛑 Stop:  ${stop_loss:,.4f}  (-{risk_pct:.1f}%)\n"
-        f"🎯 TP:    ${take_profit:,.4f}  (+{reward_pct:.1f}%)  RR={RR}\n"
+        f"🎯 TP:    ${take_profit:,.4f}  (+{reward_pct:.1f}%)  RR={rr_display}\n"
         f"📊 ATR: {atr:.4f}  |  RelVol: {rel_vol:.2f}"
     )
 
@@ -587,9 +590,10 @@ def process_symbol(conn, strategy_id, symbol, state, df):
     Returns list of actions taken: 'signal', 'trade_opened', 'trade_closed_tp', etc.
     """
     actions = []
-    label   = STRATEGIES[strategy_id]["label"]
+    label      = STRATEGIES[strategy_id]["label"]
     conditions = STRATEGIES[strategy_id]["conditions"]
-    now     = datetime.now(timezone.utc)
+    rr         = STRATEGIES[strategy_id].get("rr", RR)   # per-strategy RR
+    now        = datetime.now(timezone.utc)
 
     if len(df) < MIN_CANDLES:
         return actions
@@ -612,7 +616,7 @@ def process_symbol(conn, strategy_id, symbol, state, df):
         entry_dt = datetime.fromisoformat(trade["entry_time"])
 
         if hi >= tp:
-            pnl = trade["risk_usd"] * RR
+            pnl = trade["risk_usd"] * rr
             close_trade(conn, trade["id"], now, tp, "TP", pnl)
             state.record_pnl(pnl)
             log.info(f"[{label}] {symbol} TP hit  pnl=+{pnl:.2f}  equity=${state.capital:.2f}")
@@ -677,7 +681,7 @@ def process_symbol(conn, strategy_id, symbol, state, df):
     # ── 7. Open a paper trade ─────────────────────────────────────────────────
     entry_price = float(df_f["close"].iloc[-1])  # current bar = simulated entry
     stop_loss   = entry_price - atr
-    take_profit = entry_price + RR * atr
+    take_profit = entry_price + rr * atr
     risk_usd    = state.capital * RISK_PCT
     # position size such that 1 ATR move = risk_usd
     size        = risk_usd / atr if atr > 0 else 0
@@ -690,7 +694,7 @@ def process_symbol(conn, strategy_id, symbol, state, df):
     log.info(f"[{label}] TRADE OPENED {symbol}  "
              f"entry={entry_price:.4f}  sl={stop_loss:.4f}  tp={take_profit:.4f}  "
              f"risk=${risk_usd:.2f}")
-    tg_signal(label, symbol, entry_price, stop_loss, take_profit, atr, rel_vol)
+    tg_signal(label, symbol, entry_price, stop_loss, take_profit, atr, rel_vol, rr=rr)
     tg_trade_opened(label, symbol, entry_price, stop_loss, take_profit,
                     size, risk_usd, state.capital)
     actions.append("trade_opened")
