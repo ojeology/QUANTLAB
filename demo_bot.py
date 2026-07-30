@@ -48,6 +48,8 @@ DAILY_LOSS_LIM = -0.03          # -3% → pause 24h
 MAX_DD_LIM     = -0.15          # -15% → halt bot
 PAGE_DELAY     = 0.12           # seconds between OKX pages
 
+CACHE_DIR      = "quantlab_cache"          # local parquet cache from research runs
+
 OKX_CANDLES    = "https://www.okx.com/api/v5/market/history-candles"
 OKX_CANDLES_CUR= "https://www.okx.com/api/v5/market/candles"
 OKX_INSTR      = "https://www.okx.com/api/v5/public/instruments"
@@ -230,6 +232,74 @@ def fetch_candles(inst_id, n_bars=MIN_CANDLES):
           .reset_index(drop=True))
     df = df.set_index("datetime")
     return df if len(df) >= 50 else None
+
+def _build_cache_map():
+    """Return dict mapping instId → parquet path for all cached 1H files."""
+    cache_map = {}
+    cache_path = os.path.join(os.path.dirname(__file__) or ".", CACHE_DIR)
+    if not os.path.isdir(cache_path):
+        return cache_map
+    for fname in os.listdir(cache_path):
+        if not fname.endswith("_1H.parquet"):
+            continue
+        stem    = fname[:-len("_1H.parquet")]          # e.g. BTC_USDT_SWAP
+        inst_id = stem.replace("_", "-")               # e.g. BTC-USDT-SWAP
+        cache_map[inst_id] = os.path.join(cache_path, fname)
+    return cache_map
+
+_CACHE_MAP = None   # populated lazily on first use
+
+def fetch_candles_cached(inst_id, n_bars=None):
+    """
+    Load candles for inst_id, preferring the local parquet cache.
+
+    Strategy:
+      1. If a parquet file exists for inst_id, load it (full history).
+      2. Top-up with OKX API for bars newer than the last cached timestamp.
+      3. If no cache file exists, fall back to pure OKX API fetch.
+
+    Returns a DataFrame with DatetimeIndex (UTC) and OHLCV columns, or None.
+    """
+    global _CACHE_MAP
+    if _CACHE_MAP is None:
+        _CACHE_MAP = _build_cache_map()
+
+    path = _CACHE_MAP.get(inst_id)
+
+    if path and os.path.isfile(path):
+        try:
+            import pyarrow  # noqa – just ensure it's importable
+            df_cache = pd.read_parquet(path)
+            df_cache.index = pd.to_datetime(df_cache.index, utc=True)
+            df_cache = df_cache.sort_index().drop_duplicates()
+
+            # ── top-up: fetch only the bars we're missing ─────────────────
+            last_ts  = df_cache.index[-1]
+            now_utc  = pd.Timestamp.now("UTC")
+            hours_gap = int((now_utc - last_ts).total_seconds() / 3600)
+
+            if hours_gap >= 2:                          # at least 1 full new bar
+                n_topup  = min(hours_gap + 5, PAGE_LIMIT * 3)
+                df_new   = fetch_candles(inst_id, n_bars=n_topup)
+                if df_new is not None and len(df_new):
+                    df_new.index = pd.to_datetime(df_new.index, utc=True)
+                    df_combined = pd.concat([df_cache, df_new])
+                    df_combined = df_combined[~df_combined.index.duplicated(keep="last")]
+                    df_combined = df_combined.sort_index()
+                    log.debug(f"[cache] {inst_id}: {len(df_cache)} cached + "
+                              f"{len(df_new)} new → {len(df_combined)} total")
+                    return df_combined
+
+            log.debug(f"[cache] {inst_id}: {len(df_cache)} rows from parquet "
+                      f"(gap={hours_gap}h, no top-up needed)")
+            return df_cache
+
+        except Exception as e:
+            log.warning(f"[cache] Failed to load {path}: {e} — falling back to API")
+
+    # ── no cache: pure API ────────────────────────────────────────────────────
+    return fetch_candles(inst_id, n_bars=n_bars or (IS_LOOKBACK + MIN_CANDLES + 50))
+
 
 def fetch_universe():
     """Return list of OKX USDT perp instIds that pass basic volume filter."""
@@ -639,7 +709,7 @@ def run_scan(conn, states, universe):
     scan_results = defaultdict(lambda: defaultdict(int))
 
     for inst_id in universe:
-        df = fetch_candles(inst_id, n_bars=IS_LOOKBACK+MIN_CANDLES+50)
+        df = fetch_candles_cached(inst_id)
         if df is None or len(df) < MIN_CANDLES:
             continue
 
