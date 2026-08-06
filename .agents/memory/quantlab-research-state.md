@@ -3,14 +3,189 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
-## Frozen Baselines
+## R078 Symbol Forensics + Unseen Universe (2026-08-06)
 
-**Family A (E3.1_v2)** — FROZEN PROMOTE candidate
+**Q1 — Negative symbols?** 12/48 traded symbols net-negative full-period, but every one had
+≤5 trades (median 2) → pure noise. No reliable bad symbol. 4 never triggered (SOL, ALGO,
+GALA, SATS). **Do NOT prune — that would be curve-fitting.**
+
+**Q2 — More assets?** Fetched 18 new OKX symbols (paginated history works via `after`
+param; 70 symbols now cached). Ran locked config on 8 never-seen symbols (BICO/HYPE/XAU/
+HOME/PUMP/ZBT/ZEC/BEAT, ≥5k bars): **17 trades, PF 0.625 — edge did NOT transfer** to
+gold/meme/privacy/small-cap assets. Full universe PF 2.05 → 1.77 (diluted, still profitable).
+
+**KEY: the edge is universe-specific, not universal.** Trade the validated 52-symbol
+universe only; expand only via per-symbol validation, never by liquidity alone. Breadth
+gate stays on original 52. Locked config unchanged.
+
+## R077 Lock-In (2026-08-06) — 🏁 FINAL LOCKED CONFIGURATION
+
+**$100-account answer (1% risk/trade): max drawdown ≈ −$10.50 (−10.5%) full-period.**
+Monte Carlo (5,000 paths): DD P5=$9.72 / P50=$5.88 / P95=$3.94; P(end<$80)=0%.
+Risk table: 0.5%→DD$5.38/net$35 · 1%→DD$10.52/net$82 · 1.5%→DD$15.43/net$142 ·
+2%→DD$20.12/net$221 · 2.5%→DD$24.59/net$322. Worst month −4R, best +38R, 7-trade loss streak.
+
+**15m test (8 symbols, 2026-only untouched OOS): NO — too sparse (7 trades, PF 0.80) and
+no edge. 1m unusable (broken timestamps). Strategy stays on 1H.**
+
+**RR sweep (breadth50): RR1.5 beats RR2.0 on holdout (holPF 1.400 vs 1.250) with better
+retail metrics. Paired ΔPF not stat-sig (CI spans 0) but holdout+profile favor 1.5.**
+
+### 🏁 LOCKED CONFIG (R077)
+- **Strategy:** Family A conditions (BBW_STRICT+RV_LO+DST_NR+PRG_VH), rolling 500-bar
+  thresholds recalibrated every 168 bars
+- **Entry:** signal-bar close (E6) + gate (green candle, close>prev close, rel_vol>1.5)
+- **Filters:** VolCeil (skip atr_rank>70) + **breadth50** (enter only when >50% of 52
+  symbols above their EMA20)
+- **Exit:** SL 1·ATR, **TP 1.5·ATR (RR=1.5)**, TP checked before SL, no time stop
+- **Risk:** 1% per trade (user's choice)
+- **Results:** n=116, **PF=2.051, WR=57.8%, MDD=−9.2%**, Exp $44.4/trade@$10k,
+  Boot P5=1.553, LOO floor=1.938, **~5.8 t/mo, 65% profitable months, worst month-streak 3**
+- **Files:** `quantlab_r077.py` + `quantlab_output/r077_*`
+
+## R076 Overlay + Cross-Sectional (2026-08-06) — 🎯 BREADTH OVERLAY ADOPTED
+
+**Finding: a market-breadth overlay transforms Family A into a retail-friendly strategy.**
+
+**PART A — Overlay on Family A FINAL (E6+RR2+VolCeil):**
+
+| Overlay | PF | MDD% | t/mo | prof% mo | streak | holPF | holMDD% | holProf% |
+|---|---|---|---|---|---|---|---|---|
+| none (base) | 1.62 | -26.5 | 10.2 | 41% | 7 | 1.44 | -13.2 | 43% |
+| **breadth50** (only when >50% of 52 symbols above EMA20) | **2.15** | **-10.5** | 5.5 | **55%** | **4** | **1.25** | **-3.9** | **50%** |
+| breadth60 | 2.12 | -9.6 | 5.0 | 55% | 4 | 1.07 | -3.9 | 50% |
+| medret_pos | 1.68 | -14.2 | 4.8 | 46% | 3 | 1.05 | -4.0 | 60% |
+| btc_bull | 1.12 | -26.9 | 4.3 | 36% | 12 | 2.15 | -3.0 | 80% (n small) |
+
+**ADOPT breadth50:** PF 1.62→2.15, MDD -26.5%→-10.5%, profitable months 41%→55%, worst
+streak 7→4, AND survives untouched 2026 holdout (PF 1.25, MDD -3.9%, 50% prof months).
+BTC-bull overlay rejected (selection PF 0.83 <1 — unreliable signal density).
+
+**PART B — Cross-sectional momentum/reversal (baskets):** 24-config grid (h 24/48/72,
+rebal 12/24h, K 5/10, mom/rev) — ALL lose after 0.05% costs. Best selection Sharpe -0.03;
+holdout worst -55%. Cross-sectional relative-value has NO edge on 1H crypto after costs.
+REJECTED.
+
+**FINAL RETAIL-FRIENDLY STRATEGY (R076):**
+Family A conditions + E6 entry + RR 2.0 + VolCeil(atr_rank≤70) + **breadth50 overlay**
+(enter only when >50% of universe above EMA20). ~5-6 trades/month, PF≈2.15, MDD≈-10%,
+55% profitable months, worst losing streak 4, holdout-validated. This addresses the
+retail-profile concern from R074/R075.
+
+## R075 New Strategy Families (2026-08-06) — retail-friendly hunt
+
+**All 4 pre-registered new families LOST money. Family A FINAL remains the best strategy.**
+
+| Family | Concept | PF | t/mo | prof% months | Verdict |
+|---|---|---|---|---|---|
+| N1 trend pullback | EMA trend + pullback + 2ATR trail | 0.616 | 592 | 0% | NO |
+| N2 range mean-reversion | ADX<20 + RSI<30 + <BB low, 1:1 | 0.909 | 152 | 37% | NO (closest, still loses) |
+| N3 20-bar breakout | breakout + relvol + trail | 0.576 | 363 | 0% | NO |
+| N4 London ORB | 12-14UTC range break | 0.621 | 1,288 | 0% | NO |
+| **A_FINAL (R074)** | comp+pop E6+RR2+VolCeil | **1.620** | 10.2 | 41% | **reference** |
+
+**Retail Score:** A_FINAL 48.4 vs best new (N2) 32.2. N2 also fails holdout (hol PF 0.815),
+LOO 0.898, MC 0% — it's a loser, just a slower one.
+
+**KEY INSIGHT:** generic retail strategies (trend-follow, breakout, mean-reversion, ORB)
+have NO edge on this universe/timeframe at these params. The only validated edge remains
+Family A's rare compression-then-pop setup — edge is scarce, not hiding in plain sight.
+
+**Options considered for R076:** (1) N2 mean-reversion refinement (stricter oversold,
+first-touch, vol filter) — last reasonable shot at retail profile, but overfitting risk;
+(2) accept Family A as the project's validated strategy and shift focus to deployment
+(bot config) / live validation; (3) new data sources (funding rate only exists for
+BTC/ETH — too small; multi-timeframe 15m/1m only for ~7 symbols).
+
+## R074 outcome & decision (2026-08-06)
+
+**FINAL STRATEGY (Family A + E6 + RR2 + VolCeil)** is a real, validated edge (PF 1.63,
+LOO 1.57, MC 100%) — **but judged NOT suitable for retail deployment:**
+- Only 41% profitable months (12/29), worst losing streak 7 months, 2024 was −11R
+- Profits ultra-concentrated: Aug–Oct 2025 = 79% of all gains
+- MDD −13%..−26%, ~10 trades/month, breakeven cost 0.145%/side
+
+**DECISION: keep hunting.** Next research target = strategies with a retail-friendly
+profile: ≥50% profitable months, max losing streak ≤4, moderate frequency, lower MDD —
+even at a PF trade-off. R075 = new strategy families (trend pullback, mean reversion,
+breakout follow-through, ORB) with the same strict protocol (selection ≤2025, holdout
+2026, bootstrap/LOO/MC/costs) + a transparent Retail Score to rank against Family A.
+
+## R074 Edge Refinement (2026-08-06) — strict holdout (selection ≤2025, confirm 2026)
+
+**FINAL STRATEGY: Family A + E6_sigentry (enter at signal-bar close) + RR 2.0 + VOLCEIL (skip when atr_rank > 70)**
+
+R074 tested 11 pre-registered single-factor refinements vs the R073 winner with strict
+holdout (decisions on pre-2026 data only; untouched 2026 for confirmation):
+
+| Variant | Selection PF | ΔPF vs base [CI] | Verdict |
+|---|---|---|---|
+| BASE (E6, RR2) | 1.485 | — | reference |
+| **V03_volceil** (skip atr_rank>70) | **1.717** | [+0.17, +1.32] SIG↑ | **ADOPT** |
+| V04_breakout | 1.677 (n=57) | CI spans 0 | not significant |
+| V06_vol200 | 1.604 | CI spans 0 | not significant |
+| V01_time18 | 1.126 | SIG↓ | harmful |
+| V10_exit_partial | 0.800 | SIG↓ | harmful (again) |
+| V07/V08 RR 1.75/2.25, V09 time24, V11 trail, V05 vol175, V02 | — | CI spans 0 | no gain |
+
+**Holdout (2026, untouched):** V03 PF=1.440 (n=86) vs base 1.524 (n=111) — PF within noise,
+BUT MDD -13.2% vs -22.3% (risk-reduction confirmed out-of-sample).
+
+**Full-period (V03):** PF=1.632 (vs base 1.496), n=296, WR=44.9%, MDD=-26.5%,
+LOO floor=1.568 (vs 1.446), MC P(profit)=100% net +$17.9k DD P5=-16.6%,
+breakeven cost 0.145%/side. Monthly: ~10.2/month (median 7).
+
+**Why V03 works:** skips entries when ATR is already in the top 30% of its 100-bar range —
+the compression-then-pop setup is invalid when volatility already exploded (R072 Q3 failure
+mode). Removes the worst trades without removing winners.
+
+**DEPLOYMENT CONFIG (final):** Family A only. Entry at signal-bar close (E6), RR=2.0,
+atr_rank ≤ 70 filter, 1% risk, TP-before-SL intrabar, 1 pos/symbol. Family C OFF.
+
+## ⚠️ R073 CORRECTION (2026-08-06) — supersedes all R066–R071 baselines
+
+**The frozen baselines below were computed with a next-bar-close PROXY, not the bot's
+real SL/TP execution.** R066's `backtest_family` defines a win as `next_close > entry_close`
+with ±RR payout. The demo bot trades real 1·ATR SL / rr·ATR TP. The two measure different
+things. Full proof: `EXIT_MODEL_AUDIT.md` (reproduces both engines exactly).
+
+**Authoritative numbers (R073, bot-faithful rolling walk-forward, 52 symbols, 2.5 yrs, no costs):**
+
+| | E0 (current bot) | Best variant | Best (with 0.10% costs) |
+|---|---|---|---|
+| **Family A** (RR=2.0) | PF=1.133, n=390, WR=36.2%, MDD=-42% | **E6_sigentry PF=1.496** (n=395, WR=42.8%, MDD=-38%) | PF≈1.13 |
+| **Family C** (RR=3.0) | PF=0.926, n=10,375, WR=23.6% | E6_sigentry PF=0.938 | PF<1 at ALL costs — DEAD |
+
+**R073 verdicts:**
+1. Family A has a real but MODEST edge — NOT the exceptional PF=3.35 previously claimed.
+   Best config: **E6_sigentry (enter at signal-bar close) + RR 2.0**. Boot P5=1.264,
+   ΔPF vs E0 CI [+0.15,+0.55], LOO-sym floor=1.446, MC P(profit)=100%, DD -8%..-20%.
+   Breakeven cost 0.145%/side. E0 (current bot) dies at ~0.04%/side — the 1-bar entry
+   delay destroys the edge under costs. **E2_partial/E3_trail/E1_be1r are all significantly
+   WORSE than E0** (R072's partial-TP suggestion does not survive the corrected engine).
+2. Family C is unprofitable under EVERY exit and EVERY RR (0.39–1.02 PF, account ruined,
+   MC P(profit)=0.0%). **Remove from the demo bot.** R068's "cleared for paper trading"
+   is retracted.
+3. R072's own report was internally inconsistent (key stats showed the collapse; the Q&A
+   still recommended deployment on the old numbers).
+4. The rolling engine (`quantlab_r073.py`) is now the project's authoritative evaluator:
+   mirrors bot execution (IS_LOOKBACK=500, RECAL=168b, entry next close, TP-before-SL,
+   1 pos/symbol, 1% compounding) and uses ALL data out-of-sample.
+
+**Demo-bot action items (pending approval):** Family C → disable. Family A → evaluate
+signal at latest closed bar and enter at its close (E6), keep RR=2.0, and monitor costs
+(limit/maker fills or low-fee venue; breakeven 0.145%/side).
+
+---
+
+## Frozen Baselines (SUPERSEDED by R073 — see correction above; kept for history)
+
+**Family A (E3.1_v2)** — FROZEN PROMOTE candidate (OLD proxy numbers)
 - Conditions: `BBW_STRICT + RV_LO + DST_NR + PRG_VH`
 - BBW_STRICT = bb_width < IS p25 (tighter than BBW_LO = p33)
 - R066 baseline: PF=3.353, n=91, WR=62.6%, MDD=-4.6%, UES=209.1, Boot P5=2.333
 - All folds profitable; LOO-sym=3.091, LOO-fold=2.600
-- **Clear production leader. Deploy first for paper trading.**
+- **Clear production leader. Deploy first for paper trading.** (OLD claim — see R073)
 
 **Family B** — LOW SIGNAL FREQUENCY, not yet deployable
 - Conditions: `RV_HI + DST_MD + ADX_WK + LON`
@@ -19,11 +194,12 @@ description: Current frozen baselines, promotion status, and research trajectory
 - LON session (7–14 UTC) + high RV + weak ADX + extended above EMA200 = very rare
 - **Do not combine into portfolio until more cache data available**
 
-**Family C** — Active but lower quality
+**Family C** — Active but lower quality (OLD proxy numbers)
 - Conditions: `DST_NR + ADX_ST + PBD_HI + ASI`
 - R066 baseline: PF=1.492, n=721, WR=42.7%, MDD=-15.1%, UES=74.5
 - Boot P5=1.315, MC P(profit)=100%, LOO-sym=1.453, LOO-fold=1.401
 - All 5 folds profitable; high trade count but -15% MDD is a concern
+- ⚠️ R073: C = ADX_ST+PBD_HI (DST removed) is UNPROFITABLE under real SL/TP exits
 
 ## R066 Portfolio Validation Results
 
@@ -36,7 +212,7 @@ description: Current frozen baselines, promotion status, and research trajectory
 | Family C | 1.492 | 42.7% | 721 | -15.1% | 74.5 | 67.0 |
 | Family B | 0.000 | 0.0% | 0 | 0.0% | 12.5 | 32.1 |
 
-**Combining families DILUTES quality.** A+C portfolio drops PF from 3.353 → 1.618 and worsens MDD from -4.6% → -12.7%. Family A alone is superior.
+**Combining families DILUTES quality.** A+C portfolio drops PF from 3.353 → 1.618 and worsens MDD from -4.6% → -12.7%. Family A alone is superior. (Proxy-based — see R073.)
 
 ## R066 Key Conclusions
 
@@ -67,16 +243,16 @@ description: Current frozen baselines, promotion status, and research trajectory
 - PF=1.692 (+0.200 vs full), MDD=-3.2% (vs -8.9%), n=2049 (3× more trades)
 - Boot P5=1.576, UES=91.3, max loss streak=10
 - DST_NR was filtering OUT good trades — removing it both improves quality AND increases frequency
-- This is NOT optimization: it's evidence-based condition removal
+- This is NOT optimization: it's evidence-based condition removal (proxy-based — see R073)
 
 **Symbol insights from R067:**
 - Best tier: T3-Small (PF=1.638), worst: T2-Mid (PF=1.279)
 - Worst symbols: NEAR (-83% WR), OP (-87% WR), FET (-78% WR), ATOM (-77% WR), SUI (-76% WR)
 - Intra-session analysis inconclusive (timestamp artifact — all read as hour=0)
 
-## R068 ADX_ST+PBD_HI Independent Validation (COMPLETE)
+## R068 ADX_ST+PBD_HI Independent Validation (COMPLETE — superseded by R073)
 
-**Result: 8/8 production criteria passed — CLEARED FOR PAPER TRADING**
+**Result: 8/8 production criteria passed — CLEARED FOR PAPER TRADING** (⚠️ proxy-based; R073 retracts)
 
 | Metric | Value |
 |---|---|
@@ -100,7 +276,7 @@ description: Current frozen baselines, promotion status, and research trajectory
 - Q6 Stop Family C research: NO — paper trade first
 - Q7 vs Family A: Both real. Family A = high conviction/low frequency (PF=3.35, n=91). ADX+PBD = moderate conviction/high frequency (PF=1.69, n=2049). Run both.
 
-**Promotion status: ADX_ST+PBD_HI → PAPER TRADING alongside Family A**
+**Promotion status: ADX_ST+PBD_HI → PAPER TRADING alongside Family A** (⚠️ RETRACTED by R073)
 - Demo bot should run both strategies independently
 - Worst-case simulated drawdown: -33.6% (know this going in)
 - MC expected drawdown: -7.2%
@@ -113,15 +289,15 @@ description: Current frozen baselines, promotion status, and research trajectory
 
 | Family | PF | n | vs Baseline | Status |
 |---|---|---|---|---|
-| A (BBW+RV_LO+DST_NR+PRG_VH) | 3.353 | 91 | No change ✓ | CLEARED |
+| A (BBW+RV_LO+DST_NR+PRG_VH) | 3.353 | 91 | No change ✓ | CLEARED (proxy) |
 | B (RV_HI+DST_MD+ADX_WK+LON) | 3.200 | **26** | First real test | NOT DEPLOYABLE |
-| C (ADX_ST+PBD_HI) | 1.692 | 2,049 | No change ✓ | CLEARED |
+| C (ADX_ST+PBD_HI) | 1.692 | 2,049 | No change ✓ | CLEARED (proxy) |
 
 **Family B finding:** 26 OOS trades — signal PF=3.2 is promising but n is far too small. The data bug was real. The condition combination is genuinely rare with the LON filter. Need more cache data over time before Family B can be evaluated properly.
 
 **Session sensitivity finding (Family C):** C+ASI [0,6) gives PF=2.260 n=409. Worth tracking but not changing the frozen strategy before live validation.
 
-**Demo bot:** Build now. Family A + Family C. Family B sits out.
+**Demo bot:** Build now. Family A + Family C. Family B sits out. (⚠️ Family C later retracted by R073)
 
 ## Capital Allocation Finding (R066 Section 7)
 - Equal weight (33/33/33): PF=1.618, MDD=-8.3%
@@ -131,7 +307,7 @@ description: Current frozen baselines, promotion status, and research trajectory
 ## Stress Test (A+B+C combined)
 - Bootstrap P5=1.437 ✓, MC P(profit)=100% ✓, LOO-fold=1.581 ✓, LOO-sym=1.580 ✓
 - Permutation: artifact of fixed-RR ✗ (not informative)
-- Verdict: MODERATE (4/5 meaningful tests pass)
+- Verdict: MODERATE (4/5 meaningful tests pass) (proxy-based)
 
 ## Architecture (RR, entry, universe)
 - RR=2.0, entry gate: RELVOL>1.5 × 20-bar avg + close>open + close>prev_close
@@ -139,15 +315,21 @@ description: Current frozen baselines, promotion status, and research trajectory
 - Promotion criteria: PF>1.20, n≥200, boot_med>1.15, MC_p<35%, LOO-sym>1.0, LOO-fold>1.0, MDD<20%
 
 ## OKX API Data Limitation
-- history-candles REST endpoint caps at ~1440 bars (~60 days of 1H) for new symbols
-- 52 symbols remain in cache; cache grows incrementally over time
+- history-candles REST endpoint caps at ~1440 bars (~60 days of 1H) for new symbols (via `before`); `after` param pages deeper (~Dec 2023 verified)
+- 70 symbols now in cache (52 original + 18 fetched); cache grows incrementally over time
 - Family B's 0 OOS trades is partly explained by the narrow OOS window (20% of 2000+ bars)
 
 ## Key File Locations
-- Research scripts: `quantlab_r0XX.py` (r064–r068 are the relevant arc)
+- Research scripts: `quantlab_r0XX.py` (r073–r077 = current authoritative arc)
+- **Exit-model audit:** `EXIT_MODEL_AUDIT.md` + `scripts/exit_model_audit.py`
+- **Shared engine:** `scripts/ql_engine.py` (bot-faithful rolling walk-forward)
+- **Universe/data:** `scripts/fetch_more_symbols.py` (OKX `after` pagination)
 - Config + indicators: `quantlab_ai.py`
-- Cached OHLCV: `quantlab_cache/SYMBOL_1H.parquet` (52 symbols)
-- R066 outputs: `quantlab_output/r066_*` (dashboard, equity curves, ranking, allocation, journal)
-- R065 forensic: `quantlab_output/r065_journal.md` (Family B forensic)
-- Demo bot spec (Family A): `quantlab_output/r062_demo_bot_spec.md`
-- R068 outputs: `quantlab_output/r068_*` (dashboard, equity curves, LOO symbol, MC, journal)
+- Cached OHLCV: `quantlab_cache/SYMBOL_1H.parquet` (70 symbols)
+- R077 outputs: `quantlab_output/r077_*` (lock-in: dollar DD, 15m test, RR sweep, locked config)
+- R078 outputs: `quantlab_output/r078_*` (symbol forensics, unseen-universe test)
+- R076 outputs: `quantlab_output/r076_*` (breadth overlay adoption, cross-sectional rejection)
+- R075 outputs: `quantlab_output/r075_*` (4 new families — all rejected)
+- R074 outputs: `quantlab_output/r074_*` (edge refinement + strict holdout)
+- R073 outputs: `quantlab_output/r073_*` (corrected baselines on bot-faithful engine)
+- R066–R072 outputs: proxy-based, superseded by R073+
