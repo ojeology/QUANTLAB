@@ -3,6 +3,32 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R079 Frequency Expansion (2026-08-06) — no free lunch, but a cheap one exists
+
+**Question: can we get more trades without killing the edge?**
+
+Swept 14 relaxations of the locked config (breadth threshold, VolCeil, rel_vol gate,
+BBW p25→p33, sensible combos). Strict selection/holdout. **Every gain in trades costs
+edge — but there's a sweet spot:**
+
+| Variant | t/mo | PF | MDD% | prof% mo | holPF |
+|---|---|---|---|---|---|
+| **BASE (locked)** | 4.3 | **2.05** | **-9.2** | **65%** | 1.40 |
+| V04 br45 | 4.6 | 1.85 | -12.7 | 61% | 1.41 |
+| V05 vc80 | 4.9 | 1.83 | -12.0 | 61% | 1.25 |
+| **V03 br40** | **5.1** | **1.79** | -14.5 | 58% | 1.32 |
+| V02 br35 | 5.3 | 1.65 | -14.5 | 56% | 1.25 |
+| V01 br30 | 5.5 | 1.65 | -13.2 | 54% | 1.14 |
+| C1 br40+vc80 | 5.7 | 1.64 | -17.0 | 54% | 1.20 |
+| C4 br40+bbwlo | 6.0 | 1.52 | -18.7 | 56% | 1.29 |
+| V08 rv10 | 8.2 | 1.42 | -14.1 | 42% | 1.00 ❌ |
+| C2 br40+vc80+rv13 | 7.6 | 1.44 | -18.7 | 50% | 0.98 ❌ |
+
+**Verdict:** +20–40% trades is achievable at acceptable cost (PF ~1.8, MDD ~-12..-14%,
+holPF still >1.25). Best balance = **V03 br40** (breadth 0.40): 5.1 t/mo (+19%), PF 1.79,
+holPF 1.32. Doubling trades (8+/mo) kills the edge (holPF ≤1.0). **BASE stays the safest;
+V03_br40 is the moderate-frequency option.** User decision pending.
+
 ## R078 Symbol Forensics + Unseen Universe (2026-08-06)
 
 **Q1 — Negative symbols?** 12/48 traded symbols net-negative full-period, but every one had
