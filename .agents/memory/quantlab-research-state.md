@@ -3,7 +3,42 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
-## R080 Clean New Hypotheses (2026-08-06) — 🎯 THE FREQUENCY ANSWER WAS HIDING IN PLAIN SIGHT
+## R081 High-Win-Rate Scalp Expansion (2026-08-06) — ⚠️ the 80% WR mirage + cost wall
+
+User wants: ≥70% profitable months, ≤2-3 bad months, MORE trades. Tested the untested
+dimension: **sub-1R take profits (RR 0.4/0.5/0.6/0.75)** across 5 signals × {base, time6}.
+
+**Raw results (gross, no costs) look amazing:**
+- **Family A raw + RR 0.4: WR 80%, PF 1.60, MDD -8.2%, 14.3 t/mo, prof-mo 62%, worst streak 2, holPF 1.52** (holdout-validated!)
+- Family A raw + RR 0.5: WR 77%, PF 1.63, MDD -11.9%, 14.3 t/mo, holPF 1.69
+- Other signals (breakout/micro-scalp/RSI2/EMA20) all die or lose.
+
+**BUT the cost wall kills it (CRITICAL for retail):**
+| cost/side | rr0.4 PF | rr0.5 PF | rr0.6 PF |
+|---|---|---|---|
+| 0.00% | 1.63 | 1.66 | 1.66 |
+| 0.05% | 1.12 | 1.21 | 1.26 |
+| 0.08% | 0.86 | 0.98 | 1.06 |
+| 0.10% | 0.70 | 0.84 | 0.93 |
+Breakeven ≈ 0.06-0.07% per side (rr0.4), 0.07-0.08% (rr0.5), 0.08-0.09% (rr0.6).
+**Realistic OKX taker+slippage ≈ 0.08-0.10% → scalps DIE.** Only viable with maker-only
+fills at ≤0.05% AND minimal slippage — hard for a retail $100 trader.
+
+**Also: profitable-months ceiling.** Best achieved = 65% (rr0.4 + breadth40 filter), NOT
+70%. On this data the ceiling for a holdout-validated edge is ~60-65% profitable months;
+70% is a target we could not reach in any config across R073-R081.
+
+**Honest menu (all holdout-validated):**
+- LOCKED (RR1.5+breadth50+volceil): 4.3 t/mo, PF 2.05, MDD -9%, prof-mo 65%, holPF 1.40 — survives 0.10% costs (breakeven 0.145%)
+- MID (RR1.5+breadth40): 5.1 t/mo, PF 1.79, MDD -14.5%, holPF 1.32
+- RAW (RR1.5, no filters): 14.9 t/mo, PF 1.48, MDD -31%, prof-mo 48%, holPF 1.45
+- SCALP (RR0.4 raw): 14.3 t/mo, 80% WR, PF 1.60 gross / 1.12 @0.05% / 0.86 @0.08% — ONLY if maker fills; prof-mo 62%, worst streak 2
+
+**Verdict for user:** 70% profitable months + high frequency + cost-surviving edge = not
+found. The scalp illusion (80% WR) collapses under realistic fees. The locked config
+remains the most cost-robust; RAW is the frequency option with the drawdown cost.
+
+
 
 User wanted more trades (3-4/mo too small). Tested 10 clean NEW hypotheses (trend-pull v2,
 breakout, compression-pop wide, oversold-comp bounce, ADX ignition) with strict
