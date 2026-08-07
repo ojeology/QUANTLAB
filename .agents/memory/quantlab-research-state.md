@@ -3,6 +3,28 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R087 SVM keep-rate sweep (2026-08-06) — more-trades dial mapped
+
+User locked SVM (R086) but wants MORE trades. Swept q (fraction of signals kept):
+
+| q | trades | t/mo | WR | PF | PF@0.05% | MDD% | prof% | worst | holPF |
+|---|---|---|---|---|---|---|---|---|---|
+| 0.55 (locked) | 250 | 9.3 | 58% | 2.04 | 1.70 | -17.1 | 69% | 2 | 1.35 |
+| 0.65 | 265 | 9.8 | 58% | 2.05 | 1.71 | -17.1 | 64% | 2 | 1.32 |
+| **0.75** | **280** | **10.4** | 56% | 1.94 | 1.62 | -17.1 | **71%** | **2** | **1.36** |
+| 0.85 | 294 | 10.9 | 55% | 1.84 | 1.54 | -19.4 | 64% | 2 | 1.28 |
+| 0.95 | 301 | 11.1 | 55% | 1.84 | 1.54 | -18.2 | 64% | 2 | 1.28 |
+| 1.0 (raw) | 453 | 16.8 | 49% | 1.44 | 1.22 | -28.6 | 48% | 3 | 1.28 |
+
+**SWEET SPOT: q=0.75 → 10.4 t/mo (more than locked 9.3) AND 71% profitable months,
+PF 1.94, worst streak 2, holPF 1.36.** Relaxing further to q0.85/0.95 adds only ~0.5-1
+t/mo but prof-mo drops to 64%. Raw (no filter) = 16.8 t/mo but crashes to 48% prof-mo,
+PF 1.44, MDD -28.6%.
+
+**Recommendation: SVM q0.75 = the "more trades" version of the locked config**
+(10.4 t/mo, 71% prof-mo, PF 1.94). Honest note: prof% wobbles 64-71% between q values
+(small-sample noise on monthly buckets), so treat 71% as "high-60s to low-70s".
+
 ## R086 ML-TYPE zoo (2026-08-06) — SVM is the new champion (meets retail spec)
 
 User: don't add more features, try different ML TYPES with a few special features.
