@@ -3,7 +3,43 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
-## R081 High-Win-Rate Scalp Expansion (2026-08-06) — ⚠️ the 80% WR mirage + cost wall
+## R082/R083 Multi-TF + ML filters (2026-08-06) — 🎯 ML FILTER IS THE BEST NEW EDGE
+
+User wants: ≥70% prof-months, ≤2-3 bad months, MORE trades. Tested NEW dimensions:
+daily/4H trend filters (resampled from 1H), daily ADX, daily breadth, ML entry filter,
+BE+trail exit.
+
+**Results (base = RAW Family A, 14.9 t/mo, PF 1.49):**
+
+| Config | t/mo | WR | PF | PF@0.05% | MDD% | prof% | worst | holPF |
+|---|---|---|---|---|---|---|---|---|
+| RAW base | 14.9 | 50% | 1.49 | 1.27 | -31 | 48% | 3 | 1.45 |
+| F1 daily-trend | 4.7 | 59% | 2.16 | 1.87 | -8.3 | 57% | 3 | 2.00 |
+| F4 daily-breadth | 3.7 | 64% | 2.71 | 2.38 | -11.9 | 58% | 4 | 3.00 |
+| **F6 ML q50** | **7.7** | **60%** | **2.26** | **1.91** | -17.4 | **64%** | **2** | **1.47** |
+| **ML q55 (R083)** | **8.0** | **61%** | **2.34** | **1.97** | -17.4 | **64%** | **2** | **1.47** |
+| ML50+dailytrend | 1.8 | 85% | 8.79 | 7.47 | -3.9 | **70%** | 3 | 2.00 |
+| ML50+dailybr | 1.7 | 93% | 21.5 | 18.2 | -1.0 | **100%** | 0 | 3.00 |
+
+**KEY FINDING: the ML entry filter (walk-forward logistic regression on the RAW
+signal, keep top-q by predicted P(win)) is the best new edge found — it nearly meets
+the retail spec: 8.0 t/mo, PF 2.34 (1.97 after costs), 64% prof-months, worst losing
+streak 2, holdout PF 1.47.** First config ever with ≥8 t/mo AND PF>2 AND cost-robust
+AND holdout-validated.
+
+**The 70% prof-months target remains just out of reach at high frequency** — ML+daily
+filters hit 70-100% prof-months but only 1.7-1.8 t/mo (too few trades). Honest trade-off:
+- **ML q55**: 8 t/mo, 64% prof-mo, worst 2 — the best high-frequency retail profile
+- **ML+dailytrend**: 1.8 t/mo, 70% prof-mo, worst 3 — the best safety profile
+
+F7 BE+trail exit on raw: no help (PF 1.19). F3 daily-ADX: fails holdout. F2 4H-trend:
+too few trades, dies at cost.
+
+**ML caveat (honest):** walk-forward, threshold from selection only, holdout-confirmed —
+but 208-215 trades is modest; ML adds an overfit risk layer vs pure rule filters. Treat
+as promising, needs live confirmation.
+
+
 
 User wants: ≥70% profitable months, ≤2-3 bad months, MORE trades. Tested the untested
 dimension: **sub-1R take profits (RR 0.4/0.5/0.6/0.75)** across 5 signals × {base, time6}.
