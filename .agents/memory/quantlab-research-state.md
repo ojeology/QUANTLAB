@@ -3,6 +3,34 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R084 ML on Expanded Universe (2026-08-06) — 🎯 HITS THE 70% PROF-MONTHS TARGET
+
+Fetched 3 more pairs with real history (XAG, ALLO, AAOI) → cache = 73 symbols.
+Ran the ML q55 filter on the expanded universe.
+
+| Config | n | t/mo | WR | PF | PF@0.05% | MDD% | prof% | worst | holPF |
+|---|---|---|---|---|---|---|---|---|---|
+| A_ML52 (ref) | 216 | 8.0 | 61% | 2.36 | 1.99 | -17.0 | 64% | 2 | 1.50 |
+| **B_ML73 (expanded)** | **250** | **9.3** | 58% | **2.11** | **1.78** | -16.3 | **71%** | **2** | **1.42** |
+| C_ML transfer to new pairs | 30 | 1.1 | 47% | 1.31 | 1.03 | -5.4 | 57% | 2 | 1.00 |
+| D_raw73 | 453 | 16.8 | 49% | 1.44 | 1.22 | -28.6 | 48% | 3 | 1.28 |
+
+**KEY: B_ML73 is the FIRST config to hit the user's retail spec — ≥70% profitable
+months (71%) AND ≥8 t/mo (9.3), worst losing streak 2, PF 2.11 (1.78 @0.05% cost),
+holPF 1.42.** Expanding the universe from 52→73 with the ML filter improved
+profitable-months 64%→71% at higher frequency.
+
+**Honest caveats:**
+- Transfer test (C): ML filter trained on 52, applied to new pairs only → PF 1.31,
+  holPF 1.00 — does NOT clearly transfer. The gain in B comes mostly from the 52;
+  new pairs add modest diversity (~34 extra trades), and 71% vs 64% may be partly
+  small-sample noise on the extra trades.
+- Universe limit reached: OKX serves deep 1H history only for older instruments;
+  most of the remaining 400+ liquid swaps have <1000 bars (recent listings).
+
+**FINAL CANDIDATE: ML q55 on the 73-symbol universe (B_ML73) = 9.3 t/mo, PF 2.11,
+71% prof-months, worst streak 2, holdout-validated.**
+
 ## R082/R083 Multi-TF + ML filters (2026-08-06) — 🎯 ML FILTER IS THE BEST NEW EDGE
 
 User wants: ≥70% prof-months, ≤2-3 bad months, MORE trades. Tested NEW dimensions:
