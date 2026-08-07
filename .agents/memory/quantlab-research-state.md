@@ -3,6 +3,33 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R080 Clean New Hypotheses (2026-08-06) — 🎯 THE FREQUENCY ANSWER WAS HIDING IN PLAIN SIGHT
+
+User wanted more trades (3-4/mo too small). Tested 10 clean NEW hypotheses (trend-pull v2,
+breakout, compression-pop wide, oversold-comp bounce, ADX ignition) with strict
+selection/holdout. **ALL 10 FAILED (selPF<1.4 or holPF<1.05)** — no free lunch at high
+frequency, generic setups still lose.
+
+**BUT the test surfaced the real answer:** the RAW Family A signal (E6 + RR1.5 + base exit,
+NO breadth50, NO volceil) is already validated at HIGH frequency:
+
+| Config | t/mo | PF | MDD% | prof% mo | holPF | holMDD% |
+|---|---|---|---|---|---|---|
+| **RAW Family A (no filters)** | **14.9** | **1.48** | **-31.1** | 48% | **1.45** | **-19.9** |
+| LOCKED (breadth50+volceil) | 4.3 | 2.05 | -9.2 | 65% | 1.40 | -3.9 |
+
+**The safety filters we added in R076/R077 (breadth50, volceil) are exactly what killed
+the frequency** (15 → 4.3/mo). The raw signal itself is holdout-validated at 14.9 t/mo,
+PF 1.48. Trade-off: MDD -31% (vs -9.2%), profitable months 48% (vs 65%).
+
+**Honest menu for the user:**
+- **FREQUENCY option:** RAW E6+RR1.5 = ~15 t/mo, PF 1.48, MDD -31%, holdout-validated.
+  Lumpy/big drawdowns (the "professional" profile from R074, just 3.5x more often).
+- **SAFETY option (locked):** ~4.3 t/mo, PF 2.05, MDD -9%, 65% prof months.
+- **MIDDLE:** R079 breadths (5-6/mo, PF ~1.8).
+- No clean new hypothesis beats this — the edge is Family A's, and frequency is a
+  dial (filters off = more trades, more risk).
+
 ## R079 Frequency Expansion (2026-08-06) — no free lunch, but a cheap one exists
 
 **Question: can we get more trades without killing the edge?**
