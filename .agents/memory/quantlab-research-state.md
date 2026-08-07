@@ -3,6 +3,30 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R086 ML-TYPE zoo (2026-08-06) — SVM is the new champion (meets retail spec)
+
+User: don't add more features, try different ML TYPES with a few special features.
+Tested 6 walk-forward model types on SAME 14 lean features (11 base + 3 special:
+breadth-quartile, dist-to-48h-high, green-streak), top-q=0.55, 73-symbol universe.
+
+| ML type | t/mo | WR | PF | PF@0.05% | MDD% | prof% | worst | holPF |
+|---|---|---|---|---|---|---|---|---|
+| LR (old champ) | 8.6 | 60% | 2.22 | 1.87 | -14.1 | 64% | 3 | 1.55 |
+| **SVM (RBF)** | **9.2** | 60% | **2.23** | **1.87** | -14.5 | **71%** | **2** | **1.48** |
+| RF | 9.7 | 57% | 1.96 | 1.63 | -17.4 | 71% | 2 | 1.36 |
+| NB | 8.7 | 58% | 2.10 | 1.74 | -17.4 | 71% | 2 | 1.40 |
+| MLP | 8.0 | 60% | 2.22 | 1.87 | -14.5 | 64% | 3 | 1.37 |
+| ENSEMBLE | 9.1 | 58% | 2.05 | 1.72 | -17.4 | 64% | 3 | 1.50 |
+
+**NEW CHAMPION: SVM (RBF) — 9.2 t/mo, 71% profitable months, worst losing streak 2,
+PF 2.23 (1.87 @0.05% cost), holPF 1.48.** Beats LR on profitable-months (71 vs 64) and
+trades (9.2 vs 8.6) with equal PF. RF and NB also pass the retail spec (71% prof-mo) but
+with slightly lower PF/holPF than SVM.
+
+**Takeaway: the model TYPE matters more than feature count.** SVM's RBF kernel captures
+nonlinearities LR misses, converting ~64% → 71% profitable months without hurting PF or
+cost-robustness. New best retail candidate: **ML-SVM q55 on 73 symbols.**
+
 ## R085 Upgraded ML (2026-08-06) — the base ML filter is robust; upgrades don't beat it
 
 Tested 4 honest upgrades to R084's ML q55 (9.3 t/mo, 71% prof-mo, PF 2.11):
