@@ -3,6 +3,29 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## ⚠️ R090 H2 RETRACTED (2026-08-07) — LOOKAHEAD BUG, NOT AN EDGE
+
+**The H2 range-fade "edge" reported in R090 was a BUG — lookahead bias.**
+The day-low was computed with `f["low"].groupby(day).transform("min")` which uses the
+FULL day's low including FUTURE bars. A signal at 09:00 knew the low at 14:00. This
+inflated everything.
+
+Corrected (causal, `cummin` — running low up to current bar only):
+
+| | BUGGY | CORRECTED |
+|---|---|---|
+| n | 107 | 827 |
+| WR | 76% | 38% |
+| PF | 4.67 | 0.91 ❌ |
+| PF@0.05% cost | 2.24 | 0.39 ❌ |
+| prof-months | 100% | 20% |
+| holPF (Jun-Aug) | 4.10 | 0.87 ❌ |
+
+**CORRECTED RESULT: H2 loses money. No edge on 5m — consistent with R089/R077.**
+The R090 report, CSV, and prior memory entry are superseded by this retraction.
+LESSON: every new hypothesis must be audited for lookahead before reporting.
+The user's skepticism was correct; the bug was mine.
+
 ## R090 FRESH 5m HYPOTHESES (2026-08-07) — 🎯 H2 RANGE-FADE IS A VALIDATED 5m EDGE
 
 User wanted NEW 5m hypotheses (not the 1H port). Tested 5 setups built FOR 5m:

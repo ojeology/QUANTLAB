@@ -81,7 +81,7 @@ def h1_momentum_burst(f):
 def h2_range_fade(f):
     day = f.index.normalize()
     day_hi = f["high"].groupby(day).transform("max")
-    day_lo = f["low"].groupby(day).transform("min")
+    day_lo = f["low"].groupby(day).cummin()  # CAUSAL (running low, no future peek)
     near_hi = (f["high"] >= day_hi - 0.2 * f["atr14"])
     near_lo = (f["low"] <= day_lo + 0.2 * f["atr14"])
     rsi2 = f["rsi14"]  # use rsi14 for simplicity, extremes below 20 / above 80
