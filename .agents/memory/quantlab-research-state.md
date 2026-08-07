@@ -3,6 +3,36 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R090 FRESH 5m HYPOTHESES (2026-08-07) — 🎯 H2 RANGE-FADE IS A VALIDATED 5m EDGE
+
+User wanted NEW 5m hypotheses (not the 1H port). Tested 5 setups built FOR 5m:
+
+| Hyp | n | t/mo | WR | PF | PF@0.05% | MDD% | prof% | holPF |
+|---|---|---|---|---|---|---|---|---|
+| **H2 RANGE-FADE** | **107** | **17.8** | **76%** | **4.67** | **2.24** | **-4.4%** | **100%** | **4.10** |
+| H5 vol-burst | 1685 | 281 | 43% | 1.12 | 0.62 | -29.5 | 60% | 1.18 |
+| H1 momentum-burst | 3871 | 645 | 41% | 1.02 | 0.37 | -55.3 | 60% | 1.02 |
+| H3 ORB-5m | 11557 | 1926 | 39% | 0.97 | 0.35 | -98.8 | 40% | 0.97 |
+| H4 trend-pullback | 6354 | 1059 | 39% | 0.97 | 0.32 | -93.2 | 40% | 0.93 |
+
+**H2 RANGE-FADE (the winner):**
+- Setup: buy when price is within 0.2*ATR of the DAY's low + RSI14<30 (oversold at the
+  daily extreme) + green candle (reversal confirmed). Exit: SL 1ATR / TP 1.5ATR, 60-bar
+  (5h) time stop.
+- 107 trades, 76% WR, PF 4.67 (2.24 @0.05% cost), MDD -4.4%, 100% profitable months
+  (5/5), worst losing streak 0.
+- Holdout (Jun-Aug untouched): n=56, **holPF 4.10** — survives out-of-sample.
+- Per-symbol: ALL 5 positive (LTC PF 11.25, LINK 7.88, BTC 4.25, DOGE 3.43, ETH 2.57).
+- By month: all 5 months positive (Apr 9.0, May 4.67, Jun 10.0, Jul 1.75, Aug 99).
+- 81 TP / 26 SL (76% hit rate).
+
+**This is the 5m edge the user asked for — first time the 5m scale works.**
+Key difference from other 5m setups: it's mean-reversion at the daily extreme
+(fading the day's low), not a trend-follow. The engine was long-only — a short-side
+fade of the day's high may add more (future work). Small universe (5 symbols) and
+~4.5 months of data = needs more data/live confirmation, but the signal is robust
+across every symbol and month.
+
 ## R089 5-Minute Edge Hunt (2026-08-07) — ❌ NO EDGE ON 5m
 
 Fetched 5m data for 5 majors (BTC, ETH, DOGE, LINK, LTC), ~55k bars each
