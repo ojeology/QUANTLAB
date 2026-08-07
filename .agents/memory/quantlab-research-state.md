@@ -3,6 +3,28 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R089 5-Minute Edge Hunt (2026-08-07) — ❌ NO EDGE ON 5m
+
+Fetched 5m data for 5 majors (BTC, ETH, DOGE, LINK, LTC), ~55k bars each
+(2026-01-28 → 2026-08-07). Scaled the validated 1H machinery to 5m
+(IS_LOOKBACK=6000 bars=500h, RECAL=2016 bars=7d).
+
+**Result: the compression-pop signal LOSES money on 5m.**
+- RAW Family A on 5m: 57 trades (9.5/mo), WR 28%, **PF 0.59**, PF@0.05% cost 0.18,
+  MDD -17%, prof-mo 29%, selPF 0.63, **holPF 0.50** — negative edge, and costs destroy it.
+- SVM filter couldn't be trained: only 57 trades on 5 symbols (< min_train 300).
+- Consistent with 15m test (R077): the edge does NOT transfer to lower timeframes.
+  It lives on 1H with a broad universe and deep history only.
+
+**Pattern across timeframes (honest):**
+- 1H, 52-73 symbols, 2.5 yrs → edge FOUND & validated (SVM q0.75: 10.4 t/mo, PF 1.94)
+- 15m, 8 symbols, 6 mo → no edge (too sparse, PF 0.80 on 7 trades)
+- 5m, 5 symbols, 6 mo → no edge (PF 0.59, costs kill it)
+- 1m → unusable (broken timestamps in cache)
+
+**Verdict: 5m is closed. The validated edge is a 1H, broad-universe edge.**
+New data files: quantlab_cache/*_5m.parquet (5 symbols). Script: scripts/fetch_5m.py.
+
 ## R087 SVM keep-rate sweep (2026-08-06) — more-trades dial mapped
 
 User locked SVM (R086) but wants MORE trades. Swept q (fraction of signals kept):
