@@ -3,6 +3,26 @@ name: QuantLab Research State
 description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
 ---
 
+## R085 Upgraded ML (2026-08-06) — the base ML filter is robust; upgrades don't beat it
+
+Tested 4 honest upgrades to R084's ML q55 (9.3 t/mo, 71% prof-mo, PF 2.11):
+- B rich features (adds daily/4H trend, cross-sectional rank, multi-bar momentum): PF 2.36
+  but prof-mo DROPPED to 50% (removed too many trades from good months)
+- C rich + confidence-based sizing (risk ∝ P(win)): no improvement (prof-mo 50%)
+- D gradient boosting (HistGB, rich features): **79% profitable months!** PF 2.47 (2.06@cost),
+  worst streak 2, but t/mo 7.7 (just under 8 target) and selection→holdout PF drop 5.39→1.34
+  (bigger overfit gap than base 3.71→1.40, holPF 1.34 < 1.42)
+- E rich + daily-trend overlay: PF 4.85 but only 2.0 t/mo
+
+Feature importance (rich LR): d_trend (0.80), breadth_now (0.71), ema_dist_pct (0.66),
+real_vol_20 (0.60) — daily trend & market breadth are the strongest signals, consistent w/ R082.
+
+**VERDICT: A_base_ref (R084 ML q55 on 73) remains the champion — it survives every upgrade
+attempt.** Honest finding: your gut was right that more was possible, but the tested upgrades
+either hurt monthly consistency (rich features), added overfit risk (gboost), or cut trades
+too much (daily-trend). The one to WATCH is D_gboost (79% prof-mo) if user accepts 7.7 t/mo
+and the larger selection→holdout gap (needs live confirmation).
+
 ## R084 ML on Expanded Universe (2026-08-06) — 🎯 HITS THE 70% PROF-MONTHS TARGET
 
 Fetched 3 more pairs with real history (XAG, ALLO, AAOI) → cache = 73 symbols.
