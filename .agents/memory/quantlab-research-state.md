@@ -40,6 +40,25 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F003 Forex RR sweep (2026-08-08) — higher RR helps but doesn't cross the cost line
+
+RR sweep on ML+daily-trend (1H). Gross edge improves with RR; cost still wins.
+
+| RR | n | WR | PF | PF@cost | holPF | holPF@cost | prof% mo |
+|---|---|---|---|---|---|---|---|
+| 1.0 | 4734 | 52% | 1.09 | 0.78 | 1.06 | 0.74 | 54% |
+| 1.5 | 4418 | 43% | 1.13 | 0.87 | 1.12 | 0.84 | 71% |
+| 2.0 | 3999 | 37% | 1.17 | 0.93 | 1.18 | 0.91 | 67% |
+| 2.5 | 3725 | 32% | 1.16 | 0.93 | 1.14 | 0.90 | 71% |
+| 3.0 | 3537 | 29% | 1.19 | 0.97 | 1.15 | 0.92 | 79% |
+
+**Result:** higher RR improves BOTH gross (1.09→1.19) and cost-adjusted (0.74→0.92)
+monotonically — RR3.0 gets holPF@cost to 0.92, the closest yet. But NONE cross 1.1.
+The spread drag at 1H is structural (~0.3R/trade); higher RR dilutes but can't overcome it.
+
+**The fix is confirmed as timeframe, not RR:** at 4H the ATR ~doubles → spread cost per
+trade halves → the RR3.0 config's 0.92 should approach ~1.1+. F004 = 4H with RR 3.0.
+
 ## F002 Forex (2026-08-08) — FIRST holdout-validated GROSS edge found; costs still eat it
 
 Daily-TF context + ML-SVM filter on F001's pooled signals.
