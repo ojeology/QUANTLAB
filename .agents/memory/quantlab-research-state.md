@@ -26,6 +26,32 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## R092 5m win/loss ENVIRONMENT forensics (2026-08-07) — hour-clusters are cost mirages
+
+Forensic dissection of R091's 5m hypotheses (like R072): what separated winners from
+losers at the entry bar, then environment slicing.
+
+**Feature forensics (Cohen's d, win vs loss):** all weak (max |d| ~0.11). No strong
+discriminator at entry. Mildest signals: winners had slightly higher RelVol (d 0.106-0.109
+K1/K5), higher ATR-rank (K1 d 0.098), VWAP-dist (K1 d 0.088), MACD-hist (K5 d 0.082).
+Nothing actionable.
+
+**Environment slicing (hour-of-day + breadth + ATR-rank + VWAP-sign):** found gross-PF
+hour clusters (e.g. K1 hour=15 sel 2.54/hol 2.00 gross; K3 hour=14 sel 2.33/hol 2.65;
+K5 hour=20 sel 1.28/hol 2.42). BUT when 0.05% costs are applied, ALL collapse:
+
+| slice | selPF@cost | holPF@cost | hol n |
+|---|---|---|---|
+| K1 hour=15 | 1.28 | 1.08 | 42 |
+| K3 hour=14 | 1.08 | 1.09 | 36 |
+| K5 hour=20 | 0.47 | 0.96 | 68 |
+| K1 hour=4 | 0.36 | 0.70 | 66 |
+| (others) | <0.8 | <1.0 | — |
+
+**Verdict: no cost-surviving 5m environment exists.** The hour clusters were noise
+(small n, gross-only). 4th independent confirmation: 5m has no edge after costs.
+Causal-audit + cost-testing are now permanent gates before ANY 5m result is reported.
+
 ## R091 NEW 5m hypotheses / NEW indicators (2026-08-07) — ❌ still no 5m edge, but CAUSAL-AUDIT PASSED
 
 User asked for new indicators + new hypotheses on 5m, with environment/lookahead warning.
