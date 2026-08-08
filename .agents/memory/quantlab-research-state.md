@@ -40,6 +40,31 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F002 Forex (2026-08-08) — FIRST holdout-validated GROSS edge found; costs still eat it
+
+Daily-TF context + ML-SVM filter on F001's pooled signals.
+
+| Config | n | PF | PF@cost | holPF | holPF@cost | prof% mo |
+|---|---|---|---|---|---|---|
+| A raw pool | 10932 | 0.96 | 0.72 | 0.93 | 0.68 | 38% |
+| B daily-trend | 6408 | 1.11 | 0.85 | 1.07 | 0.80 | 67% |
+| C daily-adx | 7330 | 0.94 | 0.71 | 0.92 | 0.68 | 29% |
+| D ML-SVM | 6881 | 1.00 | 0.76 | 0.98 | 0.73 | 50% |
+| **E ML+trend** | **4458** | **1.13** | **0.87** | **1.12** | **0.84** | **71%** |
+| F hour12-18 | 3750 | 0.88 | 0.68 | 0.88 | 0.66 | 29% |
+| G hour+trend | 2184 | 1.03 | 0.80 | 1.06 | 0.80 | 54% |
+
+**BREAKTHROUGH (gross):** E_ml+trend = **holdout-validated GROSS edge**: holPF 1.12
+(untouched Aug-2025..Aug-2026), PF 1.13, **71% profitable months, worst streak 2**.
+The daily-trend filter + ML is a REAL signal in forex — first in the hunt.
+
+**BUT costs still kill it:** retail spreads ~0.3R round-trip → holPF@cost 0.84. The edge
+exists but is smaller than the spread drag at 1H.
+
+**NEXT (F003):** the cost fix = go to 4H/daily TF where ATR is larger → spread cost per
+trade in R-terms roughly halves. E_ml+trend at 4H may survive costs. Also test tighter
+spread assumptions (0.2-0.3 pip EURUSD, commission model).
+
 ## F001 Forex Hunt (2026-08-08) — run 1: no edge yet, but costs are friendlier
 
 8 majors, 1H, 2yr (Aug2024-Aug2026, yfinance — Dukascopy blocked in sandbox).
