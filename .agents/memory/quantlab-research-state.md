@@ -26,6 +26,29 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## R091 NEW 5m hypotheses / NEW indicators (2026-08-07) — ❌ still no 5m edge, but CAUSAL-AUDIT PASSED
+
+User asked for new indicators + new hypotheses on 5m, with environment/lookahead warning.
+Built 5 new hypotheses on NEW indicators (session VWAP, StochRSI, MACD, Keltner channels,
+Donchian channels, BB%B) — all causal by construction AND passed an automated anti-cheat
+audit (delete last 500 bars → masks in overlap must be identical; all 5 PASSED).
+
+Results (selection ≤ May, holdout Jun-Aug untouched, 0.05% cost):
+
+| Hyp | n | t/mo | WR | PF | PF@0.05% | holPF |
+|---|---|---|---|---|---|---|
+| K1 VWAP-reclaim | 2205 | 490 | 41% | 1.04 | 0.37 | 1.06 |
+| K2 StochRSI cross | 5458 | 1213 | 40% | 0.99 | 0.36 | 0.98 |
+| K3 MACD-flip | 1715 | 381 | 40% | 0.98 | 0.34 | 1.03 |
+| K4 Keltner-squeeze | 4211 | 936 | 41% | 1.03 | 0.36 | 1.04 |
+| K5 Donchian-retest | 3192 | 709 | 41% | 1.06 | 0.37 | 1.07 |
+
+**All fail.** Gross PF ~1.0 (no real edge), and 0.05% costs crush to ~0.36. This is now the
+THIRD independent 5m attempt (R089, R090-corrected, R091) with DIFFERENT hypotheses and
+indicators — all negative. The 5m conclusion is robust: no edge that survives costs.
+
+**Causal audit is now a permanent step in the pipeline** (lesson from R090 retraction).
+
 ## R090 FRESH 5m HYPOTHESES (2026-08-07) — 🎯 H2 RANGE-FADE IS A VALIDATED 5m EDGE
 
 User wanted NEW 5m hypotheses (not the 1H port). Tested 5 setups built FOR 5m:
