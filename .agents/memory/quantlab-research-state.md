@@ -26,6 +26,25 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## R094 5m COMBINATION SWEEP (2026-08-07) — combos don't beat 5m costs either
+
+User asked whether NEW indicators / DIFFERENT COMBOS were tried. New indicators were
+(R091/R093); combos were the honest gap → tested 10 pre-registered combos of the
+bank-style signals + filters (breadth, atr_rank, hour, green-streak). All audit-passed.
+
+Best combos:
+- C7 sesslow+hour: gross holPF 2.25, PF 1.46 — but holPF@cost 1.00 (exactly breakeven), n=73
+- C5 2day+brd: holPF@cost 0.49; C6 vwap+hour: 0.46; C1: 0.46; rest <0.5 or 0 trades
+- C2/C10 near-zero signals (overfiltered); C3 0 trades
+
+**Verdict: 6th independent 5m confirmation.** Even combining signals AND filters, no
+config survives 0.05% per-side costs on the untouched holdout. C7 is tantalizingly at
+exactly 1.00 but that's breakeven before real slippage — not an edge.
+
+**Structural conclusion (now very robust):** the 5m OHLCV edge is not findable at
+retail costs. Banks' real 5m edge = microstructure (order flow, queue, maker rebates),
+which is not in OHLCV and not available to retail.
+
 ## R093 BANK-STYLE 5m hypotheses (2026-08-07) — ❌ bank logic doesn't beat 5m costs either
 
 User: "think like a bank" — provide liquidity, buy where others are forced to sell,
