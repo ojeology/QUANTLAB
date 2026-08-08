@@ -40,6 +40,29 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F001 Forex Hunt (2026-08-08) — run 1: no edge yet, but costs are friendlier
+
+8 majors, 1H, 2yr (Aug2024-Aug2026, yfinance — Dukascopy blocked in sandbox).
+6 hypotheses, all causal-audit PASSED: London-breakout, trend-pullback,
+range-meanrev, VWAP-reclaim, momentum-burst, crypto-champion-transfer.
+
+| Hyp | n | PF | PF@cost | holPF@cost |
+|---|---|---|---|---|
+| F1 London breakout | 4506 | 0.92 | 0.70 | 0.67 |
+| F2 trend pullback | 2948 | 0.94 | 0.71 | 0.66 |
+| F3 range meanrev | 63 | 0.99 | 0.75 | 0.50 |
+| F4 VWAP reclaim | 5293 | 0.98 | 0.74 | 0.68 |
+| F5 momentum burst | 2691 | 0.95 | 0.72 | 0.71 |
+| F6 crypto transfer | 207 | 0.83 | 0.62 | 0.41 |
+
+**ALL FAIL.** Gross PF <1.0 → no raw edge in these setups; costs (retail spreads,
+~0.04-0.08R round-trip) drop to 0.66-0.75. F6 confirms crypto edge does NOT transfer
+to forex (holPF 0.56).
+
+**POSITIVE for the hunt:** forex costs are ~6-10x friendlier than crypto 5m in R-terms
+(PF@cost ~0.7 vs 0.36). The wall is weaker — the hunt is worth continuing (F002+).
+Next: daily-TF context filters, session-specific refinement, ML filter, more data.
+
 ## R095 ADVANCED ML on 5m, SIMPLE indicators (2026-08-07) — ❌ 7th confirmation: ML can't make 5m work
 
 User asked the honest gap: we never ran the ADVANCED ML (the exact models that found
