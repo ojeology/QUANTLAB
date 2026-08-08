@@ -1,7 +1,21 @@
 ---
 name: QuantLab Research State
-description: Current frozen baselines, promotion status, and research trajectory for the QuantLab algo research project
+description: QUANTLAB (crypto) CLOSED 2026-08-08. FOREX HUNT BEGINS. Crypto 1H edge saved for year-end re-run.
 ---
+
+# 🏁 QUANTLAB CLOSED → 🚀 FOREX HUNT BEGINS (2026-08-08)
+
+**Crypto hunt ended after 23 runs (R073-R095).**
+- 5m crypto: NO EDGE (7 independent proofs) — closed forever at retail costs.
+- 1H crypto: VALIDATED EDGE = SVM q0.75, 73 symbols, 10.4 t/mo, PF 1.94, ~70% prof-mo.
+  SAVED for end-of-2026 re-run → decide 2027.
+
+**NOW: FOREX.** Same pipeline (walk-forward, holdout, cost gates, causal audit, ML).
+Universe: 8 majors. TF: 1H/4H. Data: Dukascopy 10yr. Costs: spread+swap modeled.
+Success bar: holPF@cost>1.1, sel n>=200. See FOREX_HUNT_BEGINS.md.
+
+---
+
 
 ## ⚠️ R090 H2 RETRACTED (2026-08-07) — LOOKAHEAD BUG, NOT AN EDGE
 

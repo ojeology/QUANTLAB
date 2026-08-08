@@ -1,3 +1,4 @@
+- [FOREX_HUNT_BEGINS.md](FOREX_HUNT_BEGINS.md) — 🏁 QUANTLAB crypto CLOSED (5m no edge, 7 proofs; 1H edge saved for year-end re-run). 🚀 FOREX HUNT BEGINS: 8 majors, 1H/4H, Dukascopy 10yr data, full pipeline
 - [QuantLab Research State](quantlab-research-state.md) — current research round, frozen baselines, promotion status of all active environments
 - [RR per-strategy decision](quantlab-rr-decision.md) — R071 bootstrap result: FamilyA=2.0 (no sig gain), FamilyC=3.0 (P=100%, CI[+0.59,+1.11]) ⚠️ R071 was proxy-based; R073 retracts Family C and confirms RR=2.0 for Family A (later RR=1.5 in R077)
 - [Exit-Model Audit](EXIT_MODEL_AUDIT.md) — ⚠️ R066–R071 baselines were next-close PROXY, not SL/TP; R073 rebuilds on a bot-faithful engine

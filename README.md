@@ -1,15 +1,35 @@
 # QuantLab
 ### Quantitative Strategy Research Laboratory
 
-> A systematic research framework for discovering, validating, and stress-testing algorithmic cryptocurrency trading strategies using rigorous statistical methods.
+---
+
+## ═══════════════════════════════════════════════════════════════
+## 🏁 QUANTLAB — CLOSED (2026-08-08)
+## 🚀 NEW HUNT BEGINS — FOREX
+## ═══════════════════════════════════════════════════════════════
+
+**After 23 research runs (R073 → R095), the crypto hunt is closed.**
+- **5-minute crypto: NO EDGE** — proven 7 independent ways (rules, bank logic, new
+  indicators, combos, advanced ML). The 5m bar is too small vs retail costs.
+- **1-Hour crypto: VALIDATED EDGE FOUND** — **SVM q0.75 on 73 symbols**:
+  ~10.4 trades/month, PF 1.94, ~70% profitable months, cost-surviving,
+  holdout-validated. Saved for the end-of-year 2026 re-run.
+
+**The Forex hunt now begins** — same rigorous pipeline (walk-forward, holdout,
+cost gates, causal audit), applied to a market with 15-20 years of free data,
+better cost-per-move, and real session structure.
+
+---
+
+> **Good quantitative research attempts to disprove ideas before trusting them.**
 
 ---
 
 ## Overview
 
-QuantLab is a quantitative research project focused on identifying robust trading strategies through evidence-driven experimentation rather than curve fitting.
+QuantLab was a quantitative research project focused on identifying robust trading strategies through evidence-driven experimentation rather than curve fitting.
 
-The project documents dozens of research iterations covering strategy discovery, validation, portfolio construction, and paper trading.
+The project documented dozens of research iterations covering strategy discovery, validation, portfolio construction, and paper trading.
 
 Unlike many trading repositories, this project documents both successful and failed experiments, emphasizing reproducibility and scientific methodology.
 
