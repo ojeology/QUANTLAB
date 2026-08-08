@@ -756,3 +756,25 @@ signal at latest closed bar and enter at its close (E6), keep RR=2.0, and monito
 - R074 outputs: `quantlab_output/r074_*` (edge refinement + strict holdout)
 - R073 outputs: `quantlab_output/r073_*` (corrected baselines on bot-faithful engine)
 - R066–R072 outputs: proxy-based, superseded by R073+
+## F001 FOREX HUNT #1 (2026-08-08) — first negative, but X5 London-expansion is a lead
+
+Data: 8 majors × 1H (Yahoo, 2023-10 → 2026-08, ~17k bars each) + 1D 10y. Committed (92587f1).
+Costs: realistic retail spreads per pair (0.6-1.5 pips) as R-cost = spread/ATR.
+
+| Hyp | n | WR | PF | PF@spread | holPF | holPF@cost |
+|---|---|---|---|---|---|---|
+| X1 London-breakout (Asia range) | 2318 | 41% | 1.03 | 0.75 | 1.00 | 0.72 |
+| X2 Trend-pullback | 4212 | 39% | 0.96 | 0.71 | 0.92 | 0.66 |
+| X3 NY-momentum | 0 | — | — | — | — | — (vol condition never fires) |
+| X4 Day-low meanrev | 2395 | 38% | 0.92 | 0.68 | 0.84 | 0.61 |
+| **X5 London-expansion** | **412** | **44%** | **1.18** | **0.94** | **1.19** | **0.93** |
+| T1 Family-A transfer | 0 | — | — | — | — | — (never fires on FX) |
+
+All 6 passed causal audit. NO hypothesis survives spread costs (holPF@cost>1.1 bar).
+**X5 is the lead:** real gross edge (holPF 1.19, n=412, MDD -15.9%) that just needs ~20% more
+edge to clear the spread wall. X3/T1 zero trades = volume conditions too strict on FX (Yahoo
+vol) / Family-A conditions never co-occur on FX.
+
+F002 plan: (1) refine X5 (ATR-rank threshold, RR sweep 1.5-3, add trend filter, time stops);
+(2) fix X3 by dropping vol condition; (3) higher-RR tests to amplify gross edge above spread.
+
