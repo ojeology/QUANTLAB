@@ -26,6 +26,32 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## R093 BANK-STYLE 5m hypotheses (2026-08-07) — ❌ bank logic doesn't beat 5m costs either
+
+User: "think like a bank" — provide liquidity, buy where others are forced to sell,
+fade extremes to fair value, cut losers fast / let winners run. 5 fresh hypotheses
+(prior-day-low reclaim, VWAP deep-discount fade, session-low accumulate, banker tight-
+stop trail, 2-day liquidity sweep). All passed causal audit.
+
+Results (selection ≤May, holdout Jun-Aug, 0.05% cost gate):
+
+| Hyp | n | WR | PF | PF@0.05% | holPF | holPF@cost |
+|---|---|---|---|---|---|---|
+| B1 prevday-low reclaim | 877 | 39% | 0.98 | 0.41 | 0.93 | 0.43 |
+| B2 VWAP deep fade | 4926 | 50% | 0.99 | 0.24 | 0.99 | 0.26 |
+| B3 session-low accum | 283 | 52% | 1.08 | 0.36 | 1.19 | 0.42 |
+| B4 banker trail | 7527 | 35% | 1.07 | 0.42 | 1.04 | 0.41 |
+| B5 2-day liquidity sweep | 1076 | 40% | 0.99 | 0.46 | 1.02 | 0.51 |
+
+**ALL FAIL.** Even the best bank-style setup (B3: 52% WR, holPF 1.19 gross) collapses to
+holPF@cost 0.42. **5th independent 5m confirmation (R089, R090-corrected, R091, R092,
+R093): no 5m setup — momentum, mean-reversion, ORB, new indicators, or bank-style —
+survives 0.05% per-side costs.** The 5m bar move is simply too small relative to cost.
+
+**Structural conclusion:** 5m edge for a retail trader paying 0.05%+ is not findable in
+OHLCV data — the cost/edge ratio is the wall. A bank makes money on 5m via microstructure
+(order book, queue, maker rebates) which is NOT available to retail and NOT in OHLCV.
+
 ## R092 5m win/loss ENVIRONMENT forensics (2026-08-07) — hour-clusters are cost mirages
 
 Forensic dissection of R091's 5m hypotheses (like R072): what separated winners from
