@@ -26,6 +26,28 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## R095 ADVANCED ML on 5m, SIMPLE indicators (2026-08-07) — ❌ 7th confirmation: ML can't make 5m work
+
+User asked the honest gap: we never ran the ADVANCED ML (the exact models that found
+the 1H edge) on 5m. Tested: pooled 6,096 trades from 5 simple 5m signals, walk-forward
+LR / SVM-RBF / GradientBoosting (1H champions), top-q=0.5, selection ≤May, holdout Jun-Aug.
+
+| Model | n | WR | PF (gross) | PF@0.05% | holPF | holPF@cost |
+|---|---|---|---|---|---|---|
+| RAW pool | 6096 | 40% | 1.00 | 0.39 | 1.02 | 0.42 |
+| LR | 2878 | 40% | 0.99 | 0.39 | 1.06 | 0.46 |
+| SVM (1H champ) | 3128 | 40% | 0.99 | 0.41 | 1.02 | 0.46 |
+| GB (79% prof-mo on 1H) | 3565 | 41% | 1.03 | 0.39 | 1.06 | 0.43 |
+
+**ALL FAIL.** Gross PF stays ~1.0 even after ML filters half the trades — meaning the raw
+5m signals have NO edge for the ML to find. On 1H the raw was PF 1.48 (real edge), and ML
+lifted it to 2.3. On 5m raw is PF 1.00 → ML has nothing to filter. **ML can only amplify
+an edge that exists; it cannot create one from a fair coin.**
+
+**7th independent 5m confirmation (R089, R090-corrected, R091, R092, R093, R094, R095).**
+This closes the last untested angle. Conclusion is structural: no OHLCV-based 5m edge at
+retail costs. Block walk-forward (retrain every 200 rows) now used for speed on large n.
+
 ## R094 5m COMBINATION SWEEP (2026-08-07) — combos don't beat 5m costs either
 
 User asked whether NEW indicators / DIFFERENT COMBOS were tried. New indicators were
