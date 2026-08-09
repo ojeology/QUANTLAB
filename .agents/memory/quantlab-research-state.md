@@ -40,6 +40,25 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F008 SCALP PROBE (2026-08-08) — 5m scalping is cost-DEAD in BOTH markets
+
+User wants scalping, crypto AND forex, RR 1.3, "a real easy edge". Tested 5m scalps
+(4 hyps x 8 forex majors x 4 crypto, ~30 days, retail spreads / 0.05% crypto).
+
+**THE COST WALL IS ABSOLUTE AT 5m:**
+- avg cost per trade: forex 0.95R, crypto 0.94R (!!) — the cost alone is ~1R/trade
+- ALL configs: PF@cost 0.12-0.21 (catastrophic). No scalp survives.
+- Gross: crypto S2_fade (RSI2<10 fade) holPF 1.18, PF 1.11 — a REAL gross edge!
+  but @cost 0.20. Forex all gross <1.0.
+
+**Honest verdict: no easy edge at 5m in either market.** The per-trade cost (~0.95R)
+exceeds any achievable scalp edge. This is the 8th independent confirmation of the
+cost wall at fast timeframes (R081 crypto scalps, R089-095 crypto 5m, now both markets).
+
+**Constructive find:** crypto S2_fade (deep-oversold 5m fade) has a genuine GROSS edge
+(holPF 1.18) — worth re-testing at 15m/1H where cost/trade drops ~5-10x. That's the
+only path for "scalping-style" edge: same logic, slower timeframe.
+
 ## F007 Forex VALIDATION (2026-08-08) — ✅ bear-trap-reversal edge HOLDS under full battery
 
 Validated the F006 winner (REJECT bear trap = long when wick below level then close
