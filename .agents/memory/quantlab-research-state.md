@@ -40,6 +40,26 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F009 RSI2-fade at 1H (2026-08-08) — cost/trade cut 6x, but still not cost-surviving
+
+Moved the F008 scalp logic (RSI2 deep-oversold fade) to 1H. Cost/trade dropped
+~6x (forex 0.18R, crypto 0.15R vs 0.95R at 5m) — the cost wall weakens as predicted.
+
+| Config | n | PF gross | holPF gross | holPF@cost |
+|---|---|---|---|---|
+| forex S2 rsi2v2 | 799 | 1.02 | **1.09** | 0.78 |
+| crypto S1 | 1364 | 0.99 | 1.03 | 0.78 |
+| crypto S3 bb | 179 | 0.99 | **1.11** | 0.87 |
+| crypto S4 volceil | 904 | 1.04 | **1.12** | 0.82 |
+
+**Honest:** gross edges are real at 1H (holPF 1.09-1.12 for a few configs) but the
+0.15-0.18R cost still pushes holPF@cost to 0.78-0.87. The edge exists; it's just
+thinner than the remaining cost. At 4H the cost would drop to ~0.08R — same pattern
+as F004 where 4H finally approached cost survival.
+
+**The RSI2-fade is a genuine but THIN edge.** Path forward: 4H version, or combine
+with the validated bear-trap/downtrend/London filter.
+
 ## F008 SCALP PROBE (2026-08-08) — 5m scalping is cost-DEAD in BOTH markets
 
 User wants scalping, crypto AND forex, RR 1.3, "a real easy edge". Tested 5m scalps
