@@ -1,3 +1,36 @@
+# ❄️ STRATEGY FREEZE — ACTIVE (2026-08-08)
+
+**User decision:** Pause trading. Build capital first ("most traders got rich elsewhere").
+Freeze the validated strategies AS-IS, no more research/tweaking. Re-check at END OF 2026
+with fresh data → decide 2027.
+
+## FROZEN STRATEGIES (do not modify, do not re-tune)
+1. **Crypto 1H** — SVM q0.75, 73 symbols, Family-A compression-pop, RR 1.5, 1% risk.
+   Backtest: ~10.4 t/mo, PF 1.94 (1.62 @cost), ~70% prof-months, holPF 1.36. ~2.4%/mo
+   → on $10k ≈ $240/mo. Files: quantlab_r077/r086/r087 + ql_engine.
+2. **Forex bear-trap** — reject bear trap (wick below level then close above) + downtrend
+   + London session, 4H, RR 3.0. holPF@cost 1.14 (boot P5 1.06, LOO 1.09, MC 100%).
+   ~2%/mo → on $10k ≈ $200/mo. Files: forex_f007.
+
+## YEAR-END RE-CHECK PROTOCOL (Dec 2026)
+1. Fetch fresh data (OKX for crypto via after-pagination; yfinance for forex).
+2. Re-run the FULL validation battery (walk-forward, holdout, bootstrap, LOO, MC, costs)
+   on the frozen configs with the new data appended.
+3. Compare: if edge holds (holPF@cost > 1.1), green-light 2027. If degraded, reassess.
+4. Update this freeze doc with the verdict.
+
+## CAPITAL MATH (for reference)
+- $100 → $5/day = 5%/day = impossible (scam zone)
+- $10,000 → ~$200-240/mo at the frozen edge's ~2-2.4%/mo = modest living top-up
+- Realistic target capital: $5k+ before live deployment
+
+## STANDING ORDERS
+- DO NOT add new hypotheses to frozen strategies.
+- DO NOT trade live until year-end re-check.
+- Research (if any) is separate/exploratory only, never touches the frozen configs.
+
+---
+
 ---
 name: QuantLab Research State
 description: QUANTLAB (crypto) CLOSED 2026-08-08. FOREX HUNT BEGINS. Crypto 1H edge saved for year-end re-run.

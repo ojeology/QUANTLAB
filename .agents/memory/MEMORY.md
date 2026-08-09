@@ -1,3 +1,4 @@
+- ❄️ **STRATEGY FREEZE ACTIVE (2026-08-08)** — paused trading to build capital. Frozen: Crypto 1H (SVM q0.75, PF 1.94, ~$240/mo @10k) + Forex bear-trap (holPF@cost 1.14, ~$200/mo @10k). Re-check end of 2026 with fresh data → decide 2027. No more tweaking frozen strategies.
 - [FOREX_HUNT_BEGINS.md](FOREX_HUNT_BEGINS.md) — 🏁 QUANTLAB crypto CLOSED (5m no edge, 7 proofs; 1H edge saved for year-end re-run). 🚀 FOREX HUNT BEGINS: 8 majors, 1H/4H, Dukascopy 10yr data, full pipeline
 - [QuantLab Research State](quantlab-research-state.md) — current research round, frozen baselines, promotion status of all active environments
 - [RR per-strategy decision](quantlab-rr-decision.md) — R071 bootstrap result: FamilyA=2.0 (no sig gain), FamilyC=3.0 (P=100%, CI[+0.59,+1.11]) ⚠️ R071 was proxy-based; R073 retracts Family C and confirms RR=2.0 for Family A (later RR=1.5 in R077)
