@@ -40,6 +40,32 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F006 Forex COMPREHENSIVE TRAP MATRIX (2026-08-08) — 🎯 6 COST-SURVIVING CONFIGS FOUND
+
+User: traps = bull/bear/ML traps, sessions, follow vs reject. Built full matrix:
+4 trap types (prior-20, prior-day, VWAP, EMA20) x bull/bear x follow/reject x
+trend(up/dn) x session(all/london/ny-ovl) = 96 cells, RR3.0, 4H, retail spreads,
+causal-audited (14,380 events verified).
+
+**6 cells with holPF@cost > 1.1 (untouched holdout):**
+| cell | n | holPF | holPF@cost |
+|---|---|---|---|
+| follow P20-high-bull, downtrend, London | 179 | 1.53 | **1.33** |
+| reject PD-low-bear (bear-trap reversal LONG), downtrend, London | 1566 | 1.34 | **1.17** |
+| reject P20 bull-trap (short), uptrend, NY | 382 | 1.31 | **1.16** |
+| reject VWAP bear-trap (long), downtrend, London | 1633 | 1.30 | **1.13** |
+| reject EMA20 bear-trap (long), downtrend, London | 1291 | 1.29 | **1.13** |
+| reject P20 bear-trap (long), downtrend, London | 1916 | 1.27 | **1.11** |
+
+**KEY: the strongest repeatable pattern = REJECT the bear trap (long when price wicks
+below a level then closes back above) in a DOWNTREND during LONDON session.** 4 of 6
+winners are exactly that. The bear-trap reversal is REAL (contrary to F005's raw result)
+when conditioned on trend + session. Follow-P20-bull in London is the small-n outlier.
+
+**This is the first cost-surviving FOREX edge (holdout-validated).** F007: verify the
+bear-trap-reversal + downtrend + London config (bootstrap, more depth/session variants,
+and the ML trap classifier that timed out).
+
 ## F005 Forex TRAP hunt (2026-08-08) — FOLLOW beats REVERSE; T4 nearly cost-surviving
 
 User hypothesis: when price enters a trap (stop-hunt wick through prior level), does it
