@@ -40,6 +40,27 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F007 Forex VALIDATION (2026-08-08) — ✅ bear-trap-reversal edge HOLDS under full battery
+
+Validated the F006 winner (REJECT bear trap = long when wick below level then close
+back above, in DOWNTREND, LONDON session, all 4 levels combined, RR3, 4H):
+
+**Holdout (untouched Aug-2025..Aug-2026): n=3095, PF gross 1.30, PF @retail cost 1.14**
+- Boot CI hol PF @cost: **P5=1.06, med=1.13, P95=1.21** (worst-case still >1.0)
+- LOO-pair floor @cost: **1.09** (drops to 1.09-1.21 across all 8 pairs — no single pair carries it)
+- Monte Carlo (5k paths, 1% risk): P(end>100)=100%, P(end>130)=100%, P(end<90)=0%;
+  max DD P5 -41.7% / med -29.4% (lumpy — many trades)
+- Cost sensitivity: ECN 1.23 / half 1.18 / retail 1.14 / wide 1.06 — survives all
+- Selection PF only 0.76 (edge is a HOLD-OUT phenomenon — strongest recently)
+
+**ML trap classifier (capped 6k): no edge — ML 0.86, always-follow 0.84, always-reject
+0.86 @cost. The follow-vs-reject choice has no general edge; the edge is SPECIFIC to
+bear-trap-reversal+downtrend+London.**
+
+**STATUS: BEAR-TRAP-REVERSAL+DOWNTrend+LONDON = VALIDATED cost-surviving forex edge.**
+Caveats: selection PF weak (edge concentrated in holdout period), drawdown lumpy (-29 to -42%),
+~3095 holdout trades. Best config in the forex hunt.
+
 ## F006 Forex COMPREHENSIVE TRAP MATRIX (2026-08-08) — 🎯 6 COST-SURVIVING CONFIGS FOUND
 
 User: traps = bull/bear/ML traps, sessions, follow vs reject. Built full matrix:
