@@ -40,6 +40,30 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F005 Forex TRAP hunt (2026-08-08) — FOLLOW beats REVERSE; T4 nearly cost-surviving
+
+User hypothesis: when price enters a trap (stop-hunt wick through prior level), does it
+reverse or follow the trend? Tested 4 signal types (long AND short via series inversion),
+pierce-depth 0/0.2ATR, RR 2.0/3.0, 4H, 8 pairs. All causal-audit PASSED.
+
+**Key finding — FOLLOW > REVERSE (the opposite of the "trap reversal" myth):**
+| Signal | direction | holPF (gross) | holPF@cost |
+|---|---|---|---|
+| T4 bull-follow LONG (break above prior high, keep going) | follow | **1.17** | **1.03** |
+| T3 bull-reverse SHORT (break above, snap back) | reverse | 1.06 | 0.94 |
+| T1 bear-reverse LONG (break below, snap back) | reverse | 1.03 | 0.92 |
+| T2 bear-follow SHORT (break below, keep going) | follow | 0.89 | 0.78 |
+
+- Best: **T4 bull-follow long @RR3 = holPF 1.17 (gross), holPF@cost 1.03** — the ONLY
+  config at or above cost breakeven, and the first to cross 1.0. Close to the 1.1 bar.
+- The classic "trap reversal" (fade the stop-hunt) is WEAKER than the follow-through.
+  On 4H forex, when price wicks above resistance and closes above, it CONTINUES.
+- Bear-side traps (below support) show no edge at all (T2 0.78-0.89).
+
+**Status: forex is at the doorstep — T4_bull_follow @RR3 is the strongest cost-adjusted
+candidate so far (1.03).** Next levers to cross 1.1: ECN/raw spreads (0.2-0.3 pip),
+daily-trend filter on T4, tighter ML selection.
+
 ## F004 Forex 4H (2026-08-08) — cost-adjusted edge reaches 0.99; gross edge holdout-validated at RR3
 
 4H timeframe (resampled from 1H, time-window-scaled: IS_LOOKBACK 125 bars=21d, RECAL 42 bars=7d).
