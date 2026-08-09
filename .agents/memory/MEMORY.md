@@ -27,3 +27,4 @@
 - [F001 forex](quantlab_output/f001_final_report.md) — forex run 1: 6 hypotheses all audit-pass, ALL fail (PF@cost 0.66-0.75). Crypto edge doesn't transfer (F6 holPF 0.56). BUT forex costs ~6-10x friendlier than crypto 5m → hunt continues
 - [F002 forex](quantlab_output/f002_final_report.md) — **first holdout-validated GROSS forex edge: daily-trend + ML-SVM (holPF 1.12, 71% prof-mo, worst streak 2)** — but retail spreads still eat it (holPF@cost 0.84). Next: 4H TF to halve cost drag
 - [F003 forex](quantlab_output/f003_final_report.md) — RR sweep on ML+daily-trend: higher RR helps (holPF@cost 0.74→0.92 at RR3.0) but none cross 1.1. 1H spread drag structural. **Next: F004 = 4H TF + RR3.0** (ATR~2x halves cost drag)
+- [F004 forex](quantlab_output/f004_final_report.md) — 4H + RR3.0: gross edge holdout-validated (holPF 1.11), cost-adjusted 0.99 (was 0.92 at 1H). Spread drag halved to ~0.12R. At the doorstep — ECN spreads (0.2-0.3 pip) would cross 1.1

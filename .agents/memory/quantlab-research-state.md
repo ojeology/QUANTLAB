@@ -40,6 +40,26 @@ The R090 report, CSV, and prior memory entry are superseded by this retraction.
 LESSON: every new hypothesis must be audited for lookahead before reporting.
 The user's skepticism was correct; the bug was mine.
 
+## F004 Forex 4H (2026-08-08) — cost-adjusted edge reaches 0.99; gross edge holdout-validated at RR3
+
+4H timeframe (resampled from 1H, time-window-scaled: IS_LOOKBACK 125 bars=21d, RECAL 42 bars=7d).
+ML+daily-trend, RR sweep.
+
+| RR | n | WR | PF | PF@cost | holPF | holPF@cost | prof% mo |
+|---|---|---|---|---|---|---|---|
+| 1.5 | 1345 | 43% | 1.11 | 0.97 | 1.07 | 0.93 | 54% |
+| 2.0 | 1234 | 36% | 1.12 | 1.00 | 1.04 | 0.92 | 54% |
+| **3.0** | **1093** | 30% | **1.14** | **1.02** | **1.11** | **0.99** | **62%** |
+| 4.0 | 1024 | 27% | 1.13 | 1.02 | 1.05 | 0.94 | 54% |
+
+**PROGRESS:** 4H + RR3.0 = gross edge holdout-validated (holPF 1.11) AND cost-adjusted
+0.99 — up from 1H's 0.92. Spread drag now ~0.12R (vs 0.3R at 1H). At the doorstep of
+crossing 1.0, just under the 1.1 success bar.
+
+**How to cross:** (a) tighter spreads — our 0.6-1.0 pip assumption is retail; ECN/raw
+spreads (EURUSD 0.2-0.3 pip) would push 0.99 → ~1.1+; (b) daily TF; (c) more selective ML.
+F005 candidate: same config with ECN spread assumptions + q sweep.
+
 ## F003 Forex RR sweep (2026-08-08) — higher RR helps but doesn't cross the cost line
 
 RR sweep on ML+daily-trend (1H). Gross edge improves with RR; cost still wins.
