@@ -1,0 +1,58 @@
+[load] fetch 4H 2023-2026 for subset …
+  loaded BTC_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded ETH_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded SOL_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded BNB_USDT_SWAP: 8067 4H bars (2022-12-26 -> 2026-08-31)
+  loaded XRP_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded DOGE_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded ADA_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded AVAX_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded LINK_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded DOT_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded LTC_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded TRX_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded ATOM_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded NEAR_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded APT_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded ARB_USDT_SWAP: 7525 4H bars (2023-03-26 -> 2026-08-31)
+  loaded OP_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded SUI_USDT_SWAP: 7270 4H bars (2023-05-08 -> 2026-08-31)
+  loaded ETC_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded XLM_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded FIL_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded INJ_USDT_SWAP: 6014 4H bars (2023-12-03 -> 2026-08-31)
+  loaded AXS_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded SAND_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded GRT_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded HBAR_USDT_SWAP: 6651 4H bars (2023-08-19 -> 2026-08-31)
+  loaded IMX_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded COMP_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+  loaded AAVE_USDT_SWAP: 8180 4H bars (2022-12-07 -> 2026-08-31)
+[load] subset: 29
+[signals] RAW 4H trades 2023-2026: 56
+
+================================================================================================
+4H ENVIRONMENT — SWEET-SPOT HUNT (train 2023 -> test 2024/25/26)  PF@cost per year
+================================================================================================
+    q  VolC  brd |      2024      2025      2026 | survive?
+ 0.55  None False |      -         -         -    |  no
+ 0.55  None True |      -         -         -    |  no
+ 0.55    70 False |      -         -         -    |  no
+ 0.55    70 True |      -         -         -    |  no
+ 0.65  None False |      -         -         -    |  no
+ 0.65  None True |      -         -         -    |  no
+ 0.65    70 False |      -         -         -    |  no
+ 0.65    70 True |      -         -         -    |  no
+ 0.75  None False |      -         -         -    |  no
+ 0.75  None True |      -         -         -    |  no
+ 0.75    70 False |      -         -         -    |  no
+ 0.75    70 True |      -         -         -    |  no
+ 0.85  None False |      -         -         -    |  no
+ 0.85  None True |      -         -         -    |  no
+ 0.85    70 False |      -         -         -    |  no
+ 0.85    70 True |      -         -         -    |  no
+
+=== 4H SURVIVORS (PF@cost > 1 in 2024 AND 2025 AND 2026) ===
+  (none survived all three years)
+
+[done]
