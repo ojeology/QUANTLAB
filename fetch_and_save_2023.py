@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
 import pandas as pd
 warnings.filterwarnings("ignore")
+import sys
 import demo_bot as bot
 
 SAVE_DIR = "quantlab_cache_2023"
@@ -20,6 +21,8 @@ SUBSET = ["BTC_USDT_SWAP","ETH_USDT_SWAP","SOL_USDT_SWAP","BNB_USDT_SWAP","XRP_U
           "ARB_USDT_SWAP","OP_USDT_SWAP","SUI_USDT_SWAP","ETC_USDT_SWAP","XLM_USDT_SWAP",
           "FIL_USDT_SWAP","INJ_USDT_SWAP","AXS_USDT_SWAP","SAND_USDT_SWAP","FET_USDT_SWAP",
           "GRT_USDT_SWAP","HBAR_USDT_SWAP","IMX_USDT_SWAP","COMP_USDT_SWAP","AAVE_USDT_SWAP"]
+if len(sys.argv) >= 3:
+    SUBSET = SUBSET[int(sys.argv[1]):int(sys.argv[2])]
 
 
 def fetch_before(end_ts_ms, n_bars, inst, bar="1H", page_limit=200):
@@ -65,6 +68,7 @@ for sym in SUBSET:
         if f2023 is not None and len(f2023):
             df = pd.concat([f2023, df]); df = df[~df.index.duplicated(keep="last")].sort_index()
         df.to_parquet(out)
+        os.sync()
         done += 1
         print(f"  saved {sym}: {len(df)} bars ({df.index[0].date()} -> {df.index[-1].date()})  [{done}/{len(SUBSET)}]", flush=True)
     except Exception as e:
