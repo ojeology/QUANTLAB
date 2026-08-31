@@ -1,0 +1,41 @@
+[load] fetch 2023 + cache 2024-2026 for subset …
+  loaded BTC_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded ETH_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded SOL_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded BNB_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded XRP_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded DOGE_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded ADA_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded AVAX_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded LINK_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded DOT_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded LTC_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded TRX_USDT_SWAP: 26724 bars (2023-07-12 -> 2026-07-30)
+[load] subset: 12
+[signals] RAW trades 2023-2026: 161
+
+================================================================================================
+ADAPTIVE RULE HUNT incl 2023 (train 2023 -> test 2024/25/26)  PF@cost per year
+================================================================================================
+   regime    thr |      2024      2025      2026 | survive all?
+ adx_high     20 | 0.749(n18) 2.898(n30) 1.316(n23) |  no
+ adx_high     25 | 0.636(n20) 2.898(n30) 1.469(n20) |  no
+ adx_high     30 | 0.733(n21) 2.613(n31) 1.663(n19) |  no
+ adx_high     35 | 0.895(n21) 2.506(n31) 1.663(n19) |  no
+ adx_high     40 | 0.895(n21) 2.506(n31) 1.663(n19) |  no
+ vol_high    1.0 | 0.829(n22) 3.310(n33) 2.013(n21) |  no
+ vol_high    1.5 | 0.829(n22) 3.310(n33) 2.013(n21) |  no
+ vol_high    2.0 | 0.829(n22) 3.310(n33) 2.013(n21) |  no
+ vol_high    2.5 | 0.829(n22) 3.310(n33) 2.013(n21) |  no
+dist_high    2.0 | 0.976(n20) 3.017(n31) 1.541(n18) |  no
+dist_high    4.0 | 0.895(n21) 3.242(n29) 1.808(n20) |  no
+dist_high    6.0 | 0.829(n22) 3.310(n33) 2.837(n20) |  no
+dist_high    8.0 | 0.829(n22) 2.629(n32) 2.013(n21) |  no
+ rsi_extr     20 | 0.829(n22) 2.629(n32) 2.013(n21) |  no
+ rsi_extr     25 | 0.829(n22) 3.310(n33) 2.013(n21) |  no
+ rsi_extr     30 | 0.829(n22) 3.026(n31) 2.280(n23) |  no
+
+=== ADAPTIVE SURVIVORS (PF@cost > 1 in 2024 AND 2025 AND 2026) ===
+  (none survived all three years)
+
+[done]
