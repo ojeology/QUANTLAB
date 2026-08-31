@@ -1,0 +1,43 @@
+[load] 73-sym 1H cache (2024-2026) …
+[signals] RAW trades: 453
+
+==========================================================================================
+ADAPTIVE RULE HUNT — regime-gated VolCeil (train all-prior -> test 2025/2026)
+==========================================================================================
+   regime    thr |  2025 PF@c  2026 PF@c | survive 25&26?
+ adx_high     20 | 2.174(n114) 1.301(n97) | YES
+ adx_high     25 | 1.916(n125) 1.345(n101) | YES
+ adx_high     30 | 1.460(n141) 1.295(n114) | YES
+ adx_high     35 | 1.438(n146) 1.207(n114) | YES
+ adx_high     40 | 1.435(n148) 1.126(n114) | YES
+ vol_high    1.0 | 1.739(n162) 1.258(n114) | YES
+ vol_high    1.5 | 1.785(n162) 1.212(n120) | YES
+ vol_high    2.0 | 1.785(n162) 1.212(n120) | YES
+ vol_high    2.5 | 1.785(n162) 1.212(n120) | YES
+dist_high    2.0 | 2.204(n115) 1.350(n101) | YES
+dist_high    4.0 | 2.121(n115) 1.149(n109) | YES
+dist_high    6.0 | 1.457(n145) 1.338(n118) | YES
+dist_high    8.0 | 1.457(n147) 1.271(n113) | YES
+ rsi_extr     20 | 1.785(n162) 1.212(n120) | YES
+ rsi_extr     25 | 1.785(n162) 1.212(n120) | YES
+ rsi_extr     30 | 1.803(n163) 1.215(n120) | YES
+
+=== ADAPTIVE SURVIVORS (PF@cost>1 in BOTH 2025 and 2026) ===
+  regime=dist_high thr=2.0  PF@c 25=2.204 26=1.350  avg=1.777
+  regime=adx_high thr=20  PF@c 25=2.174 26=1.301  avg=1.738
+  regime=dist_high thr=4.0  PF@c 25=2.121 26=1.149  avg=1.635
+  regime=adx_high thr=25  PF@c 25=1.916 26=1.345  avg=1.631
+  regime=rsi_extr thr=30  PF@c 25=1.803 26=1.215  avg=1.509
+  regime=vol_high thr=1.0  PF@c 25=1.739 26=1.258  avg=1.499
+  regime=vol_high thr=1.5  PF@c 25=1.785 26=1.212  avg=1.498
+  regime=vol_high thr=2.0  PF@c 25=1.785 26=1.212  avg=1.498
+  regime=vol_high thr=2.5  PF@c 25=1.785 26=1.212  avg=1.498
+  regime=rsi_extr thr=20  PF@c 25=1.785 26=1.212  avg=1.498
+  regime=rsi_extr thr=25  PF@c 25=1.785 26=1.212  avg=1.498
+  regime=dist_high thr=6.0  PF@c 25=1.457 26=1.338  avg=1.397
+  regime=adx_high thr=30  PF@c 25=1.460 26=1.295  avg=1.378
+  regime=dist_high thr=8.0  PF@c 25=1.457 26=1.271  avg=1.364
+  regime=adx_high thr=35  PF@c 25=1.438 26=1.207  avg=1.322
+  regime=adx_high thr=40  PF@c 25=1.435 26=1.126  avg=1.280
+
+[done]
