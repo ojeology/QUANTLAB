@@ -1,0 +1,16 @@
+[control] 5m symbols (fresh fetch) = 8: ['AVAX-USDT-SWAP', 'BNB-USDT-SWAP', 'BTC-USDT-SWAP', 'DOGE-USDT-SWAP', 'ETH-USDT-SWAP', 'LINK-USDT-SWAP', 'SOL-USDT-SWAP', 'XRP-USDT-SWAP']
+
+======================================================================
+5m NEGATIVE CONTROL — same harness logic, 5m data (research: NO EDGE)
+Freeze = 2026-08-08 | Test window = post-freeze 5m bars (blind)
+======================================================================
+
+[Family A]
+  trades=4  win_rate=75.0%  PF=5.768  net=$505.96  maxDD=-1.0%
+  -> *** FALSE POSITIVE ***
+
+[Family C]
+  trades=41  win_rate=17.1%  PF=0.613  net=$-1261.09  maxDD=-15.2%
+  -> FAIL (correct)
+
+[done in 199.2s]

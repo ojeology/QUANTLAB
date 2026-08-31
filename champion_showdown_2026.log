@@ -1,0 +1,23 @@
+[setup] symbols: 73
+[data] symbols with features: 71
+[signals] RAW trades=473  R077 trades=145
+[split] train(pre-2026)=301  test(2026)=172
+[svm] q=0.75 kept=144/172 test trades
+
+==========================================================================
+CHAMPION SHOWDOWN — 2026 blind (train pre-2026, test 2026, fees 0.05%)
+==========================================================================
+
+[RAW Family A]
+  n=172  WR=47.7%  PF=1.367  PF@0.05%=1.114  MDD=-18.8%
+  profitable-months=62.5%  worst-streak=2  ~t/mo=21.8
+
+[SVM q0.75 (current champion)]
+  n=144  WR=50.7%  PF=1.542  PF@0.05%=1.247  MDD=-17.5%
+  profitable-months=75.0%  worst-streak=2  ~t/mo=18.6
+
+[R077 LOCKED (breadth50 + VolCeil)]
+  n=51  WR=39.2%  PF=0.968  PF@0.05%=0.753  MDD=-9.6%
+  profitable-months=42.9%  worst-streak=4  ~t/mo=6.8
+
+[done in 0.0s]

@@ -1,0 +1,56 @@
+[setup] subset symbols requested: 30
+  loaded BTC_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded ETH_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded SOL_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded BNB_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded XRP_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded DOGE_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded ADA_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded AVAX_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded LINK_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded DOT_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded LTC_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded TRX_USDT_SWAP: 26724 bars (2023-07-12 -> 2026-07-30)
+  loaded ATOM_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded NEAR_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded APT_USDT_SWAP: 31113 bars (2023-01-10 -> 2026-07-30)
+  loaded ARB_USDT_SWAP: 29374 bars (2023-03-24 -> 2026-07-30)
+  loaded OP_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded SUI_USDT_SWAP: 28353 bars (2023-05-05 -> 2026-07-30)
+  loaded ETC_USDT_SWAP: 26557 bars (2023-07-19 -> 2026-07-30)
+  loaded XLM_USDT_SWAP: 26562 bars (2023-07-19 -> 2026-07-30)
+  loaded FIL_USDT_SWAP: 31112 bars (2023-01-11 -> 2026-07-30)
+  loaded INJ_USDT_SWAP: 23329 bars (2023-12-01 -> 2026-07-30)
+  loaded AXS_USDT_SWAP: 26549 bars (2023-07-19 -> 2026-07-30)
+  loaded SAND_USDT_SWAP: 26526 bars (2023-07-19 -> 2026-07-30)
+  loaded FET_USDT_SWAP: 17352 bars (2024-08-05 -> 2026-07-29)
+  loaded GRT_USDT_SWAP: 26478 bars (2023-07-19 -> 2026-07-30)
+  loaded HBAR_USDT_SWAP: 25879 bars (2023-08-17 -> 2026-07-30)
+  loaded IMX_USDT_SWAP: 26514 bars (2023-07-19 -> 2026-07-30)
+  loaded COMP_USDT_SWAP: 26138 bars (2023-07-19 -> 2026-07-30)
+  loaded AAVE_USDT_SWAP: 26562 bars (2023-07-19 -> 2026-07-30)
+[data] subset with features: 30
+[signals] total RAW trades across 2023-2026: 387
+
+==========================================================================
+EXTENDED WALK-FORWARD — train on all prior years, test each year (fees 0.05%)
+==========================================================================
+
+[TRAIN≤2023 -> TEST 2024]
+  n=64  WR=31.2%  PF=0.682  PF@0.05%=0.580  MDD=-18.0%  prof-months=36.4%  worst=4  t/mo=5.3
+
+[TRAIN≤2024 -> TEST 2025]
+  n=108  WR=61.1%  PF=2.357  PF@0.05%=2.011  MDD=-7.8%  prof-months=63.6%  worst=2  t/mo=9.4
+
+[TRAIN≤2025 -> TEST 2026]
+  n=58  WR=56.9%  PF=1.980  PF@0.05%=1.628  MDD=-10.9%  prof-months=50.0%  worst=2  t/mo=8.9
+
+==========================================================================
+NON-CAUSAL SANITY CHECK — train 2024+ (future), test 2023 (look-ahead)
+  (answers 'does 2023's market contain the edge?' — NOT a live test)
+==========================================================================
+
+[TRAIN 2024+ -> TEST 2023 (NON-CAUSAL)]
+  n=77  WR=44.2%  PF=1.186  PF@0.05%=0.964  MDD=-11.8%  prof-months=50.0%  worst=2  t/mo=7.2
+
+[done]

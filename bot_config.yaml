@@ -1,0 +1,53 @@
+# QuantLab Demo Bot — Configuration
+# DO NOT change strategy parameters — they are frozen from research.
+
+# ── Strategies (frozen — do not edit) ───────────────────────────────────────
+strategies:
+  FamilyA:
+    label: "Family A"
+    conditions: [BBW_STRICT, RV_LO, DST_NR, PRG_VH]
+    description: "R066 PF=3.35 n=91  Boot P5=2.33"
+
+  FamilyC:
+    label: "Family C"
+    conditions: [ADX_ST, PBD_HI]
+    description: "R068 PF=1.69 n=2049  Boot P5=1.57"
+
+# ── Universe ─────────────────────────────────────────────────────────────────
+universe:
+  min_vol_24h_usd: 5_000_000
+  min_history_months: 18
+  refresh_every_hours: 24
+
+# ── Position sizing ──────────────────────────────────────────────────────────
+sizing:
+  starting_capital: 10000.0
+  risk_per_trade_pct: 0.01      # 1% per trade = $100 at $10k capital
+  risk_reward: 2.0
+  max_concurrent_per_strategy: 10
+
+# ── Risk management ──────────────────────────────────────────────────────────
+risk:
+  daily_loss_limit_pct: -0.03   # -3% → pause 24h
+  max_drawdown_pct: -0.15       # -15% → halt bot
+
+# ── Threshold calibration ────────────────────────────────────────────────────
+calibration:
+  is_lookback_bars: 500
+  min_bars_required: 400
+  recalibrate_every_days: 7
+
+# ── Telegram (set via environment variables, not here) ───────────────────────
+telegram:
+  # Export these before running:
+  #   export TELEGRAM_BOT_TOKEN="your_token_here"
+  #   export TELEGRAM_CHAT_ID="your_chat_id_here"
+  signal_alerts: true
+  trade_alerts: true
+  daily_report: true
+  daily_report_hour_utc: 8
+
+# ── Files ────────────────────────────────────────────────────────────────────
+files:
+  db: "demo_bot.db"
+  log: "demo_bot.log"

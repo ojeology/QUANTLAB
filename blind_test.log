@@ -1,0 +1,25 @@
+[setup] universe = 73 cached symbols
+[progress] 10/73 symbols processed
+[progress] 20/73 symbols processed
+[progress] 30/73 symbols processed
+[progress] 40/73 symbols processed
+[progress] 50/73 symbols processed
+[progress] 60/73 symbols processed
+[progress] 70/73 symbols processed
+
+======================================================================
+BLIND OUT-OF-SAMPLE TEST — frozen strategies on FRESH 1H OKX data
+Freeze = 2026-08-08 | Test window = post-freeze bars only (blind)
+======================================================================
+
+[Family A]  BBW_STRICT+RV_LO+DST_NR+PRG_VH — R066 PF=3.35 n=91
+  trades=10  wins=6  losses=4  win_rate=60.0%
+  gross_profit=$1244.68  gross_loss=$426.81  PF=2.916
+  start=$10000.00  equity=$10817.87  net_pnl=$817.87  maxDD=-2.0%
+
+[Family C]  ADX_ST+PBD_HI — R068 PF=1.69 n=2049
+  trades=47  wins=19  losses=28  win_rate=40.4%
+  gross_profit=$6439.12  gross_loss=$3205.07  PF=2.009
+  start=$10000.00  equity=$13234.05  net_pnl=$3234.05  maxDD=-5.9%
+
+[done in 171.0s]

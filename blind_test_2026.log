@@ -1,0 +1,24 @@
+[setup] universe = 73 cached symbols
+[progress] 10/73 symbols processed
+[progress] 20/73 symbols processed
+[progress] 30/73 symbols processed
+[progress] 40/73 symbols processed
+[progress] 50/73 symbols processed
+[progress] 60/73 symbols processed
+
+======================================================================
+BLIND OUT-OF-SAMPLE TEST — frozen strategies on 2026 (this year)
+Train = pre-2026 (2024-2025) | Test = 2026 (this year), model blind to 2026
+======================================================================
+
+[Family A]  BBW_STRICT+RV_LO+DST_NR+PRG_VH — R066 PF=3.35 n=91
+  trades=60  wins=24  losses=36  win_rate=40.0%
+  gross_profit=$5173.10  gross_loss=$3971.73  PF=1.302
+  start=$10000.00  equity=$11201.37  net_pnl=$1201.37  maxDD=-5.9%
+
+[Family C]  ADX_ST+PBD_HI — R068 PF=1.69 n=2049
+  trades=105  wins=24  losses=81  win_rate=22.9%
+  gross_profit=$6997.48  gross_loss=$7991.22  PF=0.876
+  start=$10000.00  equity=$9006.25  net_pnl=$-993.75  maxDD=-15.8%
+
+[done in 187.1s]

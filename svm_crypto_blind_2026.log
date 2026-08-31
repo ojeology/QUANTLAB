@@ -1,0 +1,24 @@
+[setup] symbols in cache: 73
+[data] symbols with features: 71
+[signals] raw trades: 473
+[split] pre-freeze(train)=301  post-freeze(BLIND)=172
+[svm] q=0.75 keep-threshold(pred Pwin)=0.431  kept=144/172 test trades
+
+========================================================================
+CRYPTO SVM q0.75 — BLIND OOS TEST on 2026 (this year)
+Train = pre-2026 (2024-2025) | Test = 2026, SVM blind to 2026 | SVM(RBF) 14 feats | RR=1.5 | keep top q=0.75
+========================================================================
+
+[RAW Family A — post-freeze (no filter)]
+  n=172  WR=47.7%  PF=1.367  PF@0.05%=1.114  MDD=-18.8%
+  profitable-months=62.5%  worst-streak=2  ~t/mo=21.8
+
+[SVM q0.75 — post-freeze (BLIND, kept)]
+  n=144  WR=50.7%  PF=1.542  PF@0.05%=1.247  MDD=-17.5%
+  profitable-months=75.0%  worst-streak=2  ~t/mo=18.6
+
+[SVM — pre-freeze (in-sample ref)]
+  n=301  WR=50.5%  PF=1.530  PF@0.05%=1.321  MDD=-28.6%
+  profitable-months=45.5%  worst-streak=3  ~t/mo=13.5
+
+[done in 0.0s]

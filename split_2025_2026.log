@@ -1,0 +1,24 @@
+[load] building universe + features …
+[split] train(2024)=105  2025=196  2026=172
+
+======================================================================
+CROSS-REGIME q=0.65  (SVM trained on 2024 only; threshold from 2024)
+======================================================================
+
+[2025 ONLY  (trained-on-2024 → 2025)]
+  n=161  WR=58.4%  PF=2.104  PF@0.05%=1.811  MDD=-22.4%  prof-months=58.3%  worst=2  t/mo=13.8
+
+[2026 ONLY  (trained-on-2024 → 2026)]
+  n=144  WR=48.6%  PF=1.419  PF@0.05%=1.156  MDD=-17.8%  prof-months=75.0%  worst=2  t/mo=18.2
+
+======================================================================
+CROSS-REGIME q=0.75  (SVM trained on 2024 only; threshold from 2024)
+======================================================================
+
+[2025 ONLY  (trained-on-2024 → 2025)]
+  n=161  WR=58.4%  PF=2.104  PF@0.05%=1.811  MDD=-22.4%  prof-months=58.3%  worst=2  t/mo=13.8
+
+[2026 ONLY  (trained-on-2024 → 2026)]
+  n=144  WR=48.6%  PF=1.419  PF@0.05%=1.156  MDD=-17.8%  prof-months=75.0%  worst=2  t/mo=18.2
+
+[done]

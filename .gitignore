@@ -1,0 +1,9 @@
+quantlab_cache/
+quantlab_output/
+__pycache__/
+*.parquet
+*.db
+*.png
+*.csv
+numba/
+.agents/
