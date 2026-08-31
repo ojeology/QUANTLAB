@@ -1,0 +1,31 @@
+[load] persisted 2023-2026 series …
+[load] symbols: 30
+[signals] RAW trades 2023-2026: 387
+
+================================================================================================
+ADAPTIVE RULE HUNT (persisted 2023-2026)  PF@cost per year — survive ALL?
+================================================================================================
+   regime    thr |      2024      2025      2026 | survive all?
+ adx_high     20 | 0.992(n59) 1.609(n77) 1.531(n47) |  no
+ adx_high     25 | 1.002(n59) 1.516(n81) 1.442(n52) | YES
+ adx_high     30 | 0.954(n63) 1.776(n91) 1.282(n57) |  no
+ adx_high     35 | 0.768(n64) 1.656(n85) 1.327(n58) |  no
+ adx_high     40 | 0.892(n68) 1.769(n88) 1.423(n58) |  no
+ vol_high    1.0 | 0.861(n67) 1.906(n97) 1.693(n57) |  no
+ vol_high    1.5 | 0.580(n64) 1.939(n98) 1.628(n58) |  no
+ vol_high    2.0 | 0.877(n71) 2.011(n108) 1.628(n58) |  no
+ vol_high    2.5 | 0.580(n64) 2.011(n108) 1.628(n58) |  no
+dist_high    2.0 | 1.179(n60) 1.817(n73) 1.528(n47) | YES
+dist_high    4.0 | 1.079(n63) 1.805(n92) 1.489(n51) | YES
+dist_high    6.0 | 0.642(n66) 1.962(n104) 1.620(n60) |  no
+dist_high    8.0 | 0.728(n69) 2.011(n108) 1.628(n58) |  no
+ rsi_extr     20 | 0.580(n64) 2.011(n108) 1.628(n58) |  no
+ rsi_extr     25 | 0.877(n71) 1.939(n98) 1.628(n58) |  no
+ rsi_extr     30 | 0.877(n71) 1.949(n106) 1.845(n55) |  no
+
+=== ADAPTIVE SURVIVORS (PF@cost > 1 in 2024 AND 2025 AND 2026) ===
+  regime=dist_high thr=2.0  PF@c 24=1.179 25=1.817 26=1.528  avg=1.508
+  regime=dist_high thr=4.0  PF@c 24=1.079 25=1.805 26=1.489  avg=1.458
+  regime=adx_high thr=25  PF@c 24=1.002 25=1.516 26=1.442  avg=1.320
+
+[done]
