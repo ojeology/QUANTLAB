@@ -1,0 +1,36 @@
+[rehearsal] loading 73-sym 1H cache (2024-2026) …
+[rehearsal] 71 symbols, 453 raw 1H signals, mldf=453
+[rehearsal] champion trades taken 2025-2026: 268
+
+==============================================================================
+PAPER-TRADING REHEARSAL — SVMQ65Adaptive (deploy module), 73-sym 1H
+==============================================================================
+
+[2025] trades=160 win=59% PF@cost=1.833 return(1% risk)=+80.2% MAX DD=-26.3%
+   month      n   win%   netR   prof?
+   2025-01     10    10%   -8.10  LOSS
+   2025-02      6    50%   +1.07  OK
+   2025-03      2     0%   -2.22  LOSS
+   2025-04      1   100%   +1.32  OK
+   2025-05     16    38%   -2.44  LOSS
+   2025-06     29    17%  -19.67  LOSS
+   2025-07      7    86%   +7.40  OK
+   2025-08     31    94%  +39.02  OK
+   2025-09     13    62%   +5.59  OK
+   2025-10     24    92%  +28.85  OK
+   2025-11      7    29%   -2.50  LOSS
+   2025-12     14    79%  +11.92  OK
+
+[2026] trades=108 win=52% PF@cost=1.315 return(1% risk)=+19.1% MAX DD=-13.5%
+   month      n   win%   netR   prof?
+   2026-01     14    36%   -2.97  LOSS
+   2026-02      1     0%   -1.05  LOSS
+   2026-03     40    70%  +25.26  OK
+   2026-04     11    64%   +4.54  OK
+   2026-05     27    41%   -2.99  LOSS
+   2026-06      7    14%   -5.30  LOSS
+   2026-07      8    50%   +0.86  OK
+
+[FULL 2025-2026] trades=268 win=56% PF@cost=1.602 return(1% risk)=+114.7% MAX DD=-26.3%
+
+[done]
