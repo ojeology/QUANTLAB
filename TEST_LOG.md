@@ -31,7 +31,7 @@ Goal: a strategy that survives 2024/2025/2026 with good drawdown and profitable 
 - **T20. CAGE TRAP (false-breakout: break below cage + reclaim → fade back to center).** Reason: alternative trap reading. Result: **FAILS** — PF@cost 0.580 (2025 0.67, 2026 0.49), 671 trades, 28–35% win. Raw cage signal is a net loser. → try cage raw + SVM filter (T21).
 - **T21. CAGE raw + SVM q0.65 + adaptive VolCeil (champion pipeline on cage).** Reason: same filter that turned Family A raw into the champion. Result: **MARGINAL** — PF@cost 1.024 (2025 1.25, 2026 0.86 loses), DD −0.5%. Does NOT beat MR-SVM. Cage hypothesis exhausted; MR-SVM remains only validated 3-yr survivor.
 - **T22. 4H-CAGE TRAP on 1H (fade 4H high/low on 1H reversal).** Reason: user-directed — use 4H candle's range as the "cage", catch the bounce at the 4H extreme on 1H. Result: **FAILS catastrophically** — 104k trades (over-trading: fires on every 1H tag of the 4H extreme), PF@cost 0.699 (2025 0.72, 2026 0.68), MDD −25%. Entry far too loose. → refine to ONE bounce per 4H bar (T23).
-- **T23. 4H-CAGE TRAP refined (ONE bounce per 4H bar + confirmation).** Reason: match intent — trap price at the 4H extreme once, catch that single bounce. → running.
+- **T23. 4H-CAGE TRAP refined (ONE bounce per 4H bar).** Reason: match intent — trap at 4H extreme once, catch single bounce. Result: **CATASTROPHIC** — PF@cost 0.514 (2025 0.53, 2026 0.49), MDD −51%, 0/12 & 0/7 profitable-months, 130k trades. Fading 4H extremes on 1H = catching falling knives. → cage hypothesis EXHAUSTED; MR-SVM is the only survivor.
 - **T24. FINALIZE sized 1H MR-SVM (30-sym, 0.5% risk) into demo_bot.** Reason: only validated 3-year survivor. → pending.
 
 ## Standing conclusion
