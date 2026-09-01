@@ -1,0 +1,82 @@
+[load] fetch+SAVE 2023 + cache 2024-2026 (20-sym) …
+  loaded+saved BTC_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved ETH_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved SOL_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved BNB_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved XRP_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved DOGE_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved ADA_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved AVAX_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved LINK_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved DOT_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved LTC_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved TRX_USDT_SWAP: 26724 bars (2023-07-12)
+  loaded+saved ATOM_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved NEAR_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved APT_USDT_SWAP: 31113 bars (2023-01-10)
+  loaded+saved ARB_USDT_SWAP: 29374 bars (2023-03-24)
+  loaded+saved OP_USDT_SWAP: 31112 bars (2023-01-11)
+  loaded+saved SUI_USDT_SWAP: 28353 bars (2023-05-05)
+  loaded+saved ETC_USDT_SWAP: 26557 bars (2023-07-19)
+  loaded+saved XLM_USDT_SWAP: 26562 bars (2023-07-19)
+[load] subset: 20  (2023 saved to quantlab_cache_2023/)
+[signals] raw Family-A trades 2023-2026: 281
+
+======================================================================
+WHAT THE ML LEARNED — top conditions driving REVERSAL-success (wins):
+======================================================================
+   adx14            0.133
+   breadth_q        0.106
+   ema_dist_pct     0.103
+   dist_hi48        0.100
+   rsi14            0.092
+   atr_rank         0.091
+   rel_vol          0.086
+   real_vol_20      0.080
+   bb_width         0.078
+   prev_body_r      0.076
+   prev_range_r     0.048
+   green_streak     0.006
+
+[bt] condition-aware RF champion trades: 156
+
+================================================================================
+TEST 24 — CONDITION-AWARE ML (RF learns reversal-vs-continuation + reasons)
+================================================================================
+
+[2024] n=45 win=40% PF@c=0.998 MAX DD=-8.7% prof-months=4/10
+   2024-01  netR=  -4.00  LOSS
+   2024-02  netR=  -0.50  LOSS
+   2024-03  netR=  +1.50  OK
+   2024-05  netR=  -1.01  LOSS
+   2024-06  netR=  +3.99  OK
+   2024-07  netR=  -1.00  LOSS
+   2024-09  netR=  -2.50  LOSS
+   2024-10  netR=  +0.49  OK
+   2024-11  netR=  -1.00  LOSS
+   2024-12  netR=  +3.99  OK
+
+[2025] n=71 win=62% PF@c=2.440 MAX DD=-7.7% prof-months=6/11
+   2025-01  netR=  -4.00  LOSS
+   2025-02  netR=  +0.50  OK
+   2025-03  netR=  -1.00  LOSS
+   2025-04  netR=  +3.00  OK
+   2025-05  netR=  -2.01  LOSS
+   2025-06  netR=  -2.50  LOSS
+   2025-07  netR=  +3.00  OK
+   2025-08  netR= +16.98  OK
+   2025-09  netR=  -1.01  LOSS
+   2025-10  netR= +17.98  OK
+   2025-12  netR=  +7.99  OK
+
+[2026] n=40 win=45% PF@c=1.225 MAX DD=-14.5% prof-months=3/6
+   2026-01  netR=  +1.49  OK
+   2026-03  netR= +15.99  OK
+   2026-04  netR=  +3.00  OK
+   2026-05  netR= -10.51  LOSS
+   2026-06  netR=  -4.00  LOSS
+   2026-07  netR=  -1.00  LOSS
+
+[FULL 2024-2026] n=156 PF@c=1.576
+
+[done]
