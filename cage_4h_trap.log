@@ -1,0 +1,68 @@
+[load] fetch 2023 + cache 2024-2026 (20-sym) …
+  loaded BTC_USDT_SWAP: 31133 bars
+  loaded ETH_USDT_SWAP: 31133 bars
+  loaded SOL_USDT_SWAP: 31133 bars
+  loaded BNB_USDT_SWAP: 31132 bars
+  loaded XRP_USDT_SWAP: 31133 bars
+  loaded DOGE_USDT_SWAP: 31133 bars
+  loaded ADA_USDT_SWAP: 31132 bars
+  loaded AVAX_USDT_SWAP: 31133 bars
+  loaded LINK_USDT_SWAP: 31133 bars
+  loaded DOT_USDT_SWAP: 31132 bars
+  loaded LTC_USDT_SWAP: 31133 bars
+  loaded TRX_USDT_SWAP: 26744 bars
+  loaded ATOM_USDT_SWAP: 31132 bars
+  loaded NEAR_USDT_SWAP: 31132 bars
+  loaded APT_USDT_SWAP: 31133 bars
+  loaded ARB_USDT_SWAP: 29394 bars
+  loaded OP_USDT_SWAP: 31132 bars
+  loaded SUI_USDT_SWAP: 28373 bars
+  loaded ETC_USDT_SWAP: 26577 bars
+  loaded XLM_USDT_SWAP: 26582 bars
+[load] subset: 20
+[bt] 4H-cage trap trades 2023-2026: 104381
+
+================================================================================
+TEST 22 — 4H-CAGE TRAP on 1H (fade 4H extremes on 1H reversal)
+================================================================================
+
+[2024] n=30826 win=46% PF@c=0.701 MAX DD=-29.4% prof-months=0/12
+   2024-01  netR=  -2.86  LOSS
+   2024-02  netR=  -3.09  LOSS
+   2024-03  netR=  -3.87  LOSS
+   2024-04  netR=  -0.39  LOSS
+   2024-05  netR=  -2.21  LOSS
+   2024-06  netR=  -1.25  LOSS
+   2024-07  netR=  -4.78  LOSS
+   2024-08  netR=  -1.79  LOSS
+   2024-09  netR=  -3.88  LOSS
+   2024-10  netR=  -3.55  LOSS
+   2024-11  netR=  -4.08  LOSS
+   2024-12  netR=  -2.66  LOSS
+
+[2025] n=29553 win=46% PF@c=0.722 MAX DD=-25.2% prof-months=1/12
+   2025-01  netR=  -3.26  LOSS
+   2025-02  netR=  -1.23  LOSS
+   2025-03  netR=  -3.56  LOSS
+   2025-04  netR=  -1.11  LOSS
+   2025-05  netR=  -2.32  LOSS
+   2025-06  netR=  -3.36  LOSS
+   2025-07  netR=  -4.72  LOSS
+   2025-08  netR=  -3.59  LOSS
+   2025-09  netR=  -2.27  LOSS
+   2025-10  netR=  -0.32  LOSS
+   2025-11  netR=  +0.02  OK
+   2025-12  netR=  -3.27  LOSS
+
+[2026] n=17724 win=45% PF@c=0.675 MAX DD=-15.3% prof-months=0/7
+   2026-01  netR=  -1.14  LOSS
+   2026-02  netR=  -4.62  LOSS
+   2026-03  netR=  -1.29  LOSS
+   2026-04  netR=  -2.16  LOSS
+   2026-05  netR=  -1.27  LOSS
+   2026-06  netR=  -3.01  LOSS
+   2026-07  netR=  -2.94  LOSS
+
+[FULL 2024-2026] n=104381 PF@c=0.699
+
+[done]
