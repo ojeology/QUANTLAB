@@ -1,0 +1,42 @@
+[load] 1H (fetch 2023 + cache) + 1D for 20-sym …
+[load] 1H=20  1D=20
+[bt] 1H-MR trades=90  1D-Trend trades=125
+
+====================================================================================
+MULTI-TIMEFRAME PORTFOLIO: 1H mean-reversion + 1D trend (50/50, 0.5% risk)
+====================================================================================
+
+[2024] n(MR+Tr)=87 win=40% PF@c=0.918 ret(1%)=-0.4% MAX DD=-2.8% prof-months=5/12
+   2024-01  netR=  -2.55  LOSS
+   2024-02  netR=  +1.44  OK
+   2024-03  netR=  +1.55  OK
+   2024-04  netR=  +1.52  OK
+   2024-05  netR=  +0.28  OK
+   2024-06  netR=  +3.08  OK
+   2024-07  netR=  -1.28  LOSS
+   2024-08  netR=  -0.70  LOSS
+   2024-09  netR=  -2.16  LOSS
+   2024-10  netR=  -2.22  LOSS
+   2024-11  netR=  -0.28  LOSS
+   2024-12  netR=  -0.39  LOSS
+
+[2025] n(MR+Tr)=86 win=49% PF@c=1.645 ret(1%)=+2.5% MAX DD=-1.5% prof-months=7/11
+   2025-01  netR=  +2.44  OK
+   2025-02  netR=  +1.65  OK
+   2025-04  netR=  +2.33  OK
+   2025-05  netR=  +1.26  OK
+   2025-06  netR=  -1.11  LOSS
+   2025-07  netR=  -0.32  LOSS
+   2025-08  netR=  -0.62  LOSS
+   2025-09  netR=  -2.27  LOSS
+   2025-10  netR=  +0.66  OK
+   2025-11  netR=  +0.42  OK
+   2025-12  netR=  +5.52  OK
+
+[2026] n(MR+Tr)=5 win=20% PF@c=0.319 ret(1%)=-0.1% MAX DD=-0.1% prof-months=0/2
+   2026-01  netR=  -0.03  LOSS
+   2026-06  netR=  -0.20  LOSS
+
+[FULL 2024-2026] PF@c=1.190 ret(1%)=+1.8% MAX DD=-2.8%
+
+[done]
