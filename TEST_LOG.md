@@ -29,7 +29,7 @@ Goal: a strategy that survives 2024/2025/2026 with good drawdown and profitable 
 - **T18. Multi-TF portfolio (1H MR + 1D trend).** Reason: 1D trend wins 2024/25, 1H MR wins 2026. Result: FAILS — 2024 PF 0.92, 2026 sparse, FULL PF 1.19.
 - **T19. CAGE mechanism — fade lower wall (EMA50 ± 2.5·ATR band; long when close<=lower wall in ADX<30 + tight-BB regime, target=cage center).** Reason: user-directed "trap price at a price that follows rules". Result: **FAILS** — PF@cost 0.613 (2025 0.71, 2026 0.57), 1357 trades (over-traded), 18–21% win. Fading the lower wall = catching falling knives. → try false-breakout variant (T20).
 - **T20. CAGE TRAP (false-breakout: break below cage + reclaim → fade back to center).** Reason: alternative trap reading. Result: **FAILS** — PF@cost 0.580 (2025 0.67, 2026 0.49), 671 trades, 28–35% win. Raw cage signal is a net loser. → try cage raw + SVM filter (T21).
-- **T21. CAGE raw + SVM q0.65 + adaptive VolCeil (champion pipeline on cage).** Reason: same filter that turned Family A raw into the champion. → running.
+- **T21. CAGE raw + SVM q0.65 + adaptive VolCeil (champion pipeline on cage).** Reason: same filter that turned Family A raw into the champion. Result: **MARGINAL** — PF@cost 1.024 (2025 1.25, 2026 0.86 loses), DD −0.5%. Does NOT beat MR-SVM. Cage hypothesis exhausted; MR-SVM remains only validated 3-yr survivor.
 - **T22. FINALIZE sized 1H MR-SVM (30-sym, 0.5% risk) into demo_bot.** Reason: only validated 3-year survivor. → pending.
 
 ## Standing conclusion

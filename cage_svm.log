@@ -4,3 +4,66 @@
   loaded SOL_USDT_SWAP: 31113 bars
   loaded BNB_USDT_SWAP: 31112 bars
   loaded XRP_USDT_SWAP: 31113 bars
+  loaded DOGE_USDT_SWAP: 31113 bars
+  loaded ADA_USDT_SWAP: 31112 bars
+  loaded AVAX_USDT_SWAP: 31113 bars
+  loaded LINK_USDT_SWAP: 31113 bars
+  loaded DOT_USDT_SWAP: 31112 bars
+  loaded LTC_USDT_SWAP: 31113 bars
+  loaded TRX_USDT_SWAP: 26724 bars
+  loaded ATOM_USDT_SWAP: 31112 bars
+  loaded NEAR_USDT_SWAP: 31112 bars
+  loaded APT_USDT_SWAP: 31113 bars
+  loaded ARB_USDT_SWAP: 29374 bars
+  loaded OP_USDT_SWAP: 31112 bars
+  loaded SUI_USDT_SWAP: 28353 bars
+  loaded ETC_USDT_SWAP: 26557 bars
+  loaded XLM_USDT_SWAP: 26562 bars
+[load] subset: 20
+[cage] raw signals 2023-2026: 671
+[bt] cage+SVM champion trades: 356
+
+================================================================================
+TEST 21 — CAGE raw signals + SVM q0.65 + adaptive VolCeil
+================================================================================
+
+[2024] n=104 win=46% PF@c=0.913 MAX DD=-0.3% prof-months=6/12
+   2024-01  netR=  -0.19  LOSS
+   2024-02  netR=  +0.07  OK
+   2024-03  netR=  +0.02  OK
+   2024-04  netR=  -0.03  LOSS
+   2024-05  netR=  -0.04  LOSS
+   2024-06  netR=  +0.15  OK
+   2024-07  netR=  +0.00  OK
+   2024-08  netR=  -0.05  LOSS
+   2024-09  netR=  -0.12  LOSS
+   2024-10  netR=  +0.04  OK
+   2024-11  netR=  +0.09  OK
+   2024-12  netR=  -0.01  LOSS
+
+[2025] n=136 win=53% PF@c=1.246 MAX DD=-0.4% prof-months=5/12
+   2025-01  netR=  -0.08  LOSS
+   2025-02  netR=  -0.01  LOSS
+   2025-03  netR=  -0.07  LOSS
+   2025-04  netR=  -0.00  LOSS
+   2025-05  netR=  -0.10  LOSS
+   2025-06  netR=  +0.10  OK
+   2025-07  netR=  -0.01  LOSS
+   2025-08  netR=  +0.26  OK
+   2025-09  netR=  +0.00  OK
+   2025-10  netR=  +0.05  OK
+   2025-11  netR=  -0.04  LOSS
+   2025-12  netR=  +0.18  OK
+
+[2026] n=116 win=39% PF@c=0.863 MAX DD=-0.5% prof-months=5/7
+   2026-01  netR=  +0.03  OK
+   2026-02  netR=  +0.09  OK
+   2026-03  netR=  -0.41  LOSS
+   2026-04  netR=  +0.04  OK
+   2026-05  netR=  -0.06  LOSS
+   2026-06  netR=  +0.12  OK
+   2026-07  netR=  +0.07  OK
+
+[FULL 2024-2026] n=356 PF@c=1.024
+
+[done]
