@@ -1,0 +1,35 @@
+[load] fetch 1D 2023-2026 for 20-sym …
+  loaded BTC_USDT_SWAP: 1380 1D bars
+  loaded ETH_USDT_SWAP: 1380 1D bars
+  loaded SOL_USDT_SWAP: 1380 1D bars
+  loaded BNB_USDT_SWAP: 1330 1D bars
+  loaded XRP_USDT_SWAP: 1380 1D bars
+  loaded DOGE_USDT_SWAP: 1380 1D bars
+  loaded ADA_USDT_SWAP: 1380 1D bars
+  loaded AVAX_USDT_SWAP: 1380 1D bars
+  loaded LINK_USDT_SWAP: 1380 1D bars
+  loaded DOT_USDT_SWAP: 1380 1D bars
+  loaded LTC_USDT_SWAP: 1380 1D bars
+  loaded TRX_USDT_SWAP: 1380 1D bars
+  loaded ATOM_USDT_SWAP: 1380 1D bars
+  loaded NEAR_USDT_SWAP: 1380 1D bars
+  loaded APT_USDT_SWAP: 1380 1D bars
+  loaded ARB_USDT_SWAP: 1240 1D bars
+  loaded OP_USDT_SWAP: 1380 1D bars
+  loaded SUI_USDT_SWAP: 1197 1D bars
+  loaded ETC_USDT_SWAP: 1380 1D bars
+  loaded XLM_USDT_SWAP: 1380 1D bars
+[load] subset: 20
+[bt] MR trades=0  Trend trades=122
+
+--- MEAN-REVERSION (quantile mask + SVM adaptive VolCeil) (1D) ---
+[2024] no trades
+[2025] no trades
+[2026] no trades
+
+--- TREND (Donchian 1D) (1D) ---
+[2024] n=50 win=46% PF@c=4.342 MAX DD=-1.6% prof-months=5/9
+[2025] n=33 win=39% PF@c=2.375 MAX DD=-1.6% prof-months=4/10
+[2026] n=5 win=20% PF@c=0.319 MAX DD=-0.3% prof-months=0/2
+
+[done]
