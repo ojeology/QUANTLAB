@@ -1,0 +1,86 @@
+[load] fetch 2023 + cache 2024-2026 (20-sym) …
+  loaded BTC_USDT_SWAP: 31113 bars
+  loaded ETH_USDT_SWAP: 31113 bars
+  loaded SOL_USDT_SWAP: 31113 bars
+  loaded BNB_USDT_SWAP: 31112 bars
+  loaded XRP_USDT_SWAP: 31113 bars
+  loaded DOGE_USDT_SWAP: 31113 bars
+  loaded ADA_USDT_SWAP: 31112 bars
+  loaded AVAX_USDT_SWAP: 31113 bars
+  loaded LINK_USDT_SWAP: 31113 bars
+  loaded DOT_USDT_SWAP: 31112 bars
+  loaded LTC_USDT_SWAP: 31113 bars
+  loaded TRX_USDT_SWAP: 26724 bars
+  loaded ATOM_USDT_SWAP: 31112 bars
+  loaded NEAR_USDT_SWAP: 31112 bars
+  loaded APT_USDT_SWAP: 31113 bars
+  loaded ARB_USDT_SWAP: 29374 bars
+  loaded OP_USDT_SWAP: 31112 bars
+  loaded SUI_USDT_SWAP: 28353 bars
+  loaded ETC_USDT_SWAP: 26557 bars
+  loaded XLM_USDT_SWAP: 26562 bars
+[load] subset: 20
+[signals] 1H Donchian trend trades 2023-2026: 4656  mldf=4656
+
+======================================================================
+CONDITIONS THE ML LEARNED for STRONG TRENDS (top drivers of trend-trade wins):
+======================================================================
+   rsi14            0.379
+   ema_dist_pct     0.321
+   dist_hi48        0.065
+   breadth_q        0.063
+   bb_width         0.032
+   rel_vol          0.028
+   adx14            0.023
+   green_streak     0.021
+   real_vol_20      0.020
+   atr_rank         0.017
+   prev_range_r     0.016
+   prev_body_r      0.015
+
+[bt] condition-aware trend trades: 2591
+
+================================================================================
+TEST 25 — CONDITION-AWARE TREND (1H Donchian + RF filter, top-65%)
+================================================================================
+
+[2024] n=1056 win=36% PF@c=1.744 MAX DD=-2.1% prof-months=8/12
+   2024-01  netR=  -0.70  LOSS
+   2024-02  netR=  +0.05  OK
+   2024-03  netR=  -0.51  LOSS
+   2024-04  netR=  -0.79  LOSS
+   2024-05  netR=  +0.91  OK
+   2024-06  netR=  -0.02  LOSS
+   2024-07  netR=  +1.40  OK
+   2024-08  netR=  +1.16  OK
+   2024-09  netR=  +1.49  OK
+   2024-10  netR=  +0.34  OK
+   2024-11  netR=  +8.17  OK
+   2024-12  netR=  +0.26  OK
+
+[2025] n=999 win=36% PF@c=1.529 MAX DD=-2.4% prof-months=7/12
+   2025-01  netR=  +1.54  OK
+   2025-02  netR=  -0.86  LOSS
+   2025-03  netR=  -0.58  LOSS
+   2025-04  netR=  +0.95  OK
+   2025-05  netR=  +1.62  OK
+   2025-06  netR=  +0.01  OK
+   2025-07  netR=  +3.60  OK
+   2025-08  netR=  +1.01  OK
+   2025-09  netR=  +1.33  OK
+   2025-10  netR=  -0.15  LOSS
+   2025-11  netR=  -0.75  LOSS
+   2025-12  netR=  -0.56  LOSS
+
+[2026] n=536 win=37% PF@c=1.537 MAX DD=-1.2% prof-months=4/7
+   2026-01  netR=  +2.15  OK
+   2026-02  netR=  +0.29  OK
+   2026-03  netR=  -0.45  LOSS
+   2026-04  netR=  -0.36  LOSS
+   2026-05  netR=  +1.35  OK
+   2026-06  netR=  -0.07  LOSS
+   2026-07  netR=  +0.15  OK
+
+[FULL 2024-2026] n=2591 PF@c=1.627
+
+[done]
