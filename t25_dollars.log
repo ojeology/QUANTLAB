@@ -1,0 +1,22 @@
+[load] fetch 2023 + cache 2024-2026 (20-sym) …
+[load] subset: 20
+[signals] 1H Donchian trades 2023-2026: 4656
+[bt] T25 condition-aware trend champion trades: 2591
+
+==============================================================================
+T25 in DOLLARS — start $100, $2 risk per trade (fixed)
+==============================================================================
+[2024] start $100.00 -> end $123.53  return +23.5%  MAX DD -4.2%  trades=1056 win=36%
+[2025] start $123.53 -> end $137.87  return +11.6%  MAX DD -3.9%  trades=999 win=36%
+[2026] start $137.87 -> end $143.99  return +4.4%  MAX DD -1.7%  trades=536 win=37%
+[FULL] start $100 -> end $143.99  total return +44.0%
+
+==============================================================================
+T25 in DOLLARS — start $100, 2% of EQUITY per trade (fractional, compounding)
+==============================================================================
+[2024] start $100.00 -> end $126.22  return +26.2%  MAX DD -4.1%  trades=1056 win=36%
+[2025] start $126.22 -> end $145.56  return +15.3%  MAX DD -4.8%  trades=999 win=36%
+[2026] start $145.56 -> end $154.72  return +6.3%  MAX DD -2.4%  trades=536 win=37%
+[FULL] start $100 -> end $154.72  total return +54.7%
+
+[done]
