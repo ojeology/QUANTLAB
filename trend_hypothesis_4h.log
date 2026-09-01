@@ -1,0 +1,69 @@
+[load] fetch 4H 2023-2026 for 20-sym subset …
+  loaded BTC_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded ETH_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded SOL_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded BNB_USDT_SWAP: 8091 4H bars (2022-12-23 -> 2026-09-01)
+  loaded XRP_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded DOGE_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded ADA_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded AVAX_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded LINK_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded DOT_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded LTC_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded TRX_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded ATOM_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded NEAR_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded APT_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded ARB_USDT_SWAP: 7549 4H bars (2023-03-23 -> 2026-09-01)
+  loaded OP_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded SUI_USDT_SWAP: 7294 4H bars (2023-05-05 -> 2026-09-01)
+  loaded ETC_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+  loaded XLM_USDT_SWAP: 8200 4H bars (2022-12-05 -> 2026-09-01)
+[load] subset: 20
+[bt] total 4H trend trades 2023-2026: 847
+
+==================================================================================
+NEW HYPOTHESIS: Trend-following Donchian on 4H — different environment
+==================================================================================
+
+[2024] trades=254 win=34% PF@cost=2.387 ret(1%)=+14.1% MAX DD=-1.9% prof-months=5/12
+   2024-01  netR=  -1.20  LOSS
+   2024-02  netR=  -0.14  LOSS
+   2024-03  netR=  +1.44  OK
+   2024-04  netR=  -0.65  LOSS
+   2024-05  netR=  -0.12  LOSS
+   2024-06  netR=  -0.20  LOSS
+   2024-07  netR=  -0.24  LOSS
+   2024-08  netR=  -0.21  LOSS
+   2024-09  netR=  +0.18  OK
+   2024-10  netR=  +0.25  OK
+   2024-11  netR=  +3.79  OK
+   2024-12  netR= +10.42  OK
+
+[2025] trades=213 win=34% PF@cost=1.005 ret(1%)=+0.0% MAX DD=-3.3% prof-months=3/12
+   2025-01  netR=  -0.98  LOSS
+   2025-02  netR=  -0.26  LOSS
+   2025-03  netR=  -0.92  LOSS
+   2025-04  netR=  -0.45  LOSS
+   2025-05  netR=  +0.23  OK
+   2025-06  netR=  -0.87  LOSS
+   2025-07  netR=  +3.53  OK
+   2025-08  netR=  +0.62  OK
+   2025-09  netR=  -0.20  LOSS
+   2025-10  netR=  -0.33  LOSS
+   2025-11  netR=  -0.22  LOSS
+   2025-12  netR=  -0.11  LOSS
+
+[2026] trades=142 win=32% PF@cost=0.942 ret(1%)=-0.2% MAX DD=-2.1% prof-months=2/8
+   2026-01  netR=  -0.01  LOSS
+   2026-02  netR=  -0.24  LOSS
+   2026-03  netR=  -1.15  LOSS
+   2026-04  netR=  -0.10  LOSS
+   2026-05  netR=  +0.36  OK
+   2026-06  netR=  -0.22  LOSS
+   2026-07  netR=  -0.65  LOSS
+   2026-08  netR=  +1.76  OK
+
+[FULL 2024-2026] trades=847 PF@cost=1.619 ret(1%)=+21.4% MAX DD=-5.4%
+
+[done]
