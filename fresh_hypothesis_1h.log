@@ -1,0 +1,16 @@
+[load] 73-sym 1H cache (2024-2026) …
+[load] symbols: 71
+
+================================================================================
+FRESH HYPOTHESIS: multiple 1H signal definitions — which carry a persistent edge?
+(testable years 2025/2026; 2024 needs 2023)
+================================================================================
+family                      2025 PF@c  2026 PF@c  both>1?
+A  [BBW,RV,DST,PRG]green  2.357(n120) 1.197(n95)  YES
+B  [BBW,DST,PRG]green     1.713(n234)1.238(n193)  YES
+C  [BBW,RV,PRG]green      1.156(n523)0.948(n427)   no
+D  [BBW,RV,DST,PRG,ADX]grn       -          -      no
+E  [BBW,PRG]green         1.162(n886)0.707(n694)   no
+F  [BBW,RV,DST,PRG]red    2.357(n120) 1.197(n95)  YES
+
+[done]
