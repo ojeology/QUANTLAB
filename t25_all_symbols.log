@@ -1,0 +1,20 @@
+[load] all symbols in cache …
+[load] 73 symbols found
+[load] usable: 71
+[signals] 1H Donchian trades 2024-2026: 8417 across 71 syms
+[bt] T25 condition-aware trend champion trades (all syms): 4787
+
+==================================================================================
+TEST 25c — T25 condition-aware TREND on FULL universe (all cached symbols)
+==================================================================================
+
+[2025] n=2874 win=32% PF@c=1.396 MAX DD=-7.2% prof-months=7/12  symbols-profitable=50/61
+
+[2026] n=1913 win=33% PF@c=1.612 MAX DD=-2.6% prof-months=6/8  symbols-profitable=48/71
+
+[FULL 2025-2026] n=4787 PF@c=1.479 MAX DD=-7.2%
+[2025] $100 start -> $136.60 (+36.6%)
+[2026] $100 start -> $171.78 (+25.8%)
+[FULL $] $100 -> $171.78 (+71.8%)
+
+[done]
