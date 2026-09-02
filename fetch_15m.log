@@ -1,0 +1,15 @@
+[start] 12 majors; 0 done
+  saved BTC_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [1/12]
+  saved ETH_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [2/12]
+  saved SOL_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [3/12]
+  saved BNB_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [4/12]
+  saved XRP_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [5/12]
+  saved DOGE_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [6/12]
+  saved ADA_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [7/12]
+  saved AVAX_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [8/12]
+  saved LINK_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [9/12]
+  saved DOT_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [10/12]
+  saved LTC_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [11/12]
+  saved TRX_USDT_SWAP: 20000 15m bars (2026-02-05 -> 2026-09-02) [12/12]
+[done] 15m fetch pass complete
+12 symbols fetched total

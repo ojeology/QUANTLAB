@@ -1,0 +1,30 @@
+[load] 12 majors 15m …
+  loaded ADA_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded AVAX_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded BNB_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded BTC_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded DOGE_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded DOT_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded ETH_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded LINK_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded LTC_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded SOL_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded TRX_USDT_SWAP: 19980 bars (2026-02-05)
+  loaded XRP_USDT_SWAP: 19980 bars (2026-02-05)
+[load] usable: 12
+[signals] 15m Donchian trades: 1898
+[split] train=940 test=958
+[bt] 15m champion (test half): 678
+
+==============================================================================
+TEST 28 — 15m condition-aware TREND (proof-of-concept, 2026-05-15..09 test)
+==============================================================================
+n=678 win=28% PF@c=1.357 MAX DD=-0.6% prof-months=2/5
+   2026-05  netR=  -0.20  LOSS
+   2026-06  netR=  -0.27  LOSS
+   2026-07  netR=  +0.13  OK
+   2026-08  netR=  +1.59  OK
+   2026-09  netR=  -0.06  LOSS
+$100 @ $2/trade -> $102.37 (+2.4%)
+
+[done]
