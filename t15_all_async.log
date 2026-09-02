@@ -1,0 +1,20 @@
+[fetch] 73 symbols; fetching 15m (7mo) in parallel …
+[fetch] done 27 symbols in 22s
+[load] 15m parquets …
+[load] usable 15m: 38
+[signals] 15m Donchian trades (7mo): 2064 across 38 syms
+[split] train=858 test=1206
+[bt] 15m champion (test half, all syms): 870
+
+================================================================================
+TEST 29 — 15m condition-aware TREND on FULL universe, last 7 months (test half)
+================================================================================
+n=870 win=29% PF@c=1.580 MAX DD=-1.2% prof-months=2/5 symbols-profitable=23/38
+   2026-05  netR=  -0.24  LOSS
+   2026-06  netR=  -0.22  LOSS
+   2026-07  netR=  +0.17  OK
+   2026-08  netR=  +3.50  OK
+   2026-09  netR=  -0.04  LOSS
+$100 @ $2/trade -> $106.34 (+6.3%) over ~3.5mo (test half)
+
+[done]
