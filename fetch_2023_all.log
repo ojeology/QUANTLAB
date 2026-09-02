@@ -1,0 +1,76 @@
+[start] 73 symbols in cache; 0 done
+  saved 1INCH_USDT_SWAP: 26258 bars (2023-07-18) [1/73]
+  skip AAOI_USDT_SWAP (no 2023 fetched)
+  saved AAVE_USDT_SWAP: 26582 bars (2023-07-18) [2/73]
+  saved ADA_USDT_SWAP: 31132 bars (2023-01-10) [3/73]
+  saved ALGO_USDT_SWAP: 26582 bars (2023-07-18) [4/73]
+  skip ALLO_USDT_SWAP (no 2023 fetched)
+  saved APT_USDT_SWAP: 31133 bars (2023-01-10) [5/73]
+  saved ARB_USDT_SWAP: 29394 bars (2023-03-23) [6/73]
+  saved ATOM_USDT_SWAP: 31132 bars (2023-01-10) [7/73]
+  saved AVAX_USDT_SWAP: 31133 bars (2023-01-10) [8/73]
+  saved AXS_USDT_SWAP: 26569 bars (2023-07-18) [9/73]
+  saved BCH_USDT_SWAP: 31133 bars (2023-01-10) [10/73]
+  skip BEAT_USDT_SWAP (no 2023 fetched)
+  saved BICO_USDT_SWAP: 26700 bars (2023-07-21) [11/73]
+  saved BNB_USDT_SWAP: 31132 bars (2023-01-10) [12/73]
+  saved BONK_USDT_SWAP: 22423 bars (2024-01-08) [13/73]
+  saved BTC_USDT_SWAP: 31133 bars (2023-01-10) [14/73]
+  saved CHZ_USDT_SWAP: 26475 bars (2023-07-18) [15/73]
+  skip CL_USDT_SWAP (no 2023 fetched)
+  saved COMP_USDT_SWAP: 26158 bars (2023-07-18) [16/73]
+  saved CRV_USDT_SWAP: 26582 bars (2023-07-18) [17/73]
+  saved DOGE_USDT_SWAP: 31133 bars (2023-01-10) [18/73]
+  saved DOT_USDT_SWAP: 31132 bars (2023-01-10) [19/73]
+  saved DYDX_USDT_SWAP: 26744 bars (2023-07-12) [20/73]
+  saved EGLD_USDT_SWAP: 26464 bars (2023-07-18) [21/73]
+  skip ENA_USDT_SWAP (no 2023 fetched)
+  saved ETC_USDT_SWAP: 26577 bars (2023-07-18) [22/73]
+  saved ETH_USDT_SWAP: 31133 bars (2023-01-10) [23/73]
+  skip FET_USDT_SWAP (no 2023 fetched)
+  saved FIL_USDT_SWAP: 31132 bars (2023-01-10) [24/73]
+  saved FLOKI_USDT_SWAP: 26734 bars (2023-07-12) [25/73]
+  saved GALA_USDT_SWAP: 26582 bars (2023-07-18) [26/73]
+  saved GMX_USDT_SWAP: 26744 bars (2023-07-12) [27/73]
+  saved GRT_USDT_SWAP: 26498 bars (2023-07-18) [28/73]
+  saved HBAR_USDT_SWAP: 25899 bars (2023-08-16) [29/73]
+  skip HOME_USDT_SWAP (no 2023 fetched)
+  skip HYPE_USDT_SWAP (no 2023 fetched)
+  saved ICP_USDT_SWAP: 26582 bars (2023-07-18) [30/73]
+  saved IMX_USDT_SWAP: 26534 bars (2023-07-18) [31/73]
+  saved INJ_USDT_SWAP: 23349 bars (2023-11-30) [32/73]
+  skip KORU_USDT_SWAP (no 2023 fetched)
+  saved LDO_USDT_SWAP: 26744 bars (2023-07-12) [33/73]
+  saved LINK_USDT_SWAP: 31133 bars (2023-01-10) [34/73]
+  saved LTC_USDT_SWAP: 31133 bars (2023-01-10) [35/73]
+  skip MU_USDT_SWAP (no 2023 fetched)
+  saved NEAR_USDT_SWAP: 31132 bars (2023-01-10) [36/73]
+  saved OP_USDT_SWAP: 31132 bars (2023-01-10) [37/73]
+  saved PEPE_USDT_SWAP: 28421 bars (2023-05-03) [38/73]
+  skip PUMP_USDT_SWAP (no 2023 fetched)
+  saved SAND_USDT_SWAP: 26546 bars (2023-07-18) [39/73]
+  saved SATS_USDT_SWAP: 22925 bars (2023-12-18) [40/73]
+  saved SHIB_USDT_SWAP: 26582 bars (2023-07-18) [41/73]
+  skip SKHYNIX_USDT_SWAP (no 2023 fetched)
+  skip SKHY_USDT_SWAP (no 2023 fetched)
+  skip SNDK_USDT_SWAP (no 2023 fetched)
+  skip SNXX_USDT_SWAP (no 2023 fetched)
+  saved SNX_USDT_SWAP: 26528 bars (2023-07-18) [42/73]
+  saved SOL_USDT_SWAP: 31133 bars (2023-01-10) [43/73]
+  skip SOXL_USDT_SWAP (no 2023 fetched)
+  skip SPCX_USDT_SWAP (no 2023 fetched)
+  saved STX_USDT_SWAP: 26554 bars (2023-07-18) [44/73]
+  saved SUI_USDT_SWAP: 28373 bars (2023-05-05) [45/73]
+  saved SUSHI_USDT_SWAP: 26577 bars (2023-07-18) [46/73]
+  saved TRX_USDT_SWAP: 26744 bars (2023-07-12) [47/73]
+  skip UB_USDT_SWAP (no 2023 fetched)
+  saved UNI_USDT_SWAP: 31132 bars (2023-01-10) [48/73]
+  skip WIF_USDT_SWAP (no 2023 fetched)
+  skip XAG_USDT_SWAP (no 2023 fetched)
+  skip XAU_USDT_SWAP (no 2023 fetched)
+  saved XLM_USDT_SWAP: 26582 bars (2023-07-18) [49/73]
+  saved XRP_USDT_SWAP: 31133 bars (2023-01-10) [50/73]
+  skip ZBT_USDT_SWAP (no 2023 fetched)
+  skip ZEC_USDT_SWAP (no 2023 fetched)
+[done] fetch 2023 pass complete
+50 symbols fetched in total

@@ -1,0 +1,23 @@
+[load] 50 symbols with 2023 saved …
+[load] 50 symbols from manifest
+[load] usable: 50
+[signals] trades 2023-2026: 10737 across 50 syms
+[bt] T25 champion trades (broad universe): 6758
+
+==================================================================================
+TEST 25d — T25 condition-aware TREND, FULL 3-YEAR, broad universe (50 syms)
+==================================================================================
+
+[2024] n=2788 win=33% PF@c=1.570 MAX DD=-2.7% prof-months=8/12 symbols-prof=41/50
+
+[2025] n=2567 win=32% PF@c=1.393 MAX DD=-7.2% prof-months=8/12 symbols-prof=43/50
+
+[2026] n=1403 win=33% PF@c=1.392 MAX DD=-3.6% prof-months=5/7 symbols-prof=32/50
+
+[FULL 2024-2026] PF@c=1.472 MAX DD=0.0%
+[2024] $100 -> $153.81 (+53.8%)
+[2025] $100 -> $185.20 (+20.4%)
+[2026] $100 -> $199.70 (+7.8%)
+[FULL $] $100 -> $199.70 (+99.7%)
+
+[done]
