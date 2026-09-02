@@ -1,0 +1,60 @@
+[fetch] 2023 1H for 20 subset …
+[fetch] 2023 done
+[load] 20-sym full 1H …
+[load] usable: 20
+[build] T25 trend + MR + unified …
+[champ] MR=98 TREND=2591 UNIFIED=2776
+
+--- SUB-STRATEGIES ---
+  MR [2024] n=37 win=46% PF=1.257 DD=-6.8%
+  MR [2025] n=61 win=66% PF=2.852 DD=-5.9%
+  MR [FULL] PF=2.074
+  TREND [2024] n=1056 win=36% PF=1.744 DD=-2.1%
+  TREND [2025] n=999 win=36% PF=1.529 DD=-2.4%
+  TREND [2026] n=536 win=37% PF=1.537 DD=-1.2%
+  TREND [FULL] PF=1.627
+  UNIFIED [2024] n=1113 win=36% PF=1.114 DD=-9.4%
+  UNIFIED [2025] n=1088 win=37% PF=1.996 DD=-9.9%
+  UNIFIED [2026] n=575 win=38% PF=1.322 DD=-12.3%
+  UNIFIED [FULL] PF=1.489
+
+======================================================================
+
+--- COMBINED MULTI-STRATEGY (MR+TREND+UNIFIED) (equal risk 0.3% x3 subs) ---
+  [2024] n_trades=587 win=35% PF=1.169 MAX DD=-2.6% prof-months=6/12
+     2024-01 netR= -0.033 LOSS
+     2024-02 netR= +0.034 OK
+     2024-03 netR= +0.010 OK
+     2024-04 netR= -0.007 LOSS
+     2024-05 netR= -0.010 LOSS
+     2024-06 netR= +0.026 OK
+     2024-07 netR= -0.000 LOSS
+     2024-08 netR= +0.004 OK
+     2024-09 netR= -0.006 LOSS
+     2024-10 netR= -0.011 LOSS
+     2024-11 netR= +0.040 OK
+     2024-12 netR= +0.014 OK
+  [2025] n_trades=563 win=32% PF=1.329 MAX DD=-3.0% prof-months=6/12
+     2025-01 netR= -0.020 LOSS
+     2025-02 netR= -0.004 LOSS
+     2025-03 netR= -0.014 LOSS
+     2025-04 netR= +0.031 OK
+     2025-05 netR= +0.014 OK
+     2025-06 netR= -0.012 LOSS
+     2025-07 netR= +0.016 OK
+     2025-08 netR= +0.037 OK
+     2025-09 netR= +0.032 OK
+     2025-10 netR= -0.015 LOSS
+     2025-11 netR= -0.010 LOSS
+     2025-12 netR= +0.045 OK
+  [2026] n_trades=307 win=40% PF=1.034 MAX DD=-1.8% prof-months=6/7
+     2026-01 netR= +0.005 OK
+     2026-02 netR= +0.000 OK
+     2026-03 netR= +0.005 OK
+     2026-04 netR= +0.012 OK
+     2026-05 netR= +0.001 OK
+     2026-06 netR= -0.009 LOSS
+     2026-07 netR= +0.002 OK
+  [FULL] PF=1.207 MAX DD=-3.0%
+$100 @ ~$2/trade total -> $100.02 (+0.0%)
+[done]

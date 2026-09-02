@@ -1,0 +1,10 @@
+
+=== HTTP reachability ===
+  https://deriv.com -> HTTP 200, 218119 bytes
+  https://api.deriv.com/ -> HTTP 200, 57916 bytes
+  https://ws.binaryws.com/ -> HTTP 200, 218119 bytes
+
+=== WebSocket ws.binaryws.com ping ===
+  WS FAIL: Handshake status 401 Unauthorized -+-+- {'date': 'Wed, 02 Sep 2026 17:52:48 GMT', 'content-type': 'application/json;charset=UTF-8', 'content-length': '24', 'connection': 'keep-alive', 'server': 'cloudflare', 'sec-websocket-accept': 'O/BnvuQnRVhnDvlrlKBI6DudAl8=', 'content-language': 'en', 'upgrade': 'websocket', 'cf-cache-status': 'DYNAMIC', 'cf-ray': 'a34e5eda895f5907-SEA', 'alt-svc': 'h3=":443"; ma=86400'} -+-+- b'{"error":"InvalidAppID"}'
+
+[done]

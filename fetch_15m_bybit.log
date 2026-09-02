@@ -1,0 +1,23 @@
+[start] 20 core symbols from Bybit (3yr 15m, async)
+  ATOM_USDT_SWAP: only 0 bars
+  BNB_USDT_SWAP: only 0 bars
+  AVAX_USDT_SWAP: only 0 bars
+  ETH_USDT_SWAP: only 0 bars
+  XRP_USDT_SWAP: only 0 bars
+  NEAR_USDT_SWAP: only 0 bars
+  LTC_USDT_SWAP: only 0 bars
+  DOT_USDT_SWAP: only 0 bars
+  DOGE_USDT_SWAP: only 0 bars
+  APT_USDT_SWAP: only 0 bars
+  ADA_USDT_SWAP: only 0 bars
+  SOL_USDT_SWAP: only 0 bars
+  LINK_USDT_SWAP: only 0 bars
+  TRX_USDT_SWAP: only 0 bars
+  BTC_USDT_SWAP: only 0 bars
+  ARB_USDT_SWAP: only 0 bars
+  SUI_USDT_SWAP: only 0 bars
+  ETC_USDT_SWAP: only 0 bars
+  XLM_USDT_SWAP: only 0 bars
+  OP_USDT_SWAP: only 0 bars
+[done] Bybit 15m fetched 0 core symbols
+[elapsed] 20s

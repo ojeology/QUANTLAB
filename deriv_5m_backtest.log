@@ -1,0 +1,25 @@
+[pull] R_75 5m from 2026-01-01 …
+[pull] got 70259 5m candles (2026-01-01 00:05:00+00:00 -> 2026-09-02 00:00:00+00:00)
+
+[BACKTEST] R_75 5m  candles=70240  test=21072
+  naive 'always up' accuracy = 50.0%
+  RF full-test accuracy     = 49.7%
+  TRADED (P>=0.60 or <0.40): n=7  WIN RATE = 57.1%
+  -> edge vs 55% bar: NO (need >=55% & enough trades)
+
+--- threshold 0.55 ---
+
+[BACKTEST] R_75 5m  candles=70240  test=21072
+  naive 'always up' accuracy = 50.0%
+  RF full-test accuracy     = 49.7%
+  TRADED (P>=0.55 or <0.45): n=45  WIN RATE = 42.2%
+  -> edge vs 55% bar: NO (need >=55% & enough trades)
+
+--- threshold 0.65 ---
+
+[BACKTEST] R_75 5m  candles=70240  test=21072
+  naive 'always up' accuracy = 50.0%
+  RF full-test accuracy     = 49.7%
+  TRADED (P>=0.65 or <0.35): n=0  WIN RATE = nan%
+  -> edge vs 55% bar: NO (need >=55% & enough trades)
+[done]

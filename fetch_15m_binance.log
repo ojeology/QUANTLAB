@@ -1,0 +1,23 @@
+[start] 20 core symbols from Binance (3yr 15m, async)
+  LTC_USDT_SWAP: only 10 bars
+  AVAX_USDT_SWAP: only 10 bars
+  LINK_USDT_SWAP: only 10 bars
+  DOGE_USDT_SWAP: only 10 bars
+  APT_USDT_SWAP: only 10 bars
+  BNB_USDT_SWAP: only 10 bars
+  XRP_USDT_SWAP: only 10 bars
+  ADA_USDT_SWAP: only 10 bars
+  TRX_USDT_SWAP: only 10 bars
+  NEAR_USDT_SWAP: only 10 bars
+  DOT_USDT_SWAP: only 10 bars
+  ATOM_USDT_SWAP: only 10 bars
+  BTC_USDT_SWAP: only 10 bars
+  SOL_USDT_SWAP: only 10 bars
+  ETH_USDT_SWAP: only 10 bars
+  ARB_USDT_SWAP: only 10 bars
+  OP_USDT_SWAP: only 10 bars
+  ETC_USDT_SWAP: only 10 bars
+  XLM_USDT_SWAP: only 10 bars
+  SUI_USDT_SWAP: only 10 bars
+[done] Binance 15m fetched 0 core symbols
+[elapsed] 20s

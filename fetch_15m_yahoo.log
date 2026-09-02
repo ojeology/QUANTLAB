@@ -1,0 +1,23 @@
+[start] 20 core symbols from Yahoo (3yr 15m, async)
+  ETH_USDT_SWAP: only 0 rows
+  DOGE_USDT_SWAP: only 0 rows
+  ADA_USDT_SWAP: only 0 rows
+  BTC_USDT_SWAP: only 0 rows
+  DOT_USDT_SWAP: only 0 rows
+  BNB_USDT_SWAP: only 0 rows
+  SOL_USDT_SWAP: only 0 rows
+  XRP_USDT_SWAP: only 0 rows
+  LINK_USDT_SWAP: only 0 rows
+  AVAX_USDT_SWAP: only 0 rows
+  APT_USDT_SWAP: only 0 rows
+  LTC_USDT_SWAP: only 0 rows
+  SUI_USDT_SWAP: only 0 rows
+  OP_USDT_SWAP: only 0 rows
+  ATOM_USDT_SWAP: only 0 rows
+  TRX_USDT_SWAP: only 0 rows
+  NEAR_USDT_SWAP: only 0 rows
+  ARB_USDT_SWAP: only 0 rows
+  XLM_USDT_SWAP: only 0 rows
+  ETC_USDT_SWAP: only 0 rows
+[done] Yahoo 15m fetched 0 core symbols
+[elapsed] 1s

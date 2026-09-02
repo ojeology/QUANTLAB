@@ -1,0 +1,36 @@
+[forex 15m] 10 pairs, 2024-01..2026-09
+[pull] frxEURUSD 15m …
+  frxEURUSD: n=3551 full_acc=50.7%  win@.55=53.2%(n=312)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxGBPUSD 15m …
+  frxGBPUSD: n=3551 full_acc=52.2%  win@.55=55.1%(n=254)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxUSDJPY 15m …
+  frxUSDJPY: n=3551 full_acc=49.5%  win@.55=51.1%(n=364)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxAUDUSD 15m …
+  frxAUDUSD: n=3551 full_acc=50.4%  win@.55=56.3%(n=71)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxUSDCHF 15m …
+  frxUSDCHF: n=3551 full_acc=55.4%  win@.55=61.1%(n=36)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxEURGBP 15m …
+  frxEURGBP: n=3551 full_acc=52.7%  win@.55=56.1%(n=239)  win@.60=0.0%(n=1)  win@.65=0.0%(n=0)
+[pull] frxUSDCAD 15m …
+  frxUSDCAD: n=3551 full_acc=48.6%  win@.55=55.9%(n=145)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxEURJPY 15m …
+  frxEURJPY: n=3551 full_acc=49.5%  win@.55=52.1%(n=374)  win@.60=46.8%(n=79)  win@.65=0.0%(n=0)
+[pull] frxGBPJPY 15m …
+  frxGBPJPY: n=3551 full_acc=52.4%  win@.55=54.7%(n=391)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+[pull] frxNZDUSD 15m …
+  frxNZDUSD: n=3551 full_acc=53.3%  win@.55=59.5%(n=74)  win@.60=0.0%(n=0)  win@.65=0.0%(n=0)
+
+==============================================================================
+FOREX 15m — DIRECTIONAL ACCURACY (binary needs >55%)
+==============================================================================
+  frxEURUSD    full_acc=50.7%  win.55=53.2%(312)  win.60=0.0%(0)  no
+  frxGBPUSD    full_acc=52.2%  win.55=55.1%(254)  win.60=0.0%(0)  no
+  frxUSDJPY    full_acc=49.5%  win.55=51.1%(364)  win.60=0.0%(0)  no
+  frxAUDUSD    full_acc=50.4%  win.55=56.3%(71)  win.60=0.0%(0)  no
+  frxUSDCHF    full_acc=55.4%  win.55=61.1%(36)  win.60=0.0%(0)  EDGE ✓
+  frxEURGBP    full_acc=52.7%  win.55=56.1%(239)  win.60=0.0%(1)  no
+  frxUSDCAD    full_acc=48.6%  win.55=55.9%(145)  win.60=0.0%(0)  no
+  frxEURJPY    full_acc=49.5%  win.55=52.1%(374)  win.60=46.8%(79)  no
+  frxGBPJPY    full_acc=52.4%  win.55=54.7%(391)  win.60=0.0%(0)  no
+  frxNZDUSD    full_acc=53.3%  win.55=59.5%(74)  win.60=0.0%(0)  no
+[done]

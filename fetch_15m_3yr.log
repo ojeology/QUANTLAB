@@ -1,0 +1,4 @@
+[fetch] 20 core symbols; 3-year 15m, chunked parallel (8 workers, retry)
+[fetch] fetched 2 this pass in 714s
+[fetch] core 15m files present: 18/20
+[done]

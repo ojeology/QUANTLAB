@@ -1,0 +1,51 @@
+[sweep] 15 instruments, 2026-01-01..09-02
+[pull] Vol-10 5m …
+  Vol-10 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Vol-25 5m …
+  Vol-25 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Vol-50 5m …
+  Vol-50 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Vol-75 5m …
+  Vol-75 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Vol-100 5m …
+  Vol-100 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Step 5m …
+  Step 5m: candles=70259  traded_n=0  WIN=n/a
+[pull] Jump-10 5m …
+    jump10 err: Symbol jump10 is invalid.
+  Jump-10 5m: NO DATA
+[pull] Jump-25 5m …
+    jump25 err: Symbol jump25 is invalid.
+  Jump-25 5m: NO DATA
+[pull] Jump-50 5m …
+    jump50 err: Symbol jump50 is invalid.
+  Jump-50 5m: NO DATA
+[pull] Jump-75 5m …
+    jump75 err: Symbol jump75 is invalid.
+  Jump-75 5m: NO DATA
+[pull] Jump-100 5m …
+    jump100 err: Symbol jump100 is invalid.
+  Jump-100 5m: NO DATA
+[pull] Vol-75 1m (finest) …
+  Vol-75 1m (finest): candles=351291  traded_n=0  WIN=n/a
+[pull] EURUSD 15m …
+  EURUSD 15m: candles=16189  traded_n=1  WIN=n/a
+[pull] GBPUSD 15m …
+  GBPUSD 15m: candles=16189  traded_n=0  WIN=n/a
+[pull] USDJPY 15m …
+  USDJPY 15m: candles=16189  traded_n=2  WIN=n/a
+
+======================================================================
+DERIV SWEEP — binary directional WIN RATE (need >=55% & enough trades)
+======================================================================
+  Vol-10 5m          candles= 70259  trades=    0  win=0.0%  no
+  Vol-25 5m          candles= 70259  trades=    0  win=0.0%  no
+  Vol-50 5m          candles= 70259  trades=    0  win=0.0%  no
+  Vol-75 5m          candles= 70259  trades=    0  win=0.0%  no
+  Vol-100 5m         candles= 70259  trades=    0  win=0.0%  no
+  Step 5m            candles= 70259  trades=    0  win=0.0%  no
+  Vol-75 1m (finest) candles=351291  trades=    0  win=0.0%  no
+  EURUSD 15m         candles= 16189  trades=    1  win=0.0%  no
+  GBPUSD 15m         candles= 16189  trades=    0  win=0.0%  no
+  USDJPY 15m         candles= 16189  trades=    2  win=0.0%  no
+[done]

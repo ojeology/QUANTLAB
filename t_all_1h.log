@@ -1,0 +1,33 @@
+[load] 20-sym full 1H (2023-2026) …
+[load] usable: 20
+[A] momentum rotation …
+
+--- A. CROSS-SECTIONAL MOMENTUM (top5 by 48-bar mom, daily rebal) ---
+  [2024] days=336 win=50% CAGR=+48.8% MAX DD=-63.0%
+  [2025] days=365 win=49% CAGR=-77.7% MAX DD=-81.3%
+  [2026] days=210 win=48% CAGR=-62.0% MAX DD=-53.6%
+  [FULL] days=911 win=49% CAGR=-49.2% MAX DD=-87.2%
+[B] trailing trend …
+  B champion trades: 2338
+
+--- B. TRAILING-EXIT TREND (Donchian + trailing stop, RF q65) ---
+  [2025] n=1505 win=42% PF@c=1.073 MAX DD=-1.6%
+  [2026] n=833 win=40% PF@c=0.955 MAX DD=-1.6%
+  [FULL] PF@c=1.035
+[C] unified MR+trend …
+  C champion trades: 2448
+
+--- C. UNIFIED MODEL (one RF on combined MR+trend raw signals, q65) ---
+  [2025] n=1585 win=42% PF@c=1.594 MAX DD=-16.9%
+  [2026] n=863 win=41% PF@c=1.349 MAX DD=-10.1%
+  [FULL] PF@c=1.498
+[D] BTC-ETH pairs …
+  D active bars: 9846
+
+--- D. BTC-ETH PAIRS (spread z-score mean-reversion) ---
+  [2024] days=4130 win=32% CAGR=-39.8% MAX DD=-99.7%
+  [2025] days=3654 win=37% CAGR=-39.0% MAX DD=-99.3%
+  [2026] days=2062 win=28% CAGR=-37.7% MAX DD=-93.1%
+  [FULL] days=9846 win=33% CAGR=-39.1% MAX DD=-100.0%
+
+[done]
