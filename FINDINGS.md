@@ -6,6 +6,19 @@
 
 ---
 
+## 2026-09-04 — T34 audit (small-account × implementability) — READ FIRST
+
+T34 re-ran the champions on the **full 50-symbol 2023→2026 universe** (2023 fetched from OKX; per-year walk-forward; fees 0.05%/side) to size a $100 account. Two corrections to the tables below:
+
+1. **The T25/T27 trend-leg numbers are exit-anchored, not implementable.** The trend simulator stamps each trade at the *exit* bar (`entry_time = df.index[i]` after close), so the RF-q65 "condition" filter reads exit-bar features. Verbatim reproduction on fetched data matches the log ($100→$198.79 vs $199.70), but the **same champion gated at the true entry bar is PF@c ≈ 1.03, $100→$106 — no live edge** (raw trend alone: 1.10/0.94/0.90). TP variants 1–3R are all negative. → treat every T25/T27/PORT trend PF ≥1.3 number below as **exit-anchored / superseded for live trading** until an entry-anchored trend gate is found.
+2. **The MR champion's 2024 is a real losing year on the full universe.** Full 50-sym run: n=297, PF@cost **0.739 / 2.151 / 1.610** (2024/25/26), return@1% **+71.2%** (30-sym log's +71.3% reproduces), **max DD @1% = −28.2%** (30-sym's −9.4% was sample luck; it missed 2024's losing regime). 2025/26 carry the result; robustness is still broad (15/30 profitable months, 36/49 symbols).
+
+**Result / recommendation for a small ($100) account:** the MR leg is the one genuine implementable edge. Its R:R optimum is **TP 2R / SL 1R** (mean R +0.30 vs +0.22 at the RR1.5 default; wr 47% vs 53%; full-Kelly 14.5%). At **1% risk/trade**: $100 → **$204 (+104%)** 2024→Jul-2026, CAGR ≈32%, MC P(profit) 99.9%, P(halve)≈0%, realized max DD **−37%** (an 18-month 2024→mid-2025 grind, trough ≈$63, then a +49% Aug-2025 month, +28% in 2026). RR1.5 @1% is the smoother alternative ($173, DD −27%). Risk ≥2% → realized DD −50…−80%; not for a small account. **Drop trend and the 70/30 sleeve at small-account size** — no live edge. Practical "leverage": 1% risk ≈ ~1× notional (MR stop ≈1.15% of price); 3–10× exchange leverage only for contract fit, never the risk dial.
+
+Files: `t34_lib.py`, `t34_validate.py`, `t34_small_account.py`, `t34_output/`. Pre-2024 data: `quantlab_cache_2023/` (re-fetch: `fetch_2023_50.py`).
+
+---
+
 ## What failed
 - **Raw Family A / Family C bot strategies** (as deployed): PF@cost ~1.0–1.1, weak. Family C even went negative on a full year.
 - **R077 "holy grail" (breadth50 + VolCeil static)**: PF@cost 0.75 → loses money after fees.

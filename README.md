@@ -65,7 +65,7 @@ QuantLab Research
 
 ---
 
-## Master Test Table (T1 - T33)
+## Master Test Table (T1 - T34)
 
 | # | Idea | Result |
 |---|-------|--------|
@@ -86,9 +86,9 @@ QuantLab Research
 | T18 | multi-TF portfolio | FAIL |
 | T19-T23 | CAGE false-breakout | FAIL |
 | T24 | Condition-aware ML (SVM) | PF 1.576 |
-| T25 | Condition-aware TREND (Donchian+RF) | PF 1.744 / 1.529 / 1.537 YES |
+| T25 | Condition-aware TREND (Donchian+RF) | PF 1.744 / 1.529 / 1.537 ⚠ exit-anchored — see T34 |
 | T26 | MR+Trend 50/50 | PF 1.21 / 1.33 / 1.81 |
-| T27 | MR+Trend 70/30 portfolio | PF 1.40 / 1.32 / 1.81, DD<1% YES |
+| T27 | MR+Trend 70/30 portfolio | PF 1.40 / 1.32 / 1.81, DD<1% ⚠ trend leg exit-anchored — see T34 |
 | T28 | 15m condition-aware | PF 1.58 / 1.75 / 0.94 (noisy) |
 | T29 | 15m broad universe | PF 1.580, 23/38 profitable (7-mo) |
 | T30/A | Cross-sectional momentum | FAIL (80% DD) |
@@ -98,15 +98,16 @@ QuantLab Research
 | T31 | Combined 3-strategy portfolio | PF 1.21 (< T27) |
 | T32 | Deriv reach + forex-15m binary (crypto method) | synthetics random; forex faint; data-capped |
 | T33 | Forex 1H spot (T25 method) | PF 1.099 (break-even); MR silent |
+| T34 | Small-account leverage × R:R ($100; implementability audit) | MR RR2 @1% risk: $100→$204, DD −37%; trend gate exit-anchored → NOT implementable |
 
 ---
 
 ## Key findings, by branch
 
 ### Main branch - Crypto 1H (the real edge)
-- **T25 (condition-aware trend):** Donchian breakout gated by ADX>20 & above EMA200, then an RF filter keeps the top-65% of setups by predicted win-probability. PF >= 1.5 every year, low DD. Strongest single-strategy edge.
-- **T27 (trend-weighted portfolio):** combines the MR champion (T24) with the trend champion (T25) at 70/30 risk. PF >= 1.3 every year with drawdown under 1% - the most consistent vehicle. Recommended deployable strategy.
-- Both validated walk-forward on 2024 / 2025 / 2026 (3 years), universe 20-73 symbols.
+- **MR champion (T24/T13, entry-anchored — the genuinely implementable edge):** FAM_A coiled signal + SVM q0.65 adaptive VolCeil, SL 1 ATR. On the FULL 50-symbol 2023→2026 universe: return@1% risk +71%, but 2024 is a real losing year (PF 0.74) and max DD @1% = −28% (T34b). **T34 recommendation (small account, $100): TP 2R instead of the 1.5R default, 1% risk/trade → $100→$204 (+104%), MC P(profit) 99.9%, P(halve)≈0.** Expect a −37% drawdown grind into mid-2025 before the +49% Aug-2025 month.
+- **T25 (condition-aware trend) / T27 (70/30 portfolio):** headline PF >= 1.3-1.5 every year / DD<1% is **exit-anchored — the RF gate reads exit-bar features**. Re-run with entry-only information (T34a): trend edge ≈ PF 1.03, no edge. **Not deployable as published** until an entry-anchored trend gate is found.
+- Historical numbers on 20-73 symbols stand as reported for their original exit-anchored pipeline; T34 is the implementability-corrected reading.
 
 ### Sub-branch B - Crypto 15m
 - 15m showed a real but noisier edge (T29 PF 1.58 on a 7-month window, 23/38 symbols profitable, ~6x the 1H trade count).
@@ -129,10 +130,9 @@ QuantLab Research
 ## Honest bottom line
 We tested every reachable trading type: crypto 1H (MR, trend, CAGE, momentum, pairs, unified, portfolios), crypto 15m, Deriv synthetics, forex 15m binary, forex 1H spot, and (attempted) stocks. The inescapable result:
 
-- **T25 / T27 on crypto 1H is the only validated, deployable strategy.** It is consistent and low-risk but compounds slowly.
-- **Everything faster or on other instruments is data-blocked or edge-less** in this environment.
-
-If you want a live, consistent strategy, finalise T27 into `demo_bot.py` for paper-trading. That is the one real engine this exploration produced.
+- **The one implementable, deployable edge is the 1H MR leg (SVM q0.65 adaptive VolCeil).** For a small account (T34, $100): TP 2R / SL 1R, 1% risk/trade → ~+104% over ~2.6 yr, near-zero ruin, accepting a −37% drawdown in year one-to-two.
+- **The T25/T27 trend "PF≥1.3, DD<1%" numbers are exit-anchored and superseded** for live/paper go-live (T34a: entry-only trend ≈ PF 1.03). Until an entry-anchored trend gate is found, do not size a real account on the trend leg.
+- Everything faster or on other instruments is **data-blocked or edge-less** in this environment.
 
 ---
 
