@@ -1,0 +1,69 @@
+
+==============================================================================================================
+  FOREX HUNT — F013  REALISTIC EDGE (daily momentum + validated-clock trades)
+==============================================================================================================
+
+  Loading 1H + building daily bars …
+  daily bars: 3471–4312 per pair
+
+  M1 TSMOM 20d — weekly legs
+    selection : n=  5250  PF= 0.95  PF@cost= 0.92
+    holdout   : n=   320  PF= 0.95  PF@cost= 0.90
+    LOO floor: 0.78   avg net R/leg: -0.070   legs/mo: 36
+    boot CI hol PF@cost: P5=0.68 med=0.90 P95=1.16
+    swap sens [+0.5 pip/day]: hol PF(net)=0.81
+    swap sens [-0.5 pip/day]: hol PF(net)=1.00
+    GATE (PF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  M1 TSMOM 60d — weekly legs
+    selection : n=  5203  PF= 0.99  PF@cost= 0.95
+    holdout   : n=   320  PF= 0.61  PF@cost= 0.58
+    LOO floor: 0.55   avg net R/leg: -0.353   legs/mo: 36
+    boot CI hol PF@cost: P5=0.45 med=0.58 P95=0.74
+    swap sens [+0.5 pip/day]: hol PF(net)=0.51
+    swap sens [-0.5 pip/day]: hol PF(net)=0.64
+    GATE (PF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  M1 TSMOM 120d — weekly legs
+    selection : n=  5123  PF= 1.07  PF@cost= 1.03
+    holdout   : n=   320  PF= 0.92  PF@cost= 0.87
+    LOO floor: 0.80   avg net R/leg: -0.093   legs/mo: 36
+    boot CI hol PF@cost: P5=0.67 med=0.87 P95=1.13
+    swap sens [+0.5 pip/day]: hol PF(net)=0.78
+    swap sens [-0.5 pip/day]: hol PF(net)=0.97
+    GATE (PF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  M2 EMA50/200 crossover segments
+    selection : n=   167  PF= 2.29  PF@cost= 2.26
+    holdout   : n=     8  PF= 0.17  PF@cost= 0.16
+    (insufficient n)
+
+------------------------------------------------------------------------------------------
+  F1/F2) CLOCK TRADES (selection <2024-04, holdout ≥2024-04) — 1H, retail costs
+------------------------------------------------------------------------------------------
+
+  F1 post-expansion fade (big morning → fade 06:00→15:00)
+    selection : n= 2628  PF= 3.17  PF@cost= 2.44
+    holdout   : n=  107  PF= 3.86  PF@cost= 2.65  WR=79%  avgR=+0.59
+    SL-first path check: hol PF@cost=0.20
+    boot CI hol PF@cost: P5=1.86 med=2.66 P95=4.19   LOO floor: 2.30
+    GATE (n≥200, PF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  F2 Tokyo-range breakout (00-06 range, break entry 06-15)
+    selection : n=21482  PF= 2.76  PF@cost= 2.03
+    holdout   : n= 1342  PF= 2.57  PF@cost= 1.57  WR=69%  avgR=+0.41
+    SL-first path check: hol PF@cost=0.15
+    no-bracket (direction-only, exit 15:00): hol PF@cost=0.83 (n=1342)
+    boot CI hol PF@cost: P5=1.42 med=1.57 P95=1.75   LOO floor: 1.49
+    GATE (n≥200, PF@cost>1.10, LOO>1.0): ✅ PASS
+
+------------------------------------------------------------------------------------------
+  REALITY CHECK: holdout legs at 0.5% risk/leg, compounding (median path)
+------------------------------------------------------------------------------------------
+    M1 TSMOM20d                        median end=  88.6 (≈-2.5%/yr at 0.5%/leg)  P(loss)=78%  DD med=-21.3% P5=-37.3%
+    M1 TSMOM60d                        median end=  55.9 (≈-11.5%/yr at 0.5%/leg)  P(loss)=100%  DD med=-45.7% P5=-58.2%
+    M1 TSMOM120d                       median end=  85.3 (≈-3.3%/yr at 0.5%/leg)  P(loss)=84%  DD med=-23.0% P5=-38.6%
+    F1 fade                            median end= 123.7 (≈+8.9%/yr at 0.5%/leg)  P(loss)=0%  DD med=-1.8% P5=-3.0%
+    F2 breakout                        median end= 352.7 (≈+65.6%/yr at 0.5%/leg)  P(loss)=0%  DD med=-5.3% P5=-8.1%
+
+  Done in 72s

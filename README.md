@@ -758,3 +758,38 @@ GitHub: https://github.com/ojeology
 
 *"The goal isn't to find a strategy that looks good. The goal is to find one that survives
 every attempt to prove it wrong."*
+
+---
+
+# 📅 UPDATE 2026-10-09 — F010–F013 (forex closed) + R096 (crypto champion revalidated)
+
+## Forex hunt: F010 → F013 — CLOSED, no edge survives honesty
+
+| Run | Question | Verdict |
+|---|---|---|
+| **F010** Trap forensics | When/what/why do big moves happen? | ✅ **Expansion clock is REAL**: big moves born **02:00–06:00 UTC** (Tokyo morning), ~2× base rate, replicated across a decade. Traps fuel bigger moves than clean breaks (1.10–1.14× vs 0.81–0.84×). But conditions forecast **volatility, not direction**. |
+| **F011** Direction engine | With-trend vs counter-trend trap-fade? | ❌ 0/3 configs pass. The clock is a *bad entry window* (fill quality worse). F007's edge is bear-side specific. |
+| **F012** 10-year validation | Does anything survive 8 virgin years (2016-23)? | ❌ 0/6 candidates. **CRITICAL FIND: yfinance 1H FX feed is labeled +4h off true UTC** (corr 0.9999 vs HistData) — F007's "London hr8" was really Tokyo 04:00. yfinance quarantined for intraday FX. |
+| **F013** Realistic edge | Daily momentum, MA cross, clock trades on 23y? | ❌ TSMOM dead post-2021 (0.58–0.90 holPF@cost). **1H bracket backtests are unresolvable** — SL-first path check turns PF 2.65/1.57 into 0.20/0.15. Path assumption manufactured the profits. |
+
+**Forex conclusion:** ~1 pip retail spread ≈ 0.10R at 1H scale — the cost wall eats everything
+measurable. The wall is structural. (Raw zips pipeline for HistData 23y lives in
+`scripts/fetch_forex_histdata.py`; Dukascopy TLS-blocked from this sandbox.)
+
+## Crypto: R096 year-end re-check — the champion LIVES
+
+Charter item from FOREX_HUNT_BEGINS.md: *"Re-run at end of 2026 with fresh data."*
+Data refreshed 2026-08-07 → 2026-10-09 (`scripts/refresh_okx.py`), R087 pipeline
+unchanged → `quantlab_r096_recheck.py`.
+
+| Config | 2026 holdout PF@cost | **FRESH window (Aug8→Oct9)** PF@cost | P(PF>1) |
+|---|---|---|---|
+| **SVM q0.55** | **1.30** (n=165) | **1.99** (n=31, CI P5 1.15) | **98%** |
+| SVM q0.75 | 1.14 (n=199) | 1.44 (n=48) | 90% |
+| raw (no ML) | ~1.3 | 1.38 | — |
+
+**Decision: PURSUE IN 2027 — ship q0.55, ≤0.06%/side all-in costs, 1% risk/trade,
+pre-committed kill-switch (rolling 3-mo PF@cost < 1.0 → halt & revalidate),
+monthly `refresh_okx.py` + `quantlab_r096_recheck.py`.**
+
+Reports: `quantlab_output/f01{0..3}_final_report.md` · `quantlab_output/r096_final_report.md`

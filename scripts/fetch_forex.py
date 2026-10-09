@@ -8,7 +8,7 @@ warnings.filterwarnings("ignore")
 import pandas as pd
 import yfinance as yf
 
-CACHE = "/home/user/quantlab/quantlab_cache/forex"
+CACHE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "quantlab_cache", "forex")
 os.makedirs(CACHE, exist_ok=True)
 
 PAIRS = {

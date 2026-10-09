@@ -1,0 +1,134 @@
+
+==============================================================================================================
+  FOREX HUNT — F010 v2  TRAP FORENSICS (fixed): when / what / why of big moves
+==============================================================================================================
+
+  Loading 1H data + causal features …
+  big6h threshold (P1, selection): 2.83 ATR
+
+------------------------------------------------------------------------------------------
+  1) WHEN: P(big 6h move) by birth session & hour (selection, base=10.0%)
+------------------------------------------------------------------------------------------
+    session     n      P(big)   lift   median|fwd6h|/ATR
+    ASIA        21348    10.2%   1.02x    1.01
+    LONDON      15216    17.3%   1.73x    1.29
+    NY_OVERLAP  15174     8.8%   0.88x    0.90
+    LATE_US     12203     4.4%   0.44x    0.66
+    ROLLOVER     8445     6.6%   0.66x    0.79
+
+    hour (UTC)  n      P(big)   lift   [peak birth hours = when]
+    00:00       3048     5.3%   0.53x  #####
+    01:00       3052     6.9%   0.69x  #######
+    02:00       3046     9.3%   0.93x  #########
+    03:00       3049    10.7%   1.07x  ###########
+    04:00       3052    11.6%   1.16x  ############
+    05:00       3053    12.6%   1.26x  #############
+    06:00       3048    15.1%   1.51x  ###############
+    07:00       3048    14.7%   1.47x  ###############
+    08:00       3047    15.1%   1.51x  ###############
+    09:00       3041    17.8%   1.78x  ##################
+    10:00       3043    19.3%   1.93x  ###################
+    11:00       3037    19.7%   1.97x  ####################
+    12:00       3032    16.3%   1.63x  ################
+    13:00       3034    12.9%   1.29x  #############
+    14:00       3034     7.0%   0.70x  #######
+    15:00       3035     4.2%   0.42x  ####
+    16:00       3039     3.6%   0.36x  ####
+    17:00       3042     4.2%   0.42x  ####
+    18:00       3054     4.2%   0.42x  ####
+    19:00       3053     4.2%   0.42x  ####
+    20:00       3054     4.9%   0.49x  #####
+    21:00       3003     6.1%   0.61x  ######
+    22:00       2723     7.2%   0.72x  #######
+    23:00       2719     6.6%   0.66x  #######
+
+------------------------------------------------------------------------------------------
+  2) WHAT: condition lift (selection, 6h label)
+------------------------------------------------------------------------------------------
+    condition                      n  P(big|c)   lift  P(up-big)  P(dn-big)
+    SQUEEZE (bb_rank≤.33)      23895     12.7%  1.27x        46%        54%
+    ADX>20 (trend active)      46901      9.3%  0.93x        50%        50%
+    VOL SURGE (rel≥1.3)        16350     12.4%  1.24x        51%        49%
+    NEAR P20 pool              16477     10.1%  1.01x        51%        49%
+    NEAR PD level              12666     10.1%  1.01x        51%        49%
+    NEAR any pool              24643      9.9%  0.99x        50%        50%
+
+    confluence score → P(big 6h)  [H2 monotone?]
+    score 0: n=  4523  P(big)=  7.1%  lift=0.71x
+    score 1: n= 22447  P(big)=  7.9%  lift=0.79x
+    score 2: n= 23896  P(big)=  9.9%  lift=0.99x
+    score 3: n= 15012  P(big)= 12.6%  lift=1.26x
+    score 4: n=  5636  P(big)= 13.6%  lift=1.36x
+    score 5: n=   872  P(big)= 14.0%  lift=1.40x
+
+------------------------------------------------------------------------------------------
+  3) WHY: structural sweep-and-fail vs clean break (selection)
+------------------------------------------------------------------------------------------
+    structural events (sel+hol): 30667  {'BRK_UP': 13236, 'BRK_DN': 11792, 'BEAR_TRAP': 2902, 'BULL_TRAP': 2737}
+    event         n(sel)  P(big6h)   lift  P(up-big)  P(dn-big)
+    BEAR_TRAP       2119     11.0%  1.10x        46%        54%
+    BULL_TRAP       1987     11.4%  1.14x        52%        48%
+    BRK_UP          9045      8.1%  0.81x        56%        44%
+    BRK_DN          8026      8.4%  0.84x        48%        52%
+    BEAR_TRAP: big moves land in fade direction 46% of the time (n_big=233)
+    BULL_TRAP: big moves land in fade direction 48% of the time (n_big=226)
+
+------------------------------------------------------------------------------------------
+  4) TRADE: 4H execution (F007 mirror) — aligned structural traps
+------------------------------------------------------------------------------------------
+  Building 4H frames …
+  4H outcomes (SL1·TP3·ATR, 24 bars, TP-before-SL) …
+  4H structural traps …
+  4H structural traps with outcomes: 2330
+
+  4H ALL structural traps (fade, no filter)
+    selection : n= 1669  PF= 1.03  PF@cost= 0.92
+    holdout*  : n=  661  PF= 1.04  PF@cost= 0.90   (*development holdout — seen via v1)
+    boot CI hol PF@cost: P5=0.77 med=0.89 P95=1.04
+    LOO floor: 0.83
+    hol PF@cost [ECN   ] = 0.98  [+swap] = 0.93
+    hol PF@cost [retail] = 0.90  [+swap] = 0.85
+    hol PF@cost [wide  ] = 0.84  [+swap] = 0.80
+    MC: P(end>100)=7%  P(end<90)=89%  DD med=-56.8% P5=-76.3%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  4H conf≥3 (fade)
+    selection : n= 1104  PF= 0.95  PF@cost= 0.85
+    holdout*  : n=  471  PF= 1.01  PF@cost= 0.87   (*development holdout — seen via v1)
+    boot CI hol PF@cost: P5=0.73 med=0.87 P95=1.03
+    LOO floor: 0.82
+    hol PF@cost [ECN   ] = 0.95  [+swap] = 0.90
+    hol PF@cost [retail] = 0.87  [+swap] = 0.83
+    hol PF@cost [wide  ] = 0.81  [+swap] = 0.78
+    MC: P(end>100)=6%  P(end<90)=89%  DD med=-51.6% P5=-70.9%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  4H conf≥4 (fade)
+    selection : n=  461  PF= 0.89  PF@cost= 0.80
+    holdout*  : n=  215  PF= 1.05  PF@cost= 0.91   (*development holdout — seen via v1)
+    boot CI hol PF@cost: P5=0.69 med=0.90 P95=1.16
+    LOO floor: 0.86
+    hol PF@cost [ECN   ] = 0.99  [+swap] = 0.94
+    hol PF@cost [retail] = 0.91  [+swap] = 0.87
+    hol PF@cost [wide  ] = 0.85  [+swap] = 0.81
+    MC: P(end>100)=25%  P(end<90)=60%  DD med=-29.2% P5=-48.3%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+------------------------------------------------------------------------------------------
+  5) 4H holdout anatomy (descriptive)
+------------------------------------------------------------------------------------------
+    squeeze     n= 283 PF@cost= 0.87
+    adx>20      n= 438 PF@cost= 0.83
+    vol-surge   n= 315 PF@cost= 0.97
+    near-liq    n= 533 PF@cost= 0.95
+    ASIA        n= 168 PF@cost= 0.95
+    LONDON      n= 146 PF@cost= 0.56
+    NY_OVERLAP  n= 295 PF@cost= 0.99
+    LATE_US     n=  52 PF@cost= 1.34
+    conf=1       n=  37 PF@cost= 1.26
+    conf=2       n= 149 PF@cost= 0.87
+    conf=3       n= 256 PF@cost= 0.84
+    conf=4       n= 168 PF@cost= 0.83
+    conf=5       n=  47 PF@cost= 1.25
+
+  Done in 5s → quantlab_output/f010_*

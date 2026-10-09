@@ -1,0 +1,85 @@
+
+==============================================================================================================
+  FOREX HUNT — F011  DIRECTION ENGINE INSIDE THE BIRTH WINDOW
+==============================================================================================================
+
+  Loading 1H data …
+  1H structural traps + context …
+
+------------------------------------------------------------------------------------------
+  1) WHY: where does fade DIRECTION come from? (1H birth study, selection)
+------------------------------------------------------------------------------------------
+    cell                      n  P(big6h)  %big in fade-dir
+    BEAR UP WIN             384     13.0%               58%
+    BEAR UP offW            911      8.1%               36%
+    BEAR DN WIN             447     16.6%               57%
+    BEAR DN offW           1114      9.8%               47%
+    BULL UP WIN             445     14.8%               44%
+    BULL UP offW           1052      9.2%               41%
+    BULL DN WIN             335     17.3%               43%
+    BULL DN offW            840     10.7%               51%
+
+  Building 4H frames + outcomes (SL1, TP3, 24 bars) …
+  4H traps with outcomes: structural=2724  mirror=26444
+
+------------------------------------------------------------------------------------------
+  2) FACTORIAL: trap x trend x window — fade PF@cost (structural 4H, selection)
+------------------------------------------------------------------------------------------
+    cell                           n     PF  PF@cost
+    BEAR UP-trend WIN            178   0.77     0.69
+    BEAR UP-trend offWin         356   0.95     0.85
+    BEAR DN-trend WIN            147   0.86     0.76
+    BEAR DN-trend offWin         345   1.26     1.13
+    BULL UP-trend WIN            200   1.04     0.93
+    BULL UP-trend offWin         322   1.44     1.30
+    BULL DN-trend WIN            153   1.18     1.05
+    BULL DN-trend offWin         267   0.91     0.82
+
+------------------------------------------------------------------------------------------
+  3) PRESPECIFIED CONFIGS (single-shot holdout battery)
+------------------------------------------------------------------------------------------
+
+  CFG-A  with-trend continuation, birth window (hr 04/08)
+    selection : n=  331  PF= 0.95  PF@cost= 0.85
+    holdout*  : n=  152  PF= 0.76  PF@cost= 0.66   (*dev holdout — seen via F010 v1)
+    F007 bdy  : pre-Aug25 PF@cost= 0.89 (n=160)  post-Aug25= 0.74 (n=323)
+    boot CI hol PF@cost: P5=0.46 med=0.66 P95=0.91
+    LOO floor: 0.56
+    hol PF@cost [ECN   ] = 0.72  [+swap] = 0.68
+    hol PF@cost [retail] = 0.66  [+swap] = 0.62
+    hol PF@cost [wide  ] = 0.61  [+swap] = 0.58
+    MC: P(end>100)=1%  P(end<90)=96%  DD med=-41.3% P5=-55.7%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  CFG-A2 with-trend continuation, all hours
+    selection : n=  954  PF= 0.94  PF@cost= 0.84
+    holdout*  : n=  372  PF= 0.97  PF@cost= 0.84   (*dev holdout — seen via F010 v1)
+    F007 bdy  : pre-Aug25 PF@cost= 0.89 (n=510)  post-Aug25= 0.81 (n=816)
+    boot CI hol PF@cost: P5=0.69 med=0.84 P95=1.03
+    LOO floor: 0.77
+    hol PF@cost [ECN   ] = 0.92  [+swap] = 0.87
+    hol PF@cost [retail] = 0.84  [+swap] = 0.80
+    hol PF@cost [wide  ] = 0.79  [+swap] = 0.75
+    MC: P(end>100)=5%  P(end<90)=91%  DD med=-48.7% P5=-68.2%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+  CFG-B  counter-trend reversal — F007 mirror (hr 8, 4 levels, 0.15)
+    selection : n= 1792  PF= 0.98  PF@cost= 0.88
+    holdout*  : n=  602  PF= 1.01  PF@cost= 0.88   (*dev holdout — seen via F010 v1)
+    F007 bdy  : pre-Aug25 PF@cost= 0.67 (n=957)  post-Aug25= 1.03 (n=1437)
+    boot CI hol PF@cost: P5=0.74 med=0.87 P95=1.01
+    LOO floor: 0.83
+    hol PF@cost [ECN   ] = 0.95  [+swap] = 0.91
+    hol PF@cost [retail] = 0.88  [+swap] = 0.83
+    hol PF@cost [wide  ] = 0.82  [+swap] = 0.78
+    MC: P(end>100)=5%  P(end<90)=91%  DD med=-57.7% P5=-76.1%
+    GATE (n≥200, holPF@cost>1.10, LOO>1.0): ❌ FAIL
+
+------------------------------------------------------------------------------------------
+  4) RR SENSITIVITY (selection, with-trend all-hours cell)
+------------------------------------------------------------------------------------------
+    RR 2.0: n=  954  PF= 0.91  PF@cost= 0.81
+    RR 3.0: n=  954  PF= 0.94  PF@cost= 0.84
+    RR 4.0: n=  954  PF= 1.04  PF@cost= 0.93
+
+  Done in 4s → quantlab_output/f011_*

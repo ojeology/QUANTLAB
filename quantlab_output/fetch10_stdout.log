@@ -1,0 +1,492 @@
+160 downloads queued (eurusd…, 2016-10/2026) …
+  [  1/160] ✓ eurusd 2017 None: ok 3286KB  (3s)
+  [  2/160] ✓ eurusd 2018 None: ok 3353KB  (3s)
+  [  3/160] ✓ eurusd 2019 None: ok 3082KB  (3s)
+  [  4/160] ✓ eurusd 2016 None: ok 3361KB  (3s)
+  [  5/160] ✓ eurusd 2021 None: ok 3208KB  (6s)
+  [  6/160] ✓ eurusd 2022 None: ok 3462KB  (6s)
+  [  7/160] ✓ eurusd 2020 None: ok 3339KB  (6s)
+  [  8/160] ✓ eurusd 2023 None: ok 2850KB  (6s)
+  [  9/160] ✓ eurusd 2026 1: ok 267KB  (8s)
+  [ 10/160] ✓ eurusd 2026 2: ok 252KB  (8s)
+  [ 11/160] ✓ eurusd 2024 None: ok 3153KB  (9s)
+  [ 12/160] ✓ eurusd 2025 None: ok 3360KB  (9s)
+  [ 13/160] ✓ eurusd 2026 3: ok 298KB  (10s)
+  [ 14/160] ✓ eurusd 2026 4: ok 277KB  (10s)
+  [ 15/160] ✓ eurusd 2026 5: ok 254KB  (11s)
+  [ 16/160] ✓ eurusd 2026 6: ok 272KB  (11s)
+  [ 17/160] ✓ eurusd 2026 7: ok 278KB  (12s)
+  [ 18/160] ✓ eurusd 2026 8: ok 252KB  (12s)
+  [ 19/160] ✓ eurusd 2026 10: ok 23KB  (12s)
+  [ 20/160] ✓ eurusd 2026 9: ok 253KB  (13s)
+  [ 21/160] ✓ gbpusd 2016 None: ok 3542KB  (15s)
+  [ 22/160] ✓ gbpusd 2017 None: ok 3351KB  (15s)
+  [ 23/160] ✓ gbpusd 2018 None: ok 3421KB  (15s)
+  [ 24/160] ✓ gbpusd 2019 None: ok 3331KB  (16s)
+  [ 25/160] ✓ gbpusd 2020 None: ok 3540KB  (18s)
+  [ 26/160] ✓ gbpusd 2021 None: ok 3366KB  (18s)
+  [ 27/160] ✓ gbpusd 2022 None: ok 3584KB  (18s)
+  [ 28/160] ✓ gbpusd 2023 None: ok 2978KB  (19s)
+  [ 29/160] ✓ gbpusd 2026 1: ok 275KB  (21s)
+  [ 30/160] ✓ gbpusd 2026 2: ok 264KB  (21s)
+  [ 31/160] ✓ gbpusd 2024 None: ok 3296KB  (21s)
+  [ 32/160] ✓ gbpusd 2025 None: ok 3414KB  (21s)
+  [ 33/160] ✓ gbpusd 2026 3: ok 308KB  (23s)
+  [ 34/160] ✓ gbpusd 2026 4: ok 287KB  (23s)
+  [ 35/160] ✓ gbpusd 2026 5: ok 265KB  (23s)
+  [ 36/160] ✓ gbpusd 2026 6: ok 283KB  (23s)
+  [ 37/160] ✓ gbpusd 2026 7: ok 289KB  (25s)
+  [ 38/160] ✓ gbpusd 2026 8: ok 261KB  (25s)
+  [ 39/160] ✓ gbpusd 2026 10: ok 23KB  (25s)
+  [ 40/160] ✓ gbpusd 2026 9: ok 263KB  (25s)
+  [ 41/160] ✓ usdjpy 2016 None: ok 3693KB  (28s)
+  [ 42/160] ✓ usdjpy 2017 None: ok 3555KB  (28s)
+  [ 43/160] ✓ usdjpy 2018 None: ok 3455KB  (28s)
+  [ 44/160] ✓ usdjpy 2019 None: ok 3251KB  (28s)
+  [ 45/160] ✓ usdjpy 2021 None: ok 3295KB  (31s)
+  [ 46/160] ✓ usdjpy 2020 None: ok 3379KB  (31s)
+  [ 47/160] ✓ usdjpy 2022 None: ok 3702KB  (31s)
+  [ 48/160] ✓ usdjpy 2023 None: ok 3208KB  (31s)
+  [ 49/160] ✓ usdjpy 2026 1: ok 300KB  (33s)
+  [ 50/160] ✓ usdjpy 2026 2: ok 293KB  (33s)
+  [ 51/160] ✓ usdjpy 2024 None: ok 3703KB  (34s)
+  [ 52/160] ✓ usdjpy 2025 None: ok 3766KB  (34s)
+  [ 53/160] ✓ usdjpy 2026 3: ok 318KB  (35s)
+  [ 54/160] ✓ usdjpy 2026 4: ok 299KB  (35s)
+  [ 55/160] ✓ usdjpy 2026 5: ok 273KB  (35s)
+  [ 56/160] ✓ usdjpy 2026 6: ok 270KB  (36s)
+  [ 57/160] ✓ usdjpy 2026 7: ok 299KB  (37s)
+  [ 58/160] ✓ usdjpy 2026 8: ok 287KB  (37s)
+  [ 59/160] ✓ usdjpy 2026 9: ok 306KB  (37s)
+  [ 60/160] ✓ usdjpy 2026 10: ok 25KB  (38s)
+  [ 61/160] ✓ audusd 2016 None: ok 3342KB  (40s)
+  [ 62/160] ✓ audusd 2017 None: ok 3159KB  (40s)
+  [ 63/160] ✓ audusd 2018 None: ok 3221KB  (40s)
+  [ 64/160] ✓ audusd 2019 None: ok 2995KB  (40s)
+  [ 65/160] ✓ audusd 2020 None: ok 3320KB  (43s)
+  [ 66/160] ✓ audusd 2021 None: ok 3261KB  (43s)
+  [ 67/160] ✓ audusd 2023 None: ok 2884KB  (43s)
+  [ 68/160] ✓ audusd 2022 None: ok 3438KB  (43s)
+  [ 69/160] ✓ audusd 2026 2: ok 258KB  (47s)
+  [ 70/160] ✓ audusd 2026 1: ok 259KB  (47s)
+  [ 71/160] ✓ audusd 2024 None: ok 3174KB  (47s)
+  [ 72/160] ✓ audusd 2025 None: ok 3196KB  (47s)
+  [ 73/160] ✓ audusd 2026 4: ok 276KB  (49s)
+  [ 74/160] ✓ audusd 2026 5: ok 256KB  (49s)
+  [ 75/160] ✓ audusd 2026 6: ok 269KB  (49s)
+  [ 76/160] ✓ audusd 2026 3: ok 301KB  (50s)
+  [ 77/160] ✓ audusd 2026 7: ok 271KB  (50s)
+  [ 78/160] ✓ audusd 2026 8: ok 247KB  (51s)
+  [ 79/160] ✓ audusd 2026 10: ok 22KB  (51s)
+  [ 80/160] ✓ audusd 2026 9: ok 250KB  (51s)
+  [ 81/160] ✓ usdcad 2016 None: ok 3503KB  (53s)
+  [ 82/160] ✓ usdcad 2018 None: ok 3357KB  (54s)
+  [ 83/160] ✓ usdcad 2017 None: ok 3320KB  (54s)
+  [ 84/160] ✓ usdcad 2019 None: ok 3123KB  (56s)
+  [ 85/160] ✓ usdcad 2020 None: ok 3408KB  (56s)
+  [ 86/160] ✓ usdcad 2022 None: ok 3495KB  (57s)
+  [ 87/160] ✓ usdcad 2021 None: ok 3346KB  (57s)
+  [ 88/160] ✓ usdcad 2023 None: ok 2915KB  (59s)
+  [ 89/160] ✓ usdcad 2026 1: ok 264KB  (59s)
+  [ 90/160] ✓ usdcad 2024 None: ok 3202KB  (59s)
+  [ 91/160] ✓ usdcad 2025 None: ok 3267KB  (60s)
+  [ 92/160] ✓ usdcad 2026 2: ok 254KB  (61s)
+  [ 93/160] ✓ usdcad 2026 3: ok 287KB  (61s)
+  [ 94/160] ✓ usdcad 2026 4: ok 267KB  (61s)
+  [ 95/160] ✓ usdcad 2026 5: ok 253KB  (62s)
+  [ 96/160] ✓ usdcad 2026 6: ok 271KB  (63s)
+  [ 97/160] ✓ usdcad 2026 7: ok 277KB  (63s)
+  [ 98/160] ✓ usdcad 2026 8: ok 255KB  (63s)
+  [ 99/160] ✓ usdcad 2026 9: ok 252KB  (64s)
+  [100/160] ✓ usdcad 2026 10: ok 21KB  (64s)
+  [101/160] ✓ usdchf 2016 None: ok 3261KB  (66s)
+  [102/160] ✓ usdchf 2017 None: ok 3217KB  (66s)
+  [103/160] ✓ usdchf 2019 None: ok 3007KB  (67s)
+  [104/160] ✓ usdchf 2018 None: ok 3174KB  (67s)
+  [105/160] ✓ usdchf 2021 None: ok 3096KB  (69s)
+  [106/160] ✓ usdchf 2020 None: ok 3192KB  (69s)
+  [107/160] ✓ usdchf 2023 None: ok 2835KB  (70s)
+  [108/160] ✓ usdchf 2022 None: ok 3344KB  (70s)
+  [109/160] ✓ usdchf 2024 None: ok 3177KB  (72s)
+  [110/160] ✓ usdchf 2025 None: ok 3234KB  (72s)
+  [111/160] ✓ usdchf 2026 2: ok 247KB  (72s)
+  [112/160] ✓ usdchf 2026 1: ok 261KB  (72s)
+  [113/160] ✓ usdchf 2026 4: ok 269KB  (74s)
+  [114/160] ✓ usdchf 2026 3: ok 283KB  (74s)
+  [115/160] ✓ usdchf 2026 5: ok 251KB  (74s)
+  [116/160] ✓ usdchf 2026 6: ok 267KB  (74s)
+  [117/160] ✓ usdchf 2026 10: ok 23KB  (76s)
+  [118/160] ✓ usdchf 2026 8: ok 254KB  (76s)
+  [119/160] ✓ usdchf 2026 9: ok 256KB  (76s)
+  [120/160] ✓ usdchf 2026 7: ok 275KB  (76s)
+  [121/160] ✓ nzdusd 2016 None: ok 3334KB  (79s)
+  [122/160] ✓ nzdusd 2017 None: ok 3182KB  (79s)
+  [123/160] ✓ nzdusd 2018 None: ok 3138KB  (79s)
+  [124/160] ✓ nzdusd 2019 None: ok 2983KB  (79s)
+  [125/160] ✓ nzdusd 2020 None: ok 3228KB  (82s)
+  [126/160] ✓ nzdusd 2022 None: ok 3371KB  (82s)
+  [127/160] ✓ nzdusd 2023 None: ok 2855KB  (82s)
+  [128/160] ✓ nzdusd 2021 None: ok 3225KB  (82s)
+  [129/160] ✓ nzdusd 2026 1: ok 254KB  (84s)
+  [130/160] ✓ nzdusd 2026 2: ok 248KB  (84s)
+  [131/160] ✓ nzdusd 2024 None: ok 3138KB  (85s)
+  [132/160] ✓ nzdusd 2025 None: ok 3164KB  (85s)
+  [133/160] ✓ nzdusd 2026 3: ok 287KB  (86s)
+  [134/160] ✓ nzdusd 2026 4: ok 268KB  (86s)
+  [135/160] ✓ nzdusd 2026 5: ok 254KB  (87s)
+  [136/160] ✓ nzdusd 2026 6: ok 263KB  (87s)
+  [137/160] ✓ nzdusd 2026 7: ok 270KB  (88s)
+  [138/160] ✓ nzdusd 2026 8: ok 249KB  (88s)
+  [139/160] ✓ nzdusd 2026 10: ok 21KB  (89s)
+  [140/160] ✓ nzdusd 2026 9: ok 252KB  (89s)
+  [141/160] ✓ eurgbp 2016 None: ok 3365KB  (91s)
+  [142/160] ✓ eurgbp 2017 None: ok 3236KB  (91s)
+  [143/160] ✓ eurgbp 2018 None: ok 3174KB  (92s)
+  [144/160] ✓ eurgbp 2019 None: ok 3162KB  (92s)
+  [145/160] ✓ eurgbp 2020 None: ok 3305KB  (95s)
+  [146/160] ✓ eurgbp 2021 None: ok 3098KB  (95s)
+  [147/160] ✓ eurgbp 2022 None: ok 3262KB  (95s)
+  [148/160] ✓ eurgbp 2023 None: ok 2674KB  (95s)
+  [149/160] ✓ eurgbp 2026 1: ok 241KB  (97s)
+  [150/160] ✓ eurgbp 2026 2: ok 231KB  (97s)
+  [151/160] ✓ eurgbp 2024 None: ok 2940KB  (98s)
+  [152/160] ✓ eurgbp 2025 None: ok 3048KB  (98s)
+  [153/160] ✓ eurgbp 2026 3: ok 259KB  (99s)
+  [154/160] ✓ eurgbp 2026 4: ok 243KB  (99s)
+  [155/160] ✓ eurgbp 2026 5: ok 231KB  (100s)
+  [156/160] ✓ eurgbp 2026 6: ok 238KB  (100s)
+  [157/160] ✓ eurgbp 2026 7: ok 250KB  (101s)
+  [158/160] ✓ eurgbp 2026 8: ok 222KB  (101s)
+  [159/160] ✓ eurgbp 2026 10: ok 20KB  (101s)
+  [160/160] ✓ eurgbp 2026 9: ok 225KB  (101s)
+
+Parsing + resampling to 1H …
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ EURUSD:   66108 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ GBPUSD:   66088 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ USDJPY:   66094 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ AUDUSD:   66090 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ USDCAD:   66102 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ USDCHF:   66096 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ NZDUSD:   66096 1H bars  2016-01-03 → 2026-10-02
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+/home/user/QUANTLAB/scripts/fetch_forex_histdata.py:79: FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+  h1 = df.resample("1H").agg({"open":"first","high":"max","low":"min","close":"last","vol":"sum"}).dropna()
+  ✓ EURGBP:   66105 1H bars  2016-01-03 → 2026-10-02
+Done in 236s
