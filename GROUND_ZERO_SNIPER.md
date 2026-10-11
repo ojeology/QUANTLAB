@@ -1,0 +1,56 @@
+# 🎯 GROUND ZERO: THE SNIPER CHARTER
+**2026-10-11 · Low-frequency, high-conviction campaign · "three perfect trades per month"**
+
+## Profile (locked)
+A sniper is the opposite of the always-on stack: **few trades, each one paid to show up.**
+- ≤ ~3 entries/month across the book; ≤ 3 concurrent positions; 1 position per coin.
+- Every candidate must clear costs by a WIDE margin (target avg net ≥ +0.4R/trade).
+- Risk 1.0% per trade (sniper sizing), hard stop mandatory, no adds, no revenge trades.
+- One shot per setup signature: if the setup fails, wait for the next one. No mining.
+
+## Who pays (candidates must answer BEFORE testing)
+- **S1 Daily cascade reversal:** liquidated leveraged longs sell at panic prices; the buyer
+  who provides liquidity at those extremes is paid the overshoot (forced flows — R104 found
+  this premium at 1H; the sniper takes it at the daily scale where retail doesn't compete).
+- **S2 Macro-catalyst expansion** (queued): post-FOMC/CPI volatility is bought by hedgers —
+  documented event premium.
+- **S3 Weekly extreme reversion** (queued): behavioral anchors at the weekly scale.
+
+## S1 — Daily cascade reversal (prespec, locked BEFORE testing)
+- **Universe:** the 20 R106 coins, OKX daily candles.
+- **Signal (all evaluated at the daily close):**
+  1. close < SMA20 − k×ATR14 (k ∈ {2.0, 2.5, 3.0}, selection picks)
+  2. drawdown from rolling 20-day high ≥ 12% (real panic, not noise)
+- **Entry:** at that signal bar's close (champion E6 semantics — close-only law).
+- **Exit (first touch, at closes only):** close ≥ SMA20 (target) · close ≤ entry − 1.0×ATR14
+  (stop) · 10 trading days (time stop) — time stop ∈ {7, 10} days, selection picks.
+- **Tie-break:** more than 3 signals in a day → take the deepest (largest k-multiple).
+- **Costs:** 0.10% round-trip (taker + slippage), charged in R.
+- **Gates (the sniper bar):**
+  1. Yearly ledger: 2024, 2025, 2026 each ≥ 0R (the survival law, unchanged)
+  2. Max drawdown ≤ 12% at 1% risk
+  3. Worst week ≥ −3%
+  4. Selection 2024-01→2026-03: n ≥ 30 trades AND avg net ≥ +0.40R
+  5. Holdout 2026-04→10 (untouched until verdict): ≥ 0R and PF ≥ 1.3
+  6. Close-only fills; daily-curve ≡ trade-ledger integrity assert on every pair
+- A failed candidate is a finding, not a failure. No gate moves after results exist.
+
+## S1 RESULT (R110, 2026-10-11) — ❌ REJECTED
+
+Daily cascade reversal, 20 coins, 1%/trade, close-only, costs in. Best grid variant (k=2.0, T=7):
+avg **+0.07R/trade** (bar: ≥+0.40) · 2026 −8.6R ❌ · maxDD −26.5% ❌ · worstW −8.9% ❌ · holdout PF 1.55 ✗–✓ mixed.
+**MEASURED LAW: the cascade overshoot premium ≈ +0.1R gross per event at ANY timeframe (1H: +0.119R/473 trades; 1D: +0.07R/192).
+Changing the clock changes frequency, not quality. Snipers must find a different PAYER, not a different chart speed.**
+
+## S2 PRESPEC (locked 2026-10-11, before testing) — MACRO-CATALYST EXPANSION
+
+Who pays: hedgers and option dealers repositioning into scheduled macro news (FOMC/CPI) —
+documented event-volatility premium; crypto absorbs the repricing in hours.
+Rule (prespec): BTC/ETH daily. Enter at the close of the LAST bar before each scheduled
+FOMC decision (14:00 ET Wed) / CPI release (08:30 ET) → direction = breakout trigger:
+long if event-day close > event-eve close × (1+0.5×ATR14/c) else short (close-only, no lookahead:
+event calendar is public/scheduled — causality trivially safe).
+Exit: 48h time stop at close, or 1×ATR14 stop at close. 1% risk, 0.10% RT.
+Gates: sniper bar (avg ≥ +0.40R needs the event premium to be LARGE) + yearly ≥ 0R + maxDD ≤ 12%.
+n ≈ 8 FOMC + 12 CPI per year ≈ 60 events/3y (2 coins). Selection 2024-01→2026-03; holdout 2026-04→10.
+Event calendar source: documented fixed schedule dates (public record), printed in report.

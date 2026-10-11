@@ -1,0 +1,18 @@
+==========================================================================
+R110 — SNIPER S1: daily cascade reversal | 20 coins | 1%/trade | max 3 concurrent
+==========================================================================
+k=2.0 T= 7: n=192 avgR=+0.07 worstW= -8.94% maxDD=-24.51% | R  +19.1/  +6.8/ -17.5 | core 2/5 
+k=2.0 T=10: n=170 avgR=+0.02 worstW= -9.88% maxDD=-26.49% | R  +12.8/  +0.7/ -13.9 | core 2/5 
+k=2.5 T= 7: n=106 avgR=+0.02 worstW= -8.02% maxDD=-17.12% | R   +8.1/  +9.5/ -14.0 | core 2/5 
+k=2.5 T=10: n= 98 avgR=-0.03 worstW= -8.02% maxDD=-20.23% | R   +7.5/  +3.6/ -13.2 | core 2/5 
+k=3.0 T= 7: n= 63 avgR=-0.01 worstW= -6.69% maxDD=-12.05% | R   +8.8/  +6.2/ -11.7 | core 2/5 
+k=3.0 T=10: n= 62 avgR=-0.03 worstW= -6.69% maxDD=-14.64% | R   +9.4/  +3.4/ -10.3 | core 2/5 
+
+>>> SELECTED: k=2.0 T=7 (selection window only)
+
+--- FULL 2024-01 -> 2026-10 ---
+trades=227 WR=50.2% avgR=+0.09 medHold=7d
+posW=38.6% worstW=-8.94% maxDD=-26.47%
+YEARLY R: 2024 +19.1 | 2025 +6.8 | 2026 -8.6
+HOLDOUT 2026-04->10: n=38 R=+9.6 PF=1.55 (✓PASS)
+per-coin: {'AVAX': np.float64(5.4), 'SUI': np.float64(0.2), 'XRP': np.float64(-1.0), 'ETC': np.float64(-2.1), 'NEAR': np.float64(4.9), 'BNB': np.float64(3.4), 'LTC': np.float64(-2.4), 'FIL': np.float64(0.1), 'ATOM': np.float64(5.8), 'ARB': np.float64(2.6), 'DOT': np.float64(0.1), 'OP': np.float64(-2.8), 'APT': np.float64(0.5), 'BTC': np.float64(1.7), 'INJ': np.float64(7.7), 'DOGE': np.float64(5.1), 'ETH': np.float64(0.7), 'SOL': np.float64(-4.1), 'ADA': np.float64(-1.3), 'LINK': np.float64(-3.0)}
