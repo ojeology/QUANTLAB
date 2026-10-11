@@ -94,3 +94,37 @@ Autopsy: gross edge −211R (dead BEFORE costs) + costs −223R. Breakouts chopp
 Audit: 3 bugs caught this round (bad ticks scrubbed; MTM off-by-one → daily≡trades assert added; double-scale printer fixed).
 
 **LAW ACCUMULATED: behavioral FX premia are dead at retail horizons. F2 = CARRY (contractual) — queued next. F3 = CTA-horizon daily trend — last word on trend after that.**
+
+## ROUND R108 PRESPEC (2026-10-11, locked BEFORE testing) — F2: FX CARRY
+
+**Hypothesis (who pays):** interest-rate differentials are a contractual, centuries-documented
+premium (Lustig–Verdelhan): speculators borrowing low-yield currencies pay you to hold
+sudden-devaluation risk of high-yield ones. Carry is CONTRACTUAL income + price risk — the
+exact shape the R103 law demands.
+
+**Data spine (dual, adversarial):**
+- S1 "fresh": FRED/OECD immediate monthly rates (IRSTCI01*), ffilled daily. CH ends 2024-01,
+  NZ ends 2024-10, AU suspiciously flat → supplemented by documented central-bank schedules
+  (printed in report) and flagged.
+- S2 "stress": supplemented currencies frozen at last FRED-verified value (CH 1.45, NZ 4.77,
+  AU 4.35 as printed). Verdict must hold on BOTH spines or candidate is inconclusive.
+
+**Universe:** all 28 synthetic crosses of the 8 majors (inner-join timestamps, close-only).
+Synthetic ATR = 1.5 × mean|Δclose|24 (disclosed approximation — no synthetic H/L).
+**Rule:** long-only top-K by carry (r_base − r_quote), K ∈ {3,5}, rebalance ∈ {weekly, monthly}.
+**Costs:** 1.5 pip RT per position change + 0.7 pip/day swap-broker take on notional.
+**Risk:** 0.5% per position, bucket 2.5×ATR (same machinery as R107, off-by-one guard + integrity assert inherited).
+**Gates:** charter 6 + holdout PF≥1.1.
+**VALIDATION ANCHOR (prespec'd):** week of 2024-08-05 (yen-carry unwind crash) MUST rank among
+worst weeks — if it doesn't, the test is broken and no verdict is valid.
+
+## ROUND R108 RESULT (2026-10-11) — F2 FX CARRY ❌ REJECTED AS CORE (premium validated)
+
+21 synthetic crosses × 3 years × dual rate spine (FRED/OECD + documented CHF/NZD/AUD supplements; stress-frozen spine).
+Best variant (K=5 monthly): yearly +46.9R / +39.6R / +112.2R — **NO LOSING YEAR, both spines** —
+but posW 60% ❌, worst week −27.9% ❌, maxDD −47% ❌. Carry's weekly sign = drift < noise; steamroller tail structural.
+**ANCHOR PASSED: 2024-08-04 unwind = worst week in sample — test independently reproduced history.**
+4 audit defects caught (cache wipe, ranking bug, mark hashing, zombie positions).
+
+**LAW: contractual premia survive retail costs ONLY when hedged. Unhedged carry = real income, unfit for consistency charter.
+R106 hedged floor = carry domesticated — the two halves of the hunt now confirm each other. F3 (daily-bar CTA trend) queued as FX hunt finale.**
