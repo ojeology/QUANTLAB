@@ -103,3 +103,32 @@ Recipe: 80% static 20-coin hedged basket (isolated, perp margin 25% of notional)
 20% dry powder for sleeves; monthly combined-yield check only.
 
 **CONSISTENCY HUNT: CLOSED — construction shipped to paper-trading (12-week trial).**
+
+## 🔁 REOPENED — ONE SEAT: R113 PRESPEC (2026-10-11, locked BEFORE testing) — CROSS-SECTIONAL MOMENTUM
+
+The last untested payer in the building. Who pays: latecomers chasing relative winners
+(documented cross-sectional momentum, Jegadeesh–Titman; strong in crypto at 1–4 week
+formations). The rotation holder sells relative strength to the crowd that arrives late.
+
+Rule: at each week's final daily close — rank all 20 coins by trailing N-day return
+(N ∈ {7,14,28} days), hold top K (K ∈ {3,5}) equal-weight 1/K until next rebalance.
+Exposure variants: always-in, OR cash-unless-BTC>SMA50 (beta filter — long-only crypto
+momentum's known enemy is beta; the filter variant is the real candidate).
+Costs: 0.05% per side on every weight change (turnover-counted, not hand-waved).
+Off-by-one law: weights decided at rebalance close apply to NEXT bar's returns.
+SANITY GATE (new, automatic): any weekly return outside ±60% ⇒ abort (unit-slip tripwire).
+GATES (unchanged, locked Aug): posW ≥65% · worstW ≥−3% · maxDD ≤12% · 2024/25/26 each ≥0R ·
+holdout (2026-04→10) ≥0R. Selection 2024-01→2026-03 picks the variant; holdout untouched.
+
+## R113 RESULT (2026-10-11) — ❌ REJECTED (2/6) — **THE MAP IS COMPLETE**
+
+Cross-sectional momentum (12 variants, weekly rotation, turnover-costed): the premium is REAL and
+holdout-confirmed (+60.7% holdout; +46%/+46% best years) — but worstW −33%, maxDD −75%, posW ~25–50%.
+**Expectancy and survivability are different axes.** Momentum is a fund's trade with hedges and 200
+holdings, not a consistency account's.
+
+### ══ FINAL MAP AFTER 113 ROUNDS ══
+Behavioral signals: thin/decaying (15 strategies, 3 markets). Unhedged carry: real, tail-heavy.
+Momentum: real, uninhabitable. **Hedged-contractual floor (R106): the only all-gates pass in history.**
+Everything exciting fails survival; everything that survives is boring rent. Charter filter vindicated.
+→ Research map CLOSED. Standing: Opay (naira pot) · STACK v2 floor (dollar pot, trial pending) · champion recheck end-2026.

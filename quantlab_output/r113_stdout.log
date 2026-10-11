@@ -1,0 +1,21 @@
+  [scrub] 1 panel bar(s) with >50% moves — prices clipped to prev
+==========================================================================
+R113 — CROSS-SECTIONAL MOMENTUM | 20 coins | weekly rotation | 0.05%/side
+==========================================================================
+N= 7 K=3 ALW : posW= 50.3% worstW=-27.81% maxDD= -77.8% | R   +39.4/  -22.4/  -19.1% | ann~-0.8% | gates 1/6
+N= 7 K=3 FILT: posW= 26.2% worstW=-27.81% maxDD= -74.1% | R   +23.9/  -41.1/  +11.0% | ann~-2.2% | gates 2/6
+N= 7 K=5 ALW : posW= 48.3% worstW=-26.75% maxDD= -84.4% | R   +32.4/  -62.5/  -12.6% | ann~-15.3% | gates 1/6
+N= 7 K=5 FILT: posW= 25.5% worstW=-26.75% maxDD= -79.3% | R   +18.6/  -60.7/  +12.8% | ann~-10.5% | gates 2/6
+N=14 K=3 ALW : posW= 49.0% worstW=-32.99% maxDD= -79.6% | R  +106.0/  -34.1/   -8.7% | ann~+22.7% | gates 1/6
+N=14 K=3 FILT: posW= 23.4% worstW=-32.99% maxDD= -74.6% | R   +46.3/  -34.6/  +24.1% | ann~+12.8% | gates 2/6
+N=14 K=5 ALW : posW= 49.7% worstW=-30.22% maxDD= -76.5% | R   +64.0/  -26.4/  -11.0% | ann~+9.5% | gates 1/6
+N=14 K=5 FILT: posW= 25.5% worstW=-30.22% maxDD= -69.7% | R   +15.8/  -26.3/  +25.1% | ann~+5.3% | gates 2/6
+N=28 K=3 ALW : posW= 47.6% worstW=-25.31% maxDD= -86.3% | R   +93.6/  -70.6/   +2.8% | ann~+9.2% | gates 2/6
+N=28 K=3 FILT: posW= 24.8% worstW=-25.31% maxDD= -69.7% | R   +46.2/  -39.4/  +45.6% | ann~+18.8% | gates 2/6
+N=28 K=5 ALW : posW= 49.7% worstW=-30.20% maxDD= -82.3% | R   +34.2/  -49.9/   -8.3% | ann~-8.6% | gates 1/6
+N=28 K=5 FILT: posW= 26.2% worstW=-30.20% maxDD= -73.2% | R    -7.0/  -26.2/  +27.4% | ann~-2.1% | gates 1/6
+
+>>> SELECTED: N=14 K=3 BTC-filter (2/6 gates)
+HOLDOUT: sum=+60.7% worstW=-20.74% (PASS)
+FINAL VERDICT: ❌ REJECTED
+context yearly %: {2024: 46.3, 2025: -34.6, 2026: 24.1}
