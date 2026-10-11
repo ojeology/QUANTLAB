@@ -4,37 +4,35 @@ R114 — PLAIN SIGHT SWEEP | benchmarks, DCA, seasonality (Bonferroni 0.05/20)
 
 B1 — BUY & HOLD (no gates; 'would you have survived' = worstWk vs −3 / maxDD vs −12):
   BH BTC                                yearly: +109.0/  -8.8/  -7.1% | worstWk  -20.2% | maxDD  -53.3%
-  BH ETH                                yearly:  +42.2/ -13.7/ -19.0% | worstWk  -25.9% | maxDD  -67.5%
+  BH ETH                                yearly:  +42.2/ -13.7/ -18.9% | worstWk  -25.9% | maxDD  -67.5%
   BH EQW-20      (weekly re-bal)        yearly:  +45.6/ -55.7/ -10.5% | worstWk  -26.7% | maxDD  -80.5%
-  BH GOLD        window 2025-04-08->    yearly-style: total +35.8% | maxDD -25.2% (context only)
-  BH SILVER      window 2026-01-27->    yearly-style: total -46.4% | maxDD -50.6% (context only)
 
 B2 — DCA $10/week since 2024-01 (the no-chart strategy):
   BTC   : invested $1,450 -> final $1,579  (1.09x)  worst unrealized DD -37.7%
-  ETH   : invested $1,450 -> final $1,376  (0.95x)  worst unrealized DD -50.8%
+  ETH   : invested $1,450 -> final $1,377  (0.95x)  worst unrealized DD -50.8%
   EQW20 : invested $1,450 -> final $1,218  (0.84x)  worst unrealized DD -52.8%
 
 B3 — SEASONALITY FALSIFICATION (20 tests; survive only p<0.0025):
-  EQW-20 Monday vs rest    : ann-diff -119.65%  p=0.1413 
+  EQW-20 Monday vs rest    : ann-diff -119.66%  p=0.1413 
   EQW-20 Friday vs rest    : ann-diff  +73.22%  p=0.3425 
-  EQW-20 Weekend vs wkday  : ann-diff  -40.37%  p=0.4920 
-  EQW-20 Turn-of-month     : ann-diff  -97.55%  p=0.1569 
+  EQW-20 Weekend vs wkday  : ann-diff  -40.37%  p=0.4921 
+  EQW-20 Turn-of-month     : ann-diff  -97.56%  p=0.1569 
   EQW-20 First week        : ann-diff   +8.43%  p=0.9026 
   EQW-20 Last week         : ann-diff -125.40%  p=0.0389 
   EQW-20 Mid-month         : ann-diff  +77.51%  p=0.2537 
   EQW-20 January           : ann-diff  -75.91%  p=0.4356 
-  EQW-20 CPI days vs rest  : ann-diff    +nan%  p=9.0000 
-  EQW-20 FOMC days vs rest : ann-diff    +nan%  p=9.0000 
-  BTC    Monday vs rest    : ann-diff  -64.58%  p=0.2699 
-  BTC    Friday vs rest    : ann-diff   -2.21%  p=0.9496 
-  BTC    Weekend vs wkday  : ann-diff  +43.85%  p=0.2464 
-  BTC    Turn-of-month     : ann-diff  -53.62%  p=0.2543 
-  BTC    First week        : ann-diff   +6.30%  p=0.8911 
-  BTC    Last week         : ann-diff  -79.25%  p=0.0558 
-  BTC    Mid-month         : ann-diff  +73.61%  p=0.0847 
+  EQW-20 CPI days vs rest  : ann-diff +242.20%  p=0.0802 
+  EQW-20 FOMC days vs rest : ann-diff  +50.80%  p=0.8726 
+  BTC    Monday vs rest    : ann-diff  -64.58%  p=0.2698 
+  BTC    Friday vs rest    : ann-diff   -2.22%  p=0.9494 
+  BTC    Weekend vs wkday  : ann-diff  +43.87%  p=0.2462 
+  BTC    Turn-of-month     : ann-diff  -53.63%  p=0.2543 
+  BTC    First week        : ann-diff   +6.29%  p=0.8912 
+  BTC    Last week         : ann-diff  -79.26%  p=0.0558 
+  BTC    Mid-month         : ann-diff  +73.63%  p=0.0846 
   BTC    January           : ann-diff  -34.48%  p=0.5848 
-  BTC    CPI days vs rest  : ann-diff    +nan%  p=9.0000 
-  BTC    FOMC days vs rest : ann-diff    +nan%  p=9.0000 
+  BTC    CPI days vs rest  : ann-diff  +93.39%  p=0.3888 
+  BTC    FOMC days vs rest : ann-diff -106.15%  p=0.5722 
 
   SURVIVORS: 0/20  | smallest p = 0.0389 (EQW-20 Last week)  | threshold 0.0025
   VERDICT: MIRAGE CONFIRMED — no calendar truth hiding here
