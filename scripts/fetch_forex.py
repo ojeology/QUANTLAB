@@ -1,48 +1,30 @@
-"""
-Fetch 1H forex data for 8 major pairs via yfinance (free, no key).
-Normalizes to UTC, saves as quantlab_cache/forex/SYMBOL_1H.parquet.
-Schema matches the crypto pipeline: datetime index (UTC), open/high/low/close.
-"""
-import os, sys, time, warnings
-warnings.filterwarnings("ignore")
+#!/usr/bin/env python3
+"""Fetch 1H FX majors from Yahoo v8 chart API -> quantlab_cache/forex/{PAIR}_1H.parquet
+Revival data source (Dukascopy TLS-dead, stooq JS-walled, HistData heavy)."""
+import json, time, urllib.request, pathlib
 import pandas as pd
-import yfinance as yf
 
-CACHE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "quantlab_cache", "forex")
-os.makedirs(CACHE, exist_ok=True)
+PAIRS = ["EURUSD", "GBPUSD", "USDJPY", "AUDUSD", "USDCAD", "USDCHF", "NZDUSD", "EURGBP"]
+OUT = pathlib.Path("quantlab_cache/forex"); OUT.mkdir(parents=True, exist_ok=True)
 
-PAIRS = {
-    "EURUSD": "EURUSD=X",
-    "GBPUSD": "GBPUSD=X",
-    "USDJPY": "JPY=X",
-    "AUDUSD": "AUDUSD=X",
-    "USDCAD": "CAD=X",
-    "USDCHF": "CHF=X",
-    "NZDUSD": "NZDUSD=X",
-    "EURGBP": "EURGBP=X",
-}
+def fetch(pair):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{pair}=X?interval=1h&range=730d"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        d = json.load(r)
+    res = d["chart"]["result"][0]
+    q = res["indicators"]["quote"][0]
+    df = pd.DataFrame({
+        "ts": pd.to_datetime(res["timestamp"], unit="s"),
+        "open": q["open"], "high": q["high"], "low": q["low"], "close": q["close"],
+    })
+    df = df.dropna(subset=["close"]).drop_duplicates("ts").sort_values("ts").reset_index(drop=True)
+    df["ts"] = df["ts"].dt.tz_localize(None)  # naive UTC (session law)
+    return df
 
-print("Fetching 8 major forex pairs (1H, ~2y each) …", flush=True)
-t0 = time.time()
-for sym, ticker in PAIRS.items():
-    out = os.path.join(CACHE, f"{sym}_1H.parquet")
-    try:
-        df = yf.download(ticker, interval="1h", period="2y", progress=False,
-                         auto_adjust=False)
-        if df is None or df.empty:
-            print(f"  ✗ {sym}: empty"); continue
-        # flatten multiindex columns
-        if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(0)
-        df = df[["Open", "High", "Low", "Close"]].copy()
-        df.columns = ["open", "high", "low", "close"]
-        df.index = pd.to_datetime(df.index, utc=True).tz_convert("UTC")
-        df = df.sort_index()
-        df = df[~df.index.duplicated(keep="last")]
-        df = df.dropna()
-        df.to_parquet(out)
-        print(f"  ✓ {sym}: {len(df)} bars  {df.index.min():%Y-%m-%d} → {df.index.max():%Y-%m-%d}")
-    except Exception as e:
-        print(f"  ✗ {sym}: {type(e).__name__} {str(e)[:100]}")
-    time.sleep(0.3)
-print(f"Done in {time.time()-t0:.0f}s → {CACHE}")
+for p in PAIRS:
+    df = fetch(p)
+    df.to_csv(OUT / f"{p}_1H.csv", index=False)  # CSV not parquet: pyarrow wiped per session
+    print(f"{p}: {len(df)} bars  {df.ts.iloc[0]} -> {df.ts.iloc[-1]}")
+    time.sleep(1.0)
+print("DONE")

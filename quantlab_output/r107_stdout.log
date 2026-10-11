@@ -1,0 +1,29 @@
+==========================================================================
+R107 FX REVIVAL — F1 Donchian basket | close-only | 1.2pip+0.7pip/day | 0.5%/pos
+==========================================================================
+  [scrub] USDJPY: 2 bad-tick bar(s) flattened to prev close
+  [scrub] NZDUSD: 1 bad-tick bar(s) flattened to prev close
+SEL N= 80: trades= 753 posW=41.2% worstW=-20.79% maxDD=-89.77% ann=-79.38% | R: -124.9/-223.5/-14.1 | gates=0/6
+SEL N=120: trades= 547 posW=42.0% worstW=-25.12% maxDD=-90.16% ann=-77.70% | R: -59.6/-272.5/-23.5 | gates=0/6
+SEL N=200: trades= 348 posW=36.1% worstW=-21.18% maxDD=-91.91% ann=-87.77% | R: -84.9/-349.9/+33.1 | gates=1/6
+
+>>> SELECTED VARIANT: N=200 (selection window only, 1/6 gates)
+
+--- FULL WINDOW (2024-01 -> 2026-10) at 0.5%/pos ---
+trades=417  WR=32.4%  avgR=-1.041  medDays=15.0
+posW=37.0%  worstW=-21.18%  maxDD=-94.67%  ann=-77.30%
+YEARLY LEDGER (R): 2024 -84.9 | 2025 -349.9 | 2026 +0.7
+GATES: {'posW': 'FAIL', 'worstW': 'FAIL', 'maxDD': 'FAIL', 'y2024': 'FAIL', 'y2025': 'FAIL', 'y2026': 'PASS'} -> 1/6
+
+--- HOLDOUT (2026-04 -> 10-09, untouched until now) ---
+trades=77  R_total=-32.4  PF@cost=1.07
+
+PER-PAIR R LEDGER (full):
+  EURUSD: n= 53 R=  -54.6  WR=30%
+  GBPUSD: n= 52 R=  -50.2  WR=38%
+  USDJPY: n= 51 R=  -42.7  WR=37%
+  AUDUSD: n= 59 R=  -90.3  WR=29%
+  USDCAD: n= 49 R=  -27.9  WR=31%
+  USDCHF: n= 43 R=   -6.5  WR=33%
+  NZDUSD: n= 61 R=  -98.2  WR=30%
+  EURGBP: n= 49 R=  -63.7  WR=33%

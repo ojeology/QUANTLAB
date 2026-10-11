@@ -59,3 +59,38 @@
 ---
 
 *"The goal isn't to find a strategy that looks good. The goal is to find one that survives every attempt to prove it wrong."*
+
+---
+
+## 🔁 REVIVAL — R107 (2026-10-11): THE THREE-YEAR TEST
+
+**Data reality (disclosed):** Dukascopy TLS-dead, HistData pipeline heavy, stooq JS-walled.
+**Working source: Yahoo 1H, 2023-12-25 → 2026-10-09 = three COMPLETE calendar years (2024/25/26).**
+Yahoo bars are aggregated quotes — acceptable for research, costs modeled conservatively on top.
+
+**THE HUGE HYPOTHESIS (stated before testing):** the QUANTLAB playbook transfers to majors —
+a close-only, cost-honest basket of FX premia can survive three full calendar years
+(2024, 2025, 2026) without a losing year.
+
+**Who pays (locked per candidate):**
+- F1 Donchian trend: institutional slow repricing + central-bank smoothing (behavioral, CTA premium)
+- F2 carry (next round): rate differentials (contractual)
+
+**GATES (prespecified, cannot change after seeing results):**
+1. Fills at bar CLOSES only — zero intrabar path ambiguity
+2. Costs: 1.2 pip round-trip + 0.7 pip/day swap haircut per open day
+3. Positive weeks ≥ 65%
+4. Worst week ≥ −3% (at 0.5% risk per pair-position)
+5. Max drawdown ≤ 12%
+6. **Each calendar year 2024/25/26 ≥ 0R (the user's survival bar — absolute)**
+7. Variant chosen on selection window 2024-01→2026-03 ONLY; holdout 2026-04→10 untouched until verdict; holdout must itself be ≥ 0R and PF@cost ≥ 1.0
+8. A failed candidate is a finding, not a failure
+
+## ROUND R107 RESULT (2026-10-11) — F1 DONCHIAN TREND BASKET ❌ REJECTED
+
+Yahoo 1H × 8 majors × 3 complete years (2024/25/26), close-only, 1.2pip+0.7pip/day, 0.5%/pos.
+Best variant (N=200h): 2024 −84.9R · 2025 −349.9R · 2026 +0.7R → **0/6 survival gates; all 8 pairs negative; holdout PF 1.07.**
+Autopsy: gross edge −211R (dead BEFORE costs) + costs −223R. Breakouts chopped at 3–20d horizon.
+Audit: 3 bugs caught this round (bad ticks scrubbed; MTM off-by-one → daily≡trades assert added; double-scale printer fixed).
+
+**LAW ACCUMULATED: behavioral FX premia are dead at retail horizons. F2 = CARRY (contractual) — queued next. F3 = CTA-horizon daily trend — last word on trend after that.**
