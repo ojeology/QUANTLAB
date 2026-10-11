@@ -1,0 +1,52 @@
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  R105 — ALL-WEATHER ALLOCATION (lend + carry + cascade + champion)
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  [1] USDT lending rate history …
+  lending epochs: 8000  2025-11-11 → 2026-10-10  avg APR 16099.3%
+  [2] funding carry …
+  window weeks: 70 | lend measured 67% | carry measured 0%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  STACKS — conservative (pre-measurement carry/lend = 0)
+──────────────────────────────────────────────────────────────────────────────────────────
+  A income-heavy (conservative)      posW= 60.0%  worstW=-111.88%  streak= 3w  maxDD= -2.95%  ann= +0.42%  posM=76%  ❌
+  B balanced (conservative)          posW= 58.6%  worstW=-169.29%  streak= 3w  maxDD= -4.77%  ann= -0.01%  posM=71%  ❌
+  C carry-max (conservative)         posW= 47.1%  worstW=-113.64%  streak= 5w  maxDD= -3.40%  ann= -0.33%  posM=65%  ❌
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  STACKS — regime-filled (pre-measurement carry = measured mean +0.121%/wk, lend = mean 0.035%/wk)
+──────────────────────────────────────────────────────────────────────────────────────────
+  A income-heavy (regime-filled)     posW= 77.1%  worstW=-107.05%  streak= 3w  maxDD= -1.62%  ann= +3.40%  posM=82%  ❌
+  B balanced (regime-filled)         posW= 74.3%  worstW=-164.46%  streak= 3w  maxDD= -3.47%  ann= +2.83%  posM=82%  ❌
+  C carry-max (regime-filled)        posW= 78.6%  worstW=-101.56%  streak= 3w  maxDD= -1.17%  ann= +6.24%  posM=82%  ❌
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  MONTHLY — B balanced (regime-filled)
+──────────────────────────────────────────────────────────────────────────────────────────
+    2025-06: +0.84%
+    2025-07: +0.30%
+    2025-08: +0.74%
+    2025-09: +0.90%
+    2025-10: +1.30%
+    2025-11: +0.21%
+    2025-12: +0.21%
+    2026-01: +0.08%
+    2026-02: -1.66%
+    2026-03: +0.53%
+    2026-04: +0.23%
+    2026-05: +0.35%
+    2026-06: -1.34%
+    2026-07: -0.99%
+    2026-08: +1.13%
+    2026-09: +0.75%
+    2026-10: +0.18%
+    positive months: 14/17  worst: -1.66%
+  MC (flagship): median=1.04x  P(loss)=12%  P5=0.98x  P95=1.09x
+  $500: ≈ $+19 / 16mo ≈ $+1.2/mo
+  $1000: ≈ $+38 / 16mo ≈ $+2.4/mo
+  $2000: ≈ $+75 / 16mo ≈ $+4.7/mo
+
+  best gate-passer: None
+
+  Done in 37s → quantlab_output/r105_*

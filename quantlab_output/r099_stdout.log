@@ -1,0 +1,38 @@
+
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  QUANTLAB AI — R099  unseen-universe transfer test (27 fresh pairs)
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  [1] Original 73: features + signals + trades …
+  symbols: 73
+  original raw trades: 502
+  original champion trades (q0.55): 249  THR=0.396
+
+  [2] New pairs: signals + trades …
+  new symbols with enough history: 27
+  new-pair raw trades: 114
+  scoring new-pair signals with the champion SVM (walk-forward in time) …
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  3) RESULTS — new pairs (never seen) vs original (reference)
+──────────────────────────────────────────────────────────────────────────────────────────
+    window                subset                n     PF  PF@cost     WR
+    all (2025-07→)        raw (no filter)     114   1.55     1.29    51%
+    < 2026                raw (no filter)      46   1.95     1.73    57%
+    2026 (≥Jan)           raw (no filter)      68   1.33     1.06    47%
+    fresh (≥Aug8)         raw (no filter)      15   2.25     1.73    60%
+    all (2025-07→)        champion filter      83   1.54     1.26    51%
+    < 2026                champion filter      24   2.10     1.86    58%
+    2026 (≥Jan)           champion filter      59   1.35     1.07    47%
+    fresh (≥Aug8)         champion filter      13   2.40     1.79    62%
+
+    all                   ORIGINAL q0.55      249   2.20     1.82    59%
+    2026 (≥Jan)           ORIGINAL q0.55      166   1.65     1.34    52%
+
+    LOO by new symbol (kept trades, PF@cost):
+    floor=1.16 (drop TIA_USDT_SWAP)
+    per-symbol kept counts: {'RAY_USDT_SWAP': 6, 'TIA_USDT_SWAP': 5, 'ONDO_USDT_SWAP': 5, 'PENGU_USDT_SWAP': 5, 'ZRO_USDT_SWAP': 5, 'CRCL_USDT_SWAP': 5, 'TAO_USDT_SWAP': 5, 'STRK_USDT_SWAP': 5}
+
+    boot CI new-pairs 2026 PF@cost: P5=0.68 med=1.07 P95=1.65  P(PF>1)=60%
+
+  Done in 23s → quantlab_output/r099_newpair_trades.csv

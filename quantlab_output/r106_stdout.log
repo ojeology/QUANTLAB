@@ -1,0 +1,131 @@
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:83: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  L=lend[c].copy(); L["wk"]=L["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:85: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  F=fund[c].copy(); F["wk"]=F["ts"].dt.to_period("W").dt.start_time
+/home/user/QUANTLAB/quantlab_r106_hedgedfloor.py:141: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  ch["w"]=ch["ts"].dt.to_period("W").dt.start_time
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  R106 — HEDGED-YIELD FLOOR (coin lending + short perp)
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  [1] coin lending histories …
+  coins with lending history: 20  (0s)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [2] per-coin hedged yield (lending APR/52 + funding weekly, %/wk)
+──────────────────────────────────────────────────────────────────────────────────────────
+  BTC   n= 15w  lend 0.000 + fund +0.105 = +0.106%/wk  APR  +5.5%  posW 100%
+  ETH   n= 15w  lend 0.010 + fund +0.080 = +0.090%/wk  APR  +4.7%  posW 100%
+  SOL   n= 15w  lend 0.060 + fund +0.061 = +0.121%/wk  APR  +6.3%  posW 100%
+  XRP   n= 15w  lend 0.005 + fund +0.088 = +0.092%/wk  APR  +4.8%  posW 100%
+  DOGE  n= 15w  lend 0.001 + fund +0.133 = +0.133%/wk  APR  +6.9%  posW 100%
+  BNB   n= 15w  lend 0.003 + fund +0.117 = +0.120%/wk  APR  +6.2%  posW 100%
+  ADA   n= 15w  lend 0.005 + fund +0.104 = +0.109%/wk  APR  +5.7%  posW 93%
+  LINK  n= 15w  lend 0.003 + fund +0.122 = +0.125%/wk  APR  +6.5%  posW 100%
+  LTC   n= 15w  lend 0.002 + fund +0.124 = +0.126%/wk  APR  +6.6%  posW 100%
+  AVAX  n= 15w  lend 0.049 + fund +0.075 = +0.125%/wk  APR  +6.5%  posW 100%
+  DOT   n= 15w  lend 0.013 + fund +0.076 = +0.089%/wk  APR  +4.6%  posW 100%
+  NEAR  n= 15w  lend 0.036 + fund +0.121 = +0.157%/wk  APR  +8.2%  posW 100%
+  APT   n= 15w  lend 0.024 + fund +0.081 = +0.105%/wk  APR  +5.5%  posW 100%
+  SUI   n= 15w  lend 0.006 + fund +0.121 = +0.127%/wk  APR  +6.6%  posW 100%
+  ATOM  n= 15w  lend 0.086 + fund -0.060 = +0.026%/wk  APR  +1.3%  posW 53%
+  FIL   n= 15w  lend 0.002 + fund +0.095 = +0.097%/wk  APR  +5.1%  posW 100%
+  INJ   n= 15w  lend 0.058 + fund -0.003 = +0.055%/wk  APR  +2.8%  posW 67%
+  ARB   n= 15w  lend 0.018 + fund +0.045 = +0.063%/wk  APR  +3.3%  posW 80%
+  OP    n= 15w  lend 0.032 + fund +0.093 = +0.125%/wk  APR  +6.5%  posW 100%
+  ETC   n= 15w  lend 0.003 + fund +0.076 = +0.079%/wk  APR  +4.1%  posW 100%
+  overlap window: 2026-06-29 → 2026-10-05  (15 weeks)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [3] baskets (equal-weight %/wk)
+──────────────────────────────────────────────────────────────────────────────────────────
+  static all-coin basket       n= 15w  mean +0.104%/wk (APR +5.4%)  posW 100%  worst +0.055%  maxDD 0.00%
+  monthly top-12 reconstituted n= 11w  mean +0.107%/wk (APR +5.6%)  posW 100%  worst +0.052%  maxDD 0.00%
+
+  current R105 floor: USDT-lend 3.5% / carry 4.0% (blended floor ≈ 3.8% on 80% of capital)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [4] UPDATED R105-B with hedged-yield floor (replace lend+carry legs)
+──────────────────────────────────────────────────────────────────────────────────────────
+  STACK v2 (floor+champ@0.15+cascade@0.15): n=11w  posW=73%  worstW=-0.09%  maxDD=-0.09%  ann=+18.6%  posM=50%  ✅GATES
+  $500: ≈ $+17/2mo ≈ $+7.23/mo  (floor alone ≈ $2.32/mo)
+  $1000: ≈ $+33/2mo ≈ $+14.45/mo  (floor alone ≈ $4.64/mo)
+  $2000: ≈ $+67/2mo ≈ $+28.90/mo  (floor alone ≈ $9.28/mo)
+
+  Done in 0s → quantlab_output/r106_*

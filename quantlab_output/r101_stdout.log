@@ -1,0 +1,64 @@
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  QUANTLAB AI — R101  SMALL-ACCOUNT PROTOCOL
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  [1] OKX contract specs (ctVal, minSz) → min notional
+    65 champion symbols with specs
+    CHEAPEST 12 by min notional (small-account friendly):
+      BICO_USDT_SWAP         min ~$    0.0   (1 champ trades)
+      GALA_USDT_SWAP         min ~$    0.0   (5 champ trades)
+      ICP_USDT_SWAP          min ~$    0.0   (2 champ trades)
+      ZBT_USDT_SWAP          min ~$    0.1   (2 champ trades)
+      BEAT_USDT_SWAP         min ~$    0.1   (1 champ trades)
+      1INCH_USDT_SWAP        min ~$    0.1   (4 champ trades)
+      FIL_USDT_SWAP          min ~$    0.1   (2 champ trades)
+      AXS_USDT_SWAP          min ~$    0.1   (5 champ trades)
+      OP_USDT_SWAP           min ~$    0.1   (4 champ trades)
+      DYDX_USDT_SWAP         min ~$    0.1   (4 champ trades)
+      CHZ_USDT_SWAP          min ~$    0.2   (4 champ trades)
+      ARB_USDT_SWAP          min ~$    0.2   (4 champ trades)
+    MOST EXPENSIVE 5:
+      UNI_USDT_SWAP          min ~$    7.5
+      BTC_USDT_SWAP          min ~$    8.3
+      HYPE_USDT_SWAP         min ~$    8.5
+      MU_USDT_SWAP           min ~$   10.4
+      ZEC_USDT_SWAP          min ~$   12.2
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [2] Does the edge hold on a small-account subset? (TOP12 cheapest-min + liquid)
+──────────────────────────────────────────────────────────────────────────────────────────
+    TOP12: ['HBAR_USDT_SWAP', 'INJ_USDT_SWAP', 'PUMP_USDT_SWAP']
+    all-73 (2026)    n=151  PF@c=1.27  sumR=+22.4R  WR=51%
+    TOP12 (2026)     n= 16  PF@c=2.18  sumR=+7.6R  WR=62%
+    all-73 (17mo)    n=234  PF@c=1.86  sumR=+89.7R  WR=60%
+    TOP12 (17mo)     n= 24  PF@c=3.19  sumR=+16.5R  WR=71%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [3] RISK LADDER — 2026 YTD, TOP12 subset, $200/$500/$1,000 accounts
+──────────────────────────────────────────────────────────────────────────────────────────
+    sizing                  account     final       P&L   maxDD
+    1%/trade                    200$      216       +16   -3.2%
+    1%/trade                    500$      539       +39   -3.2%
+    1%/trade                   1000$    1,078       +78   -3.2%
+    2%/trade + throttle         200$      225       +25   -6.4%
+    2%/trade + throttle         500$      564       +64   -6.4%
+    2%/trade + throttle        1000$    1,127      +127   -6.4%
+    3%/trade + throttle         200$      237       +37   -8.0%
+    3%/trade + throttle         500$      594       +94   -8.0%
+    3%/trade + throttle        1000$    1,187      +187   -8.0%
+
+    Monte Carlo survival (TOP12 2026 Rs, 3000 resamples):
+    2%     : median=1.16x  P(DD>30%)=0%  P(DD>50%)=0%  worst5%DD=10%
+    2% +thr: median=1.16x  P(DD>30%)=0%  P(DD>50%)=0%  worst5%DD=9%
+    3%     : median=1.24x  P(DD>30%)=0%  P(DD>50%)=0%  worst5%DD=15%
+    3% +thr: median=1.21x  P(DD>30%)=0%  P(DD>50%)=0%  worst5%DD=11%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  [4] FEASIBILITY: min notional vs account (TOP12, avg stop 0.98%)
+──────────────────────────────────────────────────────────────────────────────────────────
+    largest min-notional in TOP12: ~$6
+    $  200 @ 2% risk ($4/trade): position ≈ $408 → ✅ fits all TOP12
+    $  500 @ 2% risk ($10/trade): position ≈ $1020 → ✅ fits all TOP12
+    $ 1000 @ 2% risk ($20/trade): position ≈ $2041 → ✅ fits all TOP12
+
+  Done → quantlab_output/r101_*

@@ -1,0 +1,124 @@
+/home/user/QUANTLAB/quantlab_r102_carry.py:35: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  allf["week"]=allf["fundingTime"].dt.to_period("W")
+/home/user/QUANTLAB/quantlab_r102_carry.py:36: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  allf["month"]=allf["fundingTime"].dt.to_period("M")
+/home/user/QUANTLAB/quantlab_r102_carry.py:50: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  w = port.groupby(port.index.to_period("W")).sum()*100
+/home/user/QUANTLAB/quantlab_r102_carry.py:51: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  m = port.groupby(port.index.to_period("M")).sum()*100
+/home/user/QUANTLAB/quantlab_r102_carry.py:82: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  inc["week"]=inc["ts"].dt.to_period("W"); inc["month"]=inc["ts"].dt.to_period("M")
+/home/user/QUANTLAB/quantlab_r102_carry.py:82: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  inc["week"]=inc["ts"].dt.to_period("W"); inc["month"]=inc["ts"].dt.to_period("M")
+/home/user/QUANTLAB/quantlab_r102_carry.py:98: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  od["week"]=od["ts"].dt.to_period("W"); od["month"]=od["ts"].dt.to_period("M")
+/home/user/QUANTLAB/quantlab_r102_carry.py:98: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  od["week"]=od["ts"].dt.to_period("W"); od["month"]=od["ts"].dt.to_period("M")
+/home/user/QUANTLAB/quantlab_r102_carry.py:117: UserWarning: Converting to PeriodArray/Index representation will drop timezone information.
+  ch["month"]=ch["ts"].dt.to_period("M")
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  R102 — FUNDING CARRY (delta-neutral income, OKX 24 symbols)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+  epochs: 7774  span: 2026-06-29 → 2026-10-10
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  per-symbol funding (always-on income, %/yr on notional)
+──────────────────────────────────────────────────────────────────────────────────────────
+  DOGE   avg +0.0064%/8h  pos  90.4%  APR   +7.0%
+  LTC    avg +0.0060%/8h  pos  86.8%  APR   +6.6%
+  LINK   avg +0.0059%/8h  pos  85.5%  APR   +6.4%
+  SUI    avg +0.0059%/8h  pos  83.0%  APR   +6.4%
+  NEAR   avg +0.0058%/8h  pos  83.0%  APR   +6.4%
+  BNB    avg +0.0056%/8h  pos  79.7%  APR   +6.2%
+  BTC    avg +0.0051%/8h  pos  92.0%  APR   +5.6%
+  ADA    avg +0.0050%/8h  pos  78.5%  APR   +5.5%
+  FIL    avg +0.0046%/8h  pos  78.5%  APR   +5.0%
+  OP     avg +0.0045%/8h  pos  77.2%  APR   +4.9%
+  XRP    avg +0.0042%/8h  pos  79.7%  APR   +4.6%
+  APT    avg +0.0039%/8h  pos  73.6%  APR   +4.3%
+  ETH    avg +0.0039%/8h  pos  83.6%  APR   +4.2%
+  HBAR   avg +0.0038%/8h  pos  70.1%  APR   +4.2%
+  DOT    avg +0.0037%/8h  pos  74.3%  APR   +4.0%
+  ETC    avg +0.0037%/8h  pos  73.6%  APR   +4.0%
+  AVAX   avg +0.0036%/8h  pos  72.3%  APR   +4.0%
+  SOL    avg +0.0029%/8h  pos  70.1%  APR   +3.2%
+  IMX    avg +0.0027%/8h  pos  81.8%  APR   +3.0%
+  ARB    avg +0.0022%/8h  pos  62.7%  APR   +2.4%
+  INJ    avg -0.0001%/8h  pos  62.7%  APR   -0.2%
+  STX    avg -0.0002%/8h  pos  74.3%  APR   -0.2%
+  ATOM   avg -0.0029%/8h  pos  53.7%  APR   -3.2%
+  TRX    avg -0.0101%/8h  pos  34.4%  APR  -11.1%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  A) ALWAYS-ON portfolio (equal-weight 24, income % of notional)
+──────────────────────────────────────────────────────────────────────────────────────────
+  weekly:
+    2026-06-29/2026: +0.138%
+    2026-07-06/2026: +0.137%
+    2026-07-13/2026: +0.098%
+    2026-07-20/2026: +0.096%
+    2026-07-27/2026: +0.077%
+    2026-08-03/2026: +0.151%
+    2026-08-10/2026: +0.154%
+    2026-08-17/2026: +0.216%
+    2026-08-24/2026: +0.172%
+    2026-08-31/2026: +0.163%
+    2026-09-07/2026: +0.109%
+    2026-09-14/2026: +0.134%
+    2026-09-21/2026: +0.106%
+    2026-09-28/2026: +0.014%
+    2026-10-05/2026: +0.048%
+  positive weeks: 15/15  min week +0.014%  max +0.216%
+  monthly:
+    2026-06: +0.028%
+    2026-07: +0.493%
+    2026-08: +0.732%
+    2026-09: +0.513%
+    2026-10: +0.046%
+  → APR ≈ +3.2% on notional
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  B) THRESHOLD variant (hold only while trailing-3d avg > +0.005%/8h; 0.25% round-trip)
+──────────────────────────────────────────────────────────────────────────────────────────
+  weekly (portfolio avg):
+    2026-06-29/2026: -0.000%
+    2026-07-06/2026: -0.000%
+    2026-07-13/2026: -0.000%
+    2026-07-20/2026: -0.000%
+    2026-07-27/2026: -0.000%
+    2026-08-03/2026: -0.000%
+    2026-08-10/2026: -0.000%
+    2026-08-17/2026: -0.000%
+    2026-08-24/2026: +0.000%
+    2026-08-31/2026: -0.000%
+    2026-09-07/2026: +0.000%
+    2026-09-14/2026: -0.000%
+    2026-09-21/2026: -0.000%
+    2026-09-28/2026: -0.000%
+    2026-10-05/2026: -0.000%
+  positive weeks: 2/15
+  monthly:
+    2026-07: -0.000%
+    2026-08: -0.000%
+    2026-09: -0.000%
+    2026-10: -0.000%
+  → APR ≈ -5.2%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  $ INCOME (notional = 1× capital; spot 2/3 of capital + perp margin 1/3 @3x isolated)
+──────────────────────────────────────────────────────────────────────────────────────────
+  $  200 account → ≈ $-0.87/month (current funding regime)
+  $  500 account → ≈ $-2.18/month (current funding regime)
+  $ 1000 account → ≈ $-4.36/month (current funding regime)
+  $ 2000 account → ≈ $-8.72/month (current funding regime)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  BLEND: 50% carry + 50% champion (months in common, % of that half's capital)
+──────────────────────────────────────────────────────────────────────────────────────────
+    month       carry%  champ%   50/50
+    2026-07      -0.00    -1.8   -0.92
+    2026-08      -0.00     2.2    1.09
+    2026-09      -0.00    14.2    7.09
+    2026-10      -0.00    -1.1   -0.55
+
+  (carry leg quoted on its own capital; champ leg at 1%/trade)

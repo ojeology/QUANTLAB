@@ -793,3 +793,19 @@ pre-committed kill-switch (rolling 3-mo PF@cost < 1.0 → halt & revalidate),
 monthly `refresh_okx.py` + `quantlab_r096_recheck.py`.**
 
 Reports: `quantlab_output/f01{0..3}_final_report.md` · `quantlab_output/r096_final_report.md`
+
+## R097–R098 (2026-10-09): upgrades tested + final path audit
+
+- **R097 upgrade grid**: fees won (VIP taker 1.30 / maker 1.27), cluster caps REJECTED
+  (crypto = one 53-symbol risk block; caps cut PF to 0.97), vol-sizing no effect,
+  weekly SVM refit rejected (0.61 pred corr). Best config = R096 champion at lowest fees.
+- **R098 1-minute path audit (165 trades, OKX 1m)**: 1H TP-before-SL assumption wrong on
+  only 4/161 trades (2%). Ground-truth PF@cost **1.27 taker / 1.39 maker** (2026),
+  1.99/2.16 fresh. Zero same-minute collisions. **Champion fully validated — pursue 2027.**
+
+## R099 (2026-10-09): unseen-universe transfer test — 27 fresh pairs
+
+Signal transfers (raw PF@cost 1.29-1.36 on never-used pairs; LOO 1.16), but 2026
+magnitude 1.06-1.09 < 1.10 gate and the ML filter adds nothing off-universe.
+Equity swaps (TSLA/NVDA/MSTR/QQQ/…) = 0.97, excluded permanently. Universe expansion:
+monitoring sleeve only; graduation = ≥30 raw trades @ PF@cost ≥1.20 per pair.

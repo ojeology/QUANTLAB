@@ -1,0 +1,100 @@
+412 non-universe USDT swaps; top 30 by 24h USD vol:
+  STRK-USDT-SWAP         $   361.5M/24h
+  MAGIC-USDT-SWAP        $   254.1M/24h
+  WLD-USDT-SWAP          $    73.5M/24h
+  BZ-USDT-SWAP           $    69.8M/24h
+  CRCL-USDT-SWAP         $    64.6M/24h
+  ONDO-USDT-SWAP         $    63.7M/24h
+  MET-USDT-SWAP          $    51.9M/24h
+  MSTR-USDT-SWAP         $    50.8M/24h
+  TIA-USDT-SWAP          $    47.7M/24h
+  LIT-USDT-SWAP          $    41.8M/24h
+  TRUMP-USDT-SWAP        $    37.4M/24h
+  LITE-USDT-SWAP         $    34.5M/24h
+  CT-USDT-SWAP           $    31.7M/24h
+  XDP-USDT-SWAP          $    28.9M/24h
+  BAT-USDT-SWAP          $    28.9M/24h
+  SOXS-USDT-SWAP         $    28.2M/24h
+  ZRO-USDT-SWAP          $    25.9M/24h
+  OKB-USDT-SWAP          $    24.6M/24h
+  W-USDT-SWAP            $    24.3M/24h
+  PONS-USDT-SWAP         $    24.2M/24h
+  TAO-USDT-SWAP          $    23.9M/24h
+  MUBARAK-USDT-SWAP      $    23.3M/24h
+  QQQ-USDT-SWAP          $    22.6M/24h
+  RAY-USDT-SWAP          $    22.2M/24h
+  NVDA-USDT-SWAP         $    21.1M/24h
+  INTC-USDT-SWAP         $    19.9M/24h
+  TSLA-USDT-SWAP         $    18.9M/24h
+  PENGU-USDT-SWAP        $    17.1M/24h
+  MINA-USDT-SWAP         $    16.8M/24h
+  QUANT-USDT-SWAP        $    16.4M/24h
+Traceback (most recent call last):
+  File "/home/user/QUANTLAB/scripts/fetch_newpairs.py", line 99, in <module>
+    df=fetch_history(inst,MAX_BARS)
+  File "/home/user/QUANTLAB/scripts/fetch_newpairs.py", line 88, in fetch_history
+    df.index=pd.to_datetime(df.index,unit="ms",tz="UTC")
+             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: to_datetime() got an unexpected keyword argument 'tz'
+412 non-universe USDT swaps; top 30 by 24h USD vol:
+  STRK-USDT-SWAP         $   362.7M/24h
+  MAGIC-USDT-SWAP        $   252.8M/24h
+  WLD-USDT-SWAP          $    73.6M/24h
+  BZ-USDT-SWAP           $    69.8M/24h
+  CRCL-USDT-SWAP         $    64.6M/24h
+  ONDO-USDT-SWAP         $    63.6M/24h
+  MET-USDT-SWAP          $    51.8M/24h
+  MSTR-USDT-SWAP         $    50.8M/24h
+  TIA-USDT-SWAP          $    47.7M/24h
+  LIT-USDT-SWAP          $    41.8M/24h
+  TRUMP-USDT-SWAP        $    37.4M/24h
+  LITE-USDT-SWAP         $    34.5M/24h
+  CT-USDT-SWAP           $    31.7M/24h
+  BAT-USDT-SWAP          $    29.0M/24h
+  XDP-USDT-SWAP          $    28.9M/24h
+  SOXS-USDT-SWAP         $    28.2M/24h
+  ZRO-USDT-SWAP          $    26.0M/24h
+  OKB-USDT-SWAP          $    24.6M/24h
+  W-USDT-SWAP            $    24.3M/24h
+  PONS-USDT-SWAP         $    24.2M/24h
+  TAO-USDT-SWAP          $    23.9M/24h
+  MUBARAK-USDT-SWAP      $    23.2M/24h
+  QQQ-USDT-SWAP          $    22.6M/24h
+  RAY-USDT-SWAP          $    22.2M/24h
+  NVDA-USDT-SWAP         $    21.1M/24h
+  INTC-USDT-SWAP         $    19.9M/24h
+  TSLA-USDT-SWAP         $    18.9M/24h
+  PENGU-USDT-SWAP        $    17.1M/24h
+  MINA-USDT-SWAP         $    16.8M/24h
+  QUANT-USDT-SWAP        $    16.4M/24h
+  [1/30] STRK_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (30s)
+  [2/30] MAGIC_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (59s)
+  [3/30] WLD_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (89s)
+  [4/30] BZ_USDT_SWAP: 4788 bars  2026-03-24 → 2026-10-09  (100s)
+  [5/30] CRCL_USDT_SWAP: 5414 bars  2026-02-26 → 2026-10-09  (114s)
+  [6/30] ONDO_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (143s)
+  [7/30] MET_USDT_SWAP: 8750 bars  2025-10-10 → 2026-10-09  (165s)
+  [8/30] MSTR_USDT_SWAP: 5437 bars  2026-02-25 → 2026-10-09  (178s)
+  [9/30] TIA_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (208s)
+  [10/30] LIT_USDT_SWAP: 6956 bars  2025-12-24 → 2026-10-09  (225s)
+  [11/30] TRUMP_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (255s)
+  [12/30] LITE_USDT_SWAP: 3710 bars  2026-05-08 → 2026-10-09  (264s)
+  [13/30] CT_USDT_SWAP: insufficient (228 bars)
+  [14/30] BAT_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (295s)
+  [15/30] XDP_USDT_SWAP: insufficient (273 bars)
+  [16/30] SOXS_USDT_SWAP: 2030 bars  2026-07-17 → 2026-10-09  (300s)
+  [17/30] ZRO_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (330s)
+  [18/30] OKB_USDT_SWAP: 9621 bars  2025-09-04 → 2026-10-09  (354s)
+  [19/30] W_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (383s)
+  [20/30] PONS_USDT_SWAP: 836 bars  2026-09-05 → 2026-10-09  (385s)
+  [21/30] TAO_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (415s)
+  [22/30] MUBARAK_USDT_SWAP: 11845 bars  2025-06-03 → 2026-10-09  (444s)
+  [23/30] QQQ_USDT_SWAP: 5271 bars  2026-03-04 → 2026-10-09  (457s)
+  [24/30] RAY_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (487s)
+  [25/30] NVDA_USDT_SWAP: 5272 bars  2026-03-04 → 2026-10-09  (500s)
+  [26/30] INTC_USDT_SWAP: 5416 bars  2026-02-26 → 2026-10-09  (513s)
+  [27/30] TSLA_USDT_SWAP: 5438 bars  2026-02-25 → 2026-10-09  (526s)
+  [28/30] PENGU_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (556s)
+  [29/30] MINA_USDT_SWAP: 12000 bars  2025-05-27 → 2026-10-09  (585s)
+  [30/30] QUANT_USDT_SWAP: insufficient (207 bars)
+Done: 27/30 symbols → /home/user/QUANTLAB/quantlab_cache/newpairs in 586s

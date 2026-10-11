@@ -1,0 +1,30 @@
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  R104 — FUNDAMENTALS ROUND: basis / cascade fade / the stack
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  PART 1) BASIS: spot vs quarterly futures (contractual)
+──────────────────────────────────────────────────────────────────────────────────────────
+  quarterly futures not readable from here — basis probe inconclusive.
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  PART 2) CASCADE FADE — close-only, 3 slots, costs in
+──────────────────────────────────────────────────────────────────────────────────────────
+  cascade bars: 2473 across 66 symbols
+  ⚠ 14 trades with |r|>10% (bad ticks) — dropped
+  trades: 473  TP=282  SL=177  TIME=14  WR_TP=60%
+  cascade fade (1/3 per slot) posW= 40.4%  worstW= -11.36%  streak= 8w  maxDD= -30.36%  ann=  +6.0%  posM=62%  ❌gates
+  expectancy/trade: +0.119%   median hold: 4 bars
+    2024: weeks= 43  posW= 34.9%  worstW=-622.99%  sum=+1681.05%
+    2025: weeks= 52  posW= 38.5%  worstW=-601.46%  sum=+2222.61%
+    2026: weeks= 41  posW= 48.8%  worstW=-1136.43%  sum=-2023.73%
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  PART 3) THE STACK: carry + champion sleeve (0.25% risk/trade)
+──────────────────────────────────────────────────────────────────────────────────────────
+  STACK: champ@0.25% + carry posW= 52.3%  worstW=  -1.59%  streak= 7w  maxDD=  -4.68%  ann= +18.6%  posM=59%  ❌gates
+  overlap window (carry measured): posW=40%  worstW=-41.79%  weeks=15
+  $500: stack ≈ $+129 over 16mo ≈ $+8.0/mo (champ@0.25% + carry)
+  $1000: stack ≈ $+257 over 16mo ≈ $+16.0/mo (champ@0.25% + carry)
+
+  Done in 15s → quantlab_output/r104_*

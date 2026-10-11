@@ -1,0 +1,21 @@
+Auditing 165 trades (2026) …
+  [20/165] (8s)
+  [40/165] (20s)
+  [60/165] (24s)
+  [80/165] (34s)
+  [100/165] (46s)
+  [120/165] (53s)
+  [140/165] (68s)
+  [160/165] (83s)
+
+Audited with 1m data: 161/165 trades (NODATA: 4)
+1H convention WRONG on 4 trades (2% of audited)
+same-minute collisions: 0
+  PF@cost [taker .05/.05     ] 2026 full   n=161  PF=1.27
+  PF@cost [taker .05/.05     ] fresh Aug8+ n= 31  PF=1.99
+  PF@cost [maker-in/TP .02   ] 2026 full   n=161  PF=1.39
+  PF@cost [maker-in/TP .02   ] fresh Aug8+ n= 31  PF=2.16
+  [1H-assumed, taker]      2026 full   n=161  PF=1.33
+  [1H-assumed, taker]      fresh Aug8+ n= 31  PF=1.99
+
+Done in 89s → quantlab_output/r098_path_audit.csv

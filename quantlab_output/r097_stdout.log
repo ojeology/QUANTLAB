@@ -1,0 +1,37 @@
+
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+  QUANTLAB AI — R097  champion upgrades head-to-head (cost / portfolio / execution)
+══════════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+  Loading data (73 symbols) …
+  Symbols: 73
+  Building correlation clusters …
+  21 cliques (largest: 53 syms)
+  Raw trades: 502
+  Fitting walk-forward SVM …
+  weekly-refit check: pred corr=0.580, keep-set agreement=74.8% (selection)
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  GRID (q=0.55 champion signal, unless noted)
+──────────────────────────────────────────────────────────────────────────────────────────
+  q0.55 trades: 281; maker fill rate: 95%
+    config                          n26   PF@c  PF_sl  fN   fPF    MDD  prof%  t/mo
+    ────────────────────────────────────────────────────────────────────────────────
+    C0 base taker .05/.05           168   1.28   0.00  31  2.60 -20.9%    50%  19.1
+    C1 vip-taker .04/.04            168   1.33   0.00  31  2.70 -20.2%    50%  19.1
+    C2 maker-in .02 + taker out     163   1.28   0.00  29  2.49 -20.3%    50%  18.5
+    C3 maker-in + maker-TP out      163   1.32   0.00  29  2.57 -20.0%    50%  18.5
+    C4 C0 + cluster caps            126   0.93   0.00  23  1.57 -17.8%    50%  14.3
+    C5 C2 + cluster caps            122   0.92   0.00  21  1.41 -17.1%    50%  13.8
+    C6 C5 + vol-scaled sizing       122   0.92   0.00  21  1.41 -17.1%    50%  13.8
+    C7 full stack (C3+caps+vol)     122   0.95   0.00  21  1.47 -17.0%    50%  13.8
+    q0.65 maker-in + caps           138   0.88   0.00  31  0.93 -17.8%    50%  15.7
+
+──────────────────────────────────────────────────────────────────────────────────────────
+  MONTE CARLO on leading config (holdout net Rs, 0.5% & 1% risk)
+──────────────────────────────────────────────────────────────────────────────────────────
+  leading config by fresh PF / MDD: C1 vip-taker .04/.04
+    risk 0.5%/trade: P(end>100)=96%  median=116  DD med=-5.0% P5=-9.3%
+    risk 1.0%/trade: P(end>100)=96%  median=133  DD med=-9.8% P5=-17.7%
+
+  Done in 21s → quantlab_output/r097_*
