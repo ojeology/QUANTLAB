@@ -1,0 +1,20 @@
+events: 54 (22 FOMC + 32 CPI) over 2024-01-11 -> 2026-09-16
+
+trades total=54 (sel=48) | skipped fizzles included in count
+SELECTION: avgR=+0.275 (bar >= +0.40) WR=50%
+      count   mean     sum
+kind                      
+CPI      19 -0.059  -1.127
+FOMC     35  0.301  10.539
+              count   sum  mean
+entry_t kind                   
+2024    CPI       7 -0.44 -0.06
+        FOMC     16  6.14  0.38
+2025    CPI       8  4.02  0.50
+        FOMC     11  2.40  0.22
+2026    CPI       4 -4.71 -1.18
+        FOMC      8  2.00  0.25
+FULL: maxDD=-768.7% worstW=-2.00% | yearly R: 2024:+5.7 2025:+6.4 2026:-2.7
+HOLDOUT: n=6 R=-3.8 PF=0.31
+YEARLY GATES: {2024: 'PASS', 2025: 'PASS', 2026: 'FAIL'}
+VERDICT avgR: FAIL

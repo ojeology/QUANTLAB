@@ -54,3 +54,13 @@ Exit: 48h time stop at close, or 1×ATR14 stop at close. 1% risk, 0.10% RT.
 Gates: sniper bar (avg ≥ +0.40R needs the event premium to be LARGE) + yearly ≥ 0R + maxDD ≤ 12%.
 n ≈ 8 FOMC + 12 CPI per year ≈ 60 events/3y (2 coins). Selection 2024-01→2026-03; holdout 2026-04→10.
 Event calendar source: documented fixed schedule dates (public record), printed in report.
+
+## S2 RESULT (R111, 2026-10-11) — ❌ REJECTED (and the FOMC-only rescue died in holdout)
+
+54 public-calendar events × BTC/ETH, close-only event-day entries, 1%/trade. Prespec: avg +0.275R ❌ (< +0.40),
+2026 −2.7R ❌, all-events holdout PF 0.31 ❌. Decomposition: CPI dead (−0.06R) · FOMC +0.30R but DECAYING
+(+0.38 → +0.22 → +0.25 by year) → **FOMC-only HOLDOUT: 4 trades, −1.1R, PF 0.61 — dead.**
+**THE HOLDOUT EARNED ITS KEEP: the post-hoc subset seduced on selection (+0.37R) and was killed before shipping.**
+
+**SNIPER LAW ACCUMULATED: trade-frequency payers (forced flows, event hedgers, herds, carry) are thin, decaying,
+or tail-heavy for retail. S3 weekly extreme reversion = last queued candidate.**
