@@ -64,3 +64,29 @@ Event calendar source: documented fixed schedule dates (public record), printed 
 
 **SNIPER LAW ACCUMULATED: trade-frequency payers (forced flows, event hedgers, herds, carry) are thin, decaying,
 or tail-heavy for retail. S3 weekly extreme reversion = last queued candidate.**
+
+## S3 PRESPEC (locked 2026-10-11, before testing) — WEEKLY EXTREME REVERSION (queue finale)
+
+Who pays: capitulating holders at weekly-scale extremes — documented short-horizon reversal
+(Jegadeesh/Lehmann): after an extreme weekly drop, forced sellers have exhausted; weekend
+liquidation flushes overshoot thin liquidity. Buyer at the extreme is paid the bounce.
+Prior honesty: S1 found the same behavioral family thin at daily scale; this tests the WEEKLY
+extreme (deeper pain, rarer event). Falsification value: if THIS is thin too, the behavioral
+family is closed at every clock speed.
+
+Rule: at Friday closes — 5-day return ≤ threshold (grid {−12%, −15%}) → buy that close.
+Exit at closes: full reclaim (close ≥ pre-crash Friday close, i.e. 5 days earlier) = thesis
+realized / stop close ≤ entry − 1.25×ATR14 / 15-day time stop. 1 pos/coin, max 3 concurrent,
+deepest-drop tiebreak, 1% risk, 0.10% RT. 20 coins, OKX dailies.
+Gates: sniper bar — sel(2024-01→2026-03) n≥20 & avg ≥ +0.40R; yearly ≥0R; maxDD ≤12%;
+worstW ≥−3%; holdout(2026-04→10) ≥0R & PF ≥1.3. Integrity assert as always.
+
+## S3 RESULT (R112, 2026-10-11) — ❌ REJECTED — **SNIPER QUEUE CLOSED (0/3)**
+
+Weekly extreme reversion (≤−12%/−15% weeks): avg −0.05/+0.08R vs +0.40 bar; core gates 0/3; holdout PF 1.34 (thin-but-alive, same as S1).
+
+### ══ FINAL LAW OF THE SNIPER HUNT ══
+Behavioral reversal pays ~+0.1R/event at EVERY clock (1H +0.119 · 1D +0.07 · 1W 0.00–0.08).
+Frequency and conviction are inversely related by construction — rarer events pay the same.
+**A +0.4R-conviction retail sniper does not exist in this payer universe. 112 rounds converge:
+collect rent (hedged-contractual), don't take shots.** → STACK v2 paper trial is the standing priority.

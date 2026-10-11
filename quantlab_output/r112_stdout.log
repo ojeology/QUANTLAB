@@ -1,0 +1,13 @@
+==========================================================================
+R112 — SNIPER S3: weekly extreme reversion | 20 coins | 1%/trade | max 3
+==========================================================================
+thr=-12%: sel n=174 avgR=-0.05 (bar +0.40) worstW=-12.34% maxDD=-28.8% | selR +14.7/-10.1/-15.0 | core 0/3 
+thr=-15%: sel n=122 avgR=+0.08 (bar +0.40) worstW=-8.36% maxDD=-19.7% | selR +21.4/-3.4/-11.0 | core 0/3 
+
+>>> SELECTED: thr=-12% (selection only)
+FULL: trades=205 WR=44% avgR=+0.00
+posW=50% worstW=-12.34% maxDD=-38.6%
+YEARLY R: {2024: 14.7, 2025: -10.1, 2026: -5.7}
+HOLDOUT: n=34 R=+7.6 PF=1.34
+exits: {'reclaim<15': 110, 'time/forced': 95}
+per-coin R: {'SUI': np.float64(-1.5), 'OP': np.float64(-10.1), 'LTC': np.float64(-2.2), 'XRP': np.float64(-0.7), 'DOGE': np.float64(1.2), 'APT': np.float64(-1.8), 'ARB': np.float64(15.2), 'AVAX': np.float64(-0.3), 'NEAR': np.float64(3.1), 'LINK': np.float64(1.0), 'INJ': np.float64(17.8), 'SOL': np.float64(-2.9), 'ETC': np.float64(-1.7), 'FIL': np.float64(-7.5), 'ATOM': np.float64(-5.0), 'DOT': np.float64(-1.4), 'ADA': np.float64(-5.1), 'ETH': np.float64(2.4), 'BNB': np.float64(0.1)}
