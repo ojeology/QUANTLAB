@@ -1,0 +1,28 @@
+==========================================================================
+R109 — F3 CTA-HORIZON TREND | daily close-only Donchian | 8 majors | 0.5%/pos
+==========================================================================
+SEL N= 20d: trades= 106 posW= 39.0% worstW= -4.26% maxDD=-25.27% ann=-13.00% | R  -19.4/ -27.0/ -12.6 | gates 0/6
+SEL N= 60d: trades=  49 posW= 39.0% worstW= -5.30% maxDD=-34.40% ann=-18.71% | R  -48.1/ -18.8/ -18.0 | gates 0/6
+SEL N=120d: trades=  35 posW= 44.1% worstW= -4.54% maxDD=-30.95% ann=-12.42% | R  -35.3/  -8.8/ -12.3 | gates 0/6
+SEL N=252d: trades=  15 posW= 63.6% worstW= -3.49% maxDD= -6.79% ann=+1.34% | R  +13.3/  -2.6/  -4.6 | gates 2/6
+
+>>> SELECTED: N=252d (selection window only)
+
+--- FULL TEST WINDOW 2024-01 -> 2026-10 at 0.5%/pos ---
+trades=15 WR=26.7% avgR=-0.206 medHold=726d
+posW=60.0% worstW=-13.31% maxDD=-21.20% ann=-5.24%
+YEARLY LEDGER (R): 2024 +13.3 | 2025 -2.6 | 2026 -39.8
+GATES: {'posW': 'FAIL', 'worstW': 'FAIL', 'maxDD': 'FAIL', 'y2024': 'PASS', 'y2025': 'FAIL', 'y2026': 'FAIL'} -> 1/6
+HOLDOUT 2026-04->10: trades=11 R=-35.3 PF@cost=1.83
+ANCHOR USDJPY Jan-Jul2024 net dir-days: +1927 (net LONG ✓)
+CONTEXT (not gated) yearly R 2018-2023: {2018: -15.0, 2019: -17.5, 2020: -28.2, 2021: -17.8, 2022: 5.6, 2023: -6.8}
+
+PER-PAIR R LEDGER (test window):
+  EURUSD: n=  1 R=   -3.6 WR=0%
+  GBPUSD: n=  1 R=   -1.5 WR=0%
+  USDJPY: n=  1 R=  +22.4 WR=100%
+  AUDUSD: n=  2 R=   -1.8 WR=50%
+  USDCAD: n=  3 R=   -6.5 WR=0%
+  USDCHF: n=  2 R=   +0.4 WR=50%
+  NZDUSD: n=  1 R=   -0.7 WR=0%
+  EURGBP: n=  4 R=  -11.8 WR=25%

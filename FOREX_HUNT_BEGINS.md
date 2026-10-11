@@ -128,3 +128,40 @@ but posW 60% ❌, worst week −27.9% ❌, maxDD −47% ❌. Carry's weekly sign
 
 **LAW: contractual premia survive retail costs ONLY when hedged. Unhedged carry = real income, unfit for consistency charter.
 R106 hedged floor = carry domesticated — the two halves of the hunt now confirm each other. F3 (daily-bar CTA trend) queued as FX hunt finale.**
+
+## ROUND R109 PRESPEC (2026-10-11, locked BEFORE testing) — F3: CTA-HORIZON TREND (finale)
+
+**Hypothesis (who pays):** the documented medium-term trend premium (Moskowitz–Ooi–Pedersen
+time-series momentum; Hurst–Ooi–Pedersen century evidence): institutions reprice slowly
+(anchors, herding), central banks smooth deviations, option/reserve flows force continuation.
+Payers = everyone anchored to stale prices. This is the horizon R107 never reached (it tested
+1.5–8 DAY breakouts; CTA premium lives at 1–12 MONTHS).
+
+**Data upgrade (disclosed):** Yahoo interval=1d range=max ≈ a decade of daily bars per pair
+(1H cache alone cannot warm up 252-day lookbacks). **Test window unchanged: 2024-01→2026-10
+(the charter three-year bar). 2016–2023 printed as supplementary context ONLY — gates unchanged.**
+
+**Rule:** daily close-only Donchian, always-in long/short flip, N ∈ {20, 60, 120, 252} trading days.
+Bucket 2.5×ATR(24d); risk 0.5%/pair; costs 1.2 pip RT + 0.7 pip/day swap (swap now material —
+CTA holds are weeks-to-months; that toll is part of the question).
+**Gates:** charter 6 + holdout PF≥1.1. Selection 2024-01→2026-03 only; holdout 2026-04→10.
+Warmup disclosure: N=120 starts ~mid-2024, N=252 starts ~2025 — capability-adjusted yearly
+ledger printed alongside raw. Soft anchor: best variant must be net-LONG USDJPY during
+Jan–Jul 2024 (the documented yen slide) — if not, inspect for data bugs before verdict.
+
+## ROUND R109 RESULT (2026-10-11) — F3 CTA-HORIZON TREND ❌ REJECTED — **FX HUNT CLOSED**
+
+Decade of daily bars (2016-10→2026-10, 2603/pair), close-only Donchian N∈{20,60,120,252}d, always-in.
+Best (N=252d): 2024 +13.3R / 2025 −2.6R / 2026 −39.8R → 1/6 gates; holdout −35R. Shorter N: 0/6, all years negative.
+Anchor PASSED (net-long USDJPY Jan–Jul 2024, +1,927 dir-days; the one real trend paid +22R — the test saw it).
+Decade autopsy: gross −20.9R/41 trades (premium ABSENT on majors) + toll −88R (swap −2.15R/trade at 594d holds).
+**2026: premium appeared (+46R gross) → swap confiscated 37R of it.** Retail toll scales with horizon: spread kills short, swap kills long.
+
+### ══ FINAL LAW OF THE FX HUNT (F1+F2+F3 complete) ══
+**No behavioral FX premium exists for retail at any horizon. The one contractual premium (carry)
+has an unhedgeable-by-charter tail unhedged. Contractual premia survive retail costs ONLY hedged —
+which is exactly the R106 crypto floor.** After total famine on every other frontier,
+STACK v2 stands as the only live machine — found by fundamentals, verified by adversarial process.
+
+→ Remaining standing work: STACK v2 12-week paper trial (≥70% green, worst ≥−1.5% → size up);
+champion frozen re-check end of 2026; carry-tail research (options) = the only open FX frontier.
