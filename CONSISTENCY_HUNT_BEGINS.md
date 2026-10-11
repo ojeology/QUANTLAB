@@ -132,3 +132,29 @@ Behavioral signals: thin/decaying (15 strategies, 3 markets). Unhedged carry: re
 Momentum: real, uninhabitable. **Hedged-contractual floor (R106): the only all-gates pass in history.**
 Everything exciting fails survival; everything that survives is boring rent. Charter filter vindicated.
 → Research map CLOSED. Standing: Opay (naira pot) · STACK v2 floor (dollar pot, trial pending) · champion recheck end-2026.
+
+## R114 PRESPEC (2026-10-11, locked) — THE "PLAIN SIGHT" SWEEP (benchmarks + mirage check)
+
+Hypothesis: if any truth was missed, it hides in the scenarios too obvious to test.
+- **B1 BENCHMARKS (no gates — baselines):** buy-and-hold yearly ledgers 2024/25/26 + maxDD +
+  worst week for BTC, ETH, XAU, XAG (gold/silver sat in the cache the whole time — plain sight),
+  and weekly-rebalanced EQW-20 (0.05%/side on turnover). Question: did "doing nothing" pay more
+  than everything we built — and would the user have SURVIVED it (the 2025 reality)?
+- **B2 DCA:** $10/week into BTC / ETH / EQW-20 since 2024-01: invested, final, multiple,
+  worst unrealized drawdown. The strategy of people who never read a chart.
+- **B3 SEASONALITY FALSIFICATION (gated):** 10 pre-declared calendar patterns × {EQW-20, BTC}
+  (day-of-week ×5 grouped, turn-of-month, weekend, first/last week, month boundaries) on
+  2024-26 dailies. **Bonferroni law: 20 tests ⇒ significance only at p < 0.0025. Prediction:
+  ZERO survive. If ≥1 survives, it earns a dedicated round.**
+- **B4 FLOOR UPGRADE PROBE:** retry OKX staking endpoints (dead in R106-era) for a cheap
+  yield upgrade to the floor. 5-minute probe, no round spent if empty.
+Disclosures: short-side seasonality untestable (borrow costs unmodeled); 2022 regime forever
+out of reach; XAU/XAG via OKX SWAP dailies (venue-consistent with the coins).
+
+## R114 RESULT (2026-10-11) — PLAIN-SIGHT SWEEP — MAP CLOSED WITH BENCHMARKS
+
+Buy & hold: BTC +109%/−8.8%/−7.1% (2 losing years, maxDD −53%) · EQW-20 2025 −55.7% (maxDD −80%) → "doing nothing" FAILS the survival law.
+DCA $10/wk: BTC 1.09× · ETH 0.95× · EQW-20 0.84× — folk wisdom lost on 2/3.
+Seasonality: **0/20 survive Bonferroni (p<0.0025)**; seductive "CPI +242%/yr" = p 0.08 = noise (R111 real entries were negative).
+Staking: endpoints dead twice-confirmed. **No plain-sight truth exists outside the floor.**
+**FINAL: 114 rounds · every payer class, benchmark, and calendar mirage measured · hedged-contractual floor stands alone. Closed, with receipts.**
