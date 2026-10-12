@@ -1,0 +1,49 @@
+/home/user/QUANTLAB/quantlab_r115_funding_dispersion.py:42: FutureWarning: The default fill_method='pad' in DataFrame.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  raw = px.mask(px.pct_change().abs() > 0.5)
+universe: 30 symbols with >=97% price/funding coverage: ['AAVE', 'ADA', 'ALGO', 'APT', 'ARB', 'ATOM', 'AVAX', 'BTC', 'CRV', 'DOGE', 'DOT', 'ETC', 'ETH', 'FET', 'FIL', 'GRT', 'HBAR', 'INJ', 'LDO', 'LINK', 'LTC', 'NEAR', 'OP', 'SEI', 'SOL', 'SUI', 'TRX', 'UNI', 'XLM', 'XRP']
+==========================================================================
+R115 — FUNDING DISPERSION | 18-combo grid | WF selection | holdout 2026-07..09
+==========================================================================
+
+--- FULL GRID on SELECTION REGION (2024-07 -> 2026-06), net of costs, at 2x acct lev ---
+W=1 Q=5 R=1: APR  +16.84%  Sharpe +0.84  maxDD  -30.9%  rebals=1095
+W=1 Q=5 R=3: APR   +8.44%  Sharpe +0.46  maxDD  -34.9%  rebals=365
+W=1 Q=5 R=7: APR   +8.61%  Sharpe +0.43  maxDD  -48.2%  rebals=157
+W=1 Q=8 R=1: APR  +15.82%  Sharpe +1.04  maxDD  -20.6%  rebals=1095
+W=1 Q=8 R=3: APR   +1.15%  Sharpe +0.08  maxDD  -26.0%  rebals=365
+W=1 Q=8 R=7: APR   +6.18%  Sharpe +0.39  maxDD  -44.8%  rebals=157
+W=3 Q=5 R=1: APR  +31.64%  Sharpe +1.56  maxDD  -23.3%  rebals=1093
+W=3 Q=5 R=3: APR  +31.32%  Sharpe +1.48  maxDD  -23.4%  rebals=364
+W=3 Q=5 R=7: APR  +13.31%  Sharpe +0.67  maxDD  -42.2%  rebals=156
+W=3 Q=8 R=1: APR  +22.82%  Sharpe +1.50  maxDD  -16.7%  rebals=1093
+W=3 Q=8 R=3: APR  +21.40%  Sharpe +1.38  maxDD  -19.4%  rebals=364
+W=3 Q=8 R=7: APR  +13.53%  Sharpe +0.87  maxDD  -39.8%  rebals=156
+W=7 Q=5 R=1: APR  +59.35%  Sharpe +2.84  maxDD  -20.9%  rebals=1089
+W=7 Q=5 R=3: APR  +45.12%  Sharpe +2.24  maxDD  -22.9%  rebals=363
+W=7 Q=5 R=7: APR  +28.35%  Sharpe +1.44  maxDD  -28.7%  rebals=156
+W=7 Q=8 R=1: APR  +33.04%  Sharpe +2.13  maxDD  -27.7%  rebals=1089
+W=7 Q=8 R=3: APR  +44.14%  Sharpe +2.71  maxDD  -22.2%  rebals=363
+W=7 Q=8 R=7: APR  +21.40%  Sharpe +1.41  maxDD  -43.4%  rebals=156
+
+WF selections (months): [('W7/Q5/R1', 9), ('W7/Q8/R3', 9), ('W3/Q8/R1', 3), ('W3/Q5/R1', 3), ('W7/Q8/R1', 1), ('W1/Q8/R1', 1), ('W7/Q8/R7', 1)]
+WF-OOS  2024-07->2026-06: APR +35.52%  Sharpe +1.94  maxDD -21.7%
+HOLDOUT 2026-07->09    : APR -33.59%  equity -16.93%  maxDD -21.3%
+BOOTSTRAP ann-mean CI95: [+2.9%, +61.8%]  P(mean>0)=98.6%
+LOAO APR range: min TRX +25.2% .. max AAVE +44.2%
+
+--- BENCHMARKS (same spine, same leverage accounting where relevant) ---
+BTC B&H 2024-07->2026-09: +32.9% total
+Static short-all funding harvest: APR -1.1% (of equity, 2x lev) — price-exposed, NOT shown net of price
+Cash 4% APR reference; R106 floor reference +5.4% APR
+
+--- PHASE 4: SMALL-ACCOUNT FEASIBILITY ---
+typical book: 10 legs; max gross notional floor across WF months: $110
+MINIMUM VIABLE CAPITAL (2x leverage, 30% buffer): $72
+OKX cross-check note: OKX contract minimums are coarser (ctVal x minSz) — several alt-contracts >> $5/leg; OKX book may need 2-5x the Binance minimum.
+bootstrap P(equity < 60% at 2x lev): 1.1%
+$  25: INFEASIBLE (<venue min notional)  implied_gross_leverage=4.4x  utilization=>100% (orders below minimum round up -> over-leverage)  trades/mo~300
+$  50: INFEASIBLE (<venue min notional)  implied_gross_leverage=2.2x  utilization=>100% (orders below minimum round up -> over-leverage)  trades/mo~300
+$ 100: FEASIBLE  implied_gross_leverage=1.1x  utilization=100%  trades/mo~300
+$ 250: FEASIBLE  implied_gross_leverage=0.4x  utilization=100%  trades/mo~300
+
+>>> VERDICT: PROMISING BUT INCONCLUSIVE
