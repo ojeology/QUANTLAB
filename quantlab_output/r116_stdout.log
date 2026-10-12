@@ -1,0 +1,41 @@
+universe: 24 coins with >=97% coverage on metrics+price: ['BTC', 'ETH', 'BNB', 'SOL', 'XRP', 'DOGE', 'ADA', 'LINK', 'LTC', 'AVAX', 'DOT', 'NEAR', 'APT', 'SUI', 'ATOM', 'FIL', 'INJ', 'ARB', 'OP', 'ETC', 'TRX', 'XLM', 'CRV', 'AAVE']
+==========================================================================
+R116 — H4 CROWDING | 16 combos | WF selection | holdout 2026-07..09 untouched
+==========================================================================
+
+--- GRID on SELECTION REGION 2024-07 -> 2026-06 (net, 2x lev) ---
+A W= 7 Q=5 R=3: APR  +30.43%  Sharpe +1.65  maxDD  -30.4%
+A W= 7 Q=5 R=7: APR  +22.52%  Sharpe +1.22  maxDD  -36.7%
+A W= 7 Q=8 R=3: APR  +17.76%  Sharpe +1.29  maxDD  -32.2%
+A W= 7 Q=8 R=7: APR  +19.06%  Sharpe +1.35  maxDD  -27.2%
+A W=14 Q=5 R=3: APR  +30.60%  Sharpe +1.71  maxDD  -33.1%
+A W=14 Q=5 R=7: APR  +25.92%  Sharpe +1.42  maxDD  -30.5%
+A W=14 Q=8 R=3: APR  +22.77%  Sharpe +1.63  maxDD  -25.9%
+A W=14 Q=8 R=7: APR  +17.22%  Sharpe +1.23  maxDD  -33.0%
+B W= 7 Q=5 R=3: APR  -37.46%  Sharpe -1.87  maxDD  -85.4%
+B W= 7 Q=5 R=7: APR  -54.75%  Sharpe -2.88  maxDD  -90.5%
+B W= 7 Q=8 R=3: APR  -27.31%  Sharpe -1.86  maxDD  -71.2%
+B W= 7 Q=8 R=7: APR  -54.12%  Sharpe -3.85  maxDD  -89.8%
+B W=14 Q=5 R=3: APR  -39.72%  Sharpe -1.89  maxDD  -83.7%
+B W=14 Q=5 R=7: APR  -41.95%  Sharpe -2.11  maxDD  -86.7%
+B W=14 Q=8 R=3: APR  -30.30%  Sharpe -1.99  maxDD  -77.2%
+B W=14 Q=8 R=7: APR  -41.96%  Sharpe -2.72  maxDD  -85.5%
+
+WF picks: [('A/W14/Q8/R3', 10), ('A/W14/Q5/R3', 10), ('A/W14/Q5/R7', 4), ('A/W7/Q5/R3', 3)]
+WF-OOS 2024-07->2026-06: APR +22.41%  Sharpe +1.36  maxDD -36.7%
+HOLDOUT 2026-07->09    : APR -34.22%  equity -17.25%  maxDD -34.0%
+BOOTSTRAP CI95: [-5.1%, +42.2%]  P(mean>0)=93.8%  P(equity<60%)=6.5%
+LOAO APR: min XLM +10.4% .. max XRP +29.4%
+
+--- BENCHMARKS ---
+BTC B&H 2024-07->2026-09: +32.9% total
+cash 4% APR ref · R106 floor +5.4% APR ref · R115 funding-dispersion WF +35.5% (holdout -34%)
+
+--- PHASE 4: FEASIBILITY ---
+book legs=16  gross-notional floor $110  MIN VIABLE CAPITAL $72  trades/mo~160
+$  25: INFEASIBLE FOR SMALL ACCOUNT (implied gross lev 4.4x)
+$  50: INFEASIBLE FOR SMALL ACCOUNT (implied gross lev 2.2x)
+$ 100: FEASIBLE (implied gross lev 1.1x)
+$ 250: FEASIBLE (implied gross lev 0.4x)
+
+>>> VERDICT: FAILS AFTER COSTS

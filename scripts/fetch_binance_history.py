@@ -44,7 +44,9 @@ def month_rows(sym, y, m):
                 kdf = pd.read_csv(zf.open(name) if False else kdf)  # headered file
                 kdf = kdf.drop(0) if str(kdf.iloc[0, 4]).lower() == "close" else kdf
             for _, r in kdf.iterrows():
-                krows.append([str(r.iloc[0])[:10], float(r.iloc[4])])
+                v = r.iloc[0]; s = str(v)
+                d = s[:10] if "-" in s else pd.to_datetime(int(float(v)), unit="ms").strftime("%Y-%m-%d")
+                krows.append([d, float(r.iloc[4])])
         except Exception:
             pass
     return sym, frows, krows

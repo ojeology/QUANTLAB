@@ -77,3 +77,33 @@ Static short-all −1.1% ⇒ edge is genuinely cross-sectional (funding LEVEL �
 Real, robust, significant — and dead in its first untouched holdout. No holdout optimization performed.
 5 audit defects caught (kline formats, funding headers, R=1 schedule law, equity ×/÷ leverage, EOS coverage-defeat).
 Queued next: H4 open-interest/crowding (daily-OI source discovered this round).
+
+## H4 PRESPEC (locked 2026-10-12, BEFORE testing) — OPEN-INTEREST / CROWDED-POSITION DYNAMICS
+
+**Data discovery:** Binance Vision daily futures metrics (5-min files, daily-aggregated):
+sum_open_interest_value, sum_toptrader_long_short_ratio, count_long_short_ratio,
+sum_taker_long_short_vol_ratio → 24 coins × 1,004 consecutive days (2024-01-01→2026-09-30), zero gaps.
+OKX rubik OI-history probed: ~100 days only → BLOCKED for 3y (disclosed). Vision = sole viable spine.
+
+**Who pays:** over-leveraged consensus traders. When top traders crowd one side, their forced
+exits fuel squeezes; the portfolio standing on the uncrowded side is paid the unwind.
+**Construction (identical risk machinery to R115):** long bottom-Q / short top-Q by signal,
+0.5 gross per side, 2× acct leverage, costs 0.07%/side on turnover, funding cash flows on
+held legs (actual Binance epochs, uniform −w·f law), weights at close t / P&L from t+1.
+
+**Signal families (prespec'd):**
+- S_A "squeeze-contrarian": trailing-mean toptrader L/S ratio → long least-long-crowded, short most-long-crowded.
+- S_B "froth-contrarian": trailing-mean daily OI(USD) change → long deleveraging coins, short froth.
+**Grid (16):** family{A,B} × W{7,14}d × Q{5,8} × R{3,7}d. Bonferroni 0.05/16.
+**WF:** monthly 2024-07→2026-09 by trailing-180d net Sharpe (prior-only). **HOLDOUT untouched: 2026-07-01→09-30.**
+**Verdict mapping:** identical to R115 (SURVIVES / INCONCLUSIVE / FAILS / BLOCKED / INFEASIBLE).
+**Sanity tripwire:** weekly |ret|>60% aborts. Coverage ≥97% pre-fill on BOTH metrics and price.
+
+## H4 RESULT (R116, 2026-10-12) — ❌ FAILS AFTER COSTS (mapping applied as pre-registered)
+
+Data: Binance Vision daily metrics = 24 coins × 1,004 days (OI, toptrader L/S, account L/S, taker) — first multi-year crowding spine. OKX OI-history blocked (~100d).
+Family A squeeze-contrarian: all 8 variants positive on selection (+17..+31% APR), WF-OOS +22.4% (Sharpe 1.36), LOAO +10..+29% — HOLDOUT −34% APR ❌. Bootstrap CI [−5.1%, +42.2%] crosses 0.
+Family B froth-contrarian: −27..−55% EVERYWHERE ⇒ **OI-change is MOMENTUM not froth (reversal noted for a future prespec; not tested now — holdout-informed).**
+Feasibility: $25/$50 INFEASIBLE FOR SMALL ACCOUNT; $100/$250 mechanical.
+**Third consecutive real-in-sample/dead-holdout dollar-neutral book. Jul–Sep 2026 = the informative regime: hostile to every L/S structure tested.**
+Queue: H4 closed · B-reversal (OI momentum) queued · H2/H3 blocked · H5 parked.
