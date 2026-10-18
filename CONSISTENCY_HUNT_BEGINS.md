@@ -181,3 +181,32 @@ DON55/BTC selected: +28% APR but maxDD −35.8%, worstW −11.9%, posW 49%, 2026
 **Six-year context (2020-25): +103/+108/−6.5(2022 bear!)/+13/+61/+25 — the daily-trend legend is TRUE (sat out 2022, beat B&H over the cycle at 1/3 the drawdown) — and STILL uninhabitable under the consistency law.**
 Law (third form): cycle-surviving strategies ≠ charter-surviving strategies. Only the floor does both.
 Data spine now spans 2020-01→2026-09-30 (2,465 bars × 38 syms + funding). Sprint complete: R117 opened, tested, closed in one session.
+
+## 🔥 REOPENED (2026-10-16) — THE HUNT FOR A LIVABLE EDGE: TWIN CAMPAIGN (H-T1 + H-T2)
+
+Premise (from the ledger): the repo holds 3 REAL premia. Floor ✅ habitable. The other two are
+real but unlivable by mechanism, and the mechanism has never been actually engineered around:
+- H-T1 MOMENTUM (R113: +61% holdout, −75% DD): the pain is CONCENTRATION (top-3 = idiosyncratic
+  holes). Untested lever: DIVERSIFY + DELEVERAGE (top-8, 1/8 each, vol-targeted, BTC-beta filter).
+- H-T2 DAILY TREND (R117: beats B&H over 6y, −36% DD): the pain is DRAWDOWN (flip exits).
+  Untested lever: TIME-STOP SOFTENING (band exits, exit-at-cross variants).
+
+**Prespec H-T1 (locked BEFORE testing):** cross-sectional momentum, weekly Friday close,
+N=14d signal (R113's), top-8 equal-weight 1/8, vol-target each sleeve to 8%/yr at formation
+(clip [0.25,2]x), BTC>SMA100 cash filter variant on/off. Costs 0.05%/side on weight changes.
+Selection 2024-01→2026-03 (Sharpe) picks filter on/off only. HOLDOUT 2026-07→09 untouched.
+Gates: charter law (yearly ≥0 ×3, maxDD ≤12%, worstW ≥−3%, posW ≥65%) + holdout ≥0.
+**Prespec H-T2 (locked):** DON55 BTC perp long/flip (R117's), exits: (a) classic N-high/low
+break, (b) soft band: exit long only if close < max(SMA100, DONlow20), symmetric short,
+(c) time-stop: exit if |unrealized| < 0.5×ATR30 after 30d. Selection same window picks a/b/c.
+**Verdict mapping:** charter standard. 2020-2023 context for both. Zero new data needed.
+**The hunt ends the day one of these passes charter + holdout — or both fail and the
+"only the floor" law gets its final replication. Either outcome is a genuine edge answer.**
+
+## TWIN HUNT RESULT (R118, 2026-10-16) — BOTH LEVERS REAL, NEITHER LIVABLE: LAW FINALLY REPLICATED
+
+H-T1 momentum diversified+vol-targeted: DD −75%→−21/−25%, 2025 rescued (+3%), holdout ✓ — but 3/6 gates (maxDD/posW/worstW still fail).
+H-T2 DON55 + time-stop: 2026 rescued (−23%→+5.4%), holdout ✓, APR +27.7% — but DD DEEPENED (−41%), 3/6 gates. Risk moved, not removed.
+**Engineering can dilute or relocate charter violations; it cannot delete them. Only the contract-paid floor has nothing to engineer because it has nothing to fear.**
+Audit: off-by-one resurrected in fresh state-machine code, KILLED by cross-check vs R117 (3rd appearance of this bug family — asserts now mandatory everywhere); softband variant void (degenerate prespec wording, disclosed).
+**The hunt's termination condition, met: neither premia survivable ⇒ "only the floor" is now a thrice-tested law, not a hypothesis.**

@@ -1,0 +1,20 @@
+/home/user/QUANTLAB/quantlab_r118_twin_hunt.py:28: FutureWarning: The default fill_method='pad' in DataFrame.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  P = P.mask(P.pct_change().abs() > 0.5)
+==========================================================================
+H-T1 — MOMENTUM, DIVERSIFIED + VOL-TARGETED (top-8, 1/8 base, 8%/yr sleeves)
+==========================================================================
+H-T1 always-in              : APR  +10.8% Sh +0.59 maxDD  -24.7% worstW  -6.54% posW  50.0% | Y +38.3/ -9.0/ +0.3 | gates 2/6 | HOLDOUT +11.65% ✓
+                              context: 2020:+32% 2021:+73% 2022:-23% 2023:+33% 2024:+38% 2025:-9% 2026:+0%
+H-T1 BTC-filter             : APR  +10.0% Sh +0.68 maxDD  -20.7% worstW  -5.66% posW  28.5% | Y +24.7/ +2.7/ +0.2 | gates 3/6 | HOLDOUT +4.90% ✓
+                              context: 2020:+21% 2021:+79% 2022:-9% 2023:+21% 2024:+25% 2025:+3% 2026:+0%
+
+==========================================================================
+H-T2 — DON55 BTC LONG/FLIP WITH SOFTENED EXITS (funding + costs in)
+==========================================================================
+H-T2 classic                : APR  +19.8% Sh +0.42 maxDD  -38.6% worstW -13.32% posW  47.2% | Y +56.6/+20.6/-22.7 | gates 2/6 | HOLDOUT -2.79% ✗
+                              context: 2020:+103% 2021:+98% 2022:-11% 2023:+21% 2024:+57% 2025:+21% 2026:-23%
+H-T2 timestop               : APR  +27.7% Sh +0.61 maxDD  -41.3% worstW -13.32% posW  45.8% | Y +50.3/+20.6/ +5.4 | gates 3/6 | HOLDOUT +6.57% ✓
+                              context: 2020:+87% 2021:+81% 2022:-25% 2023:+46% 2024:+50% 2025:+21% 2026:+5%
+
+>>> H-T2 SELECTED (selection Sharpe): timestop
+>>> H-T1/T2 FINAL: H-T1 gates best 3/6, H-T2 3/6
