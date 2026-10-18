@@ -1,0 +1,34 @@
+/home/user/QUANTLAB/quantlab_r117_daily_trend.py:29: FutureWarning: The default fill_method='pad' in DataFrame.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  P = P.mask(P.pct_change().abs() > 0.5)
+universe: 31 coins (>=97% coverage, listed by 2023-09): ['AAVE', 'ADA', 'ALGO', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CRV', 'DOGE', 'DOT', 'ETC', 'ETH', 'FET', 'FIL', 'GRT', 'HBAR', 'INJ', 'LDO', 'LINK', 'LTC', 'NEAR', 'OP', 'SEI', 'SOL', 'SUI', 'TRX', 'UNI', 'XLM', 'XRP']
+==========================================================================
+R117 — DAILY-CANDLE TREND, CRYPTO PERPS | 4 signals x 3 universes | no leverage
+==========================================================================
+
+--- SELECTION 2024-01 -> 2026-03 (Sharpe picks) ---
+DON20   BTC : APR   +0.97%  Sharpe +0.02  maxDD  -54.2%  posW  47.5%  worstW -19.96% | R24/25/26(partial)   +0.2/  -0.2/  -0.1
+DON20   ETH : APR   +4.55%  Sharpe +0.06  maxDD  -74.4%  posW  46.6%  worstW -32.23% | R24/25/26(partial)   -0.7/  +0.6/  +0.1
+DON20   BOOK: APR  +17.09%  Sharpe +0.30  maxDD  -51.5%  posW  41.5%  worstW -14.79% | R24/25/26(partial)   +0.3/  +0.1/  -0.1
+DON55   BTC : APR  +37.13%  Sharpe +0.76  maxDD  -35.8%  posW  50.8%  worstW -11.85% | R24/25/26(partial)   +0.6/  +0.3/  -0.0
+DON55   ETH : APR  +36.45%  Sharpe +0.51  maxDD  -66.6%  posW  50.0%  worstW -24.60% | R24/25/26(partial)   -0.0/  +1.0/  -0.1
+DON55   BOOK: APR  +16.13%  Sharpe +0.27  maxDD  -62.3%  posW  48.3%  worstW -23.83% | R24/25/26(partial)   +0.1/  -0.0/  +0.2
+SMA100  BTC : APR  +24.51%  Sharpe +0.70  maxDD  -38.2%  posW  32.2%  worstW -10.33% | R24/25/26(partial)   +0.5/  +0.1/  +0.0
+SMA100  ETH : APR  +25.59%  Sharpe +0.56  maxDD  -50.8%  posW  25.4%  worstW -18.42% | R24/25/26(partial)   +0.1/  +0.5/  -0.0
+SMA100  BOOK: APR  +14.61%  Sharpe +0.35  maxDD  -47.2%  posW  37.3%  worstW -23.16% | R24/25/26(partial)   +0.6/  -0.2/  -0.0
+SMA200  BTC : APR  +19.20%  Sharpe +0.50  maxDD  -32.6%  posW  35.6%  worstW -14.88% | R24/25/26(partial)   +0.6/  -0.2/  +0.0
+SMA200  ETH : APR  +21.76%  Sharpe +0.45  maxDD  -38.6%  posW  25.4%  worstW -21.23% | R24/25/26(partial)   +0.4/  +0.1/  +0.0
+SMA200  BOOK: APR   -2.64%  Sharpe -0.06  maxDD  -58.7%  posW  42.4%  worstW -23.56% | R24/25/26(partial)   +0.4/  -0.5/  -0.0
+
+>>> SELECTED: DON55 on BTC
+FULL 2024-01->2026-09: {'apr': np.float64(27.98), 'sharpe': np.float64(0.59), 'maxdd': np.float64(-35.84), 'posW': np.float64(48.61), 'worstW': np.float64(-11.85), 'yr': {2024: 0.6, 2025: 0.3, 2026: -0.1}}
+GATES: {'y2024': 'PASS', 'y2025': 'PASS', 'y2026': 'FAIL', 'maxDD': 'FAIL', 'worstW': 'FAIL', 'posW': 'FAIL'} -> 2/6
+HOLDOUT 2026-07->09: +2.36% equity (PASS)
+
+--- CONTEXT (not gated): yearly returns incl. the 2022 bear ---
+DON55   BTC : 2020: +103.4% 2021: +108.2% 2022:   -6.5% 2023:  +13.3% 2024:  +61.2% 2025:  +25.4% 2026:   -9.5%
+SMA200  BTC : 2020:  +24.6% 2021:   -0.1% 2022:   +0.0% 2023:  +72.2% 2024:  +59.6% 2025:  -16.5% 2026:  +19.1%
+DON55   BTC : 2020: +103.4% 2021: +108.2% 2022:   -6.5% 2023:  +13.3% 2024:  +61.2% 2025:  +25.4% 2026:   -9.5%
+SMA200  BOOK: 2020:   -1.8% 2021:  +70.7% 2022:  -21.1% 2023:  +39.4% 2024:  +40.3% 2025:  -46.1% 2026:  +23.7%
+BTC B&H 2024->2026-09 for reference: +89.0%
+
+>>> VERDICT: FAILS AFTER COSTS ❌

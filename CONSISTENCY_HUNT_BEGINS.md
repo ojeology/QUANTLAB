@@ -158,3 +158,26 @@ DCA $10/wk: BTC 1.09× · ETH 0.95× · EQW-20 0.84× — folk wisdom lost on 2/
 Seasonality: **0/20 survive Bonferroni (p<0.0025)**; seductive "CPI +242%/yr" = p 0.08 = noise (R111 real entries were negative).
 Staking: endpoints dead twice-confirmed. **No plain-sight truth exists outside the floor.**
 **FINAL: 114 rounds · every payer class, benchmark, and calendar mirage measured · hedged-contractual floor stands alone. Closed, with receipts.**
+
+## R117 PRESPEC (2026-10-16, locked BEFORE testing) — DAILY-CANDLE TREND ON CRYPTO PERPS
+
+The user-spotted gap: classic daily-bar trend was never given a dedicated round (components only).
+Who pays: slow institutional repricing + retail anchors (behavioral trend premium at the ONE
+horizon where retail costs are smallest: ~15 trades/yr, 0.07%/side vs multi-% moves).
+
+Data: Binance Vision 1D klines, backfilled to 2020-01 for warmup (SMA200 needs it); funding
+epochs (actual) as hold cost; universe = >=97% pre-fill coverage coins (the 24-30 panel).
+Signals (prespec'd, classic only, no mining): DON20/DON55 Donchian long/flip;
+SMA100/SMA200 regime long/flat. Universes: BTC-only, ETH-only, EQW-book (all coins, 1/N).
+Costs: 0.07%/side on position changes; funding = actual daily epochs on held longs.
+No leverage (1.0x); gates: charter law — yearly 2024/25/26 each >=0, maxDD <=12%, worstW >= -3%,
+posW >=65%. Selection 2024-01->2026-03 (Sharpe) picks variant; HOLDOUT 2026-07->09 untouched.
+2020-2023 printed as context only (incl. the 2022 bear — the regime this style is famous for).
+Verdict mapping: charter standard (SURVIVES / INCONCLUSIVE / FAILS AFTER COSTS / etc).
+
+## R117 RESULT (2026-10-16) — DAILY-CANDLE TREND ❌ FAILS CHARTER (2/6) — GAP CLOSED, LEGEND CONFIRMED
+
+DON55/BTC selected: +28% APR but maxDD −35.8%, worstW −11.9%, posW 49%, 2026 −9.5% → 2/6 gates. Holdout +2.4% ✓ (first survivor of the killer quarter).
+**Six-year context (2020-25): +103/+108/−6.5(2022 bear!)/+13/+61/+25 — the daily-trend legend is TRUE (sat out 2022, beat B&H over the cycle at 1/3 the drawdown) — and STILL uninhabitable under the consistency law.**
+Law (third form): cycle-surviving strategies ≠ charter-surviving strategies. Only the floor does both.
+Data spine now spans 2020-01→2026-09-30 (2,465 bars × 38 syms + funding). Sprint complete: R117 opened, tested, closed in one session.
