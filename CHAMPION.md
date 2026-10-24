@@ -163,3 +163,12 @@ possible → kill-switch v2 + throttle are the structural defense.
 - The table above (added 2026-10-09) is preserved but SUPERSEDED by the recheck report for
   decision purposes: its 2026 row (n=151/+22.4R/1.27) does not reconcile with its own CSV
   (n=165/+27.0R/1.30) — pre-existing discrepancy, documented in the recheck report.
+
+
+## UPDATE 2026-10-24 (b): full RR sweep — decay is RR1.5-local; re-entry ladder pre-registered
+First full RR landscape (see `quantlab_output/champ_rr_sweep_2026-10-24.md`): book PF@c rises
+monotonically 1.49→2.09 for RR 1.0→3.0; the 6-mo kill-gate fails ONLY at the traded RR1.5 (0.91)
+— neighbors 1.25/1.75/2.0/2.5/3.0 pass (1.01–1.49). Two traps recorded: full-book selection bias,
+and the TP-first intrabar assumption being unvalidated at wide RRs (SL-first bounds required).
+Halt at RR1.5 stands. PRE-REGISTERED at 2026-10-24: re-entry will judge RR {1.5,2.0,2.5,3.0} on
+post-2026-10-24 data only (n≥30, SL-first bound, 6-mo PF@c≥1.0, max forward PF@c wins).
