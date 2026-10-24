@@ -1,0 +1,5 @@
+GAP: R005-R101 audited at family level (file counts via grep), not line-by-line — ~90 scripts
+GAP: CAGE strategy referenced by operator as tested — ZERO implementations found in repo (unresolved provenance)
+GAP: R115/R116 corrected numeric rerun requires multi-coin funding spine refetch (~25 min CDN job) — analytic bound documented: overcharge made R115/R116 results CONSERVATIVE (understated) by ~2-6pp APR; holdout verdicts cannot flip (error << -8..-17% moves)
+GAP: demo_bot untestable in sandbox (network/DB fixtures) — fixes verified by source-level regression asserts
+GAP: holdout 2026-07..09 examined in R115/R116/R117/R118/R119 — now CONTAMINATED for discovery (see EXPOSURE_LEDGER)

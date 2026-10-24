@@ -1,0 +1,30 @@
+id,family,market_instrument,data_source_granularity,date_range,status,evidence_grade,key_result,path
+R005-R011,early indicator prototypes,crypto perp,OKX 1H,2021-2023,tested-failed,family-summary,no edge after costs,
+R012-R035,indicator/grid sweeps,crypto perp,OKX 1H,2021-2023,tested-failed,family-summary,selection-region only; superseded by walk-forward era,
+R036-R050,combo+multi-timeframe,crypto perp,OKX 1H/15m,2021-2023,tested-failed,family-summary,no OOS survival,
+R051-R063,pairs/spread probes,crypto perp,OKX 1H,2021-2023,tested-failed,family-summary,incl. BTC-ETH spread family (directive item),
+R064-R072,ML-era + exit engines,crypto perp,OKX 1H,2021-2023,tested-mixed,family-summary,led to EXIT_MODEL_AUDIT (M1 proxy PF inflated; bot-faithful 1.19),
+R073-R084,champion dev (BBW/RV/DST/PRG),crypto 1H 52-73 syms,OKX,2023-2026,tested-validated-superseded,family-summary,frozen champion lineage; see CHAMPION.md,
+R085-R095,5m scalping campaign (7 builds),crypto 5m,OKX 5m,2023-2026,tested-failed,family-summary,cost wall: bar < round-trip cost,
+R096-R101,champion validation+ledger,crypto 1H,OKX,2024-2026,tested-validated,family-summary,2024 -14R / 2025 +67.4R / 2026 +22.4R; frozen,
+F001-F013,forex ML + session/bracket,FX majors,Dukascopy/HistData/yfinance,2016-2026,tested-failed,family-summary,no edge; F013 closed FX arc v1,
+R102,always-on carry (crypto),24 perps,OKX funding API 15wk,2026,tested-inconclusive,file-inspected,"APR +3.2%, TRX -11% structural; hold-don't-churn",quantlab_r102_carry.py
+R103,dip-ladder + low-vol,crypto 1H,OKX,2024-2026,tested-failed,file-inspected,0/7 gates both; TP<SL breakeven law,quantlab_r103_consistency.py
+R104,cascade fade 1H + stack v1,73 perps,OKX,2024-2026,tested-failed,file-inspected,+0.119R/trade thin; stack v1 posW fail; PRINTER x100 BUG FOUND+FIXED,quantlab_r104_fundamentals.py
+R105,all-weather stack A/B/C,crypto,OKX + lending API,2024-2026,tested-inconclusive,file-inspected,A/B/C pass gates (regime-filled fills); superseded by R106 floor,quantlab_r105_allweather.py
+R106,hedged-yield floor (lend+short),20 coins,OKX funding+lending 15wk,2026-06..10,analysis-NOT-executed-strategy,file-inspected,"100% posW, worst wk +0.055%; EXCHANGE/EXECUTION RISKS undocumented in original report — amended in audit",quantlab_r106_hedgedfloor.py
+R107,FX Donchian 1H 3y,8 majors,Yahoo 1H,2024-2026,tested-failed,file-inspected,gross -211R; off-by-one+ticks+printer bugs found/fixed,quantlab_r107_fx_revival.py
+R108,FX carry dual-spine,21 crosses,FRED/OECD + docs,2024-2026,tested-failed,file-inspected,no losing year but worstW -27.9%; anchor validated,quantlab_r108_fx_carry.py
+R109,FX CTA-horizon trend,8 majors dailies,Yahoo 1D decade,2016-2026,tested-failed,file-inspected,gross -21R/41 trades; swap toll -2.15R/trade,quantlab_r109_fx_cta.py
+R110,S1 daily cascade sniper,20 coins,OKX 1D,2024-2026,tested-failed,file-inspected,+0.07R vs +0.40 bar; dimension bug caught,quantlab_r110_sniper.py
+R111,S2 FOMC/CPI events,BTC/ETH,OKX 1D + public calendar,2024-2026,tested-failed,file-inspected,"FOMC decaying, dead in holdout",quantlab_r111_sniper_s2.py
+R112,S3 weekly extreme reversion,20 coins,OKX 1D,2024-2026,tested-failed,file-inspected,0.00R avg; sniper queue closed 0/3,quantlab_r112_sniper_s3.py
+R113,cross-sectional momentum,20 coins,OKX 1D,2024-2026,tested-failed,file-inspected,"premium real (+61% holdout), DD -75% uninhabitable",quantlab_r113_csm.py
+R114,plain-sight sweep (BH/DCA/seasonality),crypto+metals,Yahoo/OKX,2024-2026,tested-failed,file-inspected,BH/DCA fail law; 0/20 calendar patterns (Bonferroni),quantlab_r114_plain_sight.py
+R115,funding dispersion L/S,30 perps,BinanceVision 3y funding,2023-2026,tested-inconclusive,file-inspected,"WF +35.5% APR, boot 98.6%, LOAO+ — holdout -17%; ACCOUNTING DEFECTS CONFIRMED (this audit): turnover charged daily (R x overcharge), APR/DD mixed basis",quantlab_r115_funding_dispersion.py
+R116,OI/crowding L/S,24 coins,BinanceVision metrics 1004d,2024-2026,tested-failed,file-inspected,squeeze dead holdout; OI-change = momentum (discovery); same accounting defects as R115,quantlab_r116_crowding.py
+R117,daily-candle trend,31-38 coins,BinanceVision 2020+,2020-2026,tested-failed,file-inspected,DON55 fails charter 2/6; 6y context confirms cycle-survival legend,quantlab_r117_daily_trend.py
+R118,twin hunt (engineering),BTC+panel,BinanceVision,2020-2026,tested-INVALIDATED→corrected-in-R119,file-inspected,H-T1 cost overwrite + H-T2 cost overwrite CONFIRMED; off-by-one #4 caught in R119 rerun; R118 numbers SUPERSEDED,quantlab_r118_twin_hunt.py
+R119,corrected twin hunt (audit),12-coin core,BinanceVision,2020-2026,tested-failed (audit run),file-inspected,"corrected: H-T1 +6.5/+10.6% CAGR (costs -4.3pp), H-T2 -0.4/+14.1% (off-by-one phantom -13..-20pp); all REJECT",quantlab_r119_corrected.py
+BOT,demo_bot (3 strategies),crypto perp,OKX live-candle,never executed,NOT-EXECUTED (never live),file-inspected,bot_config headlines STALE (R066 PF=3.35 superseded; bot-faithful PF=1.19); DAILY_LOSS_LIM was dead code (FIXED this audit); restart peak amnesia (FIXED),demo_bot.py
+EXITAUDIT,exit-model sensitivity,crypto 1H,OKX,2026,audit-artifact,file-inspected,M1 proxy PF 3.35 vs bot-faithful 1.19 vs pessimistic 0.53 — exit-model choice dominates headline PF,EXIT_MODEL_AUDIT.md

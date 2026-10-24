@@ -712,12 +712,25 @@ def run_scan(conn, states, universe):
 
     scan_results = defaultdict(lambda: defaultdict(int))
 
+    day_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
     for inst_id in universe:
         df = fetch_candles_cached(inst_id)
         if df is None or len(df) < MIN_CANDLES:
             continue
 
         for sid, state in states.items():
+            # AUDIT FIX (2026-10-16): DAILY_LOSS_LIM was defined but never enforced (dead code).
+            dpnl = conn.execute(
+                "SELECT COALESCE(SUM(pnl),0) FROM trades WHERE strategy=? AND status='CLOSED' AND exit_time >= ?",
+                (sid, day_start.isoformat())
+            ).fetchone()[0] or 0.0
+            if state.capital > 0 and (dpnl / state.capital) <= DAILY_LOSS_LIM:
+                if not state.is_paused():
+                    state.paused_until = now + timedelta(hours=24)
+                    log.warning(f"[{sid}] DAILY LOSS LIMIT {dpnl/state.capital:.2%} <= {DAILY_LOSS_LIM:.0%} — paused 24h")
+            if state.is_paused():
+                scan_results[sid]["paused"] += 1
+                continue
             acts = process_symbol(conn, sid, inst_id, state, df)
             for a in acts:
                 scan_results[sid][a] += 1
@@ -803,7 +816,15 @@ def load_states(conn):
         total_pnl = row[0] if row else 0.0
         st = StrategyState(sid, STARTING_CAP)
         st.capital = STARTING_CAP + total_pnl
-        st.peak    = max(STARTING_CAP, st.capital)
+        # AUDIT FIX (2026-10-16): restore the historical peak from the equity table.
+        # Previously peak was rebuilt as max(STARTING_CAP, capital) -> drawdown amnesia after restart.
+        try:
+            prow = conn.execute(
+                "SELECT peak FROM equity WHERE strategy=? ORDER BY rowid DESC LIMIT 1", (sid,)
+            ).fetchone()
+        except Exception:
+            prow = None
+        st.peak = max(float(prow[0]), st.capital, STARTING_CAP) if prow and prow[0] else max(STARTING_CAP, st.capital)
         states[sid] = st
     return states
 

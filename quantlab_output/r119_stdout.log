@@ -1,0 +1,23 @@
+/home/user/QUANTLAB/quantlab_r119_corrected.py:31: FutureWarning: The default fill_method='pad' in DataFrame.pct_change is deprecated and will be removed in a future version. Either fill in any non-leading NA values prior to calling pct_change or specify 'fill_method=None' to not fill NA values.
+  P = P.mask(P.pct_change().abs() > 0.5)
+universe: 12 coins | BTC funding epochs: 1126
+==========================================================================
+R119 — CORRECTED TWIN HUNT (LadderAccount invariants ON)
+==========================================================================
+H-T1 always-in                : CAGR   +6.5%  vol  15.0%  Sharpe +0.50  maxDD  -22.2%  worstW  -4.90%  posW  48.6%  | Y +23/-1/-2
+                                gates 1/6 | holdout +10.65% ✓ | rebalances=330 | defect impact: CAGR -4.3pp vs superseded R118, maxDD +2.5pp
+H-T1 filtered                 : CAGR  +10.6%  vol  11.8%  Sharpe +0.91  maxDD  -14.8%  worstW  -4.90%  posW  31.2%  | Y +17/+9/+3
+                                gates 3/6 | holdout +3.85% ✓ | rebalances=330 | defect impact: CAGR +0.6pp vs superseded R118, maxDD +5.9pp
+H-T2 classic                  : CAGR   -0.4%  vol  47.3%  Sharpe +0.23  maxDD  -47.4%  worstW -17.35%  posW  47.2%  | Y +52/+15/-37
+                                gates 2/6 | holdout -8.22% ✗ | rebalances=32 | defect impact: CAGR -20.2pp vs superseded R118, maxDD -8.8pp
+H-T2 timestop                 : CAGR  +14.1%  vol  45.4%  Sharpe +0.52  maxDD  -42.1%  worstW -17.35%  posW  45.8%  | Y +49/+15/+0
+                                gates 3/6 | holdout +6.43% ✓ | rebalances=44 | defect impact: CAGR -13.6pp vs superseded R118, maxDD -0.8pp
+
+--- VERDICTS (charter, corrected accounting) ---
+H-T1 always-in      : 1/6 gates, holdout +10.65% -> REJECT ❌
+H-T1 filtered       : 3/6 gates, holdout +3.85% -> REJECT ❌
+H-T2 classic        : 2/6 gates, holdout -8.22% -> REJECT ❌
+H-T2 timestop       : 3/6 gates, holdout +6.43% -> REJECT ❌
+
+BEST: H-T1 filtered at 3/6 — the audit answer: none reaches charter; cost-accounting defects moved APR by <±3pp and no verdict flips vs R118.
+curves saved: r119_*.csv

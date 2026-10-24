@@ -6,12 +6,17 @@ strategies:
   FamilyA:
     label: "Family A"
     conditions: [BBW_STRICT, RV_LO, DST_NR, PRG_VH]
-    description: "R066 PF=3.35 n=91  Boot P5=2.33"
+    # SUPERSEDED 2026-10-24 (research audit): PF=3.35 is the M1 proxy-exit figure.
+    # Bot-faithful exit model (EXIT_MODEL_AUDIT.md, M3): PF=1.193, +$12.09/trade, n=91 OOS.
+    # Original label preserved below for history — do NOT treat as live expectations.
+    description: "R066 PF=3.35 n=91  Boot P5=2.33  [SUPERSEDED: bot-faithful PF=1.193]"
 
   FamilyC:
     label: "Family C"
     conditions: [ADX_ST, PBD_HI]
-    description: "R068 PF=1.69 n=2049  Boot P5=1.57"
+    # SUPERSEDED 2026-10-24 (research audit): M1-era figure; see EXIT_MODEL_AUDIT.md for
+    # exit-model sensitivity (M2 SL/TP-cap PF=0.528). Original preserved below.
+    description: "R068 PF=1.69 n=2049  Boot P5=1.57  [SUPERSEDED: exit-model sensitive]"
 
 # ── Universe ─────────────────────────────────────────────────────────────────
 universe:
