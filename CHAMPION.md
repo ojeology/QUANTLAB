@@ -172,3 +172,13 @@ monotonically 1.49→2.09 for RR 1.0→3.0; the 6-mo kill-gate fails ONLY at the
 and the TP-first intrabar assumption being unvalidated at wide RRs (SL-first bounds required).
 Halt at RR1.5 stands. PRE-REGISTERED at 2026-10-24: re-entry will judge RR {1.5,2.0,2.5,3.0} on
 post-2026-10-24 data only (n≥30, SL-first bound, 6-mo PF@c≥1.0, max forward PF@c wins).
+
+
+## UPDATE 2026-10-24 (c): truth audit + battery — wide-RR cells are NOT a mirage
+`quantlab_output/champ_rr_robustness_2026-10-24.md`: SL-first truth audit on 15m ground truth
+(8 syms, refreshed) found ZERO ambiguous 1H bars across the whole RR ladder (walker verified
+38/38 vs engine; caveat: 8/73 symbol coverage — full-book 1m/15m bound stays a live-capital
+precondition). Battery: every cell bootP(PF>1)=1.00, LOAO-min 1.45–2.00, PF@0.10%/side 1.18–1.82
+(the old "dies at 0.10%" claim was RR1.5-era), MC P(profit) 100% (IID caveat on DD figures).
+The re-entry ladder stands; choice among cells = forward data only. Bot risk-gate item CLOSED:
+MAX_DD_LIM confirmed wired as an entry-halt (labeled in-file); test suite now 8/8.

@@ -45,7 +45,9 @@ MIN_CANDLES    = 250            # minimum history to evaluate a symbol
 PAGE_LIMIT     = 100            # OKX candles per page
 MAX_PAGES      = 10             # max pages to fetch per symbol (1000 bars)
 DAILY_LOSS_LIM = -0.03          # -3% → pause 24h
-MAX_DD_LIM     = -0.15          # -15% → halt bot
+MAX_DD_LIM     = -0.15          # -15% → block NEW entries via check_risk_gates() in
+                                 # process_symbol (audit 2026-10-24: entry-halt, NOT a bot halt —
+                                 # open trades always run to TP/SL; scan loop continues).
 PAGE_DELAY     = 0.12           # seconds between OKX pages
 
 CACHE_DIR      = "quantlab_cache"          # local parquet cache from research runs
@@ -615,6 +617,9 @@ def process_symbol(conn, strategy_id, symbol, state, df):
         sl  = trade["stop_loss"]
         entry_dt = datetime.fromisoformat(trade["entry_time"])
 
+        # AUDIT NOTE (2026-10-24): OHLC cannot order TP vs SL intrabar; bot books TP-first
+        # (optimistic). SL-first bound required before live capital — see
+        # docs/ACCOUNTING_AND_BACKTEST_STANDARDS.md convention #5.
         if hi >= tp:
             pnl = trade["risk_usd"] * rr
             close_trade(conn, trade["id"], now, tp, "TP", pnl)
