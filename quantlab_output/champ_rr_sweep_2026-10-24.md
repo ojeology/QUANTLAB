@@ -35,3 +35,27 @@ Repro: `quantlab_champcheck_rr{10,125,175,25,30}.py` (+ rr2 from recheck); trade
   2026-10-24. Known bias: this table was seen first (impossible to un-see); the ladder + rule +
   minimum n are still declared before the deciding window.
 - Until then: paper-tracking continues; bot stays never-live; $200–300 stays out.
+
+
+## ADDENDUM 2026-10-24 (e): rolling re-selection procedure test (operator's "test old data blind" idea)
+Raw "pick RR from the full-book table" stays forbidden (seen data). The honest version of the
+operator's question was tested instead: a MECHANICAL rule — "each quarter, hold the RR with the
+best trailing-6-month PF@c among the ladder" — evaluated across the book's four decision quarters.
+No human choice occurs at any checkpoint, so the historical pass is meaningful (not answer-key reuse):
+
+| decision | rule picked | forward 3m PF@c (picked) | forward 3m PF@c (fixed RR1.5) | forward R (picked) | beat 1.5 |
+|---|---|---|---|---|---|
+| 2025-12-01 | 2.0 | 1.39 | 1.36 | +8.5R | YES |
+| 2026-03-01 | 2.5 | 1.44 | 1.43 | +25.4R | YES |
+| 2026-06-01 | 3.0 | 0.96 | 0.55 | −0.9R | YES |
+| 2026-09-01 | 3.0 | 2.81 | 1.73 | +33.6R | YES |
+
+**4/4 forward quarters beat fixed RR1.5**; the rule adapted (2.0→2.5→3.0) as the market rotated.
+Caveats: only 4 checkpoints (17-month book); ladder books share signals (correlated exits —
+comparison fair but not independent); forward windows now also seen, so this is supporting
+evidence for the RULE, never a license to re-pick a number by hand.
+
+### Prespec amendment (supersedes the one-shot choice in ADDENDUM (d))
+At re-entry, adopt the STANDING RULE: quarterly, hold the ladder-RR with the best trailing-6-mo
+PF@c (min 5 trailing trades per RR; ladder {1.5, 2.0, 2.5, 3.0}; SL-first precondition per cell).
+First live pick still subject to the fresh-data forward gate. Halt at RR1.5 unchanged.

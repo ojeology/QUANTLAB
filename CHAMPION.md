@@ -182,3 +182,10 @@ precondition). Battery: every cell bootP(PF>1)=1.00, LOAO-min 1.45–2.00, PF@0.
 (the old "dies at 0.10%" claim was RR1.5-era), MC P(profit) 100% (IID caveat on DD figures).
 The re-entry ladder stands; choice among cells = forward data only. Bot risk-gate item CLOSED:
 MAX_DD_LIM confirmed wired as an entry-halt (labeled in-file); test suite now 8/8.
+
+
+## UPDATE 2026-10-24 (d): re-selection RULE pre-registered (from operator's rolling-test idea)
+"Each quarter, hold the ladder-RR with best trailing-6mo PF@c" beat fixed RR1.5 in 4/4 forward
+quarters during 2025-12→2026-09 (picks 2.0/2.5/3.0/3.0, +8.5R +25.4R -0.9R +33.6R). Adopted as
+the pre-registered re-entry rule (amends one-shot choice; halt stands; details in
+champ_rr_sweep_2026-10-24.md addendum).
