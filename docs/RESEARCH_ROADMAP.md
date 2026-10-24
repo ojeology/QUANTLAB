@@ -5,7 +5,14 @@
 2. Cache resilience: local mirror of fetched CSVs (9 wipe events to date); checksum manifest.
 3. `demo_bot.py`: full call-graph audit of risk gates (check_risk_gates/MAX_DD_LIM unresolved); SL-first intrabar bound; FIRST forward paper run (bot has never touched a live feed).
 
-## P1 — chosen direction (one hypothesis)
+## P1 — chosen direction (one hypothesis) — **CLOSED 2026-10-24: REJECT (R120)**
+R120 2023-discovery executed; all 4 gates failed (Sharpe 0.26, bootP 0.602, non-monotone,
+LOAO-min<0); 10d horizon reverses sign. Kill-switch honored — direction closed, no 2024+ analysis.
+Next runnable (P2): corrected R115/R116 reruns (funding spine + panel now in cache). After those,
+the honest frontier is thin: order-flow remains data-blocked; consider consolidating rather than
+forcing a new direction (audit directive: a defensible negative beats a forced positive).
+
+## (HISTORICAL) P1 pre-registration
 **OI-change momentum, 2023 untouched-leg design** (see audit §4). Prespec before any 2023 byte is loaded:
 signal = 5-day ΔOI ranks, L top / S bottom quartile, weekly rebalance; discovery = 2023 only.
 Kill-switch if 2023 fails. Monetization ladder: 2024–25 WF → 2026-H1 → (weakened) holdout.
