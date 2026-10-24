@@ -102,12 +102,6 @@ def test_demo_bot_peak_reload_regression():
     PASS.append("demo_bot: peak restored from DB + DAILY_LOSS_LIM referenced in loop")
 
 
-if __name__ == "__main__":
-    for t in [test_off_by_one_signal_never_earns_own_bar, test_cost_charged_once_and_never_overwritten,
-              test_turnover_not_repeated_between_rebalances, test_mark_twice_raises,
-              test_leverage_single_basis, test_sanity_tripwire, test_demo_bot_peak_reload_regression,
-              test_bot_max_dd_gate_wired]:
-        t()
     print(f"PASSED {len(PASS)}/{len(PASS)} accounting regression tests:")
     for p in PASS:
         print("  ✓", p)
@@ -120,3 +114,11 @@ def test_bot_max_dd_gate_wired():
     assert "ok, reason = state.check_risk_gates()" in src, "MAX_DD_LIM gate call missing"
     assert "block NEW entries" in src, "entry-halt (not bot-halt) semantics must be labeled"
     assert "SL-first bound required before live capital" in src, "intrabar TP-first disclosure missing"
+
+
+if __name__ == "__main__":
+    for t in [test_off_by_one_signal_never_earns_own_bar, test_cost_charged_once_and_never_overwritten,
+              test_turnover_not_repeated_between_rebalances, test_mark_twice_raises,
+              test_leverage_single_basis, test_sanity_tripwire, test_demo_bot_peak_reload_regression,
+              test_bot_max_dd_gate_wired]:
+        t()
