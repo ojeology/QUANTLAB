@@ -9,7 +9,9 @@
 R120 2023-discovery executed; all 4 gates failed (Sharpe 0.26, bootP 0.602, non-monotone,
 LOAO-min<0); 10d horizon reverses sign. Kill-switch honored — direction closed, no 2024+ analysis.
 Next runnable (P2): corrected R115/R116 reruns (funding spine + panel now in cache). After those,
-the honest frontier is thin: order-flow remains data-blocked; consider consolidating rather than
+R121 (crypto→FX transfer, 2026-10-24): REJECT per locked gates — kept PF 1.15 vs raw 0.96,
+but bootP 0.795 < 0.95 and zero benefit in the 2016-2020 context era. Strongest near-miss of the
+audit era; direction closed. The honest frontier is thin: order-flow remains data-blocked; consider consolidating rather than
 forcing a new direction (audit directive: a defensible negative beats a forced positive).
 
 ## (HISTORICAL) P1 pre-registration

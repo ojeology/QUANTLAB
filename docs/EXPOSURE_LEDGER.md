@@ -17,4 +17,6 @@ kill-switch closed the direction instead of re-trying lookbacks). 2024–2026 OK
 2023 Binance daily metrics **untouched** (reserved for P1 OI-momentum discovery);
 2020-01→2023-12 Binance dailies used as context by R117/R118/R119 only.
 
+FX 1H 2016-01→2026-10 examined ONCE (R121 transfer test, primary eval 2021-2025) — logged.
+
 Rule: before any new experiment reads a window, append a row here. Charter RESULT sections must cite the ledger.
