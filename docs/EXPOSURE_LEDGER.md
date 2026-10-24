@@ -19,4 +19,7 @@ kill-switch closed the direction instead of re-trying lookbacks). 2024–2026 OK
 
 FX 1H 2016-01→2026-10 examined ONCE (R121 transfer test, primary eval 2021-2025) — logged.
 
+FX dailies 2003-2026 examined ONCE (R122 COT positioning, both eras) - logged.
+COT weekly positioning 1986-2026-10 examined ONCE (R122) - logged.
+
 Rule: before any new experiment reads a window, append a row here. Charter RESULT sections must cite the ledger.
