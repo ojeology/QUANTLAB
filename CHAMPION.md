@@ -147,3 +147,19 @@ data) → R097 (upgrades) → R098 (path truth). Code: `quantlab_r096_recheck.py
 
 Regime truth: harvester of volatility expansion. 2024-type markets = losing year is
 possible → kill-switch v2 + throttle are the structural defense.
+
+
+## UPDATE 2026-10-24 (early-November recheck): KILL-SWITCH v2 TRIPPED → HALT 🛑
+
+- Rolling 6-month PF@cost = **0.91** (< 1.0 gate) on fresh data through 2026-10-23 → the
+  pre-committed v2 halt rule fired. **No live capital.** Re-entry: positive paper month +
+  full revalidation (see `quantlab_output/champion_recheck_2026-10-24.md`).
+- 2026 YTD: +21.2R, PF@c 1.20 (n=186) — the year is still net-positive; the *rolling* edge
+  is what died (May/Jun hole + soft Oct).
+- New audit item: cross-environment SVM drift re-rolls borderline keeps (±10R book variance);
+  pipeline verified causal; pin library versions before the next ledger claim.
+- Pre-registered RR 2.0: NOT promoted (fresh-data gate void at n=6); stays the challenger for
+  the re-entry revalidation (in-book paired bootstrap 0.98 in its favor, 2026 +37.4R vs +17.4R).
+- The table above (added 2026-10-09) is preserved but SUPERSEDED by the recheck report for
+  decision purposes: its 2026 row (n=151/+22.4R/1.27) does not reconcile with its own CSV
+  (n=165/+27.0R/1.30) — pre-existing discrepancy, documented in the recheck report.
