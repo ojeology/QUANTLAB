@@ -1,7 +1,7 @@
 # RESEARCH ROADMAP (post-audit)
 
 ## P0 — infrastructure debts (before any new numbers)
-1. Funding-spine refetch (multi-coin monthly fundingRate, ~25 min) → unblocks corrected R115/R116 reruns.
+1. ✅ DONE 2026-10-24: funding spine refetched (32 coins × 3,378 epochs, 2023-09→2026-09, 0 fails) + daily panel extended to the full 24-coin metrics universe (24 × _1D.csv, listing-correct). Corrected R115/R116 reruns and R120 OI-momentum are now data-ready.
 2. Cache resilience: local mirror of fetched CSVs (9 wipe events to date); checksum manifest.
 3. `demo_bot.py`: full call-graph audit of risk gates (check_risk_gates/MAX_DD_LIM unresolved); SL-first intrabar bound; FIRST forward paper run (bot has never touched a live feed).
 
