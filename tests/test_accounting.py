@@ -110,7 +110,7 @@ def test_demo_bot_peak_reload_regression():
 def test_bot_max_dd_gate_wired():
     """Audit item D-a resolution: check_risk_gates (MAX_DD_LIM) must be called in the
     per-symbol scan path (process_symbol), and the entry-halt semantics must be labeled."""
-    src = open(os.path.join(REPO, "demo_bot.py")).read()
+    src = pathlib.Path("demo_bot.py").read_text()
     assert "ok, reason = state.check_risk_gates()" in src, "MAX_DD_LIM gate call missing"
     assert "block NEW entries" in src, "entry-halt (not bot-halt) semantics must be labeled"
     assert "SL-first bound required before live capital" in src, "intrabar TP-first disclosure missing"
