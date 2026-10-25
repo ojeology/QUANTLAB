@@ -28,3 +28,18 @@ remains the only filter in this lab with proven discriminative content.
 
 ## Verdict per prespec: REJECT — reverse transfer permanently mapped. Transfer program CLOSED.
 Repro: `python3 quantlab_r123_reverse_transfer.py` (~25 s; needs pyarrow).
+
+
+## ADDENDUM — AUC AUTOPSY (2026-10-24, post-report diagnostic)
+| brain | in-sample AUC (own train) | out-sample AUC | verdict |
+|---|---|---|---|
+| FX brain | 0.857 (memorization) | **0.410** (2025+ FX, n=90) — worse than random | learned noise, inverts forward |
+| Crypto brain (champion-spec) | 0.761 | 0.460 (2026 pops, n=171; CI incl. 0.5) | no measurable RANKING skill in 2026 |
+
+Reading: the FX ML is definitively bad (memorizes its 537 trades, does worse than nothing forward).
+Disclosure at the champion's expense: by the ranking standard, even the crypto filter shows no
+2026 rank-discrimination — its validated value is ECONOMIC (kept-book PF advantage, rare-trade
+discipline via the selection-calibrated threshold; forward-validated by R096-R098 and the 4/4
+quarterly-rule test), not oracle-like scoring. The champion's defenses (kill-switch, forward gates,
+small size) remain the load-bearing safety layer. Neither filter is a prophet; the system never
+required one.
