@@ -189,3 +189,7 @@ MAX_DD_LIM confirmed wired as an entry-halt (labeled in-file); test suite now 8/
 quarters during 2025-12→2026-09 (picks 2.0/2.5/3.0/3.0, +8.5R +25.4R -0.9R +33.6R). Adopted as
 the pre-registered re-entry rule (amends one-shot choice; halt stands; details in
 champ_rr_sweep_2026-10-24.md addendum).
+
+
+## UPDATE 2026-10-24 (e): lean-filter challenger REJECTED (paired dominance)
+Linear-SVM substitution (R125): 96% kept-set overlap with incumbent, P(lean>RBF)=0.00 paired, own 6-mo gate 0.87 (also HALT). Challenger not added; upgrade path #2 closed. Re-entry stack unchanged; Jan-1 rule checkpoint stands.
