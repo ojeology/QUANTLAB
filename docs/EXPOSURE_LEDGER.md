@@ -22,4 +22,6 @@ FX 1H 2016-01→2026-10 examined ONCE (R121 transfer test, primary eval 2021-202
 FX dailies 2003-2026 examined ONCE (R122 COT positioning, both eras) - logged.
 COT weekly positioning 1986-2026-10 examined ONCE (R122) - logged.
 
+GOLD GC=F daily 2000-2026 examined ONCE (R127 map) - logged. OKX XAU 1H 2024-26 examined ONCE (R127, champion book trades excepted).
+
 Rule: before any new experiment reads a window, append a row here. Charter RESULT sections must cite the ledger.
