@@ -193,3 +193,7 @@ champ_rr_sweep_2026-10-24.md addendum).
 
 ## UPDATE 2026-10-24 (e): lean-filter challenger REJECTED (paired dominance)
 Linear-SVM substitution (R125): 96% kept-set overlap with incumbent, P(lean>RBF)=0.00 paired, own 6-mo gate 0.87 (also HALT). Challenger not added; upgrade path #2 closed. Re-entry stack unchanged; Jan-1 rule checkpoint stands.
+
+
+## UPDATE 2026-10-26: retest — HALT holds at 0.97 (gate 1.0), trending up
+6-mo PF@c 0.97 (-1.7R) vs 0.91 two days prior; 2026 YTD +24.4R PF@c 1.25; unseen-since-lock trades -0.8R (n=7). Mechanical rule both ways: no resume at 0.97, no panic at 0.91. Next decision: ~Jan 1 quarterly checkpoint. See champion_recheck_2026-10-26.md.
