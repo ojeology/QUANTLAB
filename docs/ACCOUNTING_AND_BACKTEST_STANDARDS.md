@@ -21,3 +21,7 @@ Regression test: `tests/test_accounting.py::test_weights_are_sole_pnl_source`.
 ## Reporting minimums
 CAGR, vol, Sharpe, maxDD, posW, worstW, per-year table, trade/rebalance count, cost model stated,
 holdout status stated (incl. contamination), and the charter gate count. No "live-ready" language, ever.
+
+## Addendum (R129 lesson)
+Retention gates MUST be evaluated before significance gates: a gate that vetoes 100% of trades
+passes every significance test vacuously (PF of an empty book = infinity). R129 Cell A is the example.
