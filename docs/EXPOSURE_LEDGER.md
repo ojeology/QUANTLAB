@@ -24,4 +24,6 @@ COT weekly positioning 1986-2026-10 examined ONCE (R122) - logged.
 
 GOLD GC=F daily 2000-2026 examined ONCE (R127 map) - logged. OKX XAU 1H 2024-26 examined ONCE (R127, champion book trades excepted).
 
+SILVER/OIL dailies 2000-2026 + XAG/CL 1H 2024-26 examined ONCE (R128) - logged. GOLD ML walk-forward 2010-2026 (R128 addendum).
+
 Rule: before any new experiment reads a window, append a row here. Charter RESULT sections must cite the ledger.
