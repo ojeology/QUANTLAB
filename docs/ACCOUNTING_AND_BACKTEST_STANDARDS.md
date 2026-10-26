@@ -25,3 +25,9 @@ holdout status stated (incl. contamination), and the charter gate count. No "liv
 ## Addendum (R129 lesson)
 Retention gates MUST be evaluated before significance gates: a gate that vetoes 100% of trades
 passes every significance test vacuously (PF of an empty book = infinity). R129 Cell A is the example.
+
+## Addendum 2 (R131 lesson)
+Probability lift is NOT expectancy. A precursor that raises P(big move) can still be untradeable:
+direction-conditioning, per-trade costs at event frequency, and path (stop placement vs the mean
+path) each independently consume lifts of 1.2-1.5x. Any new signal must clear PF@c gates on BOTH
+halves before 'lift' language is used in reports.
