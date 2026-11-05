@@ -25,3 +25,12 @@ w3 computed ONCE as report-only sensitivity (it was R135's predeclared variant).
 5. Cost stress: pooled PF@c at 0.20% RT (2× costs — tail-coin liquidity) ≥ 1.0.
 Verdicts: PASS all → edge scales with breadth (cross-section law confirmed for trendlines);
 FAIL breadth gate → edge was a top-20 phenomenon, 20-coin spec stands. One run, no iteration.
+
+## QUEUED (post-round observations, pre-registered for a FUTURE round — cannot be tested on the
+## data that proposed them)
+1. Eligibility filter (min listing age / liquidity tier): obvious post-hoc patch, forbidden here.
+2. FREQUENCY-GATE (operator pushback, 2026-11-05): break-density is regime-informative — NEW-53
+   2024: 2.4 signals/coin @ 55% WR vs 2025: 16.4 signals/coin @ 26% WR. Hypothesis: trailing
+   book-wide signal frequency inversely predicts per-trade expectancy; a density veto may restore
+   the pool's survival law. Test protocol when scheduled: gate threshold predeclared (single
+   variant), evaluated ONLY on data not used to observe the density-quality relation.
