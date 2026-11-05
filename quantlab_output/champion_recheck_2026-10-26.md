@@ -34,3 +34,11 @@ Reading: run TODAY the rule would point at RR 3.0 (best trailing cell) — same 
 4/4 historical test. The post-lock column (2 days, 7–9 trades/cell) is statistical noise and
 currently inverse-ordered — which is precisely why the rule waits for window maturity instead of
 reacting to fresh tiny samples. Decision stays with the ~Jan 1 checkpoint.
+
+
+## RETEST — 2026-11-04 (the scheduled ~Nov-1 check, run Nov 4)
+Data through 2026-11-04 05:00 UTC. **6-mo PF@c = 0.98** (−1.0R, n=98) → HALT holds, by 0.02.
+Trajectory: 0.91 (Oct 24) → 0.97 (Oct 26) → **0.98 (Nov 4)** — the book earned +2.8R (12 trades)
+since the last retest while benched. 2026 YTD: **+28.2R, PF@c 1.28** (n=185). The gate is one
+average trade from passing — but re-entry is the Jan-1 checkpoint's job, not the gate's. Discipline
+holds in both directions: no despair at 0.91, no premature resume at 0.98.

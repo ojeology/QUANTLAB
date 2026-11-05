@@ -201,3 +201,7 @@ Linear-SVM substitution (R125): 96% kept-set overlap with incumbent, P(lean>RBF)
 
 ## R130 MECHANISM NOTE (2026-10-26): the coil does not predict eruptions — it prices them
 Precursor atlas (56 coins, 1.09M coin-hours): compression states ANTI-predict 24h eruptions (lift 0.42-0.66); expansion states lift them 1.5-1.7x; trigger bars (range+volume) lift 1.23/1.48. The champion's coil is therefore a STOP-GEOMETRY and SELECTION device (tiny ATR near-target + which-pops filter), not an eruption forecast. Wins come from modest continuation after qualified pops (+0.69% fwd24h vs +0.10% drift). Narrative updated; nothing else changes.
+
+
+## UPDATE 2026-11-04: retest — HALT 0.98 (gate 1.0), +2.8R while benched, YTD +28.2R PF@c 1.28
+Scheduled November check. Trajectory 0.91→0.97→0.98. Next: Jan-1 quarterly checkpoint (the rule decides).
