@@ -42,3 +42,9 @@ Trajectory: 0.91 (Oct 24) → 0.97 (Oct 26) → **0.98 (Nov 4)** — the book ea
 since the last retest while benched. 2026 YTD: **+28.2R, PF@c 1.28** (n=185). The gate is one
 average trade from passing — but re-entry is the Jan-1 checkpoint's job, not the gate's. Discipline
 holds in both directions: no despair at 0.91, no premature resume at 0.98.
+
+
+## RETEST — 2026-11-23: 6-mo PF@c 0.92 (-4.8R, n=93) -> HALT HOLDS
+Trajectory 0.91 -> 0.97 -> 0.98 -> 0.92: the recovery rolled back (-3.9R on 15 trades since Nov 4).
+2026 YTD +23.0R PF@c 1.21. Kill-switch vindicated again: the bleed happened at zero capital risk.
+Jan-1 quarterly checkpoint unchanged; gate needs a real recovery, not one trade.
